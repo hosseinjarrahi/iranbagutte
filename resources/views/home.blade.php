@@ -13,18 +13,15 @@
                 <ol class="text-center">
 
                     @foreach($slides as $key => $slide)
-                        @php
-                            $cat = $Category::findById($slide->category)[0];
-                        @endphp
                         <li>
                             <h2 style="padding: 0px; margin: 0px; height: 40px; width: 350px; left: 0px;" class="IB-selected each">
-                                <span class="IB-akordin0">{{ $cat->name }}</span>
+                                <span class="IB-akordin0">{{ $slide->category->name }}</span>
                             </h2>
                             <div style="width: 1040px; left: 0px; padding-left: 40px;">
                                 <a target="_blank" href="{{ url('order#'.($key + 1)) }}">
                                     <img src="{{ asset('upload/'.$slide->img) }}" class="img-fluid">
                                 </a>
-                                {{ $cat->name }}
+                                {{ $slide->category->name }}
                             </div>
                         </li>
                     @endforeach
@@ -41,13 +38,11 @@
         <div class="IB-divAcB">
 
             @foreach($slides as $key => $slide)
-                @php
-                    $cat = $Category::findById($slide->category)[0];
-                @endphp
+
                     <div class="accordion-wrapper">
                         <div class="ac-pane">
                             <a href="#" class="ac-title IB-akordin0">
-                                <span>{{ $cat->name }}</span>
+                                <span>{{ $slide->category->name }}</span>
                             </a>
 
                             <div class="ac-content" style="display: none;">
