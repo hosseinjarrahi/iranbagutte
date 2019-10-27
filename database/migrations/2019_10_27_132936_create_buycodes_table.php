@@ -15,7 +15,21 @@ class CreateBuycodesTable extends Migration
     {
         Schema::create('buycodes', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedInteger('user_id');
+	        $table->unsignedInteger('game_id')->nullable();
+	        $table->string('code');
             $table->timestamps();
+
+	        $table->foreign('user_id')
+		        ->references('id')
+		        ->on('users')
+		        ->onDelete('cascade');
+
+	        $table->foreign('game_id')
+		        ->references('id')
+		        ->on('games')
+		        ->onDelete('cascade');
+
         });
     }
 

@@ -15,6 +15,12 @@ class CreateBannersTable extends Migration
     {
         Schema::create('banners', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedInteger('clicks')->default(0);
+            $table->text('url');
+            $table->text('img')->nullable();
+            $table->string('state','1')->nullable();
+            $table->text('time')->nullable();
+            $table->text('text')->nullable();
             $table->timestamps();
         });
     }

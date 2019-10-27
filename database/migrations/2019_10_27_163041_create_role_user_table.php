@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateReservesTable extends Migration
+class CreateRoleUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,9 @@ class CreateReservesTable extends Migration
      */
     public function up()
     {
-        Schema::create('reserves', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('role_user', function (Blueprint $table) {
             $table->unsignedInteger('user_id');
-            $table->string('start_time');
-            $table->string('end_time');
-            $table->text('detail');
-            $table->string('tables');
-            $table->string('name');
-            $table->string('phone',15);
-            $table->string('trans_id');
+            $table->unsignedInteger('role_id');
             $table->timestamps();
 
 	        $table->foreign('user_id')
@@ -30,6 +23,10 @@ class CreateReservesTable extends Migration
 		        ->on('users')
 		        ->onDelete('cascade');
 
+	        $table->foreign('role_id')
+		        ->references('id')
+		        ->on('roles')
+		        ->onDelete('cascade');
         });
     }
 
@@ -40,6 +37,6 @@ class CreateReservesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reserves');
+        Schema::dropIfExists('role_user');
     }
 }

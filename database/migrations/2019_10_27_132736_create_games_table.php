@@ -6,26 +6,40 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateGamesTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('games', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
-        });
-    }
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+	public function up ()
+	{
+		Schema::create('games' , function (Blueprint $table) {
+			$table->bigIncrements('id');
+			$table->unsignedInteger('user_id');
+			$table->text('files');
+			$table->text('name')->nullable();
+			$table->text('description')->nullable();
+			$table->text('poster')->nullable();
+			$table->string('part',2);
+			$table->text('full')->nullable();
+			$table->timestamps();
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('games');
-    }
+
+			$table->foreign('user_id')
+				->references('id')
+				->on('users')
+				->onDelete('cascade');
+
+		});
+	}
+
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down ()
+	{
+		Schema::dropIfExists('games');
+	}
 }
