@@ -1,0 +1,88 @@
+.IB-accordion
+{
+	text-align: center;
+}
+#IB-one
+{
+	background: linear-gradient(to right, #f2994a, #f2c94c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	width:100% !important;
+}
+#IB-one li,#IB-one,#IB-one ol,#IB-one h2,#IB-one div
+{
+	box-sizing: unset !important;
+}
+.IB-accordion ol
+{
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+.IB-accordion li > h2
+{
+	color: black;
+	font-weight: normal;
+	margin: 0;
+	z-index: 2;
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-transform: translateX(-100%) rotate(-90deg);
+	-webkit-transform-origin: right top;
+	-moz-transform: translateX(-100%) rotate(-90deg);
+	-moz-transform-origin: right top;
+	-o-transform: translateX(-100%) rotate(-90deg);
+	-o-transform-origin: right top;
+	-ms-transform: translateX(-100%) rotate(-90deg);
+	-ms-transform-origin: right top;
+	transform: translateX(-100%) rotate(-90deg);
+	transform-origin: right top;
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+.IB-accordion li > h2 span
+{
+	display: block;
+	text-align: center;
+	height: 100%;
+	color: white;
+	font-size: 13pt;
+	padding-top:5px;
+}
+.IB-accordion li > h2 b
+{
+	display: inline-block;
+	position: absolute;
+	top: 10%;
+	top: 42%\9;
+	left: 10%;
+	left: 5%;
+	text-align: center;
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	transform: rotate(90deg);
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+}
+.IB-accordion li > h2:hover
+{
+	cursor: pointer;
+}
+.IB-accordion li > div
+{
+	height: 100%;
+	position: absolute;
+	top: 0;
+	z-index: 1;
+	overflow: hidden;
+}
+.IB-accordion noscript p
+{
+	padding: 10px;
+	margin: 0;
+	background: white;
+}
+
+
+

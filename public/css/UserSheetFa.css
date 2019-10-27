@@ -1,0 +1,1314 @@
+﻿body
+{
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+    font-family: BYekan,Tahoma;
+    font-size: 11pt;
+    line-height: 190%;
+    color: #fff;
+    background-color: #777;
+    background-size: cover;
+    background-attachment: fixed;
+}
+img
+{
+    border: 0;
+}
+.IB-container
+{
+    /*border-bottom: 10px solid #c0392b;*/
+    width: 100%;
+    /*display: inline-block;*/
+}
+
+.IB-Row
+{
+    width: 100%;
+    float: right;
+    text-align: center;
+}
+
+.IB-RowMarginFive
+{
+    width: 100%;
+    float: right;
+    margin-top: 5px;
+}
+.IB-RowMarginTen
+{
+    width: 100%;
+    float: right;
+    margin-top: 10px;
+}
+A:hover
+{
+    color: #000;
+}
+A
+{
+    color: #9b8259;
+    text-decoration: none;
+}
+a:active, a:visited, a:link
+{
+    border: none !important;
+    outline: none !important;
+    outline: 0 !important;
+}
+.IB-listResponsive
+{
+    margin: 0;
+    padding: 0;
+    float: right;
+    text-align: center !important;
+    width: 100%;
+}
+.IB-listResponsive li
+{
+    display: inline-block;
+}
+.IB-listResponsiveB
+{
+    margin: 0;
+    padding: 0;
+    float: right;
+    list-style: none;
+    width: 100%;
+}
+.IB-listResponsiveB li
+{
+    float: right;
+}
+.IB-listResponsiveB li:nth-child(3), .IB-listResponsiveB li:nth-child(4)
+{
+    float: left !important;
+}
+.IB-fade
+{
+    -moz-transition: all 0.7s ease-out;
+    -o-transition: all 0.7s ease-out;
+    -webkit-transition: all 0.7s ease-out;
+    transition: all 0.7s ease-out;
+}
+.IB-LTR
+{
+    float: left;
+    direction: ltr;
+}
+.IB-commentUserSpan
+{
+    float: left;
+    font-size: 10pt;
+    color: gray;
+    margin-top: 12px;
+}
+.IB-commentUserRight
+{
+    float: right;
+    width: 45%;
+    margin-top: 10px;
+}
+.IB-commentUserLeft
+{
+    float: right;
+    width: 55%;
+    margin-top: 10px;
+}
+.IB-txtCommentUser
+{
+    height: 25px;
+    width: 90%;
+}
+.IB-searchDivBox
+{
+    width: 380px;
+}
+.IB-searchDivBoxBox
+{
+    float: right;
+    width: 100%;
+    border: double 3px #ccc;
+    padding: 10px 0;
+    border-radius: 10px;
+}
+.IB-colorA a
+{
+    color: #fff;
+}
+.IB-colorA a:hover
+{
+    color: #fff;
+}
+.IB-RatingStarBox
+{
+    float: left !important;
+}
+
+
+/*-----------------------Header Top ------------------*/
+.IB-ib-Slide
+{
+    float: right;
+    width: 100%;
+    background-attachment: fixed;
+    height: 450px;
+    overflow: hidden;
+}
+.IB-SlideBox
+{
+    background: linear-gradient(to right, #f2994a, #f2c94c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    float: right;
+    width: 100%;
+    direction: ltr;
+    border: 3px solid #240b36;
+}
+.IB-ItemAdsLeftNews
+{
+    float: right;
+    color: #9b8259;
+    width: 160px;
+    margin-right: 64px;
+    margin-top: 0px;
+    font-size: 10pt;
+}
+.IB-LeftNews
+{
+    width: 232px;
+    height: 25px;
+    float: left;
+    position: relative;
+    z-index: 9999;
+    margin-top: 5px;
+    background: url(../Administrator/Files/Design/LeftNews.png)no-repeat center top;
+    margin-left: 10px;
+    text-align: right;
+}
+.IB-HeaderTop
+{
+    width: 100%;
+    float: right;
+    position: relative;
+    z-index: 9999;
+    text-align: center;
+}
+.IB-Logo
+{
+    width: 126px;
+    height: 95px;
+    z-index: 9999;
+    background: url(../Administrator/Files/Design/logo.png) no-repeat center;
+    display: inline-table;
+    margin-top: 5px;
+    float: left;
+    position: relative;
+    background-size: 100% 100%;
+    margin-left: 10px;
+}
+
+.IB-loginBox
+{
+    width: 270px;
+    float: left;
+}
+
+.IB-LangBox
+{
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+.IB-LangBoxItem
+{
+    float: left;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.IB-LangBoxItem img
+{
+    float: right;
+    width: 22px;
+    height: 20px;
+}
+.IB-Tell
+{
+    float: right;
+    width: 270px;
+    height: 88px;
+    z-index: 9999;
+    background: url(../Administrator/Files/Design/Tell.png) no-repeat center top;
+}
+
+.IB-HeaderTop .IB-ItemLeft
+{
+    float: left;
+    margin-top: 22px;
+    color: #b7b7b7;
+    font-size: 9pt;
+    padding: 0px 7px 0px 0px;
+}
+.IB-HeaderTop .IB-ItemLeft img
+{
+    float: right;
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+    margin-top: 2px;
+}
+.IB-HeaderTop .IB-ItemLeft:hover
+{
+    color: #fff;
+}
+
+
+
+
+
+
+/*-----------------------HeaderDown ------------------*/
+
+.IB-HeaderDownBox
+{
+    float: right;
+    width: 98%;
+    background-image: url(../Administrator/Files/Design/bgBox.png);
+    padding: 7px 1% 7px 1%;
+    border-bottom: solid 1px #333;
+}
+.IB-HeaderDownBox .IB-NewsIcon
+{
+    float: right;
+    margin-top: 2px !important;
+    margin-left: 5px;
+    height: 25px;
+    width: 25px;
+    background: url(../Administrator/Files/Design/NavigationFa.png) no-repeat;
+}
+.IB-HeaderDownBox img
+{
+    float: right;
+    margin-right: 5px;
+    margin-top: 10px;
+}
+.IB-HeaderDownBox a
+{
+    float: right;
+    color: #fff;
+}
+#IB-slideMain
+{
+    display: none;
+    float: right;
+    width: 100%;
+}
+.IB-HeaderDownBox a:hover
+{
+    float: right;
+    color: #ffff00;
+}
+.IB-pathHeaderDown
+{
+    width: 16px;
+    height: 9px;
+    z-index: 9999;
+    background: url(../Administrator/Files/Design/path.png) no-repeat;
+    float: right;
+    margin-top: 9px;
+}
+
+.IB-navDiv
+{
+    float: right;
+    width: 970px;
+    position: relative;
+    z-index: 9;
+}
+#IB-nav
+{
+    width: 100%;
+    height: 80px;
+    margin: 0 auto;
+    display: inline-table;
+    padding: 0;
+    z-index: 9999;
+    text-align: right;
+    overflow: hidden;
+}
+.IB-navshowF
+{
+    width: 1200px !important;
+}
+
+.IB-navFull
+{
+    width: 100%;
+    margin: 0 auto;
+    left: 0;
+    float: right;
+    padding: 0;
+    z-index: 999999999;
+    transition: all 0.7s;
+    opacity: 1;
+}
+.IB-showDiv
+{
+    opacity: 1 !important;
+    transition: all 1s;
+    z-index: auto;
+    overflow: inherit;
+    opacity: 1;
+}
+.IB-showDivF
+{
+    opacity: 1 !important;
+    top: 0px;
+    transition: all 1s;
+    z-index: auto;
+    overflow: inherit;
+    position: fixed;
+}
+.IB-LogoFixed
+{
+    display: none;
+    background: url(../Administrator/Files/Design/logo.png) no-repeat;
+    background-position: left bottom;
+    height: 26px;
+}
+#IB-nav li:hover
+{
+}
+#IB-nav li
+{
+    display: inline-block;
+    position: relative;
+    z-index: 500;
+    margin: 0;
+    z-index: 99999;
+    text-align: center;
+    transform: rotate(-45deg);
+    width: 160px;
+    border-bottom: solid 1px #555;
+    padding-bottom: 10px;
+    margin-left: -70px;
+}
+#IB-nav li:hover > a
+{
+    padding-right: 70px;
+    color: #f3e3b2;
+    border-radius: 0px;
+}
+#IB-nav li a
+{
+    display: block;
+    padding: 20px 60px 10px 0;
+    text-decoration: none;
+    color: #fff;
+    text-align: right;
+    font-size: 10pt;
+    font-weight: normal;
+    text-transform: uppercase;
+    transition: all 0.5s ease 0s;
+    width: 120px;
+}
+
+#IB-nav li a .imgMenu
+{
+    height: 28px;
+}
+#IB-nav li a p
+{
+    margin: 5px auto;
+    text-align: center;
+    margin-top: 10px;
+}
+#IB-nav ul
+{
+    position: absolute;
+    right: 0;
+    display: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#IB-nav ul li:hover > a
+{
+    color: #fff;
+    background-color: #333;
+}
+#IB-nav ul li
+{
+    width: 180px;
+    float: right;
+    margin: 0;
+    background-color: #947a4e;
+    border-bottom: solid 1px #000;
+    transform: rotate(-0);
+}
+
+#IB-nav ul a
+{
+    display: block;
+    height: 28px;
+    padding: 5px 10px 5px 5px;
+    text-align: right;
+    color: #fff;
+    font-size: 13px;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+    background: none;
+}
+
+#IB-nav ul.submenu ul
+{
+    position: absolute;
+    right: 181px;
+    display: none;
+    top: 0px;
+    padding: 0;
+    list-style: none;
+}
+.IB-ArrowDown
+{
+    border: 0px;
+    padding: 0px;
+}
+.IB-ArrowDown2
+{
+    height: 12px;
+    width: 8px;
+    border: 0px;
+    padding: 0px;
+    margin-top: 9px;
+    float: left;
+    background: url(../Administrator/Files/Design/ArrowDown2b.gif) no-repeat center;
+}
+.IB-ArrowDown3
+{
+    height: 12px;
+    width: 12px;
+    border: 0px;
+    padding: 0px;
+    margin-top: 9px;
+    margin-left: 5px;
+    float: left;
+    background: url(../Administrator/Files/Design/arrowDown.png) no-repeat center;
+    display: none;
+}
+
+
+/*--------------------------------------------ContentMain--------*/
+.IB-ContentMainBox
+{
+    width: 100%;
+    text-align: center;
+    float: right;
+}
+.IB-ContentMain
+{
+    width: 100%;
+    text-align: center;
+    margin-top: 0;
+    float: right;
+    padding-bottom: 0px;
+}
+.IB-ContentMainBoxBox
+{
+    width: 985px;
+}
+.IB-ContentMainBoxBox1
+{
+    width: 100%;
+    float: right;
+}
+.IB-ContentMainDivLeft
+{
+    width: 705px;
+    float: right;
+}
+.IB-ContentMainDivRight
+{
+    width: 275px;
+    float: right;
+}
+
+/* ------------------------------------------Box-----------------------------------*/
+
+.IB-Box
+{
+    float: right;
+    width: 100%;
+    border-radius: 0px;
+    background-image: url(../Administrator/Files/Design/bgBox.png);
+}
+.IB-BoxN
+{
+    width: 100%;
+    border: none;
+}
+.IB-BoxNText
+{
+    padding-bottom: 30px;
+}
+.IB-Box .IB-BoxTop
+{
+    float: right;
+    width: 100%;
+    min-height: 71px;
+    margin: 20px 0;
+}
+.IB-TitleTextMain
+{
+    background: url(  "../Administrator/Files/Design/TitleTextMain.png" ) no-repeat center top;
+}
+.IB-Box .IB-BoxTop h1, .IB-Box .IB-BoxTop h2, .IB-Box .IB-BoxTop h5
+{
+    float: right;
+    font-size: 18px;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    line-height: 170%;
+    font-weight: normal;
+    margin-top: 15px;
+    margin-right: 15px;
+}
+.IB-BoxN .IB-BoxTop h2, .IB-BoxN .IB-BoxTop h1
+{
+    float: none;
+    text-align: center;
+    color: #fff !important;
+}
+.IB-Box .IB-BoxTop a
+{
+    color: #fff;
+}
+.IB-Box .IB-BoxTop a:hover
+{
+    color: #555;
+}
+.IB-Box .IB-BoxCenter .IB-Back
+{
+    float: right;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #fff;
+    font-size: 9pt;
+}
+.IB-Box .IB-BoxCenter .IB-Back:hover
+{
+    color: Red;
+}
+.IB-Box .IB-BoxCenter .IB-DateRegister
+{
+    float: right;
+    color: #fff;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 9pt;
+}
+.IB-Box .IB-BoxCenter .IB-SepTop
+{
+    float: right;
+    color: #fff;
+    margin: 5px 10px;
+}
+.IB-Box .IB-BoxCenter
+{
+    float: right;
+    width: 98%;
+    color: #fff;
+    min-height: 120px;
+    padding: 1%;
+    text-align: justify;
+    font-size: 11pt;
+    margin-top: 8px;
+}
+.IB-Box .IB-BoxCenterText
+{
+    padding: 0;
+    margin-top: 0px;
+    width: 100%;
+}
+
+.IB-Box .IB-BoxCenterB
+{
+    float: right;
+    width: 100%;
+    color: #343434;
+    min-height: 120px;
+    text-align: justify;
+    font-size: 11pt;
+    margin-top: 8px;
+}
+.IB-Box .IB-BoxCenter .IB-ImagePost
+{
+    max-width: 570px;
+}
+.IB-Box .IB-BoxCenter .IB-Sep
+{
+    float: right;
+    width: 100%;
+    height: 1px;
+    border-bottom: solid 1px #e7e7e7;
+    margin-bottom: 10px;
+}
+.IB-Box .IB-BoxCenter .IB-LinkFooter1
+{
+    float: right;
+    color: #343434;
+    margin-bottom: 5px;
+}
+.IB-Box .IB-BoxCenter .IB-LinkFooter2
+{
+    float: left;
+    color: #343434;
+    margin-bottom: 5px;
+}
+.IB-Box .IB-BoxCenter .IB-LinkFooter1:hover, .IB-Box .IB-BoxCenter .IB-LinkFooter2:hover
+{
+    color: red;
+}
+/*------------------------BoxIndex----------------------------------*/
+.IB-BoxIndex
+{
+    float: right;
+    width: 100%;
+    margin-top: 0px;
+}
+.IB-BoxIndexR
+{
+    margin-right: 1%;
+}
+.IB-BoxIndex h2
+{
+    float: right;
+    font-size: 17pt;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    line-height: 170%;
+    font-weight: normal;
+    margin-right: 0px;
+    background-image: url(../Administrator/Files/Design/BulletBoxTop.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    padding-right: 30px;
+    margin-right: 10px;
+}
+
+
+
+/* ------------------------------------------FieldDynamic-----------------------------------*/
+.IB-FieldTitle
+{
+    float: right;
+    width: 110px;
+    text-align: left;
+    font-size: 9pt;
+}
+.IB-FieldTitle2
+{
+    text-align: right;
+    margin-right: 10px;
+}
+.IB-FieldRadioButton
+{
+    float: right;
+    margin-right: 10px;
+    font-size: 9pt;
+}
+.IB-FieldCheckBox
+{
+    float: right;
+    margin-right: 10px;
+    font-size: 8pt;
+    width: 180px;
+    margin-top: 3px;
+    text-align: right;
+}
+.IB-FieldTextBox
+{
+    float: right;
+    margin-right: 10px;
+    font-size: 9pt;
+    width: 200px;
+    text-align: right;
+    border: solid 1px #bcbbcb;
+    color: #555;
+}
+.IB-FieldTextBoxSearch
+{
+    width: 175px;
+    color: #777;
+}
+.IB-FieldTextBoxLeft
+{
+    direction: ltr;
+    text-align: left;
+}
+.IB-FieldTextBoxNumber
+{
+    width: 70px;
+    text-align: center;
+}
+.IB-FieldTextBoxNumberSearch
+{
+    width: 60px;
+    margin-top: 4px;
+}
+.IB-FieldUnit
+{
+    float: right;
+    margin-right: 10px;
+    font-size: 10pt;
+    color: Gray;
+    margin-top: 2px;
+}
+.IB-FieldFileUpload
+{
+    float: right;
+    margin-right: 10px;
+    font-size: 9pt;
+    width: 200px;
+    margin-top: 3px;
+}
+.IB-FieldDropDownList
+{
+    float: right;
+    margin-right: 10px;
+    font-size: 9pt;
+    width: 200px;
+    margin-top: 3px;
+    border: solid 1px #bcbbcb;
+}
+.IB-FieldDropDownListSearch
+{
+    width: 175px;
+    color: #8b8a8a;
+}
+.IB-FieldButton
+{
+    border: 0;
+    margin: 10px 0 0 0;
+    float: right;
+    font-size: 11pt;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    background: #525252;
+    width: 107px;
+    padding: 2px 9px;
+    margin-bottom: 15px;
+}
+.IB-FieldButtonDownload
+{
+    border: 0;
+    margin: 10px 0 0 0;
+    float: right;
+    font-size: 11pt;
+    color: #202020;
+    cursor: pointer;
+    text-align: center;
+    background: #525252;
+    width: 107px;
+    padding: 2px 9px;
+    position: relative;
+    right: 50%;
+    margin-right: -68px;
+}
+.IB-FieldButtonDownload:hover
+{
+    color: #fff;
+    background-color: #202020;
+}
+.IB-FieldButtonB
+{
+    margin-right: 68px !important;
+}
+.IB-FieldButtonQ
+{
+    margin-right: 80px !important;
+}
+.IB-FieldButtonD
+{
+    margin-right: 120px !important;
+}
+.IB-FieldButton:hover
+{
+    color: #fff;
+    background: #202020;
+}
+.IB-FieldButtonSearch
+{
+    margin-right: 63px;
+}
+.IB-FieldButtonSearch2
+{
+    width: 71px;
+    padding-top: 5px;
+    height: 23px;
+    margin-bottom: 5px;
+    margin-right: 75px;
+}
+
+.IB-lblPrice
+{
+    float: right;
+    width: 135px;
+    margin-top: 14px;
+    text-align: center;
+    margin-right: 10px;
+    font-size: 11pt;
+}
+.IB-FieldButtonSearch2:hover
+{
+    color: #7a6600;
+}
+.IB-FieldButtonSearch:hover
+{
+    background-position: 0 -28px;
+}
+.IB-FieldCaptcha
+{
+    float: right;
+    margin-right: 120px;
+}
+.IB-FieldCaptchaR
+{
+    height: 30px !important;
+    width: 90px !important;
+}
+.IB-FieldCaptchaB
+{
+    float: right;
+    margin-right: 12px;
+}
+.IB-FormCaptcha
+{
+    float: right;
+    margin-right: 120px;
+}
+.IB-FormCaptchaB
+{
+    float: left;
+    margin-left: 200px;
+    margin-right: 0;
+    margin-top: 2px;
+}
+.IB-Validation, .ValidationNormal
+{
+    float: right;
+    color: Red;
+    margin-right: 3px;
+    margin-top: 0px;
+    font-size: 12pt;
+}
+.IB-ValidationRow
+{
+    width: 100%;
+    text-align: center;
+    color: Red;
+    font-size: 12pt;
+    float: right;
+}
+.IB-ValidationRowLogin
+{
+    margin-right: 120px;
+    text-align: right;
+    font-weight: bold;
+    font-size: 10pt;
+    text-align: right;
+    float: right;
+    color: Red;
+}
+.IB-SpanMoney
+{
+    float: right;
+    margin-right: 10px;
+    font-size: 8pt;
+    color: #8b8a8a;
+    margin-top: 5px;
+}
+.IB-SpanTitleSearch
+{
+    float: right;
+    text-align: right;
+    font-size: 11pt;
+    margin-right: 7pt;
+    color: #8b8a8a;
+}
+.IB-SpanRegister
+{
+    float: left;
+    font-weight: bold;
+    font-size: 9pt;
+    color: red;
+    margin-left: 20px;
+    margin-top: 4px;
+}
+
+/*------------------------------------LinkShow-----------------------------*/
+
+.IB-LinkShow
+{
+    float: right;
+    width: 100%;
+    margin-top: 10px;
+}
+.IB-LinkShow .IB-Title
+{
+    color: #333;
+    text-align: center;
+    font-weight: bold;
+    font-size: 8pt;
+    float: right;
+    margin-right: 10px;
+}
+.IB-LinkShow .IB-Title:hover
+{
+    color: #000;
+}
+/*------------------------------------FooterLink-----------------------------*/
+#IB-Footer
+{
+    width: 100%;
+    min-height: 323px;
+    float: right;
+    color: #000;
+}
+.IB-FooterBoxBox
+{
+    width: 100%;
+    float: right;
+    margin-top: 0px;
+    background: url(../Administrator/Files/Design/footer.png)no-repeat right top;
+    background-color: #fff;
+    min-height: 350px;
+}
+
+.IB-LogoFooter
+{
+    background: url(../Administrator/Files/Design/LogoFooter.png) no-repeat center;
+    float: right;
+    width: 156px;
+    height: 155px;
+    margin-right: 50px;
+    margin-top: 50px;
+}
+.IB-Sharing
+{
+    float: right;
+    width: 400px;
+    position: relative;
+    z-index: 999;
+    margin-right: 40px;
+}
+
+
+.IB-CopyRight
+{
+    float: right;
+    width: 300px;
+    color: #fff;
+    text-align: center;
+    font-size: 8pt;
+    padding: 0px;
+    margin-top: 5px;
+    padding-top: 10px;
+}
+.IB-CopyRight a
+{
+    color: #fff;
+}
+.IB-CopyRightRight
+{
+    float: right;
+    width: 100%;
+    text-align: center;
+}
+.IB-CopyRightLeft
+{
+    float: right;
+    width: 100%;
+    text-align: center;
+}
+.IB-FooterText
+{
+    position: relative;
+    float: right;
+    width: 360px;
+    color: #333;
+    text-align: right;
+    font-size: 14px;
+}
+.IB-FooterText a
+{
+    color: #333;
+}
+.IB-FooterText .Title
+{
+    float: right;
+    color: #333;
+    width: 100%;
+    text-align: center;
+    font-size: 12pt;
+    margin-bottom: 10px;
+}
+/*-------------------------------------Social2----------------------------*/
+.IB-Social2
+{
+    width: 100%;
+    float: right;
+    height: 40px;
+    margin-top: 8px;
+}
+.IB-Social2 .IB-Item
+{
+    float: right;
+    height: 60px;
+    width: 60px;
+    margin-right: 5px;
+    margin-left: 5px;
+    overflow: hidden;
+    position: relative;
+}
+.IB-Social2 .IB-Item:hover .IB-ItemImage2
+{
+    transform: rotate(360deg);
+}
+.IB-Social2 .IB-ItemImage
+{
+    float: right;
+    height: 32px;
+    width: 32px;
+    margin-top: 13px;
+    margin-right: 15px;
+}
+.IB-Social2 .IB-ItemImage2
+{
+    float: right;
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.9s ease-out;
+}
+/*-------------------------------------Social----------------------------*/
+.IB-HeaderMenuBox
+{
+    margin-top:20px;
+    box-shadow: 0px 0px 10px black;
+    float: right;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to right, #f2994a, #f2c94c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.IB-BoxSocial
+{
+    float: right;
+    width: 100%;
+    background: linear-gradient(to right, #f2994a, #f2c94c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.IB-Social
+{
+    float: right;
+    margin-right: 10px;
+}
+.IB-Social .IB-Item
+{
+    float: left;
+    height: 35px;
+    width: 35px;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+.IB-Social .IB-Item:hover
+{
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari */
+    transform: scale(1.1);
+    background: rgba(220,143,72,0.7);
+}
+.IB-Social .IB-ItemImage
+{
+    float: left;
+    height: 35px;
+    width: 35px;
+}
+
+
+.IB-akordin0
+{
+    background: linear-gradient(to right, #c31432, #240b36);
+}
+.IB-akordin1
+{
+    border: 1px solid #ecf0f1;
+    background: #c0392b !important;
+}
+.IB-akordin2
+{
+    background: #c0392b; !important;
+}
+.IB-akordin3
+{
+    background: #c0392b; !important;
+}
+.IB-akordin4
+{
+    background: #c0392b; !important;
+}
+.IB-akordin5
+{
+    background: #c0392b; !important;
+}
+.IB-akordin6
+{
+    background: #c0392b; !important;
+}
+.IB-akordin7
+{
+    background: #c0392b; !important;
+}
+.IB-akordin8
+{
+    background: #c0392b;
+}
+
+
+
+/*Accordion*/
+.IB-divAcB
+{
+    float: right;
+    width: 100%;
+    display: none;
+}
+.IB-page-header
+{
+    color: #fff;
+    padding: 5rem 6rem;
+    text-align: center;
+    background-image: linear-gradient(120deg, #155799, #159957);
+}
+
+.IB-btn
+{
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0.3rem;
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+}
+
+.IB-btn + .IB-btn
+{
+    margin-left: 1rem;
+}
+
+.IB-btn
+{
+    padding: 0.75rem 1rem;
+}
+
+
+.IB-btn:hover
+{
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+
+section
+{
+    margin: 150px 0;
+}
+
+
+/* accordion style */
+
+
+.ac-pane
+{
+    margin-bottom: 15px;
+    background: linear-gradient(to right, #f2994a, #f2c94c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    color: #555;
+}
+
+.ac-pane:last-child
+{
+    margin-bottom: 0;
+}
+
+.IB-ac-content
+{
+    display: none;
+}
+
+.ac-title
+{
+    border: 1px solid #fff;
+    color: #fff;
+    display: block;
+    padding: 12px;
+    background-color: #a4bd04;
+}
+
+.ac-title i
+{
+    float: right;
+    font-size: 20px;
+}
+
+.ac-title i:before
+{
+    content: "\f107";
+}
+
+.active .ac-title i:before
+{
+    content: "\f106";
+}
+
+.IB-ac-content img
+{
+    width: 100%;
+}
+
+.ac-title:hover
+{
+    color: #f3e3b2 !important;
+}
+
+.IB-S1
+{
+    background-image: url(../Administrator/Files/Design/s1.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    width: 100%;
+    height: 40px;
+}
+.IB-S2
+{
+    background-image: url(../Administrator/Files/Design/s2.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    width: 100%;
+    height: 40px;
+    margin-top: 20px;
+}
+#IB-nav a{
+    box-sizing: unset !important;
+}

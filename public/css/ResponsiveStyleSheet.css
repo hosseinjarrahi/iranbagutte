@@ -1,0 +1,1031 @@
+﻿
+/***************************max-width: 1000px****************************/
+
+@media (max-width:1420px)
+{
+    .IB-BoxSizeAsli
+    {
+        width: 100%;
+    }
+}
+@media (max-width:1220px)
+{
+    .IB-divAcB
+    {
+        display:block;
+    }
+    .IB-LeftNews
+    {
+        margin-left:110px;
+    }
+    .IB-RepeaterIndexItem
+    {
+        width: 96%;
+        height: auto;
+        margin: 5px 2%;
+    }
+    .IB-RepeaterIndexItem h3
+    {
+        width: 70%;
+    }
+    .IB-RepeaterIndexItem .IB-Text
+    {
+        width: 70%;
+    }
+    .IB-LangBoxItem
+    {
+        display: inline-block;
+        float: none;
+    }
+    .IB-logIB-inBox
+    {
+        width: 100%;
+    }
+    .IB-loginBox .IB-ItemLeft
+    {
+        display: inline-block;
+        float: none;
+    }
+    .IB-Tell
+    {
+        display: inline-block;
+        float: none;
+    }
+    .IB-HeaderTop
+    {
+        background-repeat: repeat;
+    }
+    .IB-HeaIB-derMenuBox
+    {
+        height: auto;
+    }
+    .IB-Logo
+    {
+        margin-top: 10px;
+        float: none;
+    }
+    #IB-slideMain
+    {
+        display: block;
+    }
+    .   IB-container
+    {
+        width: 100%;
+    }
+
+    #IB-LinkShow
+    {
+        width: 100%;
+        margin-top: 25px;
+    }
+    #IB-LinkShow .IB-Title, #IB-LinkShow .IB-ItemSub, #IB-LinkShow .IB-ItemSub a
+    {
+    }
+    #IB-LinkShow .IB-Item
+    {
+        width: 200px;
+    }
+    #IB-LinkShow .IB-Item
+    {
+        margin-right: 0px;
+    }
+    #IB-LinkShow .IB-Item2
+    {
+        margin-right: 0px;
+    }
+    #IB-LinkShow .IB-Item3
+    {
+        position: relative;
+        float: right !important;
+        overflow: hidden;
+        margin-left: 0px;
+        padding: 0;
+    }
+    #IB-LinkShow .IB-Item4
+    {
+        position: relative;
+        float: right !important;
+        overflow: hidden;
+        margin-left: 0px;
+        padding: 0 5px 0 5px;
+    }
+
+    .IB-listResponsiveB
+    {
+        margin: 0;
+        padding: 0;
+        float: right;
+        text-align: center !important;
+        width: 100%;
+    }
+
+
+    .IB-listResponsiveB li
+    {
+        float: none;
+        display: inline-block;
+    }
+    .IB-listResponsiveB li:nth-child(3), .IB-listResponsiveB li:nth-child(4)
+    {
+        float: none !important;
+    }
+    .IB-FooterText
+    {
+        width: 90%;
+        padding: 0 5%;
+        text-align: center;
+    }
+    .IB-FooterBoxBox
+    {
+        background-image: none;
+        background-color: #fff;
+    }
+    #IB-LinkShow .IB-Item
+    {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+        text-align: right;
+    }
+    .IB-Sharing
+    {
+        display: inline-block;
+        width: 230px;
+        position: relative;
+        z-index: 999;
+        margin-right: 0px;
+        float: none;
+    }
+    .IB-LogoFooter
+    {
+        margin-right: 33px;
+    }
+
+    .IB-NavBox
+    {
+        width: 100%;
+    }
+    .IB-owl-next, .IB-owl-prev
+    {
+        display: none !important;
+    }
+    img
+    {
+        max-width:100%;
+    }
+}
+@media (min-width: 1240px)
+{
+    .IB-wrapper-flush
+    {
+        display: none !important;
+        visibility: hidden;
+    }
+
+    .IB-navFull
+    {
+        display: block !important;
+        visibility: visible;
+    }
+    .IB-has-dropdown:after
+    {
+        display: none;
+    }
+}
+@media (max-width: 1240px)
+{
+    /*---------------------------------menu-------------------------*/
+    .IB-navDiv
+    {
+        height: 0;
+    }
+    .IB-navFull
+    {
+        display: none !important;
+        visibility: hidden;
+    }
+    .IB-wrapper-flush
+    {
+        display: block !important;
+        visibility: visible;
+    }
+    .IB-ArrowDown, .IB-ArrowDown2
+    {
+        display: none;
+    }
+    .IB-ArrowDown, IB-ArrowDown2, .IB-ArrowDown3
+    {
+        display: none;
+    }
+    .IB-TextIndexText, .IB-SlideIndexText
+    {
+        width: 92%;
+    }
+
+
+
+}
+@media (max-width: 1240px)
+{
+    .IB-navDiv
+    {
+        width: 100%;
+    }
+
+    .IB-BoxIndex
+    {
+        width: 100%;
+    }
+    .IB-BoxIndexR
+    {
+        margin-right: 0%;
+    }
+    .IB-slideTuch
+    {
+        display: block;
+        visibility: visible;
+    }
+
+    .IB-Slide
+    {
+        background: linear-gradient(to right, #f2994a, #f2c94c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        display: none;
+        visibility: hidden;
+    }
+    .IB-slider-wrapper
+    {
+        display: none;
+        visibility: hidden;
+    }
+    .IB-divLeft
+    {
+        margin-left: 60px;
+    }
+    .IB-CopyRightRight
+    {
+        float: none;
+        text-align: center;
+        margin-right: 0px;
+    }
+    .IB-CopyRightLeft
+    {
+        float: none;
+        text-align: center;
+        margin-left: 0px;
+    }
+    .IB-CopyRight
+    {
+        margin-top: 5px;
+        width: 100%;
+        color: #333;
+    }
+
+    .IB-CopyRight a
+    {
+        color: #333;
+    }
+    .IB-ServiceBox4 .IB-ItemAds, .IB-ServiceBox4 .IB-ItemAds .IB-Text
+    {
+        max-height: 3500px;
+        border: none;
+    }
+}
+
+/***************************max-width: 768px****************************/
+
+
+@media (max-width: 768px)
+{
+    .IB-logoBox
+    {
+        height: 190px;
+        margin-bottom: 20px;
+    }
+    .IB-Logo
+    {
+    }
+    .IB-SearchBoxBox
+    {
+        width: 100%;
+    }
+    .IB-SearchBox
+    {
+        display: inline-table;
+        float: none;
+    }
+    .IB-Tell
+    {
+        display: none;
+    }
+    .IB-loginBox
+    {
+        float: right;
+    }
+    .IB-contactUsFooter
+    {
+        margin: 0;
+        text-align: center;
+        position: relative;
+        width: 100%;
+    }
+    .IB-navFooterList
+    {
+        position: relative;
+        right: 50%;
+        margin-right: -110px;
+    }
+    .IB-footerPicCenter
+    {
+        position: relative;
+        left: 50%;
+        margin-left: -120px;
+    }
+    .IB-ContentMainRight, .IB-ContentMainLeft
+    {
+        width: 100%;
+        margin: 0;
+    }
+
+
+
+
+    .IB-ProductShow2 .IB-ItemImage
+    {
+        margin-right: 0px;
+    }
+    /*----Box----*/
+    .IB-Box .IB-BoxCenter img
+    {
+        width: 100%;
+        height: auto;
+    }
+
+    .IB-TagImage
+    {
+        height: 16px !important;
+        width: 16px !important;
+    }
+    .IB-ProductShow1 .IB-Left
+    {
+        width: 100%;
+        height: 250px;
+        float: right;
+        margin: 0;
+        padding: 0;
+        margin-top: 10px;
+        border-radius: 3px;
+        position: relative;
+    }
+    .IB-ProductShow1 .IB-Left img
+    {
+        width: 100%;
+        height: 250px !important;
+        float: right;
+        margin: 0;
+        padding: 0;
+        margin-top: 10px;
+        border-radius: 3px;
+    }
+    .IB-Box .IB-BoxCenterB
+    {
+        margin-top: 20px;
+    }
+    .IB-commentUserRight, .IB-commentUserLeft
+    {
+        width: 100%;
+        margin-top: 10px;
+    }
+    .IB-FieldCaptcha
+    {
+        height: 30px !important;
+        width: 75px !important;
+    }
+}
+@media (max-width:750px)
+{
+
+   
+    .IB-ServiceBox2
+    {
+        min-height: 100px;
+    }
+    .IB-ServiceBox2 .IB-ItemAds, .IB-ServiceBox2 .IB-ItemAdsBox
+    {
+        width: 95% !important;
+        margin-left: 5%;
+        height: auto !important;
+    }
+    .IB-ServiceBox2 .IB-ItemAds .IB-Title2
+    {
+        padding-top:60px;
+    }
+    .IB-ServiceBox2 .IB-ItemAds .IB-ImageBox, .IB-ServiceBox2 .IB-ItemAds .IB-ItemImage
+    {
+        width: 100% !important;
+        height: auto;
+    }
+
+
+    .IB-IndexText
+    {
+        float: right;
+        width: 77%;
+        height: auto;
+        padding: 20px;
+        font-size: 12px;
+        text-align: justify;
+        margin: 0 0 0 0;
+        background: none;
+        background-color: #333;
+    }
+    .IB-BoxCenterIndexText
+    {
+        float: right;
+        height: auto;
+        width: 100%;
+        margin: 0 0px 0 0;
+        background: none;
+        background-size: 100% 100%;
+    }
+    .IB-RepeaterIndexItem
+    {
+        width: 280px;
+        height: 342px;
+        float: none;
+        display: inline-block;
+    }
+
+    .IB-RepeaterIndexItem .IB-ItemImage
+    {
+        width: 100%;
+        height: auto;
+    }
+    .IB-RepeaterIndexItem h3, .IB-RepeaterIndexItem .IB-Text
+    {
+        padding: 0 2%;
+        width: 96%;
+        border-right: 0;
+        margin-right: 0;
+    }
+}
+
+/***************************max-width: 480px****************************/
+
+
+@media (max-width:480px)
+{
+
+.IB-RepeaterIndexItem3
+{
+    width:200px;
+    padding:10px;
+}
+    .IB-ServiceBox1
+    {
+        float: right;
+        width: 280px;
+        position: relative;
+        right: 50%;
+        height: auto;
+        overflow: hidden;
+        margin: 19px -140px 19px 0;
+    }
+    .IB-ServiceBox1 .IB-ItemAds
+    {
+        width: 130px;
+        height: 130px;
+        margin: 3px;
+        float: right;
+        transition: all 0.7s;
+        background: url(../Administrator/Files/Design/bgServiceLeft.png) no-repeat left;
+    }
+    .IB-ServiceBox1 .IB-ItemAds .IB-ItemImage
+    {
+        float: right;
+        width: 130px;
+        height: 130px;
+    }
+.IB-box-back
+{
+        width: 130px;
+        height: 130px;
+}
+
+    .IB-ServiceBox3
+    {
+        height: auto;
+    }
+    .IB-ServiceBox3 .IB-ItemAds
+    {
+        width: 90%;
+        height: auto;
+        margin: 25px 5% 0 0;
+    }
+
+
+    .IB-divLeft
+    {
+        float: right;
+        width: 250px;
+    }
+
+
+    .IB-colorA a
+    {
+        color: #555;
+        font-size: 12px;
+    }
+
+    .IB-BoxCenterColor
+    {
+        margin-right: 30px;
+    }
+    .IB-FieldTitle
+    {
+        float: right;
+        width: 100px;
+        text-align: right;
+        margin-right: 20px;
+        font-size: 9pt;
+    }
+    .IB-FieldButtonD
+    {
+        margin-right: 110px !important;
+    }
+    .IB-FieldTitleB
+    {
+        width: 82px;
+        overflow: hidden;
+    }
+
+    .IB-RepeaterIndex2Item
+    {
+        width: 127px;
+        height: 130px;
+    }
+    .IB-RepeaterIndex2Item .IB-ImageBox
+    {
+        width: 117px !important;
+        height: 80px !important;
+    }
+    .IB-RepeaterIndex2Item .IB-Image
+    {
+        max-width: 117px !important;
+        height: 80px !important;
+    }
+    .IB-CatProductShow .IB-ItemAds
+    {
+        float: right;
+        width: 110px;
+        height: 170px;
+        margin-right: 7px;
+        margin-left: 7px;
+        text-align: center;
+    }
+    .IB-CatProductShow .IB-ItemImage
+    {
+        float: right;
+        width: 110px !important;
+        height: 110px !important;
+        background: #fff;
+        padding: 3px;
+        box-shadow: 1px 1px 2px 1px #d5d5d5;
+    }
+
+    .IB-ProductLeft
+    {
+        float: right;
+        width: 100%;
+    }
+    .IB-ProductShow1 .IB-Left1
+    {
+        width: 280px;
+        height: 345px;
+    }
+
+
+    /*----servicesBox----*/
+
+    .IB-ServiceBoxIn .IB-ItemAds
+    {
+        width: 280px;
+    }
+
+
+    .IB-IndexTextmain
+    {
+        width: 96% !important;
+        padding-right: 2%;
+        padding-left: 2%;
+    }
+    /*----FooterLink----*/
+    .IB-textLeftFooter, .IB-textRightFooter
+    {
+        width: 280px;
+        float: right;
+    }
+
+    /*----Box----*/
+    .IB-Box .IB-BoxCenter .IB-ImagePost
+    {
+        max-width: 270px;
+        float: right;
+    }
+    /*----AdsHomePageGallery----*/
+    .IB-ProductShow1 .IB-Left
+    {
+        width: 100%;
+    }
+    .IB-ProductShow1 .IB-Left img
+    {
+        width: 100%;
+    }
+    .IB-HeaderDownBox a
+    {
+        float: right;
+        color: #e9b35b;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* ==================== menu responsive ================ */
+
+.IB-wrapper-flush
+{
+    width: 100%;
+}
+.IB-has-dropdown .IB-nav
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    background-color: #000;
+}
+
+
+.IB-nav-container
+{
+    position: fixed;
+    top: 50px !important; /* 1 */
+    left: 0;
+    z-index: 999999999999999;
+    overflow-y: auto;
+    visibility: hidden; /* 2 */
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%); /* 2 */
+    -webkit-overflow-scrolling: touch; /* 3 */
+}
+
+.IB-nav-container.IB-is-visible
+{
+    visibility: visible; /* 1 */
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0); /* 1 */
+}
+
+
+.IB-nav-toggle
+{
+    line-height: 1;
+    display: block;
+    padding: 1.25rem 1rem;
+    width: 100% !important;
+    height: 50px;
+    border: 0;
+    position: relative;
+    right: 0;
+    top: 0;
+    z-index: 9999999999999;
+    cursor: pointer;
+    background-color:#9b8259;
+}
+
+
+.IB-nav-toggle .IB-icon-menu
+{
+    position: absolute;
+    display: inline-block;
+    width: 28px;
+    height: 20px;
+    vertical-align: middle;
+    fill: none;
+    cursor: pointer;
+    top: 15px;
+    right: 20px;
+}
+
+
+.IB-icon-menu .IB-line
+{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 4px;
+    -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    -webkit-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    background-color: #fff;
+}
+
+
+.IB-icon-menu .IB-line-1
+{
+    top: 0;
+}
+
+
+.IB-is-active .IB-icon-menu .IB-line-1
+{
+    -webkit-transform: translateY(8px) translateX(0) rotate(45deg);
+    -ms-transform: translateY(8px) translateX(0) rotate(45deg);
+    transform: translateY(8px) translateX(0) rotate(45deg);
+}
+
+
+.IB-icon-menu .IB-line-2
+{
+    top: 50%;
+    margin-top: -2px;
+}
+
+
+.IB-is-active .IB-icon-menu .IB-line-2
+{
+    opacity: 0;
+}
+
+
+.IB-icon-menu .IB-line-3
+{
+    bottom: 0;
+}
+
+
+.IB-is-active .IB-icon-menu .IB-line-3
+{
+    -webkit-transform: translateY(-8px) translateX(0) rotate(-45deg);
+    -ms-transform: translateY(-8px) translateX(0) rotate(-45deg);
+    transform: translateY(-8px) translateX(0) rotate(-45deg);
+}
+
+.IB-menu
+{
+    list-style: none !important;
+    margin: 0;
+    padding: 0;
+}
+
+
+.IB-nav-menu
+{
+    background-color: #dedede; /* 1 */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; /* 2 */
+    box-shadow: 0px 0px 7px #888;
+}
+
+
+.IB-nav-menu .IB-menu-item
+{
+    border-top: 1px solid #bbb;
+    text-align: right;
+}
+
+
+.IB-nav-menu > .IB-menu-item:last-child
+{
+    border-bottom: 1px solid #bbb;
+}
+
+
+.IB-nav-menu > .IB-menu-item:hover, .IB-nav-menu > .IB-menu-item.is-active
+{
+    background-color: #d0d0d0;
+}
+
+.IB-nav-menu .IB-menu-link
+{
+    display: block; /* 1 */
+    text-decoration: none;
+    color: #444;
+    padding: 0.75rem 1rem;
+    width: 60%;
+}
+
+
+.IB-has-dropdown
+{
+    position: relative;
+    cursor: pointer; /* 1 */
+}
+
+
+.IB-has-dropdown > .IB-menu-link
+{
+    display: inline-block;
+}
+
+
+.IB-has-dropdown:after
+{
+    font-size: 38px;
+    position: absolute;
+    top: 10px;
+    left: 1rem;
+    bottom: 0;
+    content: "+"; /* 1 */
+    color: #222;
+}
+
+
+.IB-has-dropdown.IB-is-active:after
+{
+    content: "\2013"; /* 1 */
+}
+
+
+
+.IB-nav-dropdown
+{
+    display: none; /* 1 */
+}
+
+.IB-has-dropdown.IB-is-active > .IB-nav-dropdown
+{
+    display: block; /* 1 */
+}
+
+
+.IB-nav-dropdown .IB-nav-dropdown
+{
+}
+
+.IB-nav-dropdown .IB-menu-item
+{
+}
+.nav-dropdown .menu-item:hover
+{
+    background-color: #e8e8e8;
+}
+.IB-nav-dropdown .IB-nav-dropdown .IB-menu-item
+{
+}
+
+
+.IB-content
+{
+    margin-top: 60px;
+}
+
+.IB-content .IB-wrapper
+{
+    padding: 1rem 0;
+}
+@media (min-width: 1240px)
+{
+
+
+    .IB-nav, .IB-nav-container, .IB-nav-container.IB-is-visible
+    {
+        position: static;
+        top: auto;
+        left: auto;
+        z-index: auto;
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    .IB-nav-container, .IB-nav-container.IB-is-visible
+    {
+        visibility: visible;
+        height: auto;
+        min-height: 0;
+        overflow-y: visible;
+    }
+
+    .IB-nav-toggle
+    {
+        display: none;
+    }
+
+
+    .IB-nav-menu > .IB-menu-item, .IB-nav-menu > .IB-menu-item.IB-is-active
+    {
+        display: inline-block; /* 1 */
+        background-color: transparent;
+        border: 0;
+    }
+
+
+    .IB-nav-menu > .IB-menu-item:last-child
+    {
+        border: 0;
+    }
+
+    .IB-nav-menu .IB-menu-item
+    {
+        -webkit-transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+        transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+    }
+
+
+    .IB-has-dropdown:after
+    {
+        content: "" !important;
+    }
+
+
+    .IB-nav-menu > .IB-has-dropdown:after
+    {
+        position: absolute;
+        top: 50%;
+        right: 1rem;
+        width: 0;
+        height: 0;
+        margin-top: -2px;
+        margin-left: -4px;
+        content: "";
+        border-width: 5px 5px 0 5px;
+        border-style: solid;
+        border-color: #444 transparent transparent transparent;
+    }
+
+
+    .IB-has-dropdown > .IB-menu-link
+    {
+        padding-right: 2rem;
+    }
+
+
+    .IB-nav-dropdown
+    {
+        display: block;
+        opacity: 0;
+        position: absolute;
+        top: 100%;
+        width: 200px;
+        margin: 0;
+        padding: 0.5rem 0;
+        visibility: hidden;
+        -webkit-transition: visibility 0s linear 0.25s, opacity 0.25s linear;
+        transition: visibility 0s linear 0.25s, opacity 0.25s linear;
+    }
+
+    .IB-has-dropdown:hover > .IB-nav-dropdown
+    {
+        visibility: visible;
+        opacity: 1;
+        -webkit-transition-delay: 0s;
+        transition-delay: 0s;
+    }
+
+    .IB-nav-dropdown .IB-menu-item
+    {
+        border: 0;
+    }
+
+    .IB-nav-dropdown .IB-menu-item:hover, .IB-nav-dropdown .IB-nav-dropdown .IB-menu-item:hover
+    {
+        background-color: #d0d0d0;
+    }
+
+    .IB-nav-dropdown .IB-nav-dropdown, .IB-nav-dropdown .IB-nav-dropdown .IB-menu-item
+    {
+    }
+
+    .IB-nav-dropdown .IB-nav-dropdown
+    {
+        z-index: 9998;
+        top: 0;
+        left: 100%;
+    }
+
+    .IB-content
+    {
+        margin-top: 0;
+    }
+}
+
+

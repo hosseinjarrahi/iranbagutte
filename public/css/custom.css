@@ -1,0 +1,460 @@
+@keyframes fader {
+    0%{
+		transform: scale(0,0);
+		opacity: 0;
+        /*margin-top: -300px;*/
+    }
+    100%
+    {
+        opacity: 1;
+        /*margin-top: 0px;*/
+		transform: scale(1,1);
+    }
+}
+@font-face {
+	font-family: 'vazir';
+	src: url('../font/Vazir.woff');
+}
+@media only screen and (max-width: 999px){
+	.res-ads{
+		width: 250px !important;
+	}
+	.basket-top
+	{
+		display: none;
+	}
+	.basket-bottom
+	{
+		display: inline-block !important;
+		float: left;
+	}
+	body{
+		font-size: 13px !important;
+	}
+	.IB-nav-toggle{
+		height: 60px;
+	}
+	.IB-footer{
+		border-radius: 10% 10% 0 0 !important;
+	}
+	.text-logo{
+		font-size: 1rem !important;
+		margin: 0 !important;
+		padding:0 !important;
+	}
+	.food-text
+	{
+		margin-top:1em;
+		margin: auto !important;
+		text-align: center !important;
+		box-shadow: 0px 2px 3px darkgray;
+		font-size: 1.3rem;
+	}
+	.nav-pagination{
+		left:0;
+	}
+	.log{
+		right: 0;
+		top: 0;
+	}
+	#nav-login {
+		position: absolute;
+		right: 20%;
+	}
+
+	}
+body {
+    direction: rtl;
+	background: linear-gradient(to right, #f2994a, #f2c94c) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	font-family: vazir !important;
+}
+input{
+	text-align: right !important;
+}
+.loginBox{
+	background-color: hsla(180, 28%, 4%, 0.8);
+	box-shadow: 0px 0px 10px hsla(360, 78%, 51%, 0.82);
+}
+.search-btn
+{
+	top:0;
+	right: 0;
+	height: 100%;
+	background-color: transparent;
+	border: none;
+	outline: none;
+}
+.search-btn:active
+{
+	border: none;
+	outline: none;
+}
+.search-btn:hover{
+	cursor: pointer;
+}
+.ib-search > input {
+	text-align: right;
+	box-sizing: border-box;
+	padding-right: 30px;
+}
+/* fliper */
+
+.flip-scene {
+	perspective: 600px;
+}
+
+.flip-card {
+	width: 100%;
+	height: 100%;
+	transition: transform 1s;
+	transform-style: preserve-3d;
+	cursor: pointer;
+	position: relative;
+}
+
+.flip-card.flip-is-flipped {
+	transform: rotateY(180deg);
+}
+
+.flip-card__face {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+    top: 0px;
+	color: white;
+	text-align: center;
+	font-weight: bold;
+	font-size: 40px;
+	backface-visibility: hidden;
+}
+
+.flip-card__face--back {
+	transform: rotateY(180deg);
+}
+
+
+/* */
+
+.slider {
+	width: 100%;
+	height: 350px;
+	position: relative;
+	margin: auto;
+	overflow-x: scroll;
+	overflow-y: hidden;
+}
+
+.slider::-webkit-scrollbar {
+	display: none;
+}
+
+.slider .slide {
+	display: flex;
+	position: absolute;
+	left: 0;
+	transition: 0.3s left ease-in-out;
+}
+
+.slider .item {
+	margin-right: 10px;
+}
+
+.slider .item:last-child {
+	margin-right: 0;
+}
+
+.ctrl {
+	text-align: center;
+	margin-top: 5px;
+}
+
+.ctrl-btn {
+	padding: 10px 10px;
+	min-width: 50px;
+	background: #fff;
+	border: none;
+	font-weight: 600;
+	text-align: center;
+	cursor: pointer;
+	outline: none;
+
+	position: absolute;
+	top: 50%;
+	margin-top: -27.5px;
+}
+
+@media only screen and (max-width: 999px){
+	.res-ads{
+		width: 250px !important;
+	}
+	.ctrl-btn.pro-prev,.ctrl-btn.pro-next{
+		display: none;
+	}
+}
+@media only screen and (max-width: 1250px){
+	.logo{
+		display: none;
+	}
+	.logo2
+	{
+		display: block !important;
+	}
+	#sefaresh,.IB-Social,#search,.basket-top
+	{
+		display: none !important;
+	}
+}
+.logo2
+{
+	display: none;
+}
+.ctrl-btn.pro-prev {
+	left: 0;
+	background-color: hsla(321, 80%, 44%, 0.3);
+	transition: all 0.5s;
+}
+
+.ctrl-btn.pro-next {
+	right: 0;
+	transition: all 0.5s;
+	background-color: hsla(321, 80%, 44%, 0.3);
+}
+.ctrl-btn.pro-prev:hover {
+	left: 0;
+	background-color: hsla(321, 80%, 44%, 1);
+}
+
+.ctrl-btn.pro-next:hover {
+	right: 0;
+	background-color: hsla(321, 80%, 44%, 1);
+}
+/**/
+.IB-ads{
+	background : #a4bd04;
+	transition: all 0.5s;
+    bottom: -20%;
+    left:0;
+	opacity: 0.5;
+}
+.IB-ads:hover{
+	background : #a4bd04;
+}
+.ads-parent:hover .IB-ads{
+    bottom: 0%;
+	opacity: 1;
+}
+.ads-parent{
+    overflow: hidden ;
+    width: 350px;
+    height: auto;
+	box-shadow: 0px 3px 3px black;
+}
+
+.IB-footer
+{
+	background: linear-gradient(to bottom, #ff4e50, #f9d423); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 100% 100% 0 0;
+    height:  150px;
+	box-shadow: 0px -2px 10px black;
+}
+
+.special-text{
+	color: white;
+}
+.shadow{
+	-webkit-box-shadow:  0px 3px 5px black;
+	-moz-box-shadow:  0px 3px 5px black;
+	box-shadow:  0px 3px 5px black;
+}
+.food-text{
+	margin-top:1em;
+	color:white;
+	display:block;
+	padding: 1em;
+	width: 100%;
+	border: 1px solid black;
+	border-radius: 5px 1px;
+	box-shadow: 0px 2px 3px darkgray;
+}
+#nav-login {
+	display: inline-block;
+	margin-top: 25px !important;
+}
+
+#nav-login a {
+	color: white;
+	text-decoration: none;
+	padding: 5px 10px;
+	background-color: darkblue;
+	border-radius: 5px;
+}
+#nav-login a:hover {
+	background-color: blue;
+	text-decoration: none;
+}
+
+.animation
+{
+    -webkit-animation: fader 2s;
+    -o-animation: fader 2s;
+    animation: fader 2s;
+}
+.basket-bottom
+{
+	display: none;
+}
+.tik::after
+{
+	background-image: url('../img/tic.png');
+	background-size: 20px 20px;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	content:"";
+}
+p.sad > img
+{
+	width: 100% !important;
+	max-width: 100%; !important;
+}
+
+.p-hover{
+	box-shadow: 0px 3px 10px #d35400;
+	transition: all 0.5s;
+}
+.p-hover:hover{
+	box-shadow: 0px 5px 30px #d35400;
+}
+
+.main-text img{
+	margin-bottom: 2rem;
+}
+
+.main-text p{
+	margin-top: 2rem;
+}
+/* width */
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+
+.spinner {
+	margin: 100px auto;
+	width: 40px;
+	height: 40px;
+	position: relative;
+	text-align: center;
+
+	-webkit-animation: sk-rotate 2.0s infinite linear;
+	animation: sk-rotate 2.0s infinite linear;
+}
+
+.dot1, .dot2 {
+	width: 60%;
+	height: 60%;
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	background-color: #333;
+	border-radius: 100%;
+
+	-webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+	animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.dot2 {
+	top: auto;
+	bottom: 0;
+	-webkit-animation-delay: -1.0s;
+	animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-rotate { 100% { -webkit-transform: rotate(360deg) }}
+@keyframes sk-rotate { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
+
+@-webkit-keyframes sk-bounce {
+	0%, 100% { -webkit-transform: scale(0.0) }
+	50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+	0%, 100% {
+		transform: scale(0.0);
+		-webkit-transform: scale(0.0);
+	} 50% {
+		  transform: scale(1.0);
+		  -webkit-transform: scale(1.0);
+	  }
+}
+
+canvas {
+	border:1px solid #d3d3d3;
+	background-color: #f1f1f1;
+	display: block;
+	margin: auto;
+}
+
+/*              */
+ .hover2:hover
+ {
+	 background-color: #1a1a1a;
+	 color: white !important;
+ }
+.hover2{
+	color: black !important;
+}
+.dropbtna {
+	color: white;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 100000000000;
+	right: 6rem;
+	top:80px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Showa the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.showa {display:block;}
