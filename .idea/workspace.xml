@@ -2,258 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05a6871d-cda8-44be-8068-f86f5d0f090a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/calendar/CHANGELOG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/README" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/cal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/calendar-setup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/calendar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/doc/reference-Z-S.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/doc/reference.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/doc/reference.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/examples/cal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/examples/dynamic.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/examples/gregorian.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/examples/jalali.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/jalali.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-af.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-al.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-bg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-big5-utf8.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-big5.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-br.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-ca.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-cs-utf8.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-cs-win.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-da.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-de.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-du.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-el.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-en.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-es.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-fa.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-fi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-fr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-he-utf8.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-hr-utf8.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-hr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-hu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-it.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-jp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-ko-utf8.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-ko.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-lt-utf8.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-lt.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-lv.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-nl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-no.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-pl-utf8.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-pl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-pt.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-ro.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-ru.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-ru_win_.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-si.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-sk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-sp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-sv.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-tr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/calendar-zh.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/lang/cn_utf8.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/skins/aqua/active-bg.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/skins/aqua/dark-bg.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/skins/aqua/hover-bg.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/skins/aqua/menuarrow.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/skins/aqua/normal-bg.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/skins/aqua/rowhover-bg.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/skins/aqua/status-bg.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/skins/aqua/theme.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/skins/aqua/title-bg.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/skins/aqua/today-bg.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/skins/calendar-blue.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/skins/calendar-blue2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/skins/calendar-brown.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/skins/calendar-green.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/skins/calendar-system.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/skins/calendar-tas.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/skins/calendar-win2k-1.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/skins/calendar-win2k-2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/skins/calendar-win2k-cold-1.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/skins/calendar-win2k-cold-2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/skins/menuarrow.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/calendar/skins/menuarrow2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/ResponsiveStyleSheet.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/UserSheetFa.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/animate-min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/custom.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/liteaccordion.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/font/Vazir.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/font/Vazir.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/font/Vazir.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/html5game/Project-2Drace-3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/html5game/Project-2Drace-3_texture_0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/html5game/particles/IDR_GIF1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/html5game/particles/IDR_GIF10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/html5game/particles/IDR_GIF11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/html5game/particles/IDR_GIF12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/html5game/particles/IDR_GIF13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/html5game/particles/IDR_GIF14.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/html5game/particles/IDR_GIF15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/html5game/particles/IDR_GIF2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/html5game/particles/IDR_GIF3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/html5game/particles/IDR_GIF4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/html5game/particles/IDR_GIF5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/html5game/particles/IDR_GIF6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/html5game/particles/IDR_GIF7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/html5game/particles/IDR_GIF8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/html5game/particles/IDR_GIF9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/html5game/Project-2Drace-3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/html5game/Project-2Drace-3_texture_0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/html5game/particles/IDR_GIF1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/html5game/particles/IDR_GIF10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/html5game/particles/IDR_GIF11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/html5game/particles/IDR_GIF12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/html5game/particles/IDR_GIF13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/html5game/particles/IDR_GIF14.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/html5game/particles/IDR_GIF15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/html5game/particles/IDR_GIF2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/html5game/particles/IDR_GIF3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/html5game/particles/IDR_GIF4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/html5game/particles/IDR_GIF5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/html5game/particles/IDR_GIF6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/html5game/particles/IDR_GIF7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/html5game/particles/IDR_GIF8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/html5game/particles/IDR_GIF9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part1/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part1/html5game/Project-2Drace-3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part1/html5game/Project-2Drace-3_texture_0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part1/html5game/particles/IDR_GIF1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part1/html5game/particles/IDR_GIF10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part1/html5game/particles/IDR_GIF11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part1/html5game/particles/IDR_GIF12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part1/html5game/particles/IDR_GIF13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part1/html5game/particles/IDR_GIF14.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part1/html5game/particles/IDR_GIF15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part1/html5game/particles/IDR_GIF2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part1/html5game/particles/IDR_GIF3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part1/html5game/particles/IDR_GIF4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part1/html5game/particles/IDR_GIF5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part1/html5game/particles/IDR_GIF6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part1/html5game/particles/IDR_GIF7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part1/html5game/particles/IDR_GIF8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part1/html5game/particles/IDR_GIF9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part1/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part2/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part2/html5game/Project-2Drace-3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part2/html5game/Project-2Drace-3_texture_0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part2/html5game/particles/IDR_GIF1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part2/html5game/particles/IDR_GIF10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part2/html5game/particles/IDR_GIF11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part2/html5game/particles/IDR_GIF12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part2/html5game/particles/IDR_GIF13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part2/html5game/particles/IDR_GIF14.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part2/html5game/particles/IDR_GIF15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part2/html5game/particles/IDR_GIF2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part2/html5game/particles/IDR_GIF3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part2/html5game/particles/IDR_GIF4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part2/html5game/particles/IDR_GIF5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part2/html5game/particles/IDR_GIF6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part2/html5game/particles/IDR_GIF7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part2/html5game/particles/IDR_GIF8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part2/html5game/particles/IDR_GIF9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/games/3830488_بازی/part2/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/0219_Elmwood_0016.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/290038_adv.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/3j5h_mushroom-cheddar-burger-mushroom-cheddar-burger-7wallpaper-blogfa-com-1920x1080.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/AjaxLoader.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/LEdu.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/adv.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/android.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/back.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/call.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/call.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/controls.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/delicious-sandwiches.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/felafel.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/ff1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/ff2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/grabbing.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/halo_4_2013-wallpaper-1440x960.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/ib_5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/instagram.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/ios.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/loginBack.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/logoiran.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/mario.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/pizza1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/play.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/reserve (1).jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/reserve (2).jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/reserve1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/reserve2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/saghf.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/send (1).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/send (2).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/send1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/send2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/shopping-bag.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/ss2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/ss3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/telegram.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/tic.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/tut.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/jquery-1.7.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/jquery.flip.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/liteaccordion.jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/owl.carousel.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/paccordion.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/popper.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/tiny.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/1180427_ws_Marvelous_Mountain_Side_Iran_1920x1080.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/1252298_ws_Marvelous_Mountain_Side_Iran_1920x1080.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/1316883_photo6017073071313236002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/1381063_3j5h_mushroom-cheddar-burger-mushroom-cheddar-burger-7wallpaper-blogfa-com-1920x1080.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/1426535_pizza-makhsoos.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/1677971_backdrops-wooden-floor-vinyl-props-for-studio-scenic-grass-background.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/1746308_tut.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/1750266_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/1824533_burger.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/1871339_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/1938951_بازی.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/2253552_b229lfoicf8nmo11eq6pt16g1dndkege.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/2273280_بازی دو قسمتی اول.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/2486783_delicious-sandwiches.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/2614393_adv.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/284013_photo5902257278252331416.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/290038_adv.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/324702_delicious-sandwiches.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/3416855_پیتزا-مخلوط.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/3571853_3j5h_mushroom-cheddar-burger-mushroom-cheddar-burger-7wallpaper-blogfa-com-1920x1080.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/3686639_photo6017073071313236002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/3717853_burger.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/3830488_بازی.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/3861828_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/433359_همبرگرهاا--696x400.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/569191_pizza-makhsoos.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/591807_همبرگرهاا--696x400.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/787471_photo6017073071313236002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/815439_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/936235_همبرگرهاا--696x400.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/950991_b229lfoicf8nmo11eq6pt16g1dndkege.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/992448_3j5h_mushroom-cheddar-burger-mushroom-cheddar-burger-7wallpaper-blogfa-com-1920x1080.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/ELECTRONICS_machine_technology_circuit_electronic_computer_technics_detail_psychedelic_abstract_pattern_1920x1080.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/Untitled-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/a.swf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/photo5902408658669646312.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/telegram.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -265,10 +16,54 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="328">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
+              <folding>
+                <element signature="e#7#389#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="656">
+              <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2019_10_27_134315_create_options_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="246">
+              <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_10_27_133515_create_slides_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_10_27_134315_create_options_table.php" />
+      </list>
+    </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -392,7 +187,24 @@
             <path>
               <item name="iranbagutte" type="b2602c69:ProjectViewProjectNode" />
               <item name="iranbagutte" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="iranbagutte" type="b2602c69:ProjectViewProjectNode" />
+              <item name="iranbagutte" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Providers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="iranbagutte" type="b2602c69:ProjectViewProjectNode" />
+              <item name="iranbagutte" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="iranbagutte" type="b2602c69:ProjectViewProjectNode" />
+              <item name="iranbagutte" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -401,6 +213,8 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public/admin" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -410,6 +224,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\iranbagutte\public\admin" />
       <recent name="F:\iranbagutte\public" />
     </key>
   </component>
@@ -441,15 +256,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1572181635516</updated>
-      <workItem from="1572181636895" duration="720000" />
+      <workItem from="1572181636895" duration="2646000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="720000" />
+    <option name="totallyTimeSpent" value="2646000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="npm" side_tool="true" />
       <window_info id="Favorites" side_tool="true" />
@@ -479,6 +295,61 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/calendar/doc/reference.css">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="41">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#7#389#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="656">
+          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="521">
+          <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+          <folding>
+            <element signature="e#33#71#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_10_27_133515_create_slides_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-205">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_10_27_134315_create_options_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

@@ -5,7 +5,6 @@
 @endsection
 
 @section('slider')
-@inject("Category","App\Models")
 
 <div class="IB-Slide">
     <div class="IB-container">
