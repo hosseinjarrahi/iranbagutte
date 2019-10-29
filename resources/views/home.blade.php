@@ -67,7 +67,7 @@
             <div class="shadow special-text d-block d-md-inline-block col-lg-5 col-12 p-3" style="font-size: 1.2rem;background-color: hsla(360, 52%, 56%, 0.2);">
                 <h3 class="d-block p-1 text-center" style="border-bottom: gold 2px solid;">درباره ما</h3>
                 <p class="sad col-10" style="text-align: justify !important;">
-                    {!! $op->main  !!}
+                    {!! $op->main ?? ''  !!}
                 </p>
             </div>
 

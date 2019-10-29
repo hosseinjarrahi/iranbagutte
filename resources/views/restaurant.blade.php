@@ -15,71 +15,71 @@
                     <li>
                         <span>جای پارک : </span>
                         <span>
-                            @if($res->park)
+                            @isset($restaurant->options['park'])
                                 دارد
                             @else
                                 ندارد
-                            @endif
+                            @endisset
                         </span>
                     </li>
                     <li>
                         <span>اینترنت : </span>
                         <span>
-                            @if($res->wifi)
+                            @isset($restaurant->options['wifi'])
                                 دارد
                             @else
                                 ندارد
-                            @endif
+                            @endisset
                         </span>
                     </li>
                     <li>
                         <span>زمین بازی : </span>
                         <span>
-                            @if($res->game)
+                            @isset($restaurant->options['game'])
                                 دارد
                             @else
                                 ندارد
-                            @endif
+                            @endisset
                         </span>
                     </li>
                     <li>
                         <span>میز کودک : </span>
                         <span>
-                            @if($res->child_bench)
+                            @isset($restaurant->options['child_bench'])
                                 دارد
                             @else
                                 ندارد
-                            @endif
+                            @endisset
                         </span>
                     </li>
                     <li>
                         <span>موسیقی زنده : </span>
                         <span>
-                            @if($res->music)
+                            @isset($restaurant->options['music'])
                                 دارد
                             @else
                                 ندارد
-                            @endif
+                            @endisset
                         </span>
                     </li>
                     <li>
                         <span>تحویل رایگان : </span>
                         <span>
-                            @if($res->delivery)
+                            @isset($restaurant->options['delivery'])
                                 دارد
                             @else
                                 ندارد
-                            @endif
+                            @endisset
                         </span>
                     </li>
                     <li>
                         <span>کارت خوان سیار : </span>
                         <span>
-                            @if($res->kart)
+                            @isset($restaurant->options['kart'])
                                 دارد
                             @else
                                 ندارد
-                            @endif
+                            @endisset
                         </span>
                     </li>
                 </ul>
@@ -96,10 +96,9 @@
                                     <div class="ads-parent each shadow m-2 py-4 text-center rounded" style="background: linear-gradient(to right, #cb2d3e, #ef473a);width: 200px !important;">
                                         <span class="d-none">{{ $cat->id }}</span>
                                         <span class="text-center w-100 h-50">
-                                            <span style="cursor: pointer;font-size: 2rem;color: white !important;">{{ $cat->name }}</a>
+                                            <span style="cursor: pointer;font-size: 2rem;color: white !important;">{{ $cat->name }}</span>
                                         </span>
                                     </div>
-
                                 @endforeach
 
                             </div>
@@ -111,24 +110,24 @@
 
                 <div class="pb-5 col-12 pt-3 p-0 d-flex flex-row flex-wrap justify-content-center align-items-stretch" id="ajax">
 
-                    @foreach($products as $key => $product)
+                    @foreach($foods as $key => $food)
                         <div class="col-lg-4 col-11 my-2 animate" style="opacity: 0;">
                             <div class="card bg-light p-hover">
-                                <div class="card-header text-bold text-dark">{{ $product->name }}</div>
-                                <div class="card-img-top" style="width:100%;height: 200px;background-position: center;background-image: url({{ asset('upload/'.$product->img) }});background-repeat:no-repeat;background-size: cover;"></div>
+                                <div class="card-header text-bold text-dark">{{ $food->name }}</div>
+                                <div class="card-img-top" style="width:100%;height: 200px;background-position: center;background-image: url({{ asset('upload/'.$food->img) }});background-repeat:no-repeat;background-size: cover;"></div>
                                 <div class="card-body">
                                     <p class="text-justify text-dark">
 
                                         <span style="color: #1f4;">توضیحات:</span>
-                                        {{ $product->small_detail }}
+                                        {{ $food->small_detail }}
                                         <br>
                                         <span style="color: #f14;">قیمت:</span>
-                                        {{ $product->price }}
+                                        {{ $food->price }}
                                         <span>تومان</span>
                                     </p>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="{{ url('food/'.$product->id) }}" class="btn btn-outline-danger btn-block">خرید محصول</a>
+                                    <a href="{{ url('food/'.$food->id) }}" class="btn btn-outline-danger btn-block">خرید محصول</a>
                                 </div>
                             </div>
                         </div>
@@ -189,7 +188,7 @@
                     </p>
                 </div>
                 <div class="back" style="background: url({{ asset('img/halo_4_2013-wallpaper-1440x960.jpg') }});background-size: cover;background-position: center;">
-                    <a href="{{ url("reserve/".$res->id) }}" class="d-block back"></a>
+                    <a href="{{ url("reserve/".$restaurant->id) }}" class="d-block back"></a>
                 </div>
             </div>
         </div>
@@ -223,7 +222,7 @@
                         `;
                 var request = new XMLHttpRequest();
                 let id = acc[i].firstElementChild.innerHTML;
-                let url = "{{ url() }}/restaurant/down";
+                let url = "{{ url('/restaurant/down') }}";
                 request.open('POST',url);
                 request.onreadystatechange = function () {
                     if (request.status == 200) {
@@ -270,7 +269,7 @@
                     }
                 };
                 request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-                request.send('a= '+{{ $id }}+' | '+id);
+                request.send('a= '+{{ $restaurant->id }}+' | '+id);
             }
         }
 
