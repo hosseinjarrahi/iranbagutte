@@ -10,4 +10,9 @@ class Category extends Model
 	{
 		return $this->hasOne(Slide::class);
     }
+
+	public function foods ()
+	{
+		return $this->hasMany(Food::class);
+    }
 }

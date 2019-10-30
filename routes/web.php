@@ -14,9 +14,11 @@
 Route::get('/' , 'HomeController@home');
 Route::get('/benefits' , 'HomeController@benefits');
 Route::get('/contact-us' , 'HomeController@contactUs');
+Route::get('/food/{food}/{alert?}','HomeController@showFood');
 
 Route::group(['prefix' => 'restaurant'],function(){
 	Route::get('{restaurant}','HomeController@showRestaurant');
+	Route::post('down','HomeController@ajax');
 });
 
 Route::get('/test' , function(){

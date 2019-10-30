@@ -4,25 +4,25 @@
 @endsection
 @section('content')
 <div class="container-fluid pl-5 row d-flex flex-column flex-lg-row justify-content-center" style="margin-top: 1em;">
-    <h3 class="bg-danger food-text mb-3">{{ $product->title }}</h3>
+    <h3 class="bg-danger food-text mb-3">{{ $food->title }}</h3>
     <div class="col-lg-5 col-12 mb-3">
-        <img class="img-thumbnail" src="{{ asset('upload/'.$product->img) }}">
+        <img class="img-thumbnail" src="{{ asset('upload/'.$food->img) }}">
     </div>
     <div class="col-lg-7 col-12 jumbotron mb-3">
         <b style="color: red">
             توضیحات:
         </b>
         <p class="text-justify">
-            {{ $product->main_detail }}
+            {{ $food->main_detail }}
         </p>
         <b style="color: green">
             قیمت:
         </b>
         <p>
-            <span>{{ $product->price }}</span>
+            <span>{{ $food->price }}</span>
             <span> تومان </span>
         </p>
-        <form action="{{ url('add-to-basket/'.$product->id) }}" method="get">
+        <form action="{{ url('add-to-basket/'.$food->id) }}" method="get">
             <div class="form-group">
                 <label for="sel1">تعداد (انتخاب کنید):</label>
                 <input type="number" min="1" max="100" class="form-control" name="count" value="1">
@@ -34,7 +34,7 @@
 
     </div>
 </div>
-    @if(isset($alert))
+    @if($alert != null)
         <script>
             alert('محصول مورد نظر به سبد خرید افزوده شد.');
         </script>

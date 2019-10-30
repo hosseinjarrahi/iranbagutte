@@ -6,6 +6,8 @@
 
 
 @section('content')
+    <meta name="_token" content="{{ csrf_token() }}" />
+
     <div class="container-fluid mt-0 ">
 
         <div class="row pl-2 py-0">
@@ -180,6 +182,8 @@
         </div>
     @endif
 
+    <div class="col-12 d-flex justify-content-center">{{ $foods->links() }}</div>
+
     <div class="container-fluid p-lg-3 p-1 col-12 m-0 p-0 d-flex flex-lg-row flex-column justify-content-around">
         <div class="shadow col-12 col-lg-2" style="height:200px;padding: 5px;">
             <div id="card-1" class="w-100 h-100 d-flex align-items-center">
@@ -192,8 +196,6 @@
                 </div>
             </div>
         </div>
-
-
 
     </div>
 
@@ -238,18 +240,18 @@
                             };
                             var size = Object.size(jsontext);
                             let text = "";
-
+                            console.log(jsontext);
                             for (let j = 0; j < size; j++) {
                                 text += `
                                 <div class="col-lg-4 col-11 my-2 animate" style="opacity: 0;">
                                     <div class="card bg-light p-hover">
-                                        <div class="card-header text-bold text-dark">` + jsontext[j].name + `</div>
+                                        <div class="card-header text-bold text-dark">` + jsontext[j].title + `</div>
                                         <div class="card-img-top" style="width:100%;height: 200px;background-position: center;background-image: url(` + jsontext[j].img + `);background-repeat:no-repeat;background-size: cover;"></div>
                                         <div class="card-body">
                                             <p class="text-justify text-dark">
 
                                                 <span style="color: #1f4;">توضیحات:</span>
-                                                ` + jsontext[j].desc + `
+                                                ` + jsontext[j].small_detail + `
                                         <br>
                                         <span style="color: #f14;">قیمت:</span>
                                              ` + jsontext[j].price + `
@@ -257,7 +259,7 @@
                                     </p>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="` + jsontext[j].id + `" class="btn btn-outline-danger btn-block">خرید محصول</a>
+                                    <a href="` + jsontext[j].url + `" class="btn btn-outline-danger btn-block">خرید محصول</a>
                                         </div>
                                     </div>
                                 </div>
@@ -269,7 +271,8 @@
                     }
                 };
                 request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-                request.send('a= '+{{ $restaurant->id }}+' | '+id);
+                request.setRequestHeader('X-CSRF-TOKEN', $('meta[name="_token"]').attr('content'));
+                request.send('id='+id);
             }
         }
 

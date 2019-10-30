@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
+use App\Food;
 use App\Option;
 use App\Restaurant;
 use App\Slide;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Collection;
 
 class HomeController extends Controller
 {
@@ -42,7 +46,26 @@ class HomeController extends Controller
 	{
 		$home = 1;
 		$cats = $restaurant->categories;
-		$foods = $restaurant->foods();
+		$foods = $restaurant->foods()->paginate(6);
 		return view('restaurant' , compact( 'cats' , 'home' , 'foods' , 'restaurant'));
 	}
+
+	public function showFood(Food $food,$alert = null)
+	{
+		return view('food',compact('food','alert'));
+	}
+
+	public function ajax(Request $request)
+	{
+		/**
+		 * @var LengthAwarePaginator $foods
+		 */
+		$foods = (Category::find($request->id))->foods;
+		$foods->map(function($item){
+			$item->url = url('food/'.$item->id);
+			$item->img = asset('upload/'.$item->img);
+		});
+		echo $foods->toJson();
+	}
+
 }
