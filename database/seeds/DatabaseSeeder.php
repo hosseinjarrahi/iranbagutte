@@ -1,5 +1,12 @@
 <?php
 
+use App\Category;
+use App\Food;
+use App\Game;
+use App\Option;
+use App\Restaurant;
+use App\Slide;
+use App\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -11,15 +18,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-    	\App\Category::truncate();
-    	\App\Food::truncate();
-    	\App\Option::truncate();
-    	\App\Slide::truncate();
-    	\App\Restaurant::truncate();
-        $this->call(CategoryTableSeeder::class);
-        $this->call(FoodTableSeeder::class);
-        $this->call(OptionTableSeeder::class);
-        $this->call(SlideTableSeeder::class);
-        $this->call(RestaurantTableSeeder::class);
+    	Category::truncate();
+    	Food::truncate();
+    	Option::truncate();
+    	Slide::truncate();
+    	Restaurant::truncate();
+    	Game::truncate();
+    	User::truncate();
+	    $this->call(UsersTableSeeder::class);
+	    $this->call(CategoriesTableSeeder::class);
+	    $this->call(FoodsTableSeeder::class);
+	    $this->call(OptionsTableSeeder::class);
+	    $this->call(SlidesTableSeeder::class);
+	    $this->call(RestaurantsTableSeeder::class);
+	    $this->call(GamesTableSeeder::class);
     }
 }

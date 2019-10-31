@@ -16,7 +16,8 @@ class CreateGamesTable extends Migration
 		Schema::create('games' , function (Blueprint $table) {
 			$table->bigIncrements('id');
 			$table->unsignedInteger('user_id');
-			$table->text('files');
+			$table->unsignedTinyInteger('status');
+			$table->text('file');
 			$table->text('name')->nullable();
 			$table->text('description')->nullable();
 			$table->text('poster')->nullable();

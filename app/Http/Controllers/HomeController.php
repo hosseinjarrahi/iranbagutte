@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Food;
+use App\Game;
 use App\Option;
 use App\Restaurant;
 use App\Slide;
@@ -53,6 +54,12 @@ class HomeController extends Controller
 	public function showFood(Food $food,$alert = null)
 	{
 		return view('food',compact('food','alert'));
+	}
+
+	public function gamesPage ()
+	{
+		$games = Game::where('status',1)->paginate(6);
+		return view('game.gamesPage' , compact('games'));
 	}
 
 	public function ajax(Request $request)
