@@ -1,11 +1,12 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
+/** @var Factory $factory */
 
-use App\Model;
+use App\Slide;
 use Faker\Generator as Faker;
+use Illuminate\Database\Eloquent\Factory;
 
-$factory->define(\App\Slide::class, function (Faker $faker) {
+$factory->define(Slide::class, function (Faker $faker) {
     return [
         'category_id' => random_int(1 , 2),
         'restaurant_id' => 1,

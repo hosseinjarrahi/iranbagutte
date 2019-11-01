@@ -17,7 +17,7 @@ class CreateBuycodesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedInteger('user_id');
 	        $table->unsignedInteger('game_id')->nullable();
-	        $table->string('code');
+	        $table->string('code')->unique();
             $table->timestamps();
 
 	        $table->foreign('user_id')

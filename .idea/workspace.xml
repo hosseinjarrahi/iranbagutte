@@ -2,96 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05a6871d-cda8-44be-8068-f86f5d0f090a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Hossein.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Hossein.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/iranbagutte.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/iranbagutte.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Banner.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Banner.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_27_132736_create_games_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_27_132736_create_games_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/CategoryTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CategoriesTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/BannerFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/BannerFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/BuycodeFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/BuycodeFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/CategoryFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/CategoryFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/FoodFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/FoodFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/OptionFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/OptionFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/RestaurantFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/RestaurantFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/SlideFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/SlideFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_27_132936_create_buycodes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_27_132936_create_buycodes_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/BannersTableSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/BuycodesTableSeeder.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/FoodTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/FoodsTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/OptionTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/OptionsTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/RestaurantTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/RestaurantsTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/SlideTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/SlidesTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/html5game/Project-2Drace-3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/html5game/Project-2Drace-3_texture_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/html5game/particles/IDR_GIF1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/html5game/particles/IDR_GIF10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/html5game/particles/IDR_GIF11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/html5game/particles/IDR_GIF12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/html5game/particles/IDR_GIF13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/html5game/particles/IDR_GIF14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/html5game/particles/IDR_GIF15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/html5game/particles/IDR_GIF2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/html5game/particles/IDR_GIF3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/html5game/particles/IDR_GIF4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/html5game/particles/IDR_GIF5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/html5game/particles/IDR_GIF6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/html5game/particles/IDR_GIF7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/html5game/particles/IDR_GIF8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/html5game/particles/IDR_GIF9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part1/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/html5game/Project-2Drace-3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/html5game/Project-2Drace-3_texture_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/html5game/particles/IDR_GIF1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/html5game/particles/IDR_GIF10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/html5game/particles/IDR_GIF11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/html5game/particles/IDR_GIF12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/html5game/particles/IDR_GIF13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/html5game/particles/IDR_GIF14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/html5game/particles/IDR_GIF15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/html5game/particles/IDR_GIF2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/html5game/particles/IDR_GIF3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/html5game/particles/IDR_GIF4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/html5game/particles/IDR_GIF5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/html5game/particles/IDR_GIF6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/html5game/particles/IDR_GIF7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/html5game/particles/IDR_GIF8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/html5game/particles/IDR_GIF9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/2273280_بازی دو قسمتی اول/part2/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part1/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part1/html5game/Project-2Drace-3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part1/html5game/Project-2Drace-3_texture_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part1/html5game/particles/IDR_GIF1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part1/html5game/particles/IDR_GIF10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part1/html5game/particles/IDR_GIF11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part1/html5game/particles/IDR_GIF12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part1/html5game/particles/IDR_GIF13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part1/html5game/particles/IDR_GIF14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part1/html5game/particles/IDR_GIF15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part1/html5game/particles/IDR_GIF2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part1/html5game/particles/IDR_GIF3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part1/html5game/particles/IDR_GIF4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part1/html5game/particles/IDR_GIF5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part1/html5game/particles/IDR_GIF6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part1/html5game/particles/IDR_GIF7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part1/html5game/particles/IDR_GIF8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part1/html5game/particles/IDR_GIF9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part1/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part2/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part2/html5game/Project-2Drace-3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part2/html5game/Project-2Drace-3_texture_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part2/html5game/particles/IDR_GIF1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part2/html5game/particles/IDR_GIF10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part2/html5game/particles/IDR_GIF11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part2/html5game/particles/IDR_GIF12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part2/html5game/particles/IDR_GIF13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part2/html5game/particles/IDR_GIF14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part2/html5game/particles/IDR_GIF15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part2/html5game/particles/IDR_GIF2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part2/html5game/particles/IDR_GIF3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part2/html5game/particles/IDR_GIF4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part2/html5game/particles/IDR_GIF5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part2/html5game/particles/IDR_GIF6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part2/html5game/particles/IDR_GIF7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part2/html5game/particles/IDR_GIF8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part2/html5game/particles/IDR_GIF9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/games/3830488_بازی/part2/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/1316883_photo6017073071313236002.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/1677971_backdrops-wooden-floor-vinyl-props-for-studio-scenic-grass-background.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/3686639_photo6017073071313236002.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/787471_photo6017073071313236002.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/game.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/game.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/gamesPage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/gamesPage.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -120,10 +52,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/database/factories/UserFactory.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
+            <state relative-caret-position="328">
+              <caret line="63" selection-start-line="63" selection-end-line="63" />
+              <folding>
+                <element signature="e#40#55#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/game.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="82">
+              <caret line="117" column="31" lean-forward="true" selection-start-line="117" selection-start-column="31" selection-end-line="117" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -134,6 +78,18 @@
     <findStrings>
       <find>conta</find>
       <find>HomeController</find>
+      <find>$id</find>
+      <find>-&gt;id</find>
+      <find>id</find>
+      <find>empty</find>
+      <find>banners</find>
+      <find>$game</find>
+      <find>$p</find>
+      <find>'mast'</find>
+      <find>dynamic</find>
+      <find>form</find>
+      <find>&lt;form</find>
+      <find>product</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -150,42 +106,53 @@
         <option value="$PROJECT_DIR$/app/Slide.php" />
         <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_10_27_132724_create_foods_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_10_27_132801_create_banners_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_10_27_132828_create_restaurants_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_10_27_163041_create_role_user_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_10_27_132811_create_roles_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_10_27_132901_create_events_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_10_27_132749_create_tables_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_10_27_132915_create_reserves_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_10_27_132936_create_buycodes_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_10_27_132946_create_payments_table.php" />
         <option value="$PROJECT_DIR$/app/Food.php" />
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
-        <option value="$PROJECT_DIR$/database/factories/CategoryFactory.php" />
         <option value="$PROJECT_DIR$/database/seeds/OptionTableSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/FoodTableSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/CategoryTableSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/SlideTableSeeder.php" />
-        <option value="$PROJECT_DIR$/database/factories/FoodFactory.php" />
-        <option value="$PROJECT_DIR$/database/factories/SlideFactory.php" />
-        <option value="$PROJECT_DIR$/database/factories/OptionFactory.php" />
         <option value="$PROJECT_DIR$/database/seeds/RestaurantTableSeeder.php" />
-        <option value="$PROJECT_DIR$/database/factories/RestaurantFactory.php" />
         <option value="$PROJECT_DIR$/app/Restaurant.php" />
         <option value="$PROJECT_DIR$/_ide_helper.php" />
         <option value="$PROJECT_DIR$/app/Category.php" />
         <option value="$PROJECT_DIR$/resources/views/restaurant.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/food.blade.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_10_27_132736_create_games_table.php" />
         <option value="$PROJECT_DIR$/database/factories/GameFactory.php" />
         <option value="$PROJECT_DIR$/database/seeds/GamesTableSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" />
-        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/database/factories/UserFactory.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_10_27_132801_create_banners_table.php" />
+        <option value="$PROJECT_DIR$/database/factories/RestaurantFactory.php" />
+        <option value="$PROJECT_DIR$/database/factories/CategoryFactory.php" />
+        <option value="$PROJECT_DIR$/database/factories/FoodFactory.php" />
+        <option value="$PROJECT_DIR$/database/factories/OptionFactory.php" />
+        <option value="$PROJECT_DIR$/database/factories/SlideFactory.php" />
+        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
+        <option value="$PROJECT_DIR$/database/seeds/BannersTableSeeder.php" />
+        <option value="$PROJECT_DIR$/app/Banner.php" />
+        <option value="$PROJECT_DIR$/database/factories/BannerFactory.php" />
+        <option value="$PROJECT_DIR$/resources/views/gamesPage.blade.php" />
+        <option value="$PROJECT_DIR$/database/seeds/BuycodesTableSeeder.php" />
+        <option value="$PROJECT_DIR$/database/factories/BuycodeFactory.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_10_27_132936_create_buycodes_table.php" />
+        <option value="$PROJECT_DIR$/app/User.php" />
+        <option value="$PROJECT_DIR$/resources/views/game.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
       </list>
     </option>
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -283,6 +250,7 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
       <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
       <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -296,6 +264,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -312,19 +281,17 @@
               <item name="iranbagutte" type="b2602c69:ProjectViewProjectNode" />
               <item name="iranbagutte" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="factories" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="iranbagutte" type="b2602c69:ProjectViewProjectNode" />
               <item name="iranbagutte" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="seeds" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -341,6 +308,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\iranbagutte\public\admin" />
       <recent name="F:\iranbagutte\public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\iranbagutte\resources\views" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -379,18 +349,19 @@
       <workItem from="1572421735380" duration="71000" />
       <workItem from="1572452581806" duration="5267000" />
       <workItem from="1572521408587" duration="20000" />
-      <workItem from="1572536556395" duration="4166000" />
+      <workItem from="1572536556395" duration="7538000" />
+      <workItem from="1572575258520" duration="6986000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27392000" />
+    <option name="totallyTimeSpent" value="37750000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16040269" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.26442954" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24966443" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -405,14 +376,14 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.53571427" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.6964286" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16040269" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26442954" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24966443" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -427,7 +398,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.53571427" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.6964286" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -438,71 +409,9 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/calendar/doc/reference.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
-          <folding>
-            <element signature="e#33#71#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Slide.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="10" column="36" lean-forward="true" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-205">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_10_27_163041_create_role_user_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_10_27_132901_create_events_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="17" column="50" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_10_27_132828_create_restaurants_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-328">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_10_27_132811_create_roles_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-205">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_10_27_132801_create_banners_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-574">
           <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
         </state>
       </provider>
@@ -518,13 +427,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="574">
           <caret line="31" lean-forward="true" selection-start-line="26" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_10_27_132936_create_buycodes_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="26" lean-forward="true" selection-start-line="21" selection-end-line="26" />
         </state>
       </provider>
     </entry>
@@ -606,47 +508,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/CategoryFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
-          <folding>
-            <element signature="e#67#81#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/SlideFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/OptionFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="10" column="101" selection-start-line="10" selection-start-column="101" selection-end-line="10" selection-end-column="101" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#p#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#p#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/seeds/RestaurantsTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="533">
           <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/RestaurantFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="10" column="29" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -671,16 +536,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="10" column="19" lean-forward="true" selection-start-line="3" selection-end-line="10" selection-end-column="19" />
-          <folding>
-            <element signature="e#23#69#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Category.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="598">
@@ -692,38 +547,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="598">
           <caret line="36" column="22" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="25" selection-start-line="25" selection-end-line="29" />
-          <folding>
-            <element signature="e#7#389#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="61" column="35" selection-start-line="61" selection-start-column="26" selection-end-line="61" selection-end-column="35" />
-          <folding>
-            <element signature="e#40#57#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/game/gamesPage.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-837" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/FoodFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="14" column="45" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -741,20 +564,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/FoodsTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/GamesTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/seeds/OptionsTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
@@ -769,27 +578,218 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_10_27_163041_create_role_user_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="639">
-          <caret line="35" column="1" lean-forward="true" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
+        <state relative-caret-position="598">
+          <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Auth/Guard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-12">
+          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_10_27_132801_create_banners_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="738">
+          <caret line="20" column="94" selection-start-line="20" selection-start-column="94" selection-end-line="20" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/EventsTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/GamesTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/factories/RestaurantFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
           <folding>
-            <element signature="e#7#24#0#PHP" expanded="true" />
+            <element signature="e#37#56#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/factories/CategoryFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+          <folding>
+            <element signature="e#67#84#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/factories/FoodFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/factories/OptionFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#67#82#0#PHP" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/factories/SlideFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#37#51#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/factories/GameFactory.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+        <state relative-caret-position="-195">
+          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <folding>
+            <element signature="e#67#80#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/factories/EventFactory.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/FoodsTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/factories/UserFactory.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
+        <state relative-caret-position="41">
+          <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+          <folding>
+            <element signature="e#66#79#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Banner.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="14" column="66" selection-start-line="14" selection-start-column="66" selection-end-line="14" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/BannersTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-58">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/factories/BannerFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="29" column="22" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/gamesPage.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+          <folding>
+            <element signature="e#483#502#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
+          <folding>
+            <element signature="e#7#22#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/factories/BuycodeFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/BuycodesTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="13" column="48" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="34" column="26" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="26" />
+          <folding>
+            <element signature="e#7#389#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_10_27_132936_create_buycodes_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="457">
+          <caret line="61" column="16" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="16" />
+          <folding>
+            <element signature="e#23#69#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/game.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="117" column="31" lean-forward="true" selection-start-line="117" selection-start-column="31" selection-end-line="117" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
+          <folding>
+            <element signature="e#40#55#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

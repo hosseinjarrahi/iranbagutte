@@ -15,8 +15,8 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
-        'name', 'email', 'password',
+    protected $guarded = [
+        'id', 'email'
     ];
 
     /**
@@ -36,4 +36,29 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+	public function buycodes ()
+	{
+		return $this->hasMany(Buycode::class);
+    }
+
+	public function buycodesWith (Game $game)
+	{
+		return $this->buycodes()->where('game_id',$game->id)->get();
+    }
+    
+	public function roles ()
+	{
+		return $this->hasMany(Role::class);
+    }
+
+	public function payments ()
+	{
+		return $this->hasMany(Payment::class);
+    }
+
+	public function payedThisGame ($game)
+	{
+		return !$this->payments()->where('products',$game->id)->get()->isEmpty();
+    }
 }

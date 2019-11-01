@@ -11,6 +11,6 @@ class BuycodesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(\App\Buycode::class,10)->create();
     }
 }

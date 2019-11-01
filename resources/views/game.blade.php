@@ -66,9 +66,9 @@
             <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     @php($active = 'active')
-                    @foreach($ads as $index => $ad)
+                    @foreach($banners as $index => $ad)
                         @if($ad->state == 1)
-                            <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                            <div class="carousel-item {{ 'active' }}">
                                 <a href="{{ url('advertise/'.$ad->id) }}">
                                     <img src="{{ asset('upload/'.$ad->img) }}" class="d-block w-100">
                                 </a>
@@ -114,16 +114,17 @@
                                 </div>
                             </a>
                         @endfor
-                        @if($game->part != $p)
+                        @if($game->part != $part)
                         <div class="ads-parent position-relative m-2 d-flex flex-column justify-content-center align-items-center"
                              style="border-radius: 30px;width: 500px; !important;background: #0c5460">
                             <span class="pb-3">جهت ادامه بازی کد خرید ساندویچ خودرا وارد نمایید</span>
-                            @if(!\App\Core\Auth::check())<span class="pb-3">ابتدا باید وارد حساب خود شوید</span>@endif
-                            <form action="{{ url('pcode/'.$id) }}" method="post">
+                            @if(!auth()->check())<span class="pb-3">ابتدا باید وارد حساب خود شوید</span>@endif
+                            <form action="{{ url('check-buycode') }}" method="post">
+                                @csrf
                                 <div class="form-row">
                                     <div class="col-8">
                                         <input name="buy_code" class="form-control">
-                                        <input name="p" value="{{ $p + 1 }}" type="hidden" class="form-control">
+                                        <input name="id" value="{{ $game->id }}" type="hidden" class="form-control">
                                     </div>
                                     <div class="col-4">
                                         <button type="submit" class="btn btn-default">ارسال</button>
@@ -144,7 +145,7 @@
 
     <div class="justify-content-center d-flex align-items-center w-100 bg-dark"
          style="height: 200px;background: url({{ asset('img/mario.png') }});background-repeat: no-repeat;background-blend-mode: multiply;background-size: cover;">
-        @if($sell)
+        @if(auth()->check() && auth()->user()->payedThisGame($game))
             <a href="{{ asset('upload/'.$game->full) }}" style="color: #969896;font-size: 2rem;">دانلود نسخه کامل</a>
         @else
             <a href="#" style="color: #969896;font-size: 2rem;">خرید و دانلود نسخه کامل بازی</a>
@@ -157,7 +158,7 @@
                 <div class="carousel-inner">
 
                     @php($active = 'active')
-                    @foreach($ads as $index => $ad)
+                    @foreach($banners as $index => $ad)
                         @if($ad->state == 0)
                             <div class="carousel-item {{ $active }}">
                                 <a href="{{ url('advertise/'.$ad->id) }}">
@@ -174,7 +175,7 @@
     </div>
     <script>
         let ztime = 99999999999;
-        @if(!empty($zirnevis))
+        @if($zirnevis)
         let url = '{{ url('advertise/'.$zirnevis->id) }}';
         let zirnevis = `
                 <div class="example2">
@@ -191,19 +192,24 @@
         let max = -1;
         let part = 1;
         let z = null;
+
         @foreach($urls as $url)
-        iframes.push(`<iframe width="100%" height="800px" src="{{ $url }}"></iframe>`);
-                @endforeach
-                @foreach($dynamic as $d)
-        let x = {time: '{{ $d->time }}', img: '{{ $d->img }}', url: '{{ $d->url }}', id: '{{ $d->id }}'};
-        vars.push(x);
+            iframes.push(`<iframe width="100%" height="800px" src="{{ $url }}"></iframe>`);
         @endforeach
+
+        let x = {
+            time: '{{ $dynamic->time }}',
+            img: '{{ $dynamic->img }}',
+            url: '{{ $dynamic->url }}',
+            id: '{{ $dynamic->id }}'
+        };
+        vars.push(x);
 
             for (v of vars) {
             max++;
             let img = `
             <div class="container">
-                <a target="_blank" href="{{ url('advertise/') }}${v.id}"><img style="max-height:500px;" id="Ad" src="{{ asset('upload/') }}${v.img}" class="d-block mx-auto img-fluid rounded"></a>
+                <a target="_blank" href="{{ url('advertise/') }}/${v.id}"><img style="max-height:500px;" id="Ad" src="{{ asset('upload/') }}/${v.img}" class="d-block mx-auto img-fluid rounded"></a>
                 <div id="progressBar" style="height:5px;background-color:white;"></div>
             </div>
             `;

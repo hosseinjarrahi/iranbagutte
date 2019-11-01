@@ -12,7 +12,7 @@
         @forelse($games as $game)
                 <a style="color: white">
                     <div class="res-ads ads-parent position-relative m-3 mt-2">
-                        <a href="{{ url('games/'.$game->id) }}" style="color: #fff">
+                        <a href="{{ url('game/'.$game->id) }}" style="color: #fff">
                             <img class="img-fluid w-100 h-100" src="{{ asset('upload/'.$game->poster) }}">
                             <span class="IB-ads text-center w-100 p-2 position-absolute h-50">
                               {{ $game->name }}
@@ -25,8 +25,7 @@
         @endforelse
 
         </div>
-
-
+    {{ $games->links() }}
     </div>
 
 @endsection

@@ -23,9 +23,13 @@ Route::group(['prefix' => 'restaurant'],function(){
 	Route::get('{restaurant}','HomeController@showRestaurant');
 	Route::post('down','HomeController@ajax');
 });
-//
-//Route::get('/test' , function () {
-//	dd(App\Game::paginate(6));
-//});
+
+Route::get('/test' , function () {
+	dd(\App\Banner::textBanner()->get());
+});
 
 Route::get('/games-page','HomeController@gamesPage');
+
+Route::get('/game/{game}','HomeController@game');
+
+Route::post('check-buycode' , 'HomeController@checkBuycode');

@@ -1,11 +1,12 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
+/** @var Factory $factory */
 
-use App\Model;
+use App\Food;
 use Faker\Generator as Faker;
+use Illuminate\Database\Eloquent\Factory;
 
-$factory->define(\App\Food::class, function (Faker $faker) {
+$factory->define(Food::class, function (Faker $faker) {
     return [
         'restaurant_id' => 1,
 	    'category_id' => random_int(1 , 2),

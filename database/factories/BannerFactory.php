@@ -22,18 +22,18 @@ $banners = [
 		'clicks' => 0,
 		'url' => 'http://google.com',
 		'text' => 'این یک متن زیرونویس است لطفا دقت بفرمایید.',
-		'time' => 1
+		'time' => 60
 		],
 	3 => [
 		'clicks' => 0,
 		'url' => 'http://google.com',
-		'img' => 'mas.jpg',
+		'img' => 'mast.jpg',
 		'state' => 2,
-		'time' => 30
+		'time' => 5
 	],
 ];
 $counter = 0;
 
-$factory->define(\App\Banner::class, function (Faker $faker) use ($counter,$banners) {
+$factory->define(App\Banner::class, function (Faker $faker) use (&$counter,$banners) {
     return $banners[$counter++];
 });
