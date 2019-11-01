@@ -16,9 +16,9 @@ class CreateBannersTable extends Migration
         Schema::create('banners', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedInteger('clicks')->default(0);
-            $table->text('url');
+            $table->text('url')->default('iranbagutte.com');
             $table->text('img')->nullable();
-            $table->string('state','1')->nullable();
+            $table->string('state','1')->nullable(); // state [0 => up,1 => down,2 => dynamic]
             $table->text('time')->nullable();
             $table->text('text')->nullable();
             $table->timestamps();

@@ -1,0 +1,39 @@
+<?php
+
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+
+use App\Model;
+use Faker\Generator as Faker;
+
+$banners = [
+	0 => [
+		'clicks' => 0,
+		'url' => 'http://google.com',
+		'img' => 'adv.gif',
+		'state' => 1,
+		],
+	1 => [
+		'clicks' => 0,
+		'url' => 'http://google.com',
+		'img' => 'adv.gif',
+		'state' => 0,
+		],
+	2 => [
+		'clicks' => 0,
+		'url' => 'http://google.com',
+		'text' => 'این یک متن زیرونویس است لطفا دقت بفرمایید.',
+		'time' => 1
+		],
+	3 => [
+		'clicks' => 0,
+		'url' => 'http://google.com',
+		'img' => 'mas.jpg',
+		'state' => 2,
+		'time' => 30
+	],
+];
+$counter = 0;
+
+$factory->define(\App\Banner::class, function (Faker $faker) use ($counter,$banners) {
+    return $banners[$counter++];
+});
