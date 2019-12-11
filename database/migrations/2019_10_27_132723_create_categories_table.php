@@ -20,7 +20,7 @@ class CreateCategoriesTable extends Migration
             $table->timestamps();
 
             $table->foreign('restaurant_id')
-	            ->references('id')
+	           ->references('id')
                 ->on('restaurants')
                 ->onDelete('cascade');
         });

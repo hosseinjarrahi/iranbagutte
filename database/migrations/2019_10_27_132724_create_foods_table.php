@@ -25,14 +25,14 @@ class CreateFoodsTable extends Migration
             $table->timestamps();
 
             $table->foreign('category_id')
-	            ->references('id')
+	           ->references('id')
 	            ->on('categories')
 	            ->onDelete('cascade');
 
             $table->foreign('restaurant_id')
-	            ->references('id')
-	            ->on('restaurants')
-	            ->onDelete('cascade');
+	           ->references('id')
+	           ->on('restaurants')
+	           ->onDelete('cascade');
         });
     }
 

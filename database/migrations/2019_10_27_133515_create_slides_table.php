@@ -24,7 +24,7 @@ class CreateSlidesTable extends Migration
 	            ->references('id')
 	            ->on('categories')
 	            ->onDelete('cascade');
-
+                
             $table->foreign('restaurant_id')
 	            ->references('id')
 	            ->on('restaurants')
