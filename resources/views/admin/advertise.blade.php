@@ -17,7 +17,7 @@
 
                             <p class="card-text">
                             <form action="{{ url('admin/advertise') }}" method="post" enctype="multipart/form-data">
-                                @method(PUT)
+                                @method("put")
                                 @csrf
                                 <input name="url" type="url" placeholder="url" class="mb-2 form-control">
                                 <input type="file" name="img" class="mb-2 form-control">
