@@ -25,7 +25,7 @@ class HomeController extends Controller
 		//		$op->main = str_replace('../' , '' , $op->main);
 		//		$op->main = str_replace('width="' , 'class="img-fluid"' , $op->main);
 		//		$op->main = str_replace('height="' , '' , $op->main);
-		return view('home' , compact('op' , 'home' , 'slides'));
+		return view('home' , compact('op' ,'home' , 'slides'));
 	}
 
 	public function benefits ()
