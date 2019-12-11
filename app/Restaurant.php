@@ -20,4 +20,14 @@ class Restaurant extends Model
 		return $this->hasMany(Category::class);
     }
 
+    public function slides()
+    {
+        return $this->hasMany(Slide::class);
+    }
+
+    public function events()
+    {
+        return $this->hasMany(Event::class);
+    }
+
 }

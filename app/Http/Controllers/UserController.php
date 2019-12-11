@@ -16,4 +16,9 @@ class UserController extends Controller
     {
         return User::login($request->username, $request->password);
     }
+
+    public function logout()
+    {
+        return \Auth::logoutCurrentDevice();
+    }
 }

@@ -117,4 +117,13 @@ class HomeController extends Controller
 		echo $foods->toJson();
 	}
 
+    public function order()
+    {
+        $home = 1;
+        $res = Restaurant::where('id',1)->with('foods')->get()->first();
+        $products = $res->foods;
+        $slides = $res->slides()->with('category')->get();
+        $special = $res->events();
+        return view('order',compact('special','slides','home','products','res'));
+	}
 }

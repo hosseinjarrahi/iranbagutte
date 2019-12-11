@@ -39,3 +39,5 @@ Route::post('check-buycode' , 'HomeController@checkBuycode');
 Route::get('/login','UserController@loginPage');
 
 Route::post('/login','UserController@login');
+
+Route::get('/order','HomeController@order');
