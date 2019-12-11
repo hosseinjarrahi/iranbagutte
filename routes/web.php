@@ -24,6 +24,8 @@ Route::group(['prefix' => 'restaurant'],function(){
 	Route::post('down','HomeController@ajax');
 });
 
+Route::get('/restaurants','HomeController@showRestaurants');
+
 Route::get('/test' , function () {
 	dd(\App\Banner::textBanner()->get());
 });

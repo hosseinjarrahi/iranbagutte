@@ -54,6 +54,11 @@ class HomeController extends Controller
 		return view('restaurant' , compact('cats' , 'home' , 'foods' , 'restaurant'));
 	}
 
+    public function showRestaurants()
+    {
+        return view('restaurants');
+	}
+	
 	public function showFood (Food $food , $alert = null)
 	{
 		return view('food' , compact('food' , 'alert'));
