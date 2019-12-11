@@ -61,4 +61,16 @@ class User extends Authenticatable
 	{
 		return !$this->payments()->where('products',$game->id)->get()->isEmpty();
     }
+
+    public static function login($username, $password)
+    {
+        $user = self::where('username',$username)->first();
+        if ($user && \Hash::check($password,$user->password)) {
+            if(\Auth::loginUsingId($user->id))
+                return redirect('/');
+            return back();
+        }
+        else
+            return redirect('login')->with(['error' => 'نام کاربری و یا رمز اشتباه است.']);
+    }
 }

@@ -35,3 +35,7 @@ Route::get('/games-page','HomeController@gamesPage');
 Route::get('/game/{game}','HomeController@game');
 
 Route::post('check-buycode' , 'HomeController@checkBuycode');
+
+Route::get('/login','UserController@loginPage');
+
+Route::post('/login','UserController@login');

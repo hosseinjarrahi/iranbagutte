@@ -4,12 +4,12 @@
     <title>@yield('title')</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="public/css/bootstrap.css">
-    <link rel="stylesheet" href="public/css/custom.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/custom.css">
     <style>
         body {
             direction: rtl;
-            background-image: url("public/img/loginBack.jpg");
+            background-image: url("img/loginBack.jpg");
             background-size: cover;
         }
     </style>
@@ -19,6 +19,4 @@
     @yield('menu')
 
 </body>
-<script src="public/js/bootstrap.js"></script>
-<script src="public/js/jquery-1.7.1.min.js"></script>
 </html>

@@ -15,6 +15,7 @@
                 @endforeach
             @endif
             <form action="{{ url('login') }}" method="post">
+                @csrf
                 <div class="input-group mb-2">
                     <input type="text" class="form-control" name="username" required><br>
                     <div class="input-group-append">
@@ -32,13 +33,7 @@
             </form>
 
         </div>
-    <a class="mt-2 col-11 col-md-7 btn btn-block btn-info" href="{{ url('') }}">بازگشت به صفحه اصلی</a>
+    <a class="mt-2 col-11 col-md-7 btn btn-block btn-info" href="{{ url('/') }}">بازگشت به صفحه اصلی</a>
 </div>
-{{--@php--}}
-    {{--if(isset($_POST['submit'])){--}}
-        {{--$username=$_POST['username'];--}}
-        {{--$pss=$_POST['pass'];--}}
-        {{--Cookie::set('username',$username,60*60*24*12);--}}
-    {{--}--}}
-{{--@endphp--}}
+
 @endsection
