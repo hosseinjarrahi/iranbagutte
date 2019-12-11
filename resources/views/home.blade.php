@@ -129,7 +129,7 @@
                 <div class="slide" id="slide" style="color:#fff;">
 
                     @for($i=0;$i<3;$i++)
-                        <a href="{{url('restaurants/1')}}" style="color: white">
+                        <a href="{{url('restaurant/1')}}" style="color: white">
                             <div class="ads-parent position-relative m-2">
                                 <img class="item img-fluid w-100 h-100" src="{{ asset('img/0219_Elmwood_0016.jpg') }}">
                                 <span class="IB-ads text-center w-100 p-2 position-absolute h-50">
@@ -138,7 +138,7 @@
                             </div>
                         </a>
                     @endfor
-                    <a href="{{url('restaurant/restaurantsPage')}}" style="color: white">
+                    <a href="{{url('restaurants')}}" style="color: white">
                         <div class="ads-parent position-relative m-2">
                             <img class="item img-fluid w-100 h-100" src="{{ asset('img/0219_Elmwood_0016.jpg') }}">
                             <span class="IB-ads text-center w-100 p-2 position-absolute h-50">
