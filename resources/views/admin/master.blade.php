@@ -24,7 +24,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <!-- Font Awesome Icons -->
 
-    <link rel="stylesheet" href="{{ asset('admin/plugins/font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url('admin/plugins/font-awesome/css/font-awesome.min.css') }}">
 
     <!-- Theme style -->
 
@@ -315,7 +315,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                         <li class="nav-item has-treeview">
 
-                            <a href="#" class="nav-link">
+                            <a href="{{url('manager/advertise')}}" class="nav-link">
 
                                 <i class="nav-icon fa fa-area-chart"></i>
 
@@ -508,7 +508,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                         <li class="nav-item">
 
-                            <a href="{{ url() }}" class="nav-link">
+                            <a href="#" class="nav-link">
 
                                 <i class="nav-icon fa fa-th"></i>
 
@@ -576,6 +576,5 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{ asset('admin/dist/js/adminlte.min.js') }}"></script>
 
 </body>
-
 </html>
 
