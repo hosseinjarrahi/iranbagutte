@@ -29,22 +29,14 @@ Route::get('/test', function () {
 });
 
 Route::get('/games-page', 'HomeController@gamesPage');
-
 Route::get('/game/{game}', 'HomeController@game');
-
 Route::post('check-buycode', 'HomeController@checkBuycode');
+
 // manager login
-
-
-
-
-Route::group(['prefix' => 'manager'], function () {
-
+    Route::group(['prefix' => 'manager'], function () {
     Route::get("/", "ManagerController@show");
     Route::get('home', "ManagerController@home");
-
 });
-
 //end manager login
 
 //advertise
@@ -62,3 +54,9 @@ Route::group(['prefix' => 'manager'], function () {
     Route::put('manager/advertise/dynamic','AdvertiseController@dynamicAdd');
 
 //end advertise
+// category
+Route::get("manager/category" , "CategoryController@show");
+Route::put("manager/category" , "CategoryController@add");
+Route::patch("manager/category" , "CategoryController@update");
+Route::get("manager/category/delete/{id}" , "CategoryController@mainDelete");
+Route::get("manager/category/sub/delete/{id}" , "CategoryController@subDelete");
