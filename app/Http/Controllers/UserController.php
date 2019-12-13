@@ -21,6 +21,8 @@ class UserController extends Controller
 
     public function logout()
     {
-        return \Auth::logoutCurrentDevice();
+        if(\Auth::check())
+            \Auth::logoutCurrentDevice();
+        return redirect('/');
     }
 }

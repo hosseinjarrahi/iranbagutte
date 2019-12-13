@@ -11,6 +11,6 @@ class RolesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(\App\Role::class,9)->create();
     }
 }

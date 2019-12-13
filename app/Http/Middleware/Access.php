@@ -15,8 +15,8 @@ class Access
      */
     public function handle($request, Closure $next,$role)
     {
-        if(!$request->user()->hasRole($role))
-            return abort(511);
-        return $next($request);
+        if($request->user()->hasRole($role) || $request->user()->hasRole('admin'))
+            return $next($request);
+        return abort(503);
     }
 }

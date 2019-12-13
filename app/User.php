@@ -48,7 +48,7 @@ class User extends Authenticatable
     
 	public function roles ()
 	{
-		return $this->hasMany(Role::class);
+		return $this->belongsToMany(Role::class,'role_user');
     }
 
 	public function payments ()
@@ -63,9 +63,9 @@ class User extends Authenticatable
 
     public function hasRole($role)
     {
-        if($this->roles->has($role))
-            return true;
-        return false;
+        if($this->roles->where('access',$role)->isEmpty())
+            return false;
+        return true;
     }
 
     public static function login($username, $password)

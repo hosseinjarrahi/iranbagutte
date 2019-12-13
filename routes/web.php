@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'HomeController@home');
+Route::get('/', 'HomeController@home')->name('home');
 
 Route::get('/benefits', 'HomeController@benefits');
 
@@ -39,6 +39,8 @@ Route::post('check-buycode', 'HomeController@checkBuycode');
 Route::get('/login', 'UserController@loginPage')->name('login');
 
 Route::post('/login', 'UserController@login');
+
+Route::get('/logout', 'UserController@logout')->name('logout');
 
 Route::get('/order', 'HomeController@order');
 

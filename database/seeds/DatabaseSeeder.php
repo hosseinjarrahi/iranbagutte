@@ -7,6 +7,7 @@ use App\Food;
 use App\Game;
 use App\Option;
 use App\Restaurant;
+use App\Role;
 use App\Slide;
 use App\User;
 use Illuminate\Database\Seeder;
@@ -29,7 +30,9 @@ class DatabaseSeeder extends Seeder
     	Restaurant::truncate();
     	Game::truncate();
     	User::truncate();
+    	Role::truncate();
 	    $this->call(BannersTableSeeder::class);
+	    $this->call(RolesTableSeeder::class);
 	    $this->call(UsersTableSeeder::class);
 	    $this->call(CategoriesTableSeeder::class);
 	    $this->call(FoodsTableSeeder::class);
