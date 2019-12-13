@@ -24,9 +24,9 @@ Route::group(['prefix' => 'restaurant'], function () {
     Route::post('down', 'HomeController@ajax');
 });
 
-Route::get('/restaurants','HomeController@showRestaurants');
+Route::get('/restaurants', 'HomeController@showRestaurants');
 
-Route::get('/test' , function () {
+Route::get('/test', function () {
     dd(\App\Banner::textBanner()->get());
 });
 
@@ -34,35 +34,31 @@ Route::get('/games-page', 'HomeController@gamesPage');
 
 Route::get('/game/{game}', 'HomeController@game');
 
-Route::post('check-buycode' , 'HomeController@checkBuycode');
+Route::post('check-buycode', 'HomeController@checkBuycode');
 
-Route::get('/login','UserController@loginPage')->name('login');
+Route::get('/login', 'UserController@loginPage')->name('login');
 
-Route::post('/login','UserController@login');
+Route::post('/login', 'UserController@login');
 
-Route::get('/order','HomeController@order');
+Route::get('/order', 'HomeController@order');
 
-Route::group(['prefix' => 'manager'], function () {
+Route::group(['prefix' => 'manager','middleware' => 'auth'], function () {
 
     Route::get("/", "ManagerController@show");
     Route::get('home', "ManagerController@home");
 
+    Route::get('advertise', 'AdvertiseController@show');
+    Route::get('advertise/delete/{id}', 'AdvertiseController@delete');
+    Route::put('advertise', 'AdvertiseController@add');
+
+    Route::get('advertise/zirnevis', 'AdvertiseController@zirnevisManage');
+    Route::get('advertise/zirnevis/delete/{id}', 'AdvertiseController@zirnevisDelete');
+    Route::put('advertise/zirnevis', 'AdvertiseController@zirnevisAdd');
+
+    Route::get('advertise/dynamic', 'AdvertiseController@dynamicManage');
+    Route::get('advertise/dynamic/delete/{id}', 'AdvertiseController@dynamicDelete');
+    Route::put('advertise/dynamic', 'AdvertiseController@dynamicAdd');
+
 });
-
-//end manager login
-
-//advertise
-
-    Route::get('manager/advertise','AdvertiseController@show');
-    Route::get('manager/advertise/delete/{id}','AdvertiseController@delete');
-    Route::put('manager/advertise','AdvertiseController@add');
-
-    Route::get('manager/advertise/zirnevis','AdvertiseController@zirnevisManage');
-    Route::get('manager/advertise/zirnevis/delete/{id}','AdvertiseController@zirnevisDelete');
-    Route::put('manager/advertise/zirnevis','AdvertiseController@zirnevisAdd');
-
-    Route::get('manager/advertise/dynamic','AdvertiseController@dynamicManage');
-    Route::get('manager/advertise/dynamic/delete/{id}','AdvertiseController@dynamicDelete');
-    Route::put('manager/advertise/dynamic','AdvertiseController@dynamicAdd');
 
 //endadvertise

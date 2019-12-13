@@ -9,6 +9,8 @@ class UserController extends Controller
 {
     public function loginPage()
     {
+        if(\Auth::check())
+            return back();
         return view('user.login');
     }
 
