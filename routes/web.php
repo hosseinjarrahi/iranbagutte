@@ -27,7 +27,8 @@ Route::group(['prefix' => 'restaurant'], function () {
 Route::get('/restaurants','HomeController@showRestaurants');
 
 Route::get('/test' , function () {
-	dd(\App\Banner::textBanner()->get());
+    dd(\App\Banner::textBanner()->get());
+});
 
 Route::get('/games-page', 'HomeController@gamesPage');
 
@@ -35,7 +36,7 @@ Route::get('/game/{game}', 'HomeController@game');
 
 Route::post('check-buycode' , 'HomeController@checkBuycode');
 
-Route::get('/login','UserController@loginPage');
+Route::get('/login','UserController@loginPage')->name('login');
 
 Route::post('/login','UserController@login');
 
@@ -64,4 +65,4 @@ Route::group(['prefix' => 'manager'], function () {
     Route::get('manager/advertise/dynamic/delete/{id}','AdvertiseController@dynamicDelete');
     Route::put('manager/advertise/dynamic','AdvertiseController@dynamicAdd');
 
-//end advertise
+//endadvertise

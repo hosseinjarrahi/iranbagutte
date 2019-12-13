@@ -9,7 +9,6 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     use Notifiable;
-
     /**
      * The attributes that are mass assignable.
      *
@@ -60,6 +59,13 @@ class User extends Authenticatable
 	public function payedThisGame ($game)
 	{
 		return !$this->payments()->where('products',$game->id)->get()->isEmpty();
+    }
+
+    public function hasRole($role)
+    {
+        if($this->roles->has($role))
+            return true;
+        return false;
     }
 
     public static function login($username, $password)
