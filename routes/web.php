@@ -36,8 +36,9 @@ Route::get("/checkout" , 'BasketController@checkout');
 Route::get("/reply" , 'BasketController@reply');
 Route::get("/status" , 'BasketController@status');
 
-Route::group(['prefix' => 'manager','middleware' => 'auth'], function () {
 
+// manager login
+Route::group(['prefix' => 'manager','middleware' => 'auth'], function () {
     Route::get("/", "ManagerController@show");
     Route::get('home', "ManagerController@home");
 
@@ -49,6 +50,8 @@ Route::group(['prefix' => 'manager','middleware' => 'auth'], function () {
     Route::get('advertise/zirnevis/delete/{id}', 'AdvertiseController@zirnevisDelete');
     Route::put('advertise/zirnevis', 'AdvertiseController@zirnevisAdd');
 
+//end manager login
+
     Route::get('advertise/dynamic', 'AdvertiseController@dynamicManage');
     Route::get('advertise/dynamic/delete/{id}', 'AdvertiseController@dynamicDelete');
     Route::put('advertise/dynamic', 'AdvertiseController@dynamicAdd');
@@ -58,9 +61,17 @@ Route::group(['prefix' => 'manager','middleware' => 'auth'], function () {
     Route::get("sit/setting" , "OrderController@sitSetting");
     Route::get("rm-sit/{id}" , "OrderController@rmvSit");
 
+    // category
+Route::get("category" , "CategoryController@show");
+Route::put("category" , "CategoryController@add");
+Route::patch("category" , "CategoryController@update");
+Route::get("category/delete/{id}" , "CategoryController@mainDelete");
+Route::get("category/sub/delete/{id}" , "CategoryController@subDelete");
+
 });
 
 Route::group(['prefix' => 'restaurant'], function () {
     Route::get('{restaurant}', 'HomeController@showRestaurant');
     Route::post('down', 'HomeController@ajax');
 });
+//end advertise
