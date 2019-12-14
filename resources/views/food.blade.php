@@ -23,6 +23,7 @@
             <span> تومان </span>
         </p>
         <form action="{{ url('add-to-basket/'.$food->id) }}" method="get">
+            @csrf
             <div class="form-group">
                 <label for="sel1">تعداد (انتخاب کنید):</label>
                 <input type="number" min="1" max="100" class="form-control" name="count" value="1">

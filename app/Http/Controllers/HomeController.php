@@ -126,4 +126,5 @@ class HomeController extends Controller
         $special = $res->events();
         return view('order',compact('special','slides','home','products','res'));
 	}
+
 }

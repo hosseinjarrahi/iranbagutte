@@ -12,37 +12,29 @@
 */
 
 Route::get('/', 'HomeController@home')->name('home');
-
 Route::get('/benefits', 'HomeController@benefits');
-
 Route::get('/contact-us', 'HomeController@contactUs');
 
 Route::get('/food/{food}/{alert?}', 'HomeController@showFood');
-
-Route::group(['prefix' => 'restaurant'], function () {
-    Route::get('{restaurant}', 'HomeController@showRestaurant');
-    Route::post('down', 'HomeController@ajax');
-});
-
 Route::get('/restaurants', 'HomeController@showRestaurants');
 
-Route::get('/test', function () {
-    dd(\App\Banner::textBanner()->get());
-});
-
 Route::get('/games-page', 'HomeController@gamesPage');
-
 Route::get('/game/{game}', 'HomeController@game');
-
 Route::post('check-buycode', 'HomeController@checkBuycode');
 
 Route::get('/login', 'UserController@loginPage')->name('login');
 
 Route::post('/login', 'UserController@login');
-
 Route::get('/logout', 'UserController@logout')->name('logout');
 
 Route::get('/order', 'HomeController@order');
+
+Route::get("/basket" , 'BasketController@show');
+Route::get("/add-to-basket/{id}" , 'BasketController@add');
+Route::get("/remove-from-basket/{id}" , 'BasketController@remove');
+Route::get("/checkout" , 'BasketController@checkout');
+Route::get("/reply" , 'BasketController@reply');
+Route::get("/status" , 'BasketController@status');
 
 Route::group(['prefix' => 'manager','middleware' => 'auth'], function () {
 
@@ -68,4 +60,7 @@ Route::group(['prefix' => 'manager','middleware' => 'auth'], function () {
 
 });
 
-//endadvertise
+Route::group(['prefix' => 'restaurant'], function () {
+    Route::get('{restaurant}', 'HomeController@showRestaurant');
+    Route::post('down', 'HomeController@ajax');
+});
