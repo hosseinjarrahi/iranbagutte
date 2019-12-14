@@ -5,7 +5,6 @@
 @endsection
 
 @section('slider')
-@inject("Category","App\Models")
 
 <div class="IB-Slide">
     <div class="IB-container">
@@ -14,17 +13,14 @@
                 <ol class="text-center">
 
                     @foreach($slides as $slide)
-                        @php
-                            $cat = $Category::findById($slide->category)[0];
-                        @endphp
                     <li>
                         <h2 style="padding: 0px; margin: 0px; height: 40px; width: 350px; left: 0px;" class="IB-selected each">
-                            <span class="d-none">{{ $cat->id }}</span>
-                            <span class="IB-akordin0">{{ $cat->name }}</span>
+                            <span class="d-none">{{ $slide->category->id }}</span>
+                            <span class="IB-akordin0">{{ $slide->category->name }}</span>
                         </h2>
                         <div style="width: 1040px; left: 0px; padding-left: 40px;">
                                 <img src="{{ asset('upload/'.$slide->img) }}" class="img-fluid">
-                                {{ $cat->name }}
+                                {{ $slide->category->name }}
                         </div>
                     </li>
                     @endforeach
@@ -42,12 +38,9 @@
             <div class="accordion-wrapper">
                 <div class="ac-pane">
                     @foreach($slides as $slide)
-                        @php
-                            $cat = $Category::findById($slide->category)[0];
-                        @endphp
                     <a href="#" class="ac-title IB-akordin0 each">
-                        <span class="d-none">{{ $cat->id }}</span>
-                        <span>{{ $cat->name }}</span>
+                        <span class="d-none">{{ $slide->category->id }}</span>
+                        <span>{{ $slide->category->name }}</span>
                     </a>
                     <div class="ac-content" style="display: none;">
                         <a href="#">
@@ -279,7 +272,7 @@
                         `;
                 var request = new XMLHttpRequest();
                 let id = acc[i].firstElementChild.innerHTML;
-                let url = "{{ url() }}/order/down/" + id;
+                let url = "{{ url('') }}/order/down/" + id;
                 request.open('POST',url);
                 request.onreadystatechange = function () {
                     if ((request.status === 200) && (request.readyState === 4)) {

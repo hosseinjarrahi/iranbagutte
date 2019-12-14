@@ -25,7 +25,7 @@ class HomeController extends Controller
 		//		$op->main = str_replace('../' , '' , $op->main);
 		//		$op->main = str_replace('width="' , 'class="img-fluid"' , $op->main);
 		//		$op->main = str_replace('height="' , '' , $op->main);
-		return view('home' , compact('op' , 'home' , 'slides'));
+		return view('home' , compact('op' ,'home' , 'slides'));
 	}
 
 	public function benefits ()
@@ -54,6 +54,11 @@ class HomeController extends Controller
 		return view('restaurant' , compact('cats' , 'home' , 'foods' , 'restaurant'));
 	}
 
+    public function showRestaurants()
+    {
+        return view('restaurants');
+	}
+	
 	public function showFood (Food $food , $alert = null)
 	{
 		return view('food' , compact('food' , 'alert'));
@@ -110,6 +115,16 @@ class HomeController extends Controller
 			$item->img = asset('upload/'.$item->img);
 		});
 		echo $foods->toJson();
+	}
+
+    public function order()
+    {
+        $home = 1;
+        $res = Restaurant::where('id',1)->with('foods')->get()->first();
+        $products = $res->foods;
+        $slides = $res->slides()->with('category')->get();
+        $special = $res->events();
+        return view('order',compact('special','slides','home','products','res'));
 	}
 
 }

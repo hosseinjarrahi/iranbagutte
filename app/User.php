@@ -9,7 +9,6 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     use Notifiable;
-
     /**
      * The attributes that are mass assignable.
      *
@@ -49,7 +48,7 @@ class User extends Authenticatable
     
 	public function roles ()
 	{
-		return $this->hasMany(Role::class);
+		return $this->belongsToMany(Role::class,'role_user');
     }
 
 	public function payments ()
@@ -60,5 +59,25 @@ class User extends Authenticatable
 	public function payedThisGame ($game)
 	{
 		return !$this->payments()->where('products',$game->id)->get()->isEmpty();
+    }
+
+    public function hasRole($role)
+    {
+        if($this->roles->where('access',$role)->isEmpty()
+            && $this->roles->where('access','admin')->isEmpty())
+            return false;
+        return true;
+    }
+
+    public static function login($username, $password)
+    {
+        $user = self::where('username',$username)->first();
+        if ($user && \Hash::check($password,$user->password)) {
+            if(\Auth::loginUsingId($user->id))
+                return redirect('/');
+            return back();
+        }
+        else
+            return redirect('login')->with(['error' => 'نام کاربری و یا رمز اشتباه است.']);
     }
 }

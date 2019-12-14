@@ -18,17 +18,12 @@
             <form action="{{ url('register') }}" method="post">
                 @method(PUT)
                 <div class="input-group mb-2">
-                    <input type="text" class="form-control" name="fName" required value="{{ $user->fname ?? '' }}"><br>
+                    <input type="text" class="form-control" name="name" required value="{{ $user->fname ?? '' }}"><br>
                     <div class="input-group-append">
-                        <span class="input-group-text text-dark">نام </span>
+                        <span class="input-group-text text-dark">نام و نام خانوادگی</span>
                     </div>
                 </div>
-                <div class="input-group mb-2">
-                    <input type="text" class="form-control" name="lName" required value="{{ $user->lname ?? '' }}"><br>
-                    <div class="input-group-append">
-                        <span class="input-group-text text-dark">نام خانوادگی</span>
-                    </div>
-                </div>
+
                 <div class="input-group mb-2">
                     <input type="text" class="form-control" name="username" required value="{{ $user->username ?? '' }}"><br>
                     <div class="input-group-append">

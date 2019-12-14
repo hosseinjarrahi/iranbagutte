@@ -19,6 +19,7 @@ use Illuminate\Support\Str;
 $factory->define(User::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
+        'username' => $faker->userName,
         'email' => $faker->unique()->safeEmail,
         'phone' => random_int(00000 , 154698547854),
         'address' => $faker->address,

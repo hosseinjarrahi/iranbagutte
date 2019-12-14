@@ -8,7 +8,7 @@ class AdvertiseController extends Controller
 {
     public function __construct ()
     {
-//        Auth::redirectToLogin('manager/login' , 'manager');
+        $this->middleware('Access:advertise');
     }
 
     public function show ()

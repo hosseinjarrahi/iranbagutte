@@ -122,7 +122,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                 <li class="nav-item">
 
-                                    <a href="{{ url('admin/add-product') }}" class="nav-link">
+                                    <a href="{{ url('manager/add-product') }}" class="nav-link">
 
                                         <i class="fa fa-circle-o nav-icon"></i>
 
@@ -134,7 +134,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                 <li class="nav-item">
 
-                                    <a href="{{ url('admin/show-products') }}" class="nav-link">
+                                    <a href="{{ url('manager/show-products') }}" class="nav-link">
 
                                         <i class="fa fa-circle-o nav-icon"></i>
 
@@ -146,7 +146,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                 <li class="nav-item">
 
-                                    <a href="{{ url('admin/category') }}" class="nav-link">
+                                    <a href="{{ url('manager/category') }}" class="nav-link">
 
                                         <i class="fa fa-circle-o nav-icon"></i>
 
@@ -158,7 +158,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                 <li class="nav-item">
 
-                                    <a href="{{ url('admin/slides') }}" class="nav-link">
+                                    <a href="{{ url('manager/slides') }}" class="nav-link">
 
                                         <i class="fa fa-circle-o nav-icon"></i>
 
@@ -193,7 +193,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                 <li class="nav-item">
 
-                                    <a href="{{ url('admin/sit/setting') }}" class="nav-link">
+                                    <a href="{{ url('manager/sit/setting') }}" class="nav-link">
 
                                         <i class="fa fa-circle-o nav-icon"></i>
 
@@ -205,7 +205,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                 <li class="nav-item">
 
-                                    <a href="{{ url('admin/reserved') }}" class="nav-link">
+                                    <a href="{{ url('manager/reserved') }}" class="nav-link">
 
                                         <i class="fa fa-circle-o nav-icon"></i>
 
@@ -240,7 +240,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                 <li class="nav-item">
 
-                                    <a href="{{ url('admin/manage-users') }}" class="nav-link">
+                                    <a href="{{ url('manager/manage-users') }}" class="nav-link">
 
                                         <i class="fa fa-circle-o nav-icon"></i>
 
@@ -252,7 +252,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                 <li class="nav-item">
 
-                                    <a href="{{ url('admin/manage-special-users') }}" class="nav-link">
+                                    <a href="{{ url('manager/manage-special-users') }}" class="nav-link">
 
                                         <i class="fa fa-circle-o nav-icon"></i>
 
@@ -264,7 +264,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                 <li class="nav-item">
 
-                                    <a href="{{ url('admin/manage-dev-users') }}" class="nav-link">
+                                    <a href="{{ url('manager/manage-dev-users') }}" class="nav-link">
 
                                         <i class="fa fa-circle-o nav-icon"></i>
 
@@ -298,7 +298,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                 <li class="nav-item">
 
-                                    <a href="{{ url('admin/manage-pays') }}" class="nav-link">
+                                    <a href="{{ url('manager/manage-pays') }}" class="nav-link">
 
                                         <i class="fa fa-circle-o nav-icon"></i>
 
@@ -333,7 +333,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                 <li class="nav-item">
 
-                                    <a href="{{ url('admin/advertise') }}" class="nav-link">
+                                    <a href="{{ url('manager/advertise') }}" class="nav-link">
 
                                         <i class="fa fa-circle-o nav-icon"></i>
 
@@ -345,7 +345,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                 <li class="nav-item">
 
-                                    <a href="{{ url('admin/advertise/dynamic') }}" class="nav-link">
+                                    <a href="{{ url('manager/advertise/dynamic') }}" class="nav-link">
 
                                         <i class="fa fa-circle-o nav-icon"></i>
 
@@ -356,7 +356,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </li>
                                 <li class="nav-item">
 
-                                    <a href="{{ url('admin/advertise/zirnevis') }}" class="nav-link">
+                                    <a href="{{ url('manager/advertise/zirnevis') }}" class="nav-link">
 
                                         <i class="fa fa-circle-o nav-icon"></i>
 
@@ -391,7 +391,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                 <li class="nav-item">
 
-                                    <a href="{{ url('admin/games') }}" class="nav-link">
+                                    <a href="{{ url('manager/games') }}" class="nav-link">
 
                                         <i class="fa fa-circle-o nav-icon"></i>
 
@@ -403,7 +403,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                 <li class="nav-item">
 
-                                    <a href="{{ url('admin/users-games') }}" class="nav-link">
+                                    <a href="{{ url('manager/users-games') }}" class="nav-link">
 
                                         <i class="fa fa-circle-o nav-icon"></i>
 
@@ -438,7 +438,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                 <li class="nav-item">
 
-                                    <a href="{{ url('admin/detail-REs') }}" class="nav-link">
+                                    <a href="{{ url('manager/detail-REs') }}" class="nav-link">
 
                                         <i class="fa fa-circle-o nav-icon"></i>
 
@@ -450,7 +450,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                 <li class="nav-item">
 
-                                    <a href="{{ url('admin/about-us') }}" class="nav-link">
+                                    <a href="{{ url('manager/about-us') }}" class="nav-link">
 
                                         <i class="fa fa-circle-o nav-icon"></i>
 
@@ -462,7 +462,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                 <li class="nav-item">
 
-                                    <a href="{{ url('admin/benefits') }}" class="nav-link">
+                                    <a href="{{ url('manager/benefits') }}" class="nav-link">
 
                                         <i class="fa fa-circle-o nav-icon"></i>
 
