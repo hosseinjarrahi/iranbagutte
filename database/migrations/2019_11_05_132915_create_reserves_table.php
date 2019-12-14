@@ -16,6 +16,7 @@ class CreateReservesTable extends Migration
         Schema::create('reserves', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedInteger('user_id');
+            $table->unsignedInteger('restaurant_id');
             $table->string('start_time');
             $table->string('end_time');
             $table->text('detail');
@@ -24,11 +25,11 @@ class CreateReservesTable extends Migration
             $table->string('phone',15);
             $table->string('trans_id');
             $table->timestamps();
-
-	        $table->foreign('user_id')
-		        ->references('id')
-		        ->on('users')
-		        ->onDelete('cascade');
+//
+//	        $table->foreign('user_id')
+//		        ->references('id')
+//		        ->on('users')
+//		        ->onDelete('cascade');
 
         });
     }

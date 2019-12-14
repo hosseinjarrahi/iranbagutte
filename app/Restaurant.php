@@ -30,4 +30,9 @@ class Restaurant extends Model
         return $this->hasMany(Event::class);
     }
 
+    public function reserves()
+    {
+        return $this->hasMany(Reserve::class);
+    }
+
 }

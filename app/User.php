@@ -63,7 +63,8 @@ class User extends Authenticatable
 
     public function hasRole($role)
     {
-        if($this->roles->where('access',$role)->isEmpty())
+        if($this->roles->where('access',$role)->isEmpty()
+            && $this->roles->where('access','admin')->isEmpty())
             return false;
         return true;
     }

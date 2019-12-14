@@ -61,6 +61,11 @@ Route::group(['prefix' => 'manager','middleware' => 'auth'], function () {
     Route::get('advertise/dynamic/delete/{id}', 'AdvertiseController@dynamicDelete');
     Route::put('advertise/dynamic', 'AdvertiseController@dynamicAdd');
 
+    Route::put("add/sit" , "OrderController@addSit");
+    Route::get("reserved" , "OrderController@showReserved");
+    Route::get("sit/setting" , "OrderController@sitSetting");
+    Route::get("rm-sit/{id}" , "OrderController@rmvSit");
+
 });
 
 //endadvertise

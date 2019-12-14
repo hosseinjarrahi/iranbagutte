@@ -15,10 +15,8 @@ $access = [
     'tables',
     'users',
 ];
-$counter = 0;
 $factory->define(Role::class, function (Faker $faker) use ($access,$counter){
     return [
-        'access' => $access[$counter]
+        'access' => $access[0]
     ];
-    $counter++;
 });

@@ -19,16 +19,16 @@ class CreateSlidesTable extends Migration
             $table->unsignedInteger('restaurant_id');
             $table->text('img');
             $table->timestamps();
-
-            $table->foreign('category_id')
-	            ->references('id')
-	            ->on('categories')
-	            ->onDelete('cascade');
-                
-            $table->foreign('restaurant_id')
-	            ->references('id')
-	            ->on('restaurants')
-	            ->onDelete('cascade');
+//
+//            $table->foreign('category_id')
+//	            ->references('id')
+//	            ->on('categories')
+//	            ->onDelete('cascade');
+//
+//            $table->foreign('restaurant_id')
+//	            ->references('id')
+//	            ->on('restaurants')
+//	            ->onDelete('cascade');
         });
     }
 

@@ -20,15 +20,15 @@ class CreateBuycodesTable extends Migration
 	        $table->string('code')->unique();
             $table->timestamps();
 
-	        $table->foreign('user_id')
-		        ->references('id')
-		        ->on('users')
-		        ->onDelete('cascade');
-
-	        $table->foreign('game_id')
-		        ->references('id')
-		        ->on('games')
-		        ->onDelete('cascade');
+//	        $table->foreign('user_id')
+//		        ->references('id')
+//		        ->on('users')
+//		        ->onDelete('cascade');
+//
+//	        $table->foreign('game_id')
+//		        ->references('id')
+//		        ->on('games')
+//		        ->onDelete('cascade');
 
         });
     }
