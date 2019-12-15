@@ -18,10 +18,11 @@ class CreateFoodsTable extends Migration
             $table->unsignedInteger('restaurant_id');
             $table->unsignedInteger('category_id');
             $table->text('title');
-            $table->text('small_detail');
-            $table->text('main_detail');
+            $table->text('small_detail')->nullable();
+            $table->text('main_detail')->nullable();
             $table->text('img');
             $table->string('price');
+            $table->text('labels')->nullable();
             $table->timestamps();
 //
 //            $table->foreign('category_id')

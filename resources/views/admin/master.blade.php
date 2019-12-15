@@ -122,7 +122,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                 <li class="nav-item">
 
-                                    <a href="{{ url('manager/add-product') }}" class="nav-link">
+                                    <a href="{{ url('manager/add-food') }}" class="nav-link">
 
                                         <i class="fa fa-circle-o nav-icon"></i>
 
@@ -134,7 +134,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                 <li class="nav-item">
 
-                                    <a href="{{ url('manager/show-products') }}" class="nav-link">
+                                    <a href="{{ url('manager/show-foods') }}" class="nav-link">
 
                                         <i class="fa fa-circle-o nav-icon"></i>
 

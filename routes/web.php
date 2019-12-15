@@ -90,13 +90,13 @@ Route::group(['prefix' => 'manager','middleware' => 'auth'], function () {
     Route::get("category/sub/delete/{id}" , "CategoryController@subDelete");
 
 // product
-    Route::get("add-product" , 'ProductsController@show');
-    Route::put("add-product" , 'ProductsController@add');
-    Route::get("show-products" , "ProductsController@manageProducts");
+    Route::get("add-food" , 'FoodController@show');
+    Route::put("add-food" , 'FoodController@add');
+    Route::get("show-foods" , "FoodController@managefoods");
 
-    Route::get("remove-product/{id}" , "ProductsController@deleteProduct");
-    Route::get("edit-product/{id}" , "ProductsController@show");
-    Route::patch("edit-product/{id}" , "ProductsController@update");
+    Route::get("remove-product/{id}" , "FoodController@deleteFood");
+    Route::get("edit-product/{id}" , "FoodController@show");
+    Route::patch("edit-product/{id}" , "FoodController@update");
 
 //slides
     Route::get("slides/delete/{id}" , "SlidesController@delete");
