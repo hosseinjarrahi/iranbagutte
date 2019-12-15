@@ -36,6 +36,9 @@ Route::get("/checkout" , 'BasketController@checkout');
 Route::get("/reply" , 'BasketController@reply');
 Route::get("/status" , 'BasketController@status');
 
+Route::get("reserve/{id?}" , 'HomeController@reserve');
+Route::post('reserve/{id?}' , 'HomeController@addReserve');
+
 Route::group(['prefix' => 'manager','middleware' => 'auth'], function () {
 
     Route::get("/", "ManagerController@show");

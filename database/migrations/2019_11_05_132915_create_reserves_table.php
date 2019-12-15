@@ -15,15 +15,15 @@ class CreateReservesTable extends Migration
     {
         Schema::create('reserves', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('user_id')->nullable();
             $table->unsignedInteger('restaurant_id');
             $table->string('start_time');
             $table->string('end_time');
-            $table->text('detail');
+            $table->text('detail')->nullable();
             $table->string('tables');
             $table->string('name');
             $table->string('phone',15);
-            $table->string('trans_id');
+            $table->string('trans_id')->nullable();
             $table->timestamps();
 //
 //	        $table->foreign('user_id')
