@@ -42,7 +42,7 @@ Route::post('reserve/{id?}' , 'HomeController@addReserve');
 Route::group(['prefix' => 'manager','middleware' => 'auth'], function () {
 
     Route::get("/", "ManagerController@show");
-    Route::get('home', "ManagerController@home");
+    Route::get('home', "ManagerController@home")->name('admin.home');
 //advertise
     Route::get('advertise', 'AdvertiseController@show');
     Route::get('advertise/delete/{id}', 'AdvertiseController@delete');

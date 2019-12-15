@@ -45,7 +45,7 @@ class User extends Authenticatable
 	{
 		return $this->buycodes()->where('game_id',$game->id)->get();
     }
-    
+
 	public function roles ()
 	{
 		return $this->belongsToMany(Role::class,'role_user');
@@ -63,9 +63,24 @@ class User extends Authenticatable
 
     public function hasRole($role)
     {
+        if($role == 'any')
+        {
+            if (session('isAdmin'))
+                return true;
+            if(!$this->roles->isEmpty())
+            {
+                session(['isAdmin' => 1]);
+                return true;
+            }
+            return false;
+        }
+
         if($this->roles->where('access',$role)->isEmpty()
             && $this->roles->where('access','admin')->isEmpty())
+        {
+            session(['isAdmin' => 1]);
             return false;
+        }
         return true;
     }
 
