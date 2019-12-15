@@ -22,10 +22,9 @@ Route::get('/games-page', 'HomeController@gamesPage');
 Route::get('/game/{game}', 'HomeController@game');
 Route::post('check-buycode', 'HomeController@checkBuycode');
 
-Route::get('/login', 'UserController@loginPage')->name('login');
-
-Route::post('/login', 'UserController@login');
-Route::get('/logout', 'UserController@logout')->name('logout');
+Route::get('/login', 'HomeController@loginPage')->name('login');
+Route::post('/login', 'HomeController@login');
+Route::get('/logout', 'HomeController@logout')->name('logout');
 
 Route::get('/order', 'HomeController@order');
 
@@ -61,7 +60,6 @@ Route::group(['prefix' => 'manager','middleware' => 'auth'], function () {
     Route::get("sit/setting" , "OrderController@sitSetting");
     Route::get("rm-sit/{id}" , "OrderController@rmvSit");
 
-
 //admin detail res
     Route::get("detail-res","OptionController@detail");
     Route::post("detail-res","OptionController@editDetail");
@@ -73,12 +71,9 @@ Route::group(['prefix' => 'manager','middleware' => 'auth'], function () {
 
 //admin manage users
     Route::get("manage-users" , "UserController@showUsers");
-    Route::get("manage-special-users" , "UserController@showSpecials");
-    Route::get("manage-dev-users" , "UserController@showDevs");
-    Route::get("remove-user/{type}/{id}" , "UserController@removeUser");
     Route::get("show-user/{id}" , "UserController@showUser");
-    Route::get("promote-to-special/{id}" , "UserController@promoteToS");
-    Route::get("promote-to-dev/{id}" , "UserController@promoteToD");
+    Route::get("remove-user/{id}" , "UserController@remove");
+    Route::post("promote/{id}" , "UserController@promote");
 
 // about us and benefits
     Route::post("upload" , 'OptionController@upload');
