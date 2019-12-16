@@ -11,70 +11,77 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <form method="post" action="{{ url('admin/detail-Res') }}">
-                                    <div class="form-group">
+                            <form method="post" action="{{ url('manager/detail-res') }}" enctype="multipart/form-data">
+                                @csrf
+                                <div class="form-group">
                                         نام رستوران:
                                         <input class="form-control" type="text" name="name" value="{{ $res->name ?? ''}}">
                                         <br>
                                         ساعت کاری:
                                         <br>
                                         از
-                                        <input class="form-control" type="text" name="time1" value="{{ $res->time1 ?? ''}}">
+                                        <input class="form-control" type="text" name="time1" value="{{ $res->options['start'] ?? ''}}">
                                         تا
-                                        <input class="form-control" type="text" name="time2" value="{{ $res->time2 ?? ''}}">
+                                        <input class="form-control" type="text" name="time2" value="{{ $res->options['end'] ?? ''}}">
                                         <br>
                                         توضیحات رستوران شما:
                                         <br>
-                                        <textarea name="details" class="form-control" cols="30" rows="5">{{ $res->details ?? ''}}</textarea>
+                                        <textarea name="details" class="form-control" cols="30" rows="5">{{ $res->options['details'] ?? ''}}</textarea>
                                         <br>
                                         جای پارک:
                                         <br>
                                         دارد
-                                        <input type="radio" name="park" value="1" @if($res->park) checked @endif>
+                                        <input type="radio" name="park" value="1" @if($res->options['park']) checked @endif>
                                         ندارد
-                                        <input type="radio" name="park" value="0" @if(!$res->park) checked @endif>
+                                        <input type="radio" name="park" value="0" @if(!$res->options['park']) checked @endif>
                                         <br>
                                         اینترنت:
                                         <br>
                                         دارد
-                                        <input type="radio" name="wifi" value="1" @if($res->wifi) checked @endif>
+                                        <input type="radio" name="wifi" value="1" @if($res->options['wifi']) checked @endif>
                                         ندارد
-                                        <input type="radio" name="wifi" value="0" @if(!$res->wifi) checked @endif>
+                                        <input type="radio" name="wifi" value="0" @if(!$res->options['wifi']) checked @endif>
                                         <br>
                                         زمین بازی:
                                         <br>
                                         دارد
-                                        <input type="radio" name="game" value="1" @if($res->game) checked @endif>
+                                        <input type="radio" name="game" value="1" @if($res->options['game']) checked @endif>
                                         ندارد
-                                        <input type="radio" name="game" value="0" @if(!$res->game) checked @endif>
+                                        <input type="radio" name="game" value="0" @if(!$res->options['game']) checked @endif>
                                         <br>
                                         میز کودک:
                                         <br>
                                         دارد
-                                        <input type="radio" name="child_bench" value="1" @if($res->child_bench) checked @endif>
+                                        <input type="radio" name="child_bench" value="1" @if($res->options['child_bench']) checked @endif>
                                         ندارد
-                                        <input type="radio" name="child_bench" value="0" @if(!$res->child_bench) checked @endif>
+                                        <input type="radio" name="child_bench" value="0" @if(!$res->options['child_bench']) checked @endif>
                                         <br>
                                         موسیقی زنده :
                                         <br>
                                         دارد
-                                        <input type="radio" name="music" value="1" @if($res->music) checked @endif>
+                                        <input type="radio" name="music" value="1" @if($res->options['music']) checked @endif>
                                         ندارد
-                                        <input type="radio" name="music" value="0" @if(!$res->music) checked @endif>
+                                        <input type="radio" name="music" value="0" @if(!$res->options['music']) checked @endif>
                                         <br>
                                         تحویل رایگان :
                                         <br>
                                         دارد
-                                        <input type="radio" name="delivery" value="1" @if($res->delivery) checked @endif>
+                                        <input type="radio" name="delivery" value="1" @if($res->options['delivery']) checked @endif>
                                         ندارد
-                                        <input type="radio" name="delivery" value="0" @if(!$res->delivery) checked @endif>
+                                        <input type="radio" name="delivery" value="0" @if(!$res->options['delivery']) checked @endif>
                                         <br>
                                         کارت خوان سیار:
                                         <br>
                                         دارد
-                                        <input type="radio" name="kart" value="1" @if($res->kart) checked @endif>
+                                        <input type="radio" name="kart" value="1" @if($res->options['kart']) checked @endif>
                                         ندارد
-                                        <input type="radio" name="kart" value="0" @if(!$res->kart) checked @endif>
+                                        <input type="radio" name="kart" value="0" @if(!$res->options['kart']) checked @endif>
+                                        <br>
+                                        تصویر رستوران:
+                                        @if($res->pics)
+                                        <img src="{{ url('upload/'.$res->pics) }}" class="img-fluid col-12 col-md-6 col-lg-4">
+                                        @endif
+                                        <input type="file" name="img" class="form-control">
                                     </div>
                                     <button class="btn btn-primary" type="submit">تغییر</button>
                             </form>

@@ -15,7 +15,6 @@
 
                             <table class="table table-hover table-responsive">
                                 <tr>
-                                    <th>#</th>
                                     <th class="col-12">نام محصول</th>
                                     <th>ویرایش</th>
                                     <th>حذف</th>
@@ -23,11 +22,9 @@
 
                                 @forelse($products as $product)
                                     <tr>
-                                        @php $i++; @endphp
-                                        <td>{{ $start + $i }}</td>
                                         <td>{{ $product->title }}</td>
-                                        <td><a href="{{ url('admin/edit-product/'.$product->id) }}">ویرایش</a></td>
-                                        <td><a href="{{ url('admin/remove-product/'.$product->id) }}">حذف</a></td>
+                                        <td><a href="{{ url('manager/edit-product/'.$product->id) }}">ویرایش</a></td>
+                                        <td><a href="{{ url('manager/remove-product/'.$product->id) }}">حذف</a></td>
                                     </tr>
                                 @empty
                                     <tr>
@@ -36,10 +33,7 @@
                                 @endforelse
                             </table>
 
-                            <ul class="pagination mt-5">
-                                <li><a class="page-link" href="{{ url('admin/manage-products/'.$pages['next']) }}">صفحه بعد</a></li>
-                                <li><a class="page-link" href="{{ url('admin/manage-products/'.$pages['pre']) }}">صفحه قبل</a></li>
-                            </ul>
+                            {{ $products->links() }}
 
                         </div>
                     </div>

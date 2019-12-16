@@ -8,12 +8,15 @@ use App\Category;
 use App\Food;
 use App\Game;
 use App\Option;
+use App\Reserve;
 use App\Restaurant;
 use App\Slide;
+use App\Table;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
+use Jdf;
 
 class HomeController extends Controller
 {
@@ -126,5 +129,96 @@ class HomeController extends Controller
         $special = $res->events();
         return view('order',compact('special','slides','home','products','res'));
 	}
+
+    public function reserve($id = 1,Request $request)
+    {
+        $message = isset($request->message) ? $request->message : null;
+        $home = 1;
+        $miz  = Table::where('restaurant_id',$id)->get();
+        $reserve = Reserve::where('restaurant_id',$id)->get();
+        $out = $miz;
+        foreach ($reserve as $r)
+            if($r->time_e < time())
+                $r->delete();
+
+        $errors = (isset($request->errors)) ? unserialize($reserve->errors) : [];
+
+        return view('reserve',compact('errors','home','id','out','message'));
+    }
+
+    public function addReserve($id = 1,Request $request)
+    {
+
+        $request->time_s = $this->faTOen($request->time_s);
+        $date = explode('-',$request->time_s);
+        $time = explode(':',substr($date[2],'3'));
+        $date[2] = substr($date[2],'0','2');
+        $jdf = new Jdf($time[0],$time[1],0,$date[1],$date[2],$date[0]);
+        $time_s = $jdf->jmktime();
+        $jdf = new Jdf((int)$time[0] + (int)$request->time_e,$time[1],0,$date[1],$date[2],$date[0]);
+        $time_e = $jdf->jmktime();
+
+        $reserve = new Reserve;
+        $reserve->name   = $request->name;
+        $reserve->end_time = ($time_e <= 3) ? $time_e : 3;
+        $reserve->start_time = $time_s;
+        $reserve->phone  = $request->phone;
+        $reserve->detail = $request->detail;
+        $reserve->tables = rtrim($request->capacity,'-');
+        $reserve->restaurant_id = $request->res;
+
+        $message = null;
+        if ($this->checkTime($reserve,$id))
+        {
+            if ($reserve->save())
+                $message = "میز با موفقیت رزرو شد";
+            else {
+                $message = "متاسفانه مشکلی در رزرو میز به وجود آمده است";
+//                $errors = $reserve->errors->firstOfAll();
+//                $errors = serialize($errors);
+            }
+        } else {
+            $message = "متاسفانه میز انتخابی ، در زمان مورد نظر رزرو شده است.";
+        }
+        $home = 1;
+        return redirect(url('reserve/'.$id.'?message=').$message/*.' & errors='.$errors*/);
+    }
+
+    function faTOen($string) {
+        return strtr($string, array('۰'=>'0', '۱'=>'1', '۲'=>'2', '۳'=>'3', '۴'=>'4', '۵'=>'5', '۶'=>'6', '۷'=>'7', '۸'=>'8', '۹'=>'9', '٠'=>'0', '١'=>'1', '٢'=>'2', '٣'=>'3', '٤'=>'4', '٥'=>'5', '٦'=>'6', '٧'=>'7', '٨'=>'8', '٩'=>'9'));
+    }
+
+    public function checkTime(Reserve $reserve,$id)
+    {
+        $old  = Reserve::where('restaurant_id',$id);
+        foreach ($old as $m)
+        {
+            if (array_intersect(explode('-',$m->res_reserve_ids),explode('-',$reserve->res_reserve_ids)))
+            {
+                if ($reserve->time_e > $m->time_s && $reserve->time_s < $m->time_e)
+                    return false;
+            }
+        }
+        return true;
+    }
+
+    public function loginPage()
+    {
+        if(\Auth::check())
+            return back();
+        return view('user.login');
+    }
+
+    public function login(Request $request)
+    {
+        return User::login($request->username, $request->password);
+    }
+
+    public function logout()
+    {
+        if(\Auth::check())
+            \Auth::logoutCurrentDevice();
+        return redirect('/');
+    }
 
 }

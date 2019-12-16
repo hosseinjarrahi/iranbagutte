@@ -14,8 +14,8 @@
                     <div class="card">
                         <div class="card-body">
                             <p class="card-text">
-                            <form action="{{ url('admin/advertise/zirnevis') }}" method="post" enctype="multipart/form-data">
-                                @method(PUT)
+                            <form action="{{ url('manager/advertise/zirnevis') }}" method="post" enctype="multipart/form-data">
+                                @method('put')
                                 @csrf
                                 <input name="url" type="url" placeholder="آدرس سایت" class="mb-2 form-control">
                                 <input name="time" type="number" placeholder="چند ثانیه پس از شروع بازی" class="mb-2 form-control">
@@ -52,7 +52,7 @@
                                         </td>
                                         <td>{{ $ad->clicks }}</td>
                                         <td>
-                                            <a href="{{ url('admin/advertise/zirnevis/delete/'.$ad->id) }}">حذف</a>
+                                            <a href="{{ url('manager/advertise/zirnevis/delete/'.$ad->id) }}">حذف</a>
                                         </td>
                                     </tr>
                                 @empty

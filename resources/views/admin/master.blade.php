@@ -122,7 +122,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                 <li class="nav-item">
 
-                                    <a href="{{ url('manager/add-product') }}" class="nav-link">
+                                    <a href="{{ url('manager/add-food') }}" class="nav-link">
 
                                         <i class="fa fa-circle-o nav-icon"></i>
 
@@ -134,7 +134,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                 <li class="nav-item">
 
-                                    <a href="{{ url('manager/show-products') }}" class="nav-link">
+                                    <a href="{{ url('manager/show-foods') }}" class="nav-link">
 
                                         <i class="fa fa-circle-o nav-icon"></i>
 
@@ -210,65 +210,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <i class="fa fa-circle-o nav-icon"></i>
 
                                         <p>میزر های رزرو شده</p>
-
-                                    </a>
-
-                                </li>
-
-                            </ul>
-
-                        </li>
-
-
-                        <li class="nav-item has-treeview">
-
-                            <a href="#" class="nav-link">
-
-                                <i class="nav-icon fa fa-users"></i>
-
-                                <p>
-
-                                    مدیریت کاربران
-
-                                    <i class="right fa fa-angle-left"></i>
-
-                                </p>
-
-                            </a>
-
-                            <ul class="nav nav-treeview">
-
-                                <li class="nav-item">
-
-                                    <a href="{{ url('manager/manage-users') }}" class="nav-link">
-
-                                        <i class="fa fa-circle-o nav-icon"></i>
-
-                                        <p>کاربران عادی</p>
-
-                                    </a>
-
-                                </li>
-
-                                <li class="nav-item">
-
-                                    <a href="{{ url('manager/manage-special-users') }}" class="nav-link">
-
-                                        <i class="fa fa-circle-o nav-icon"></i>
-
-                                        <p>کاربران ویژه</p>
-
-                                    </a>
-
-                                </li>
-
-                                <li class="nav-item">
-
-                                    <a href="{{ url('manager/manage-dev-users') }}" class="nav-link">
-
-                                        <i class="fa fa-circle-o nav-icon"></i>
-
-                                        <p>بازی سازان</p>
 
                                     </a>
 
@@ -438,7 +379,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                 <li class="nav-item">
 
-                                    <a href="{{ url('manager/detail-REs') }}" class="nav-link">
+                                    <a href="{{ url('manager/detail-res') }}" class="nav-link">
 
                                         <i class="fa fa-circle-o nav-icon"></i>
 
@@ -473,6 +414,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </li>
 
                             </ul>
+
+                        </li>
+                        <li class="nav-item has-treeview">
+
+                            <a href="{{ url('manager/manage-users') }}" class="nav-link">
+
+                                <i class="nav-icon fa fa-users"></i>
+
+                                <p>
+
+                                    مدیریت کاربران
+
+                                </p>
+
+                            </a>
 
                         </li>
                         <li class="nav-item has-treeview">

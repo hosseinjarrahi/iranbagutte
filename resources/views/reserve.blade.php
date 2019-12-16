@@ -64,7 +64,7 @@
             </div>
         @endif
         <form id="myform" action="{{ url('reserve/'.$id) }}" method="post" class="form-input-holder-base form-group row p-4 p-lg-1">
-
+            @csrf
             <h2>رزرو میز</h2>
 
             <div class="form-row">

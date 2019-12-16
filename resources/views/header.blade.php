@@ -110,12 +110,15 @@
 							</div>
 
 							<li class="IB-menu-item"><a class="IB-menu-link" href="{{ url('games-page') }}">صـفحـه بازی ها</a></li>
-							{{--							<li class="IB-menu-item"><a class="IB-menu-link" href="foods">مــحـصـولات</a></li>--}}
 							<li class="IB-menu-item"><a class="IB-menu-link" href="{{ url('contact-us') }}">ارتباط با ما</a></li>
-							@if(\Session::get('User'))
+							@if(auth()->check())
 							<li class="IB-menu-item"><a class="IB-menu-link" href="{{ url('edit') }}">ویرایش اطلاعات</a></li>
 							<li class="IB-menu-item"><a class="IB-menu-link" href="{{ url('status') }}">سفارشات</a></li>
-							@endif
+                                @if(auth()->user()->hasRole('any'))
+                                    <li class="IB-menu-item text-bold text-info"><a class="IB-menu-link" href="{{ route('admin.home') }}">مدیریت</a></li>
+                                @endif
+                            @endif
+
 
 						</ul>
 
@@ -124,7 +127,7 @@
 	            </div>
 
 				<div id="nav-login">
-					@if(!\Session::get('User'))
+					@if(!auth()->check())
 						<a href="{{ url('login') }}">ورود</a>
 						<a href="{{ url('register') }}">ثبت نام</a>
 					@else
@@ -149,10 +152,14 @@
 
 							<li class="IB-menu-item"><a class="IB-menu-link" href="#">ارتباط با ما</a></li>
 							<li class="IB-menu-item"><a class="IB-menu-link" href="#">مزایای عضویت</a></li>
-							@if(\Session::get('User'))
+							@if(auth()->check())
 								<li class="IB-menu-item"><a class="IB-menu-link" href="{{ url('edit') }}">ویرایش اطلاعات</a></li>
 								<li class="IB-menu-item"><a class="IB-menu-link" href="{{ url('status') }}">سفارشات</a></li>
-							@endif
+                                @if(auth()->user()->hasRole('any'))
+                                    <li class="IB-menu-item bg-info"><a class="IB-menu-link" href="{{ url('status') }}">سفارشات</a></li>
+                                @endif
+                            @endif
+
 							<form >
 
 									<div class="input-group mr-lg-2 m-0">

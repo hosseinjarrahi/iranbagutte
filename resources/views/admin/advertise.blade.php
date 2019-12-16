@@ -16,7 +16,7 @@
                             <h5 class="card-title mb-2 text-bold">افزودن تبلیغات ثابت</h5>
 
                             <p class="card-text">
-                            <form action="{{ url('admin/advertise') }}" method="post" enctype="multipart/form-data">
+                            <form action="{{ url('manager/advertise') }}" method="post" enctype="multipart/form-data">
                                 @method("put")
                                 @csrf
                                 <input name="url" type="url" placeholder="url" class="mb-2 form-control">
@@ -57,7 +57,7 @@
                                         </td>
                                         <td>{{ $ad->clicks }}</td>
                                         <td>
-                                            <a href="{{ url('admin/advertise/delete/'.$ad->id) }}">حذف</a>
+                                            <a href="{{ url('manager/advertise/delete/'.$ad->id) }}">حذف</a>
                                         </td>
                                     </tr>
                                 @empty
