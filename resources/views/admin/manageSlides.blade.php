@@ -32,19 +32,14 @@
                     </div>
                 @endif
 
-                @if(isset($errors) || isset($message))
-                    <p><a href="{{ url('restaurant/category') }}" class="btn btn-primary" >بازگشت</a></p>
-                @endif
-
-                @unless(isset($errors) || isset($message))
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title mb-2 text-bold">افزودن اسلاید</h5>
 
                                 <p class="card-text">
-                                <form action="{{ url('admin/slides') }}" method="post" enctype="multipart/form-data">
-                                    @method(PUT)
+                                <form action="{{ url('manager/slides') }}" method="post" enctype="multipart/form-data">
+                                    @method('put')
                                     @csrf
 
                                     <select name="category" class="form-control">
@@ -72,7 +67,7 @@
                                     @forelse($slides as $slide)
                                         <tr>
                                             <td class="col-12"><img class="col-10 col-lg-3 img-fluid" src="{{ asset('upload/'.$slide->img) }}"></td>
-                                            <td><a href="{{ url('admin/slides/delete/'.$slide->id) }}">حذف</a></td>
+                                            <td><a href="{{ url('manager/slides/delete/'.$slide->id) }}">حذف</a></td>
                                         </tr>
                                     @empty
                                         <p>هیچ اسلاید یافت نشد</p>
@@ -83,7 +78,6 @@
                             </div>
                         </div>
                     </div>
-            @endunless
             <!-- /.row -->
             </div><!-- /.container-fluid -->
         </div>

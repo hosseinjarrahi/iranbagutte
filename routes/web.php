@@ -99,9 +99,9 @@ Route::group(['prefix' => 'manager','middleware' => 'auth'], function () {
     Route::patch("edit-product/{id}" , "FoodController@update");
 
 //slides
-    Route::get("slides/delete/{id}" , "SlidesController@delete");
-    Route::get("slides" , "SlidesController@show");
-    Route::put("slides" , "SlidesController@add");
+    Route::get("slides/delete/{id}" , "SlideController@delete");
+    Route::get("slides" , "SlideController@show");
+    Route::put("slides" , "SlideController@add");
 
 // games
     Route::get("games","GameBoxController@manage");
