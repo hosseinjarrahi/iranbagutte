@@ -38,11 +38,12 @@ Route::get("/status" , 'BasketController@status');
 Route::get("reserve/{id?}" , 'HomeController@reserve');
 Route::post('reserve/{id?}' , 'HomeController@addReserve');
 
-// manager login
+// manager
 Route::group(['prefix' => 'manager','middleware' => 'auth'], function () {
     Route::get("/", "ManagerController@show");
     Route::get('home', "ManagerController@home")->name('admin.home');
 //advertise
+
     Route::get('advertise', 'AdvertiseController@show');
     Route::get('advertise/delete/{id}', 'AdvertiseController@delete');
     Route::put('advertise', 'AdvertiseController@add');
@@ -51,16 +52,18 @@ Route::group(['prefix' => 'manager','middleware' => 'auth'], function () {
     Route::get('advertise/zirnevis/delete/{id}', 'AdvertiseController@zirnevisDelete');
     Route::put('advertise/zirnevis', 'AdvertiseController@zirnevisAdd');
 
-//end manager login
-
     Route::get('advertise/dynamic', 'AdvertiseController@dynamicManage');
     Route::get('advertise/dynamic/delete/{id}', 'AdvertiseController@dynamicDelete');
     Route::put('advertise/dynamic', 'AdvertiseController@dynamicAdd');
+//end advertise
+
+
 //tables
     Route::put("add/sit" , "OrderController@addSit");
     Route::get("reserved" , "OrderController@showReserved");
     Route::get("sit/setting" , "OrderController@sitSetting");
     Route::get("rm-sit/{id}" , "OrderController@rmvSit");
+
 
 
 //admin detail res
@@ -92,6 +95,7 @@ Route::group(['prefix' => 'manager','middleware' => 'auth'], function () {
     Route::get("category/delete/{id}" , "CategoryController@mainDelete");
     Route::get("category/sub/delete/{id}" , "CategoryController@subDelete");
 
+
 // product
     Route::get("add-food" , 'FoodController@show');
     Route::put("add-food" , 'FoodController@add');
@@ -112,9 +116,8 @@ Route::group(['prefix' => 'manager','middleware' => 'auth'], function () {
     Route::get("games/{id}","GameBoxController@delete");
 
 });
-
+//end manager
 Route::group(['prefix' => 'restaurant'], function () {
     Route::get('{restaurant}', 'HomeController@showRestaurant');
     Route::post('down', 'HomeController@ajax');
 });
-//end advertise
