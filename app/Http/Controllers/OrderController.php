@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Reserve;
 use App\Restaurant;
+use App\Table;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -15,29 +16,29 @@ class OrderController extends Controller
 
     public function sitSetting()
     {
-        $opt = Restaurant::find(auth()->id())->reserves;
+        $opt = Restaurant::find(auth()->id())->tables;
         return view('admin.sitSetting',compact('opt'));
     }
 
     public function addSit(Request $request)
     {
-        $sit = new Reserve();
+        $sit = new Table();
         $sit->capacity = $request->capacity;
-        $sit->resid = auth()->id;
+        $sit->restaurant_id = auth()->id();
         $sit->save();
-        return redirect('manager/sit/setting');
+        return back();
     }
 
     public function rmvSit($id)
     {
-        $sit = Reserve::find($id);
+        $sit = Table::find($id);
         $sit->delete();
         return redirect('manager/sit/setting');
     }
 
     public function showReserved()
     {
-        $reserve = Reserve::where('res','=','-1','time_s|ASC');
+        $reserve = Reserve::where('restaurant_id',auth()->id())->paginate(10);
         return view('admin.manageReserved',compact('reserve'));
     }
 }

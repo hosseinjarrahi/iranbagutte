@@ -6,18 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Restaurant extends Model
 {
-	protected $casts = [
-		'options' => 'array'
-	];
+    protected $casts = [
+        'options' => 'array'
+    ];
 
-	public function foods ()
-	{
-		return $this->hasMany(Food::class);
+    public function foods()
+    {
+        return $this->hasMany(Food::class);
     }
 
-	public function categories ()
-	{
-		return $this->hasMany(Category::class);
+    public function categories()
+    {
+        return $this->hasMany(Category::class);
     }
 
     public function slides()
@@ -33,6 +33,11 @@ class Restaurant extends Model
     public function reserves()
     {
         return $this->hasMany(Reserve::class);
+    }
+
+    public function tables()
+    {
+        return $this->hasMany(Table::class);
     }
 
 }

@@ -16,7 +16,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
-use Jdf;
+use Morilog\Jalali\Jalalian;
 
 class HomeController extends Controller
 {
@@ -137,9 +137,9 @@ class HomeController extends Controller
         $miz  = Table::where('restaurant_id',$id)->get();
         $reserve = Reserve::where('restaurant_id',$id)->get();
         $out = $miz;
-        foreach ($reserve as $r)
-            if($r->time_e < time())
-                $r->delete();
+//        foreach ($reserve as $r)
+//            if($r->time_e < time())
+//                $r->delete();
 
         $errors = (isset($request->errors)) ? unserialize($reserve->errors) : [];
 
@@ -153,14 +153,12 @@ class HomeController extends Controller
         $date = explode('-',$request->time_s);
         $time = explode(':',substr($date[2],'3'));
         $date[2] = substr($date[2],'0','2');
-        $jdf = new Jdf($time[0],$time[1],0,$date[1],$date[2],$date[0]);
-        $time_s = $jdf->jmktime();
-        $jdf = new Jdf((int)$time[0] + (int)$request->time_e,$time[1],0,$date[1],$date[2],$date[0]);
-        $time_e = $jdf->jmktime();
+        $time_s = new Jalalian($date[0], $date[1], $date[2],$time[0],$time[1]);
+        $time_e = new Jalalian($date[0], $date[1], $date[2],(int)$time[0] + (int)$request->time_e,$time[1]);
 
         $reserve = new Reserve;
         $reserve->name   = $request->name;
-        $reserve->end_time = ($time_e <= 3) ? $time_e : 3;
+        $reserve->end_time = $time_e;
         $reserve->start_time = $time_s;
         $reserve->phone  = $request->phone;
         $reserve->detail = $request->detail;
@@ -193,7 +191,7 @@ class HomeController extends Controller
         $old  = Reserve::where('restaurant_id',$id);
         foreach ($old as $m)
         {
-            if (array_intersect(explode('-',$m->res_reserve_ids),explode('-',$reserve->res_reserve_ids)))
+            if (array_intersect(explode('-',$m->tables),explode('-',$reserve->tables)))
             {
                 if ($reserve->time_e > $m->time_s && $reserve->time_s < $m->time_e)
                     return false;

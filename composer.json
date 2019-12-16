@@ -10,9 +10,9 @@
     "require": {
         "php": "^7.2",
         "fideloper/proxy": "^4.0",
-        "jalalidate/jdf": "dev-master",
         "laravel/framework": "^6.2",
-        "laravel/tinker": "^1.0"
+        "laravel/tinker": "^1.0",
+        "morilog/jalali": "3.*"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.6",

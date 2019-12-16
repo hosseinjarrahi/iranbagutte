@@ -13,14 +13,15 @@
                         <div class="card-body">
                             <form method="post" action="{{ url('manager/add/sit') }}" enctype="multipart/form-data">
                                 @method('put')
+                                @csrf
                                 <div class="form-group">
                                     <label for="email">میز چند نفره:<b class="text-danger">{{ $errors->name ?? '' }}</b></label>
-                                    <input class="form-control" type="number" min="0" max="20" name="count" id=""><br>
+                                    <input class="form-control" type="number" min="0" max="20" name="capacity" id=""><br>
                                 </div>
-                                <div class="form-group">
-                                    <label for="email">هزینه میز:<b class="text-danger">{{ $errors->price ?? '' }}</b></label>
-                                        <input class="form-control" type="number" name="price" id=""><br>
-                                </div>
+{{--                                <div class="form-group">--}}
+{{--                                    <label for="email">هزینه میز:<b class="text-danger">{{ $errors->price ?? '' }}</b></label>--}}
+{{--                                        <input class="form-control" type="number" name="price" id=""><br>--}}
+{{--                                </div>--}}
                                 <button type="submit" name="add_product" class="btn btn-primary">افزودن محصول</button>
                             </form>
                         </div>
