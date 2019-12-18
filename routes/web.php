@@ -121,3 +121,7 @@ Route::group(['prefix' => 'restaurant'], function () {
     Route::get('{restaurant}', 'HomeController@showRestaurant');
     Route::post('down', 'HomeController@ajax');
 });
+
+Route::get('/test',function(){
+    dd(json_encode(\App\Food::all()));
+});

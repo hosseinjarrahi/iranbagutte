@@ -5,9 +5,6 @@
 @endsection
 
 @section('content')
-    @inject('User','App\Models')
-    @inject('Res','App\Models')
-
     <div class="content">
         <div class="container-fluid">
             <div class="row">
@@ -25,33 +22,29 @@
                                     <th>حذف</th>
                                 </tr>
                                 @foreach($allPay as $itemPay)
-                                    @php
-                                    $userId=$itemPay->userid;
-                                    $user=$User::findById($userId)[0];
-                                    @endphp
                                     <tr>
                                         <td>{{ $itemPay->id }}</td>
-                                        <td>{{ $user->lname }}</td>
+                                        <td>{{ $itemPay->user->name }}</td>
                                         <td>
-                                            @foreach(unserialize($itemPay->products) as $product)
-                                                -{{$product['name']}}-
-
+                                            @foreach(json_decode($itemPay->products) as $product)
+                                                -{{$product->title}}-
                                             @endforeach
                                         </td>
                                         <td>
                                             @php
                                             $price=0;
                                             @endphp
-                                            @foreach(unserialize($itemPay->products) as $product)
-                                                @php($price+=$product['price']*$product['count'])
+                                            @foreach(json_decode($itemPay->products) as $product)
+                                                @php($price+=$product->price*($product->count ?? 1))
                                             @endforeach
                                             {{$price}}
                                         </td>
-                                        <th><a href="{{ url('admin/detail-pay/'.$itemPay->id) }}"> جزئیات بیشتر</a></th>
+                                        <th><a href="{{ url('manager/detail-pay/'.$itemPay->id) }}"> جزئیات بیشتر</a></th>
 
-                                        <td><a href="{{ url('admin/remove-pay/'.$itemPay->id) }}">حذف</a></td>
+                                        <td><a href="{{ url('manager/remove-pay/'.$itemPay->id) }}">حذف</a></td>
                                     </tr>
                                 @endforeach
+                                {{ $allPay->links() }}
                             </table>
                         </div>
                     </div>
