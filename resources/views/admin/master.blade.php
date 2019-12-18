@@ -101,382 +101,392 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <!-- Add icons to the links using the .nav-icon class
 
                              with font-awesome or any other icon font library -->
+                        @if(auth()->user()->hasRole('posts'))
+                            <li class="nav-item has-treeview">
 
-                        <li class="nav-item has-treeview">
+                                <a href="#" class="nav-link">
 
-                            <a href="#" class="nav-link">
+                                    <i class="nav-icon fa fa-edit"></i>
 
-                                <i class="nav-icon fa fa-edit"></i>
+                                    <p>
 
-                                <p>
+                                        مدیریت پست ها
 
-                                    مدیریت پست ها
+                                        <i class="right fa fa-angle-left"></i>
 
-                                    <i class="right fa fa-angle-left"></i>
+                                    </p>
 
-                                </p>
+                                </a>
 
-                            </a>
+                                <ul class="nav nav-treeview">
 
-                            <ul class="nav nav-treeview">
+                                    <li class="nav-item">
 
-                                <li class="nav-item">
+                                        <a href="{{ url('manager/add-food') }}" class="nav-link">
 
-                                    <a href="{{ url('manager/add-food') }}" class="nav-link">
+                                            <i class="fa fa-circle-o nav-icon"></i>
 
-                                        <i class="fa fa-circle-o nav-icon"></i>
+                                            <p>افزودن محصول</p>
 
-                                        <p>افزودن محصول</p>
+                                        </a>
+
+                                    </li>
+
+                                    <li class="nav-item">
+
+                                        <a href="{{ url('manager/show-foods') }}" class="nav-link">
+
+                                            <i class="fa fa-circle-o nav-icon"></i>
+
+                                            <p>مشاهده محصولات</p>
+
+                                        </a>
+
+                                    </li>
+
+                                    <li class="nav-item">
+
+                                        <a href="{{ url('manager/category') }}" class="nav-link">
+
+                                            <i class="fa fa-circle-o nav-icon"></i>
+
+                                            <p>دسته بندی ها</p>
+
+                                        </a>
+
+                                    </li>
+
+                                    <li class="nav-item">
+
+                                        <a href="{{ url('manager/slides') }}" class="nav-link">
+
+                                            <i class="fa fa-circle-o nav-icon"></i>
+
+                                            <p>اسلایدر</p>
+
+                                        </a>
+
+                                    </li>
+
+                                </ul>
+
+                            </li>
+
+                        @endif
+                        @if(auth()->user()->hasRole('tables'))
+                            <li class="nav-item has-treeview">
+
+                                <a href="#" class="nav-link">
+
+                                    <i class="nav-icon fa fa-table"></i>
+
+                                    <p>
+
+                                        مدیریت میزها
+
+                                        <i class="right fa fa-angle-left"></i>
+
+                                    </p>
+
+                                </a>
+
+                                <ul class="nav nav-treeview">
+
+                                    <li class="nav-item">
+
+                                        <a href="{{ url('manager/sit/setting') }}" class="nav-link">
+
+                                            <i class="fa fa-circle-o nav-icon"></i>
+
+                                            <p>تنظیمات</p>
+
+                                        </a>
+
+                                    </li>
+
+                                    <li class="nav-item">
+
+                                        <a href="{{ url('manager/reserved') }}" class="nav-link">
+
+                                            <i class="fa fa-circle-o nav-icon"></i>
+
+                                            <p>میزر های رزرو شده</p>
+
+                                        </a>
+
+                                    </li>
+
+                                </ul>
+
+                            </li>
+                        @endif
+                        @if(auth()->user()->hasRole('payments'))
+                            <li class="nav-item has-treeview">
+
+                                <a href="#" class="nav-link">
+
+                                    <i class="nav-icon fa fa-shopping-bag"></i>
+
+                                    <p>
+
+                                        خرید ها
+
+                                        <i class="right fa fa-angle-left"></i>
+
+                                    </p>
+
+                                </a>
+
+                                <ul class="nav nav-treeview">
+
+                                    <li class="nav-item">
+
+                                        <a href="{{ url('manager/manage-pays') }}" class="nav-link">
+
+                                            <i class="fa fa-circle-o nav-icon"></i>
+
+                                            <p>لیست خرید</p>
+
+                                        </a>
+
+                                    </li>
+
+                                </ul>
+
+                            </li>
+                        @endif
+                        @if(auth()->user()->hasRole('advertise'))
+                            <li class="nav-item has-treeview">
+
+                                <a href="{{url('manager/advertise')}}" class="nav-link">
+
+                                    <i class="nav-icon fa fa-area-chart"></i>
+
+                                    <p>
+
+                                        تبلیغات
+
+                                        <i class="right fa fa-angle-left"></i>
+
+                                    </p>
+
+                                </a>
+
+                                <ul class="nav nav-treeview">
+
+                                    <li class="nav-item">
+
+                                        <a href="{{ url('manager/advertise') }}" class="nav-link">
+
+                                            <i class="fa fa-circle-o nav-icon"></i>
+
+                                            <p>ثابت</p>
+
+                                        </a>
+
+                                    </li>
+
+                                    <li class="nav-item">
+
+                                        <a href="{{ url('manager/advertise/dynamic') }}" class="nav-link">
+
+                                            <i class="fa fa-circle-o nav-icon"></i>
+
+                                            <p>ابتدای بازی</p>
+
+                                        </a>
+
+                                    </li>
+                                    <li class="nav-item">
+
+                                        <a href="{{ url('manager/advertise/zirnevis') }}" class="nav-link">
+
+                                            <i class="fa fa-circle-o nav-icon"></i>
+
+                                            <p>تبلیغات زیرنویس</p>
+
+                                        </a>
+
+                                    </li>
+
+                                </ul>
+
+                            </li>
+
+                        @endif
+                        @if(auth()->user()->hasRole('games'))
+                            <li class="nav-item has-treeview">
+
+                                <a href="#" class="nav-link">
+
+                                    <i class="nav-icon fa fa-gamepad"></i>
+
+                                    <p>
+
+                                        بازی ها
+
+                                        <i class="right fa fa-angle-left"></i>
+
+                                    </p>
+
+                                </a>
+
+                                <ul class="nav nav-treeview">
+
+                                    <li class="nav-item">
+
+                                        <a href="{{ url('manager/games') }}" class="nav-link">
+
+                                            <i class="fa fa-circle-o nav-icon"></i>
+
+                                            <p>مدیریت بازی ها</p>
+
+                                        </a>
+
+                                    </li>
+                                    @if(auth()->user()->hasRole('gameCheck'))
+                                        <li class="nav-item">
+
+                                            <a href="{{ url('manager/users-games') }}" class="nav-link">
+
+                                                <i class="fa fa-circle-o nav-icon"></i>
+
+                                                <p>بازی های ارسالی</p>
+
+                                            </a>
+
+                                        </li>
+                                    @endif
+                                </ul>
+
+                            </li>
+                        @endif
+                        @if(auth()->user()->hasRole('settings'))
+                            <li class="nav-item has-treeview">
+
+                                <a href="#" class="nav-link">
+
+                                    <i class="nav-icon fa fa-gears"></i>
+
+                                    <p>
+
+                                        تنظیمات سایت
+
+                                        <i class="right fa fa-angle-left"></i>
+
+                                    </p>
+
+                                </a>
+                                <ul class="nav nav-treeview">
+
+                                    <li class="nav-item">
+
+                                        <a href="{{ url('manager/detail-res') }}" class="nav-link">
+
+                                            <i class="fa fa-circle-o nav-icon"></i>
+
+                                            <p>امکانات رستوران</p>
+
+                                        </a>
+
+                                    </li>
+                                    @if(auth()->user()->hasRole('adminSetting'))
+                                        <li class="nav-item">
+
+                                            <a href="{{ url('manager/about-us') }}" class="nav-link">
+
+                                                <i class="fa fa-circle-o nav-icon"></i>
+
+                                                <p>درباره ما</p>
+
+                                            </a>
+
+                                        </li>
+
+                                        <li class="nav-item">
+
+                                            <a href="{{ url('manager/benefits') }}" class="nav-link">
+
+                                                <i class="fa fa-circle-o nav-icon"></i>
+
+                                                <p>مزایای عضویت</p>
+
+                                            </a>
+
+                                        </li>
+                                    @endif
+                                </ul>
+
+                            </li>
+                            @endif
+
+                            @if(auth()->user()->hasRole('users'))
+
+                                <li class="nav-item has-treeview">
+
+                                    <a href="{{ url('manager/manage-users') }}" class="nav-link">
+
+                                        <i class="nav-icon fa fa-users"></i>
+
+                                        <p>
+
+                                            مدیریت کاربران
+
+                                        </p>
 
                                     </a>
 
                                 </li>
+                            @endif
+                            @if(auth()->user()->hasRole('chat'))
+                            <li class="nav-item has-treeview">
 
-                                <li class="nav-item">
+                                <a href="http://go.iranbaguette.com/admin" class="nav-link">
 
-                                    <a href="{{ url('manager/show-foods') }}" class="nav-link">
+                                    <i class="nav-icon fa fa-comments"></i>
 
-                                        <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>
 
-                                        <p>مشاهده محصولات</p>
+                                        پنل مدیریت چت آنلاین
 
-                                    </a>
+                                    </p>
 
-                                </li>
+                                </a>
 
-                                <li class="nav-item">
+                            </li>
+                            @endif
+                            @if(auth()->user()->hasRole('comments'))
+                            <li class="nav-item">
 
-                                    <a href="{{ url('manager/category') }}" class="nav-link">
+                                <a href="#" class="nav-link">
 
-                                        <i class="fa fa-circle-o nav-icon"></i>
+                                    <i class="nav-icon fa fa-comment"></i>
 
-                                        <p>دسته بندی ها</p>
+                                    <p>
 
-                                    </a>
+                                        نظرات
 
-                                </li>
+                                    </p>
 
-                                <li class="nav-item">
+                                </a>
 
-                                    <a href="{{ url('manager/slides') }}" class="nav-link">
+                            </li>
+                            @endif
+                            <li class="nav-item">
 
-                                        <i class="fa fa-circle-o nav-icon"></i>
+                                <a href="#" class="nav-link">
 
-                                        <p>اسلایدر</p>
+                                    <i class="nav-icon fa fa-th"></i>
 
-                                    </a>
+                                    <p>
 
-                                </li>
+                                        مشاهده سایت
 
-                            </ul>
+                                    </p>
 
-                        </li>
+                                </a>
 
-
-                        <li class="nav-item has-treeview">
-
-                            <a href="#" class="nav-link">
-
-                                <i class="nav-icon fa fa-table"></i>
-
-                                <p>
-
-                                    مدیریت میزها
-
-                                    <i class="right fa fa-angle-left"></i>
-
-                                </p>
-
-                            </a>
-
-                            <ul class="nav nav-treeview">
-
-                                <li class="nav-item">
-
-                                    <a href="{{ url('manager/sit/setting') }}" class="nav-link">
-
-                                        <i class="fa fa-circle-o nav-icon"></i>
-
-                                        <p>تنظیمات</p>
-
-                                    </a>
-
-                                </li>
-
-                                <li class="nav-item">
-
-                                    <a href="{{ url('manager/reserved') }}" class="nav-link">
-
-                                        <i class="fa fa-circle-o nav-icon"></i>
-
-                                        <p>میزر های رزرو شده</p>
-
-                                    </a>
-
-                                </li>
-
-                            </ul>
-
-                        </li>
-
-                        <li class="nav-item has-treeview">
-
-                            <a href="#" class="nav-link">
-
-                                <i class="nav-icon fa fa-shopping-bag"></i>
-
-                                <p>
-
-                                    خرید ها
-
-                                    <i class="right fa fa-angle-left"></i>
-
-                                </p>
-
-                            </a>
-
-                            <ul class="nav nav-treeview">
-
-                                <li class="nav-item">
-
-                                    <a href="{{ url('manager/manage-pays') }}" class="nav-link">
-
-                                        <i class="fa fa-circle-o nav-icon"></i>
-
-                                        <p>لیست خرید</p>
-
-                                    </a>
-
-                                </li>
-
-                            </ul>
-
-                        </li>
-
-
-                        <li class="nav-item has-treeview">
-
-                            <a href="{{url('manager/advertise')}}" class="nav-link">
-
-                                <i class="nav-icon fa fa-area-chart"></i>
-
-                                <p>
-
-                                    تبلیغات
-
-                                    <i class="right fa fa-angle-left"></i>
-
-                                </p>
-
-                            </a>
-
-                            <ul class="nav nav-treeview">
-
-                                <li class="nav-item">
-
-                                    <a href="{{ url('manager/advertise') }}" class="nav-link">
-
-                                        <i class="fa fa-circle-o nav-icon"></i>
-
-                                        <p>ثابت</p>
-
-                                    </a>
-
-                                </li>
-
-                                <li class="nav-item">
-
-                                    <a href="{{ url('manager/advertise/dynamic') }}" class="nav-link">
-
-                                        <i class="fa fa-circle-o nav-icon"></i>
-
-                                        <p>ابتدای بازی</p>
-
-                                    </a>
-
-                                </li>
-                                <li class="nav-item">
-
-                                    <a href="{{ url('manager/advertise/zirnevis') }}" class="nav-link">
-
-                                        <i class="fa fa-circle-o nav-icon"></i>
-
-                                        <p>تبلیغات زیرنویس</p>
-
-                                    </a>
-
-                                </li>
-
-                            </ul>
-
-                        </li>
-
-
-                        <li class="nav-item has-treeview">
-
-                            <a href="#" class="nav-link">
-
-                                <i class="nav-icon fa fa-gamepad"></i>
-
-                                <p>
-
-                                    بازی ها
-
-                                    <i class="right fa fa-angle-left"></i>
-
-                                </p>
-
-                            </a>
-
-                            <ul class="nav nav-treeview">
-
-                                <li class="nav-item">
-
-                                    <a href="{{ url('manager/games') }}" class="nav-link">
-
-                                        <i class="fa fa-circle-o nav-icon"></i>
-
-                                        <p>مدیریت بازی ها</p>
-
-                                    </a>
-
-                                </li>
-
-                                <li class="nav-item">
-
-                                    <a href="{{ url('manager/users-games') }}" class="nav-link">
-
-                                        <i class="fa fa-circle-o nav-icon"></i>
-
-                                        <p>بازی های ارسالی</p>
-
-                                    </a>
-
-                                </li>
-
-                            </ul>
-
-                        </li>
-
-
-                        <li class="nav-item has-treeview">
-
-                            <a href="#" class="nav-link">
-
-                                <i class="nav-icon fa fa-gears"></i>
-
-                                <p>
-
-                                    تنظیمات سایت
-
-                                    <i class="right fa fa-angle-left"></i>
-
-                                </p>
-
-                            </a>
-
-                            <ul class="nav nav-treeview">
-
-                                <li class="nav-item">
-
-                                    <a href="{{ url('manager/detail-res') }}" class="nav-link">
-
-                                        <i class="fa fa-circle-o nav-icon"></i>
-
-                                        <p>امکانات رستوران</p>
-
-                                    </a>
-
-                                </li>
-
-                                <li class="nav-item">
-
-                                    <a href="{{ url('manager/about-us') }}" class="nav-link">
-
-                                        <i class="fa fa-circle-o nav-icon"></i>
-
-                                        <p>درباره ما</p>
-
-                                    </a>
-
-                                </li>
-
-                                <li class="nav-item">
-
-                                    <a href="{{ url('manager/benefits') }}" class="nav-link">
-
-                                        <i class="fa fa-circle-o nav-icon"></i>
-
-                                        <p>مزایای عضویت</p>
-
-                                    </a>
-
-                                </li>
-
-                            </ul>
-
-                        </li>
-                        <li class="nav-item has-treeview">
-
-                            <a href="{{ url('manager/manage-users') }}" class="nav-link">
-
-                                <i class="nav-icon fa fa-users"></i>
-
-                                <p>
-
-                                    مدیریت کاربران
-
-                                </p>
-
-                            </a>
-
-                        </li>
-                        <li class="nav-item has-treeview">
-
-                            <a href="http://go.iranbaguette.com/admin" class="nav-link">
-
-                                <i class="nav-icon fa fa-comments"></i>
-
-                                <p>
-
-                                    پنل مدیریت چت آنلاین
-
-                                </p>
-
-                            </a>
-
-                        </li>
-                        <li class="nav-item">
-
-                            <a href="#" class="nav-link">
-
-                                <i class="nav-icon fa fa-comment"></i>
-
-                                <p>
-
-                                    نظرات
-
-                                </p>
-
-                            </a>
-
-                        </li>
-
-                        <li class="nav-item">
-
-                            <a href="#" class="nav-link">
-
-                                <i class="nav-icon fa fa-th"></i>
-
-                                <p>
-
-                                    مشاهده سایت
-
-                                </p>
-
-                            </a>
-
-                        </li>
+                            </li>
 
                     </ul>
 

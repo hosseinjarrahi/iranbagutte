@@ -40,4 +40,8 @@ class Restaurant extends Model
         return $this->hasMany(Table::class);
     }
 
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
+    }
 }

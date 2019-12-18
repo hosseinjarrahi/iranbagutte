@@ -22,6 +22,8 @@ class GameController extends Controller
         $game->part = $request->part;
         $game->user_id = auth()->id();
         $game->status = 0;
+        if (auth()->user()->hasRole('admin') || auth()->user()->hasRole('checkGame'))
+            $game->status = 1;
 
         $file = $request->file('poster');
         if ($request->hasFile('poster')) {
@@ -34,17 +36,17 @@ class GameController extends Controller
         if ($request->hasFile('full')) {
             $path = random_int(0, 99999) . time() . '_.' . $request->full->getClientOriginalExtension();
             $file->move(public_path('games'), $path);
-            $game->full = 'games/'.$path;
+            $game->full = 'games/' . $path;
         }
 
         $file = $request->file('file');
         if ($request->hasFile('file')) {
             $path = random_int(0, 99999) . time();
-            $file->move(public_path('games'), $path.'.' . $request->file->getClientOriginalExtension());
-            $game->file = 'games/'.$path;
+            $file->move(public_path('games'), $path . '.' . $request->file->getClientOriginalExtension());
+            $game->file = 'games/' . $path;
         }
         if ($game->save()) {
-            $file = public_path($game->file.'.zip');
+            $file = public_path($game->file . '.zip');
             $zip = new ZipArchive;
             $res = $zip->open($file);
             if ($res === TRUE) {
@@ -63,7 +65,7 @@ class GameController extends Controller
         $id = (int)$id;
         $game = Game::find($id);
         $this->deleteFile('upload/' . $game->poster);
-        $this->deleteFile($game->file.'.zip');
+        $this->deleteFile($game->file . '.zip');
         $this->deleteFile($game->file);
         $this->deleteFile($game->full);
         $game->delete();

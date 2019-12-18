@@ -186,7 +186,7 @@ class HomeController extends Controller
 
     public function checkTime(Reserve $reserve, $id)
     {
-        $old = Reserve::where('restaurant_id', $id);
+        $old = Reserve::where('restaurant_id', $id)->get();
         foreach ($old as $m) {
             if (array_intersect(explode('-', $m->tables), explode('-', $reserve->tables))) {
                 if ($reserve->time_e > $m->time_s && $reserve->time_s < $m->time_e)

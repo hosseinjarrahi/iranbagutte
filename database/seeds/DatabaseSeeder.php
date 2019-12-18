@@ -6,6 +6,7 @@ use App\Category;
 use App\Food;
 use App\Game;
 use App\Option;
+use App\Payment;
 use App\Restaurant;
 use App\Role;
 use App\Slide;
@@ -31,6 +32,7 @@ class DatabaseSeeder extends Seeder
     	Game::truncate();
     	User::truncate();
     	Role::truncate();
+    	Payment::truncate();
 	    $this->call(BannersTableSeeder::class);
 	    $this->call(RolesTableSeeder::class);
 	    $this->call(UsersTableSeeder::class);
@@ -41,5 +43,6 @@ class DatabaseSeeder extends Seeder
 	    $this->call(RestaurantsTableSeeder::class);
 	    $this->call(GamesTableSeeder::class);
 	    $this->call(BuycodesTableSeeder::class);
+	    $this->call(PaymentsTableSeeder::class);
     }
 }
