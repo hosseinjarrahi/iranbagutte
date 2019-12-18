@@ -15,7 +15,6 @@ use App\Table;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Support\Collection;
 use Morilog\Jalali\Jalalian;
 
 class HomeController extends Controller
