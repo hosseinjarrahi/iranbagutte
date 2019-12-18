@@ -40,8 +40,7 @@ Route::post('reserve/{id?}' , 'HomeController@addReserve');
 
 // manager
 Route::group(['prefix' => 'manager','middleware' => 'auth'], function () {
-    Route::get("/", "ManagerController@show");
-    Route::get('home', "ManagerController@home")->name('admin.home');
+    Route::get("/", "ManagerController@show")->name('admin.home');
 //advertise
 
     Route::get('advertise', 'AdvertiseController@show');
