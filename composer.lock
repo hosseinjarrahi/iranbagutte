@@ -4,8 +4,70 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ac7f7dc089081a2695743b6b602552fe",
+    "content-hash": "786e3cce0df4878395de7ea8cc0fc916",
     "packages": [
+        {
+            "name": "beberlei/assert",
+            "version": "v3.2.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/beberlei/assert.git",
+                "reference": "99508be011753690fe108ded450f5caaae180cfa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/beberlei/assert/zipball/99508be011753690fe108ded450f5caaae180cfa",
+                "reference": "99508be011753690fe108ded450f5caaae180cfa",
+                "shasum": ""
+            },
+            "require": {
+                "ext-ctype": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "ext-simplexml": "*",
+                "php": "^7"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "*",
+                "phpstan/phpstan-shim": "*",
+                "phpunit/phpunit": ">=6.0.0 <8"
+            },
+            "suggest": {
+                "ext-intl": "Needed to allow Assertion::count(), Assertion::isCountable(), Assertion::minCount(), and Assertion::maxCount() to operate on ResourceBundles"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Assert\\": "lib/Assert"
+                },
+                "files": [
+                    "lib/Assert/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Richard Quadling",
+                    "email": "rquadling@gmail.com",
+                    "role": "Collaborator"
+                }
+            ],
+            "description": "Thin assertion library for input validation in business models.",
+            "keywords": [
+                "assert",
+                "assertion",
+                "validation"
+            ],
+            "time": "2019-10-10T10:33:57+00:00"
+        },
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "v0.1.1",
@@ -469,46 +531,6 @@
             "time": "2018-09-29T18:48:56+00:00"
         },
         {
-            "name": "jalalidate/jdf",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/alinasrin/jdf.git",
-                "reference": "6262d978935665c51196a92a13105432f9889822"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/alinasrin/jdf/zipball/6262d978935665c51196a92a13105432f9889822",
-                "reference": "6262d978935665c51196a92a13105432f9889822",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.2"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "Jdf.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "alinasrin",
-                    "homepage": "https://github.com/alinasrin"
-                }
-            ],
-            "description": "This class can return perisan date (jalaly or iranian date) in php",
-            "homepage": "http://jdf.scr.ir",
-            "time": "2018-06-25T14:07:44+00:00"
-        },
-        {
             "name": "laravel/framework",
             "version": "v6.7.0",
             "source": {
@@ -881,6 +903,61 @@
                 "psr-3"
             ],
             "time": "2019-11-13T10:27:43+00:00"
+        },
+        {
+            "name": "morilog/jalali",
+            "version": "v3.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/morilog/jalali.git",
+                "reference": "ae040b5659c04933f8d7423f1fabaa1dd168d62b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/morilog/jalali/zipball/ae040b5659c04933f8d7423f1fabaa1dd168d62b",
+                "reference": "ae040b5659c04933f8d7423f1fabaa1dd168d62b",
+                "shasum": ""
+            },
+            "require": {
+                "beberlei/assert": "3.*",
+                "nesbot/carbon": "^1.21 || ^2.0",
+                "php": "^7.0 | ^7.1 | ^7.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Morilog\\Jalali\\": "src"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Milad Rey",
+                    "email": "miladr@gmail.com"
+                },
+                {
+                    "name": "Morteza Parvini",
+                    "email": "m.parvini@outlook.com"
+                }
+            ],
+            "description": "This Package helps developers to easily work with Jalali (Shamsi or Iranian) dates in PHP applications, based on Jalali (Shamsi) DateTime class.",
+            "keywords": [
+                "Jalali",
+                "date",
+                "datetime",
+                "laravel",
+                "morilog"
+            ],
+            "time": "2019-12-16T06:24:41+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -5932,9 +6009,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "jalalidate/jdf": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

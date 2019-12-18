@@ -5,8 +5,7 @@
 @endsection
 
 @section('content')
-@inject('ResReserve','App\Models')
-@inject('jdf','App\Core')
+@inject('table','App\Table')
     <div class="content">
         <div class="container-fluid">
             <div class="row">
@@ -33,7 +32,7 @@
                                         $exp = ($exp === "") ? $r->res_reserve_ids : $exp;
                                         foreach ($exp as $e)
                                         {
-                                            $s = $ResReserve::findById($e);
+                                            $s = $table::find($e);
                                             if(empty($s))
                                                 continue;
                                             $miz[] = ($s[0])->capacity;
@@ -46,8 +45,8 @@
                                         <td>{!! $miz ?? '<span class="text-danger">شما میز را حذف کردید</span>' !!}</td>
                                         <td>{{ $r->name }}</td>
                                         <td>{{ $r->phone }}</td>
-                                        <td>{{ $jdf::jdate('y-m-d G:i',$r->time_s) }}</td>
-                                        <td>{{ $jdf::jdate('y-m-d G:i',$r->time_e) }}</td>
+                                        <td>{{ $r->start_time }}</td>
+                                        <td>{{ $r->end_time }}</td>
                                         <td>{{ $r->detail }}</td>
                                     </tr>
                                 @empty
@@ -57,10 +56,7 @@
                                 @endforelse
                             </table>
 
-{{--                            <ul class="pagination mt-5">--}}
-{{--                                <li><a class="page-link" href="{{ url('admin/manage-products/'.$pages['next']) }}">صفحه بعد</a></li>--}}
-{{--                                <li><a class="page-link" href="{{ url('admin/manage-products/'.$pages['pre']) }}">صفحه قبل</a></li>--}}
-{{--                            </ul>--}}
+                            {{ $reserve->links() }}
 
                         </div>
                     </div>

@@ -63,7 +63,7 @@
 					<div class="row">
 
 						<div class="position-relative basket-top">
-							<span class="position-absolute badge badge-success" style="top: 30%;right: 15px;font-size: 0.8rem">@php echo Cookie::get('count'); @endphp</span>
+							<span class="position-absolute badge badge-success" style="top: 30%;right: 15px;font-size: 0.8rem">@php echo session('count'); @endphp</span>
 							<a href="{{ url('basket') }}" class="mr-5"><img src="{{ asset('img/shopping-bag.png') }}" class="img-fluid" style="height: 35px;"></a>
 						</div>
 
