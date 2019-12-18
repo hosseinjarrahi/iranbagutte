@@ -48,11 +48,11 @@ Route::group(['prefix' => 'manager','middleware' => 'auth'], function () {
     Route::put('advertise', 'AdvertiseController@add');
 
     Route::get('advertise/zirnevis', 'AdvertiseController@zirnevisManage');
-    Route::get('advertise/zirnevis/delete/{id}', 'AdvertiseController@zirnevisDelete');
+    Route::get('advertise/zirnevis/delete/{id}', 'AdvertiseController@delete');
     Route::put('advertise/zirnevis', 'AdvertiseController@zirnevisAdd');
 
     Route::get('advertise/dynamic', 'AdvertiseController@dynamicManage');
-    Route::get('advertise/dynamic/delete/{id}', 'AdvertiseController@dynamicDelete');
+    Route::get('advertise/dynamic/delete/{id}', 'AdvertiseController@delete');
     Route::put('advertise/dynamic', 'AdvertiseController@dynamicAdd');
 //tables
     Route::put("add/sit" , "OrderController@addSit");
@@ -104,9 +104,9 @@ Route::group(['prefix' => 'manager','middleware' => 'auth'], function () {
     Route::put("slides" , "SlideController@add");
 
 // games
-    Route::get("games","GameBoxController@manage");
-    Route::put("games","GameBoxController@add");
-    Route::get("games/{id}","GameBoxController@delete");
+    Route::get("games","GameController@manage");
+    Route::put("games","GameController@add");
+    Route::get("games/{id}","GameController@delete");
 
 });
 

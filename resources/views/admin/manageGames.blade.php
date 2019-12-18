@@ -16,8 +16,8 @@
                             <h5 class="card-title mb-2 text-bold">افزودن بازی</h5>
 
                             <p class="card-text">
-                            <form action="{{ url('admin/games') }}" method="post" enctype="multipart/form-data">
-                                @method(PUT)
+                            <form action="{{ url('manager/games') }}" method="post" enctype="multipart/form-data">
+                                @method('put')
                                 @csrf
                                 <div class="form-group">
                                     <input name="name" type="text" placeholder="نام بازی" class="mb-2 form-control">
@@ -63,12 +63,13 @@
                                 @forelse($games as $game)
                                     <tr>
                                         <td>{{ $game->name }}</td>
-                                        <td><a href="{{ url('admin/games/'.$game->id) }}">حذف</a></td>
+                                        <td><a href="{{ url('manager/games/'.$game->id) }}">حذف</a></td>
                                     </tr>
                                 @empty
                                     هیچ بازی پیدا نشد
                                 @endforelse
                             </table>
+                            {{ $games->links() }}
                             </p>
 
                         </div>

@@ -55,7 +55,7 @@ class AdvertiseController extends Controller
         $ad->time = $request->time;
         $ad->url = $request->url;
         $file = $request->file('img');
-        if ( $request->hasFile('img') && !is_null($request->img) ) {
+        if ( $request->hasFile('imgdynamicDelete') && !is_null($request->img) ) {
             $path = random_int(0 , 99999).time().'_.'.$request->img->getClientOriginalExtension();
             $file->move(public_path('upload') , $path);
             $ad->img = $path;
