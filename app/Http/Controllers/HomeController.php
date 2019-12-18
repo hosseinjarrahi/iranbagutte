@@ -15,8 +15,6 @@ use App\Table;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Support\Collection;
-use Jdf;
 
 class HomeController extends Controller
 {

@@ -39,13 +39,12 @@ class GameController extends Controller
 
         $file = $request->file('file');
         if ($request->hasFile('file')) {
-            $path = random_int(0, 99999) . time() . '_.' . $request->full->getClientOriginalExtension();
-            $file->move(public_path('games'), $path);
-            $game->file = 'gmaes/'.$path;
+            $path = random_int(0, 99999) . time();
+            $file->move(public_path('games'), $path.'.' . $request->file->getClientOriginalExtension());
+            $game->file = 'games/'.$path;
         }
-
         if ($game->save()) {
-            $file = public_path($game->file);
+            $file = public_path($game->file.'.zip');
             $zip = new ZipArchive;
             $res = $zip->open($file);
             if ($res === TRUE) {
@@ -64,6 +63,7 @@ class GameController extends Controller
         $id = (int)$id;
         $game = Game::find($id);
         $this->deleteFile('upload/' . $game->poster);
+        $this->deleteFile($game->file.'.zip');
         $this->deleteFile($game->file);
         $this->deleteFile($game->full);
         $game->delete();
