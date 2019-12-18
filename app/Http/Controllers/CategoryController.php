@@ -69,22 +69,22 @@ class CategoryController extends Controller
         return view('admin.category', compact('html', 'category'));
     }
 
-    public function add()
+    public function add(Request $request)
     {
         $message = null;
         $errors = null;
         $name = isset($_POST['name']) ? $_POST['name'] : null;
         $mainCategory = new Category;
         $mainCategory->name = $name;
-        $mainCategory->res = '-1';
+        $mainCategory->restaurant_id = '1';
         $mainCategory->save();
-        $errors = $mainCategory->errors->all();
+//        $errors = $mainCategory->errors->all();
         if (!empty($errors))
             $message = "مشکلی در اضافه کردن رخ داده است.";
         else
             $message = "موضوع مورد نظر با موفقیت اضافه گردید";
 
-        return view('admin.category', compact('errors', 'message'));
+        return back();
     }
 
     public function update(Request $request)
