@@ -31,51 +31,51 @@
                                         جای پارک:
                                         <br>
                                         دارد
-                                        <input type="radio" name="park" value="1" @if($res->options['park']) checked @endif>
+                                        <input type="radio" name="park" value="1" @if($res->options['park'] ?? 0) checked @endif>
                                         ندارد
-                                        <input type="radio" name="park" value="0" @if(!$res->options['park']) checked @endif>
+                                        <input type="radio" name="park" value="0" @unless($res->options['park'] ?? 0) checked @endif>
                                         <br>
                                         اینترنت:
                                         <br>
                                         دارد
-                                        <input type="radio" name="wifi" value="1" @if($res->options['wifi']) checked @endif>
+                                        <input type="radio" name="wifi" value="1" @if($res->options['wifi'] ?? 0) checked @endif>
                                         ندارد
-                                        <input type="radio" name="wifi" value="0" @if(!$res->options['wifi']) checked @endif>
+                                        <input type="radio" name="wifi" value="0" @unless($res->options['wifi'] ?? 0) checked @endif>
                                         <br>
                                         زمین بازی:
                                         <br>
                                         دارد
-                                        <input type="radio" name="game" value="1" @if($res->options['game']) checked @endif>
+                                        <input type="radio" name="game" value="1" @if($res->options['game'] ?? 0) checked @endif>
                                         ندارد
-                                        <input type="radio" name="game" value="0" @if(!$res->options['game']) checked @endif>
+                                        <input type="radio" name="game" value="0" @unless($res->options['game'] ?? 0) checked @endif>
                                         <br>
                                         میز کودک:
                                         <br>
                                         دارد
-                                        <input type="radio" name="child_bench" value="1" @if($res->options['child_bench']) checked @endif>
+                                        <input type="radio" name="child_bench" value="1" @if($res->options['child_bench'] ?? 0) checked @endif>
                                         ندارد
-                                        <input type="radio" name="child_bench" value="0" @if(!$res->options['child_bench']) checked @endif>
+                                        <input type="radio" name="child_bench" value="0" @unless($res->options['child_bench'] ?? 0) checked @endif>
                                         <br>
                                         موسیقی زنده :
                                         <br>
                                         دارد
-                                        <input type="radio" name="music" value="1" @if($res->options['music']) checked @endif>
+                                        <input type="radio" name="music" value="1" @if($res->options['music'] ?? 0) checked @endif>
                                         ندارد
-                                        <input type="radio" name="music" value="0" @if(!$res->options['music']) checked @endif>
+                                        <input type="radio" name="music" value="0" @unless($res->options['music'] ?? 0) checked @endif>
                                         <br>
                                         تحویل رایگان :
                                         <br>
                                         دارد
-                                        <input type="radio" name="delivery" value="1" @if($res->options['delivery']) checked @endif>
+                                        <input type="radio" name="delivery" value="1" @if($res->options['delivery'] ?? 0) checked @endif>
                                         ندارد
-                                        <input type="radio" name="delivery" value="0" @if(!$res->options['delivery']) checked @endif>
+                                        <input type="radio" name="delivery" value="0" @unless($res->options['delivery'] ?? 0) checked @endif>
                                         <br>
                                         کارت خوان سیار:
                                         <br>
                                         دارد
-                                        <input type="radio" name="kart" value="1" @if($res->options['kart']) checked @endif>
+                                        <input type="radio" name="kart" value="1" @if($res->options['kart'] ?? 0) checked @endif>
                                         ندارد
-                                        <input type="radio" name="kart" value="0" @if(!$res->options['kart']) checked @endif>
+                                        <input type="radio" name="kart" value="0" @unless($res->options['kart'] ?? 0) checked @endif>
                                         <br>
                                         تصویر رستوران:
                                         @if($res->pics)

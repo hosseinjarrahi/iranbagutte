@@ -39,9 +39,8 @@ Route::get("reserve/{id?}", 'HomeController@reserve');
 Route::post('reserve/{id?}', 'HomeController@addReserve');
 
 // manager
-Route::group(['prefix' => 'manager', 'middleware' => 'auth'], function () {
-    Route::get("/", "ManagerController@show");
-    Route::get('home', "ManagerController@home")->name('admin.home');
+Route::group(['prefix' => 'manager','middleware' => 'auth'], function () {
+    Route::get("/", "ManagerController@show")->name('admin.home');
 //advertise
 
     Route::get('advertise', 'AdvertiseController@show');
@@ -119,4 +118,8 @@ Route::group(['prefix' => 'manager', 'middleware' => 'auth'], function () {
 Route::group(['prefix' => 'restaurant'], function () {
     Route::get('{restaurant}', 'HomeController@showRestaurant');
     Route::post('down', 'HomeController@ajax');
+});
+
+Route::get('/test',function(){
+    dd(json_encode(\App\Food::all()));
 });
