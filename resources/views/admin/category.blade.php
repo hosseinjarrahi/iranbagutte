@@ -32,6 +32,10 @@
                     </div>
                 @endif
 
+                {{--@if(isset($errors) || isset($message))--}}
+                    {{--<p><a href="{{ url('manager/category') }}" class="btn btn-primary">بازگشت</a></p>--}}
+                {{--@endif--}}
+
                 {{--                @unless(isset($errors) || isset($message))--}}
                 <div class="col-lg-6">
                     <div class="card">

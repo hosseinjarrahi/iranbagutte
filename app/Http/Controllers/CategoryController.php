@@ -18,7 +18,7 @@ class CategoryController extends Controller
 
             $html .= '<h5><span>+ </span><span class="text-info">' . $category->name . '</span><span class="col-5"></span><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal' . $category->id . '">ویرایش</button><span class="col-5"></span><a href="' . url('manager/category/delete/'.$category->id) . '" class="btn btn-danger">حذف</a></h5><div class="px-3">';
             $modals .= $this->createModal($category->id, 1);
-            echo "<br>";
+//            echo "<br>";
             $html .= '</div>';
         }
         $html .= '</div>';
@@ -35,8 +35,15 @@ class CategoryController extends Controller
         <div class="modal" id="' . $sub . 'modal' . $id . '" style="z-index: 2000;">
           <div class="modal-dialog">
             <div class="modal-content">
-              <form action="' . url('manager/category') . '" method="post">
+             <form action="' . url('manager/category') . '" method="post">
+
+              '.
+                method_field('patch')
+
+                .'
+              <!-- 
               <input type="hidden" name="_method" value="PATCH" >
+              -->
               <input type="hidden" name="main" value="' . $main . '" >
               <input type="hidden" name="id" value="' . $id . '" >
               <!-- Modal Header -->
@@ -89,8 +96,10 @@ class CategoryController extends Controller
 
     public function update(Request $request)
     {
-        $main = Category::find($request->id);
-        $main->name = $request->name;
+        $id = $request->get('id');
+        $main = Category::find($id);
+        $name = $request->get('name');
+        $main->name = $name;
         $main->save();
         return back();
     }
