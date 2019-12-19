@@ -10,13 +10,38 @@ class GameController extends Controller
 {
     public function manage()
     {
-        $games = Game::paginate(10);
+        $games = Game::with('user')->paginate(10);
         return view('admin.manageGames', compact('games'));
+    }
+
+    public function sendPage()
+    {
+        $games = Game::where('user_id',auth()->id())->paginate(10);
+        return view('admin.sendGame',compact('games'));
+    }
+
+    public function download(Game $game)
+    {
+        $file = public_path($game->full);
+        return response()->download($file);
+    }
+
+    public function verify(Game $game)
+    {
+        $game->status = 1;
+        $game->save();
+        return back();
+    }
+
+    public function block(Game $game)
+    {
+        $game->status = 0;
+        $game->save();
+        return back();
     }
 
     public function add(Request $request)
     {
-        //todo: need to change upload convention
         $game = new Game;
         $game->name = $request->name;
         $game->part = $request->part;

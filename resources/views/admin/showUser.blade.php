@@ -99,6 +99,11 @@
                                             <input type="checkbox" name="payments"
                                                    @if(!$role->where('access','payments')->isEmpty()) checked @endif>
                                             <br>
+                                            تنظیمات سایت
+                                            <br>
+                                            <input type="checkbox" name="settings"
+                                                   @if(!$role->where('access','settings')->isEmpty()) checked @endif>
+                                            <br>
                                             نظرات
                                             <br>
                                             <input type="checkbox" name="comments"

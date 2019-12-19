@@ -50,10 +50,10 @@ class HomeController extends Controller
 
     public function showRestaurant(Restaurant $restaurant)
     {
-        $home = 1;
         $cats = $restaurant->categories;
         $foods = $restaurant->foods()->paginate(6);
-        return view('restaurant', compact('cats', 'home', 'foods', 'restaurant'));
+
+        return view('restaurant', compact('cats', 'foods', 'restaurant'));
     }
 
     public function showRestaurants()

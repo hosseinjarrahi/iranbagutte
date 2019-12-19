@@ -336,11 +336,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                     <li class="nav-item">
 
-                                        <a href="{{ url('manager/games') }}" class="nav-link">
+                                        <a href="{{ url('manager/send-game') }}" class="nav-link">
 
                                             <i class="fa fa-circle-o nav-icon"></i>
 
-                                            <p>مدیریت بازی ها</p>
+                                            <p>ارسال بازی</p>
 
                                         </a>
 
@@ -348,11 +348,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     @if(auth()->user()->hasRole('gameCheck'))
                                         <li class="nav-item">
 
-                                            <a href="{{ url('manager/users-games') }}" class="nav-link">
+                                            <a href="{{ url('manager/games') }}" class="nav-link">
 
                                                 <i class="fa fa-circle-o nav-icon"></i>
 
-                                                <p>بازی های ارسالی</p>
+                                                <p>مدیریت بازی ها</p>
 
                                             </a>
 

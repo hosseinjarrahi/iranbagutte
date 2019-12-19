@@ -17,7 +17,7 @@
                     <li>
                         <span>جای پارک : </span>
                         <span>
-                            @isset($restaurant->options['park'])
+                            @isset($restaurant->options->park)
                                 دارد
                             @else
                                 ندارد
@@ -27,7 +27,7 @@
                     <li>
                         <span>اینترنت : </span>
                         <span>
-                            @isset($restaurant->options['wifi'])
+                            @isset($restaurant->options->wifi)
                                 دارد
                             @else
                                 ندارد
@@ -37,7 +37,7 @@
                     <li>
                         <span>زمین بازی : </span>
                         <span>
-                            @isset($restaurant->options['game'])
+                            @isset($restaurant->options->game)
                                 دارد
                             @else
                                 ندارد
@@ -47,7 +47,7 @@
                     <li>
                         <span>میز کودک : </span>
                         <span>
-                            @isset($restaurant->options['child_bench'])
+                            @isset($restaurant->options->child_bench)
                                 دارد
                             @else
                                 ندارد
@@ -57,7 +57,7 @@
                     <li>
                         <span>موسیقی زنده : </span>
                         <span>
-                            @isset($restaurant->options['music'])
+                            @isset($restaurant->options->music)
                                 دارد
                             @else
                                 ندارد
@@ -67,7 +67,7 @@
                     <li>
                         <span>تحویل رایگان : </span>
                         <span>
-                            @isset($restaurant->options['delivery'])
+                            @isset($restaurant->options->delivery)
                                 دارد
                             @else
                                 ندارد
@@ -77,7 +77,7 @@
                     <li>
                         <span>کارت خوان سیار : </span>
                         <span>
-                            @isset($restaurant->options['kart'])
+                            @isset($restaurant->options->kart)
                                 دارد
                             @else
                                 ندارد

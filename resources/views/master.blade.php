@@ -260,9 +260,9 @@
 
 
 <!-- Start Live Chat Code -->
-<script type="text/javascript" src="http://go.iranbaguette.com/assets/js/jquery.min.js"></script>
-<script type="text/javascript">jQuery.noConflict();</script>
-<script type="text/javascript">jQuery(document).ready(function($) {$.ajaxSetup({xhrFields: {withCredentials: true},headers: {"X-Requested-With": "XMLHttpRequest"}});$.ajax({type: "GET",url: "http://go.iranbaguette.com/live_chat",dataType: "html",success: function(data) {$("body").append(data);}});});</script>
+{{--<script type="text/javascript" src="http://go.iranbaguette.com/assets/js/jquery.min.js"></script>--}}
+{{--<script type="text/javascript">jQuery.noConflict();</script>--}}
+{{--<script type="text/javascript">jQuery(document).ready(function($) {$.ajaxSetup({xhrFields: {withCredentials: true},headers: {"X-Requested-With": "XMLHttpRequest"}});$.ajax({type: "GET",url: "http://go.iranbaguette.com/live_chat",dataType: "html",success: function(data) {$("body").append(data);}});});</script>--}}
 <!-- End Live Chat Code -->
 
 

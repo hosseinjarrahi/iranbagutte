@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Role;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -39,11 +40,11 @@ class UserController extends Controller
         $user = User::find($id);
         $roles = $user->roles;
         foreach ($roles as $role)
-            $role->delete();
+            $user->roles()->detach($role->id);
         $roles = $request->except('_token');
         foreach ($roles as $key => $role) {
-            $r = new Role(['access' => $key]);
-            $user->roles()->save($r);
+            $r = Role::where('access',$key)->first();
+            $user->roles()->attach($r->id);
         }
         return back();
     }

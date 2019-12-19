@@ -11,9 +11,12 @@ $access = [
     'payments',
     'games',
     'comments',
-    'setting',
+    'settings',
     'tables',
     'users',
+    'sendGame',
+    'checkGame',
+    'slides',
 ];
 $factory->define(Role::class, function (Faker $faker) use ($access,$counter){
     return [

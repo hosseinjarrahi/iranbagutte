@@ -44,4 +44,9 @@ class Restaurant extends Model
     {
         return $this->hasMany(Payment::class);
     }
+
+    public function getOptionsAttribute($value)
+    {
+        return json_decode(json_decode($value));
+    }
 }
