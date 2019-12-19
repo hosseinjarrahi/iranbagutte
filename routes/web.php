@@ -35,8 +35,8 @@ Route::get("/checkout", 'BasketController@checkout');
 Route::get("/reply", 'BasketController@reply');
 Route::get("/status", 'BasketController@status');
 
-Route::get("edit" , "UserController@takmil");
-Route::put("edit" , "UserController@takmiler");
+Route::get("edit" , "BasketController@takmil");
+Route::put("edit" , "BasketController@takmiler");
 
 
 

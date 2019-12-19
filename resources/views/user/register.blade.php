@@ -19,7 +19,7 @@
                 @method('put')
                 @csrf
                 <div class="input-group mb-2">
-                    <input type="text" class="form-control" name="name" required value="{{ $user->fname ?? '' }}"><br>
+                    <input type="text" class="form-control" name="name" required value="{{ $user->name ?? '' }}"><br>
                     <div class="input-group-append">
                         <span class="input-group-text text-dark">نام و نام خانوادگی</span>
                     </div>

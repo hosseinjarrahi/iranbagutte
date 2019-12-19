@@ -315,7 +315,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </li>
 
                         @endif
-                        @if(auth()->user()->hasRole('games'))
+                        @if(auth()->user()->hasRole('developer'))
                             <li class="nav-item has-treeview">
 
                                 <a href="#" class="nav-link">
@@ -345,7 +345,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         </a>
 
                                     </li>
-                                    @if(auth()->user()->hasRole('gameCheck'))
+                                    @if(auth()->user()->hasRole('checkGame'))
                                         <li class="nav-item">
 
                                             <a href="{{ url('manager/games') }}" class="nav-link">

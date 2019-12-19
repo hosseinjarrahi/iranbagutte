@@ -18,7 +18,10 @@ class RegisterController extends Controller
         $res = false;
         $errors = [];
         $user = null;
-        if((User::where('username',$request->username[0])->get())->isEmpty())
+        if(
+            (User::where('username',$request->username)->get())->isEmpty() &&
+            (User::where('email',$request->email)->get())->isEmpty()
+        )
         {
             $user = new User;
             $user->username = $request->username;
@@ -27,9 +30,10 @@ class RegisterController extends Controller
             $user->phone = $request->phone;
             $user->name = $request->name;
             $res = $user->save();
+            auth()->login($user);
         }
         else
-            $errors['username'] = "نام کاربری وارد شده تکراری می باشد.";
+            $errors['username'] = "نام کاربری و یا ایمیل وارد شده تکراری می باشد.";
 
         if($res)
         {
