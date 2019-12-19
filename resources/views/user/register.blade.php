@@ -16,7 +16,8 @@
                 @endforeach
             @endif
             <form action="{{ url('register') }}" method="post">
-                @method(PUT)
+                @method('put')
+                @csrf
                 <div class="input-group mb-2">
                     <input type="text" class="form-control" name="name" required value="{{ $user->fname ?? '' }}"><br>
                     <div class="input-group-append">

@@ -49,7 +49,6 @@ class UserController extends Controller
         return back();
     }
 
-
     public function takmil()
     {
         $user = auth()->user();
@@ -70,6 +69,5 @@ class UserController extends Controller
         }
         return redirect('basket');
     }
-
 
 }

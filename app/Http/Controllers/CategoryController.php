@@ -16,7 +16,7 @@ class CategoryController extends Controller
         $categories = Restaurant::find(auth()->id())->Categories;
         foreach ($categories as $category) {
 
-            $html .= '<h5><span>+ </span><span class="text-info">' . $category->name . '</span><span class="col-5"></span><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal' . $category->id . '">ویرایش</button><span class="col-5"></span><a href="' . url('manager/category/delete/'.$category->id) . '" class="btn btn-danger">حذف</a></h5><div class="px-3">';
+            $html .= '<h5><span>+ </span><span class="text-info">' . $category->name . '</span><span class="col-5"></span><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal' . $category->id . '">ویرایش</button><span class="col-5"></span><a href="' . url('manager/category/delete/' . $category->id) . '" class="btn btn-danger">حذف</a></h5><div class="px-3">';
             $modals .= $this->createModal($category->id, 1);
 //            echo "<br>";
             $html .= '</div>';
@@ -37,13 +37,11 @@ class CategoryController extends Controller
             <div class="modal-content">
              <form action="' . url('manager/category') . '" method="post">
 
-              '.
-                method_field('patch')
-
-                .'
-              <!-- 
+            
+              
               <input type="hidden" name="_method" value="PATCH" >
-              -->
+              <input type="hidden" name="_token" value="'.csrf_token().'" >
+              
               <input type="hidden" name="main" value="' . $main . '" >
               <input type="hidden" name="id" value="' . $id . '" >
               <!-- Modal Header -->
@@ -72,7 +70,7 @@ class CategoryController extends Controller
     public function show()
     {
         $html = $this->getCategories();
-        $category = Category::where('restaurant_id',auth()->id())->get();
+        $category = Category::where('restaurant_id', auth()->id())->get();
         return view('admin.category', compact('html', 'category'));
     }
 
