@@ -37,15 +37,11 @@ class CategoryController extends Controller
             <div class="modal-content">
              <form action="' . url('manager/category') . '" method="post">
 
-              ' .
-            method_field('patch')
-
-            . '' .
-            csrf()
-            . '
-              <!-- 
+            
+              
               <input type="hidden" name="_method" value="PATCH" >
-              -->
+              <input type="hidden" name="_token" value="'.csrf_token().'" >
+              
               <input type="hidden" name="main" value="' . $main . '" >
               <input type="hidden" name="id" value="' . $id . '" >
               <!-- Modal Header -->
