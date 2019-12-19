@@ -4,7 +4,7 @@ tinymce.init({
     theme: "modern",
     skin: "lightgray",
 
-    images_upload_url: 'http://localhost/projects/irabBuget/admin/upload',
+    images_upload_url: 'http://127.0.0.1:8000/manager/upload',
 
     width: "100%",
     height: 300,
@@ -54,7 +54,14 @@ tinymce.init({
 
 
 tinymce.activeEditor.uploadImages(function(success) {
-    $.post('http://localhost/projects/irabBuget/admin/upload', tinymce.activeEditor.getContent()).done(function() {
+    $.post({
+        url:'http://127.0.0.1:8000/manager/upload',
+        headers: {
+        "My-First-Header":"first value",
+            "My-Second-Header":"second value"
+        },
+        tinymce.activeEditor.getContent()
+    }).done(function() {
         console.log("Uploaded images and posted content as an ajax request.");
     });
 });

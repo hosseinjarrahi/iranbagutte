@@ -32,10 +32,6 @@
                     </div>
                 @endif
 
-                @if(isset($errors) || isset($message))
-                    <p><a href="{{ url('manager/category') }}" class="btn btn-primary">بازگشت</a></p>
-                @endif
-
                 {{--                @unless(isset($errors) || isset($message))--}}
                 <div class="col-lg-6">
                     <div class="card">
@@ -45,6 +41,7 @@
                             <p class="card-text">
                             <form action="{{ url('manager/category') }}" method="post">
                                 @method('put')
+                                @csrf
                                 <input type="text" name="name" class="mb-2 form-control" placeholder="موضوع جدید">
                                 <input type="submit" class="btn btn-primary" value="افزودن">
                             </form>

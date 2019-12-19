@@ -8,10 +8,15 @@ use Illuminate\Http\Request;
 
 class SlideController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('Access:slides');
+    }
+
     public function show()
     {
-        $slides = Slide::where('restaurant_id',auth()->id())->get();
-        $cats = Category::where('restaurant_id',auth()->id())->get();
+        $slides = Slide::where('restaurant_id',1)->get();
+        $cats = Category::where('restaurant_id',1)->get();
 
         return view('admin.manageSlides',compact('cats','slides'));
     }
@@ -27,7 +32,7 @@ class SlideController extends Controller
     {
         $slide = new Slide;
         $slide->category_id = $request->category;
-        $slide->restaurant_id = auth()->id();
+        $slide->restaurant_id = 1;
         $file = $request->file('img');
         if ( $request->hasFile('img') && !is_null($request->img) ) {
             $path = random_int(0 , 99999).time().'_.'.$request->img->getClientOriginalExtension();
