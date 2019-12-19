@@ -4,6 +4,8 @@
 @endsection
 
 @section('content')
+    <meta name="_token" content="{{ csrf_token() }}" />
+
     <div class="content">
         <div class="container-fluid">
             <div class="row">

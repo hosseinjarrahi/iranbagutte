@@ -156,6 +156,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                     </li>
 
+                                    @if(auth()->user()->hasRole('slides'))
                                     <li class="nav-item">
 
                                         <a href="{{ url('manager/slides') }}" class="nav-link">
@@ -167,7 +168,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         </a>
 
                                     </li>
-
+                                    @endif
                                 </ul>
 
                             </li>
@@ -487,6 +488,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </a>
 
                             </li>
+                        <li class="nav-item">
+
+                            <a href="{{ route('logout') }}" class="nav-link">
+
+                                <i class="nav-icon fa fa-th"></i>
+
+                                <p>
+
+                                    خروج
+
+                                </p>
+
+                            </a>
+
+                        </li>
 
                     </ul>
 

@@ -77,7 +77,7 @@ class OptionController extends Controller
         return redirect('admin/benefits');
     }
 
-    public function upload()
+    public function upload(Request $request)
     {
 
         /*******************************************************
@@ -89,7 +89,7 @@ class OptionController extends Controller
          * Change this line to set the upload folder *
          *********************************************/
         $imageFolder = 'upload/';
-
+        dd($request);
         reset($_FILES);
         $temp = current($_FILES);
         if (is_uploaded_file($temp['tmp_name'])) {

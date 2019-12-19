@@ -13,10 +13,10 @@ class CategoryController extends Controller
         $html = '<div class="p-1 lister">';
         $modals = "";
 
-        $categories = Restaurant::first()->Categories;
+        $categories = Restaurant::find(auth()->id())->Categories;
         foreach ($categories as $category) {
 
-            $html .= '<h5><span>+ </span><span class="text-info">' . $category->name . '</span><span class="col-5"></span><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal' . $category->id . '">ویرایش</button><span class="col-5"></span><a href="' . url('manager/category/delete/') . $category->id . '" class="btn btn-danger">حذف</a></h5><div class="px-3">';
+            $html .= '<h5><span>+ </span><span class="text-info">' . $category->name . '</span><span class="col-5"></span><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal' . $category->id . '">ویرایش</button><span class="col-5"></span><a href="' . url('manager/category/delete/'.$category->id) . '" class="btn btn-danger">حذف</a></h5><div class="px-3">';
             $modals .= $this->createModal($category->id, 1);
 //            echo "<br>";
             $html .= '</div>';
@@ -72,7 +72,7 @@ class CategoryController extends Controller
     public function show()
     {
         $html = $this->getCategories();
-        $category = Category::all();
+        $category = Category::where('restaurant_id',auth()->id())->get();
         return view('admin.category', compact('html', 'category'));
     }
 
@@ -80,16 +80,16 @@ class CategoryController extends Controller
     {
         $message = null;
         $errors = null;
-        $name = isset($_POST['name']) ? $_POST['name'] : null;
+        $name = $request->name ?? null;
         $mainCategory = new Category;
         $mainCategory->name = $name;
-        $mainCategory->restaurant_id = '1';
+        $mainCategory->restaurant_id = auth()->id();
         $mainCategory->save();
 //        $errors = $mainCategory->errors->all();
-        if (!empty($errors))
-            $message = "مشکلی در اضافه کردن رخ داده است.";
-        else
-            $message = "موضوع مورد نظر با موفقیت اضافه گردید";
+//        if (!empty($errors))
+//            $message = "مشکلی در اضافه کردن رخ داده است.";
+//        else
+//            $message = "موضوع مورد نظر با موفقیت اضافه گردید";
 
         return back();
     }
@@ -101,7 +101,7 @@ class CategoryController extends Controller
         $name = $request->get('name');
         $main->name = $name;
         $main->save();
-        $this->show();
+        return back();
     }
 
     public function mainDelete($id)
@@ -117,6 +117,6 @@ class CategoryController extends Controller
             $message = "مشکلی در حذف رخ داده است.";
         }
 
-        return view('admin.category', compact('message'));
+        return back();
     }
 }
