@@ -49,4 +49,27 @@ class UserController extends Controller
         return back();
     }
 
+
+    public function takmil()
+    {
+        $user = auth()->user();
+        return view('user.edit',compact('user'));
+    }
+
+    public function takmiler(Request $request)
+    {
+        $user = auth()->user();
+        $errors = [];
+        $user->email   = (empty($request->email)) ? null : $request->email;
+        $user->phone   = (empty($request->phone)) ? null : $request->phone;
+        $user->name   = (empty($request->name)) ? null : $request->name;
+        $user->address = (empty($request->address)) ? null : $request->address;
+
+        if(!$user->save()) {
+            return redirect('/edit');
+        }
+        return redirect('basket');
+    }
+
+
 }

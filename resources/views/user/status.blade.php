@@ -18,20 +18,20 @@
                 @forelse($pays as $pay)
                     <tr>
                         <th class="col-12" colspan="3">
-                            <span>شماره فاکتور : </span><span>{{ $pay->factor }}</span>-----
-                            <span> وضعیت : </span><span>{{ $pay->status }}در دست بررسی</span>
+                            <span>شماره تراکنش : </span><span>{{ $pay->trans_id }}</span>-----
+{{--                            <span> وضعیت : </span><span>{{ $pay->status }}در دست بررسی</span>--}}
                         </th>
                     </tr>
 
                     @php
-                        $products = unserialize($pay->products,["allowed_classes" => false]);
+                        $products = json_decode($pay->products);
                     @endphp
 
                     @foreach($products as $product)
                     <tr>
-                        <td>{{ $product['title'] }}</td>
-                        <td>{{ $product['price'] }} تومان </td>
-                        <td>تعداد:{{ $product['count'] }}</td>
+                        <td>{{ $product->title }}</td>
+                        <td>{{ $product->price }} تومان </td>
+                        <td>تعداد:{{ $product->count ?? 1 }}</td>
                     </tr>
                     @endforeach
 

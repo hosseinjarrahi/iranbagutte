@@ -16,18 +16,13 @@
                 @endforeach
             @endif
             <form action="{{ url('edit') }}" method="post">
-                @method(PUT)
+                @method('put')
+                @csrf
                 <div class="alert alert-warning">لطفا اطلاعاتتان را کامل کنید</div>
                 <div class="input-group mb-2">
-                    <input type="text" class="form-control" name="fName" required value="{{ $user->fname ?? '' }}"><br>
+                    <input type="text" class="form-control" name="name" required value="{{ $user->name ?? '' }}"><br>
                     <div class="input-group-append">
-                        <span class="input-group-text text-dark">نام </span>
-                    </div>
-                </div>
-                <div class="input-group mb-2">
-                    <input type="text" class="form-control" name="lName" required value="{{ $user->lname ?? '' }}"><br>
-                    <div class="input-group-append">
-                        <span class="input-group-text text-dark">نام خانوادگی</span>
+                        <span class="input-group-text text-dark">نام و نام خانوادگی </span>
                     </div>
                 </div>
                 <div class="input-group mb-2">

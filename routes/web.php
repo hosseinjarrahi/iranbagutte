@@ -35,6 +35,11 @@ Route::get("/checkout", 'BasketController@checkout');
 Route::get("/reply", 'BasketController@reply');
 Route::get("/status", 'BasketController@status');
 
+Route::get("edit" , "UserController@takmil");
+Route::put("edit" , "UserController@takmiler");
+
+
+
 Route::get("reserve/{id?}", 'HomeController@reserve');
 Route::post('reserve/{id?}', 'HomeController@addReserve');
 

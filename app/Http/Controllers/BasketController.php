@@ -130,7 +130,7 @@ class BasketController extends Controller
     {
         if(!auth()->check()) return redirect('/login');
         $user = auth()->user();
-//        $pays = Payment::where('user_id'$user->id);
+        $pays = $user->payments;
         return view('user.status',compact('pays'));
     }
 }
