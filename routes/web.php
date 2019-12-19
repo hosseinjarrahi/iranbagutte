@@ -38,6 +38,10 @@ Route::get("/status", 'BasketController@status');
 Route::get("reserve/{id?}", 'HomeController@reserve');
 Route::post('reserve/{id?}', 'HomeController@addReserve');
 
+//user register
+Route::get("register" , "RegisterController@show");
+Route::put("register" , "RegisterController@register");
+
 // manager
 Route::group(['prefix' => 'manager','middleware' => 'auth'], function () {
     Route::get("/", "ManagerController@show")->name('admin.home');
