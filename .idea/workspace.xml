@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05a6871d-cda8-44be-8068-f86f5d0f090a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OptionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OptionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Restaurant.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Restaurant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/detailsRes.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/detailsRes.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/order.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/order.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="05a6871d-cda8-44be-8068-f86f5d0f090a" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -444,18 +439,12 @@
       <workItem from="1576674813931" duration="466000" />
       <workItem from="1576691248622" duration="630000" />
       <workItem from="1576708563955" duration="1151000" />
-      <workItem from="1576754169477" duration="7625000" />
-      <workItem from="1576778506512" duration="1467000" />
-      <workItem from="1577377688480" duration="769000" />
-      <workItem from="1577617739438" duration="1301000" />
-      <workItem from="1577625187337" duration="175000" />
-      <workItem from="1577817636721" duration="43000" />
-      <workItem from="1577855693881" duration="2001000" />
+      <workItem from="1576754169477" duration="7892000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79920000" />
+    <option name="totallyTimeSpent" value="74431000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -467,8 +456,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info content_ui="combo" x="496" y="58" width="373" height="622" id="Project" order="0" weight="0.19261745" />
       <window_info id="Structure" order="1" weight="0.24962178" />
