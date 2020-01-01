@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Restaurant extends Model
 {
     protected $casts = [
-        'options' => 'json',
-        'pics' => 'json'
+        'options' => 'Array',
+        'pics' => 'Array'
     ];
 
     public function foods()

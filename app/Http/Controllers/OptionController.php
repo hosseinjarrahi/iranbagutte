@@ -37,13 +37,13 @@ class OptionController extends Controller
         $options['kart']= $request->kart;
         $options['music']= $request->music;
         $options['details']= $request->details;
-        $res->options = json_encode($options);
+        $res->options = $options;
         $file = $request->file('img');
         if ( $request->hasFile('img') && !is_null($request->img) ) {
             $path = random_int(0 , 99999).time().'_.'.$request->img->getClientOriginalExtension();
             $request->img->move(public_path('upload') , $path);
             $imgPath = $path;
-            $res->pics = $imgPath;
+            $res->pics = [$imgPath];
         }
         $res->save();
         return redirect(url('manager/detail-res'));
