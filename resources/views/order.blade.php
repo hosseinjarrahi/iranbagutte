@@ -221,7 +221,6 @@
                     <div class="back" style="background: url({{ asset('img/reserve2.jpg') }});background-size: cover;background-position: center;"></div>
                 </div>
                 </a>
-
             </div>
 
         <div class="shadow col-12 col-lg-2" style="height:200px;padding: 5px;">

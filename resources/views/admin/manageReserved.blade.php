@@ -26,23 +26,9 @@
                                 </tr>
 
                                 @forelse($reserve as $key => $r)
-                                    @php
-                                        $miz = [];
-                                        $exp = explode('-',$r->res_reserve_ids);
-                                        $exp = ($exp === "") ? $r->res_reserve_ids : $exp;
-                                        foreach ($exp as $e)
-                                        {
-                                            $s = $table::find($e);
-                                            if(empty($s))
-                                                continue;
-                                            $miz[] = ($s[0])->capacity;
-                                        }
-                                    $miz = implode(' | ',$miz);
-                                    if(empty($miz)) $miz = null;
-                                    @endphp
                                     <tr>
                                         <td>{{ $key }}</td>
-                                        <td>{!! $miz ?? '<span class="text-danger">شما میز را حذف کردید</span>' !!}</td>
+                                        <td>{!!$r->tables->implode(' - ') ?? '<span class="text-danger">میزی رزرو نشده است</span>' !!}</td>
                                         <td>{{ $r->name }}</td>
                                         <td>{{ $r->phone }}</td>
                                         <td>{{ $r->start_time }}</td>

@@ -1,43 +1,43 @@
 @extends('master')
 
 @section('title')
-	ایران باگت
+    ایران باگت
 @endsection
 
 @section('slider')
 
-<div class="IB-Slide">
-    <div class="IB-container">
-        <div class="IB-SlideBox">
-            <div id="IB-one" class="IB-accordion IB-dark IB-rounded" style="width: 1200px;">
-                <ol class="text-center">
+    <div class="IB-Slide">
+        <div class="IB-container">
+            <div class="IB-SlideBox">
+                <div id="IB-one" class="IB-accordion IB-dark IB-rounded" style="width: 1200px;">
+                    <ol class="text-center">
 
-                    @foreach($slides as $key => $slide)
-                        <li>
-                            <h2 style="padding: 0px; margin: 0px; height: 40px; width: 350px; left: 0px;" class="IB-selected each">
-                                <span class="IB-akordin0">{{ $slide->category->name }}</span>
-                            </h2>
-                            <div style="width: 1040px; left: 0px; padding-left: 40px;">
-                                <a target="_blank" href="{{ url('order#'.($key + 1)) }}">
-                                    <img src="{{ asset('upload/'.$slide->img) }}" class="img-fluid">
-                                </a>
-                                {{ $slide->category->name }}
-                            </div>
-                        </li>
-                    @endforeach
+                        @foreach($slides as $key => $slide)
+                            <li>
+                                <h2 style="padding: 0px; margin: 0px; height: 40px; width: 350px; left: 0px;" class="IB-selected each">
+                                    <span class="IB-akordin0">{{ $slide->category->name }}</span>
+                                </h2>
+                                <div style="width: 1040px; left: 0px; padding-left: 40px;">
+                                    <a target="_blank" href="{{ url('order#'.($key + 1)) }}">
+                                        <img src="{{ asset('upload/'.$slide->img) }}" class="img-fluid">
+                                    </a>
+                                    {{ $slide->category->name }}
+                                </div>
+                            </li>
+                        @endforeach
 
-                </ol>
+                    </ol>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
-<div class="IB-divAcB">
-    <div class="IB-container">
-        <div class="IB-divAcB">
+    <div class="IB-divAcB">
+        <div class="IB-container">
+            <div class="IB-divAcB">
 
-            @foreach($slides as $key => $slide)
+                @foreach($slides as $key => $slide)
 
                     <div class="accordion-wrapper">
                         <div class="ac-pane">
@@ -52,11 +52,11 @@
                             </div>
                         </div>
                     </div>
-            @endforeach
+                @endforeach
 
+            </div>
         </div>
     </div>
-</div>
 
 @endsection
 
@@ -64,7 +64,8 @@
     <div class="container-fluid mt-2">
         <div class="row p-2 py-5 d-flex justify-content-around">
 
-            <div class="shadow special-text d-block d-md-inline-block col-lg-5 col-12 p-3" style="font-size: 1.2rem;background-color: hsla(360, 52%, 56%, 0.2);">
+            <div class="shadow special-text d-block d-md-inline-block col-lg-5 col-12 p-3"
+                 style="font-size: 1.2rem;background-color: hsla(360, 52%, 56%, 0.2);">
                 <h3 class="d-block p-1 text-center" style="border-bottom: gold 2px solid;">درباره ما</h3>
                 <p class="sad col-10" style="text-align: justify !important;">
                     {!! $op->main ?? ''  !!}
@@ -73,52 +74,31 @@
 
             <div class="col-lg-4 col-12 d-block d-md-inline-block text-center mt-3 mt-lg-0">
                 <div class="row text-center justify-content-center">
+                    @foreach($games as $key => $game)
 
-                    <div class="col-md-6 col-5 shadow" style="height:200px;padding: 5px;">
-                        <div id="card-1" class="w-100 h-100 d-flex align-items-center">
-                            <div class="front bg-danger text-center" style="background: url({{ asset('img/back.jpg') }});">
-                                <p style=" font-weight: bold;color: darkblue;padding: 14px;">
-                                <p>هم بازی کن</p><p>هم فلافل مجانی ببر</p>
-                                </p>
+                        <div class="col-md-6 col-5 shadow" style="height:200px;padding: 5px;">
+                            <div id="card-{{ $key+1 }}" class="w-100 h-100 d-flex align-items-center">
+
+                                <div class="front bg-danger text-center" style="background: url({{ asset('img/back.jpg') }});">
+                                    <a href="{{ url('game/'.$game->id) }}">
+                                        <p style=" font-weight: bold;color: darkblue;padding: 14px;">
+                                        <p>هم بازی کن</p>
+                                        <p>هم فلافل مجانی ببر</p>
+                                        </p>
+                                    </a>
+                                </div>
+
+                                <div class="back"
+                                     style="background: url({{ asset('upload/'.$game->poster) }});
+                                             background-size: cover;
+                                             background-position: center;
+                                             ">
+                                </div>
+
                             </div>
-                            <div class="back" style="background: url({{ asset('img/halo_4_2013-wallpaper-1440x960.jpg') }});background-size: cover;background-position: center;"></div>
                         </div>
-                    </div>
 
-                    <div class="col-md-6 col-5 shadow" style="height:200px;padding: 5px;">
-                        <div id="card-2" class="w-100 h-100 d-flex align-items-center">
-                            <div class="front bg-danger text-center" style="background: url({{ asset('img/back.jpg') }});">
-                                <p style=" font-weight: bold;color: darkblue;padding: 14px;">
-                                <p>هم بازی کن</p><p>هم فلافل مجانی ببر</p>
-                                </p>
-                            </div>
-                            <div class="back" style="background: url({{ asset('img/halo_4_2013-wallpaper-1440x960.jpg') }});background-size: cover;background-position: center;"></div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-5 shadow" style="height:200px;padding: 5px;">
-                        <div id="card-3" class="w-100 h-100 d-flex align-items-center">
-                            <div class="front bg-danger text-center" style="background: url({{ asset('img/back.jpg') }});">
-                                <p style=" font-weight: bold;color: darkblue;padding: 14px;">
-                                <p>هم بازی کن</p><p>هم فلافل مجانی ببر</p>
-                                </p>
-                            </div>
-                            <div class="back" style="background: url({{ asset('img/halo_4_2013-wallpaper-1440x960.jpg') }});background-size: cover;background-position: center;"></div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-5 shadow" style="height:200px;padding: 5px;">
-                        <div id="card-4" class="w-100 h-100 d-flex align-items-center">
-                            <div class="front bg-danger text-center" style="background: url({{ asset('img/back.jpg') }});">
-                                <p style=" font-weight: bold;color: darkblue;padding: 14px;">
-                                <p>هم بازی کن</p><p>هم فلافل مجانی ببر</p>
-                                </p>
-                            </div>
-                            <div class="back" style="background: url({{ asset('img/halo_4_2013-wallpaper-1440x960.jpg') }});background-size: cover;background-position: center;"></div>
-                        </div>
-                    </div>
-
-
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -149,8 +129,8 @@
 
 
                 </div>
-                    <button class="ctrl-btn pro-prev text-white">< قبلی</button>
-                    <button class="ctrl-btn pro-next text-white">بعدی ></button>
+                <button class="ctrl-btn pro-prev text-white">< قبلی</button>
+                <button class="ctrl-btn pro-next text-white">بعدی ></button>
             </div>
         </div>
 

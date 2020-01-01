@@ -125,6 +125,8 @@ Route::group(['prefix' => 'manager','middleware' => 'auth'], function () {
     Route::get("block-game/{game}", "GameController@block");
     Route::put("games", "GameController@add");
     Route::get("games/{id}", "GameController@delete");
+//events
+    Route::resource("events", "EventController");
 
 });
 //end manager

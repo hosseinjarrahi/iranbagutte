@@ -21,13 +21,15 @@ class HomeController extends Controller
 {
     public function home()
     {
+        $games = Game::inRandomOrder()->limit(4)->get();
         $home = 1;
         $op = Option::first();
         $slides = Slide::where('restaurant_id', 1)->with('category')->get();
         $op->main = str_replace('../', '', $op->main);
         $op->main = str_replace('width="', 'class="img-fluid"', $op->main);
         $op->main = str_replace('height="', '', $op->main);
-        return view('home', compact('op', 'home', 'slides'));
+
+        return view('home', compact('op', 'home', 'slides', 'games'));
     }
 
     public function benefits()
@@ -36,6 +38,7 @@ class HomeController extends Controller
         $benefits->main = str_replace('../', '', $benefits->main);
         $benefits->main = str_replace('width="', 'class="img-fluid"', $benefits->main);
         $benefits->main = str_replace('height="', '', $benefits->main);
+
         return view('benefits', compact('benefits'));
     }
 
@@ -45,6 +48,7 @@ class HomeController extends Controller
         $contactUs->main = str_replace('../', '', $contactUs->main);
         $contactUs->main = str_replace('width="', 'class="img-fluid"', $contactUs->main);
         $contactUs->main = str_replace('height="', '', $contactUs->main);
+
         return view('contact-us', compact('contactUs'));
     }
 
@@ -82,12 +86,14 @@ class HomeController extends Controller
         for ($i = 2; $i <= $part; $i++) {
             $urls[$i] = asset($game->file . '/part' . $i . '/index.html');
         }
+
         return view('game', compact('dynamic', 'urls', 'zirnevis', 'banners', 'part', 'game'));
     }
 
     public function gamesPage()
     {
         $games = Game::where('status', 1)->paginate(6);
+
         return view('gamesPage', compact('games'));
     }
 
@@ -102,6 +108,7 @@ class HomeController extends Controller
             $buycode->game_id = $request->id;
             $buycode->save();
         }
+
         return back();
     }
 
@@ -125,6 +132,7 @@ class HomeController extends Controller
         $products = $res->foods;
         $slides = $res->slides()->with('category')->get();
         $special = $res->events();
+
         return view('order', compact('special', 'slides', 'home', 'products', 'res'));
     }
 
@@ -135,9 +143,6 @@ class HomeController extends Controller
         $miz = Table::where('restaurant_id', $id)->get();
         $reserve = Reserve::where('restaurant_id', $id)->get();
         $out = $miz;
-//        foreach ($reserve as $r)
-//            if($r->time_e < time())
-//                $r->delete();
 
         $errors = (isset($request->errors)) ? unserialize($reserve->errors) : [];
 
@@ -160,14 +165,16 @@ class HomeController extends Controller
         $reserve->start_time = $time_s;
         $reserve->phone = $request->phone;
         $reserve->detail = $request->detail;
-        $reserve->tables = rtrim($request->capacity, '-');
+        $tables = explode('-', $request->capacity);
+        array_pop($tables);
+        $reserve->tables = $tables;
         $reserve->restaurant_id = $request->res;
 
         $message = null;
         if ($this->checkTime($reserve, $id)) {
-            if ($reserve->save())
+            if ($reserve->save()) {
                 $message = "میز با موفقیت رزرو شد";
-            else {
+            } else {
                 $message = "متاسفانه مشکلی در رزرو میز به وجود آمده است";
 //                $errors = $reserve->errors->firstOfAll();
 //                $errors = serialize($errors);
@@ -176,30 +183,62 @@ class HomeController extends Controller
             $message = "متاسفانه میز انتخابی ، در زمان مورد نظر رزرو شده است.";
         }
         $home = 1;
+
         return redirect(url('reserve/' . $id . '?message=') . $message/*.' & errors='.$errors*/);
     }
 
     function faTOen($string)
     {
-        return strtr($string, array('۰' => '0', '۱' => '1', '۲' => '2', '۳' => '3', '۴' => '4', '۵' => '5', '۶' => '6', '۷' => '7', '۸' => '8', '۹' => '9', '٠' => '0', '١' => '1', '٢' => '2', '٣' => '3', '٤' => '4', '٥' => '5', '٦' => '6', '٧' => '7', '٨' => '8', '٩' => '9'));
+        return strtr($string, [
+            '۰' => '0',
+            '۱' => '1',
+            '۲' => '2',
+            '۳' => '3',
+            '۴' => '4',
+            '۵' => '5',
+            '۶' => '6',
+            '۷' => '7',
+            '۸' => '8',
+            '۹' => '9',
+            '٠' => '0',
+            '١' => '1',
+            '٢' => '2',
+            '٣' => '3',
+            '٤' => '4',
+            '٥' => '5',
+            '٦' => '6',
+            '٧' => '7',
+            '٨' => '8',
+            '٩' => '9',
+        ]);
     }
 
     public function checkTime(Reserve $reserve, $id)
     {
-        $old = Reserve::where('restaurant_id', $id)->get();
-        foreach ($old as $m) {
-            if (array_intersect(explode('-', $m->tables), explode('-', $reserve->tables))) {
-                if ($reserve->time_e > $m->time_s && $reserve->time_s < $m->time_e)
-                    return false;
+        /**
+         * @var  \Illuminate\Support\Collection $tables
+         * @var  \Illuminate\Support\Collection $conflicts
+         */
+        $restaurant = Restaurant::find($id);
+        $tables = $restaurant->tables->pluck('id');
+        $conflicts = $restaurant->reserves()->where('end_time', '>', $reserve->start_time)->where('start_time', '<', $reserve->end_time)->get();
+        $reservedTables = ($conflicts->pluck('tables'))->flatten(4);
+        foreach ($reservedTables as $key => $reservedTable) {
+            $index = $tables->search($reservedTable);
+            if ($index !== false) {
+                $tables->forget($index);
             }
         }
-        return true;
+
+        return $reserve->tables->diff($tables)->isEmpty();
     }
 
     public function loginPage()
     {
-        if (\Auth::check())
+        if (\Auth::check()) {
             return back();
+        }
+
         return view('user.login');
     }
 
@@ -210,9 +249,10 @@ class HomeController extends Controller
 
     public function logout()
     {
-        if (\Auth::check())
+        if (\Auth::check()) {
             \Auth::logoutCurrentDevice();
+        }
+
         return redirect('/');
     }
-
 }
