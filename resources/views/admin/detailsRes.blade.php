@@ -78,8 +78,10 @@
                                         <input type="radio" name="kart" value="0" @unless($res->options['kart'] ?? 0) checked @endif>
                                         <br>
                                         تصویر رستوران:
-                                        @if($res->pics)
-                                        <img src="{{ url('upload/'.$res->pics) }}" class="img-fluid col-12 col-md-6 col-lg-4">
+                                        @if(!empty($res->pics))
+                                            @foreach($res->pics as $pic)
+                                                <img src="{{ url('upload/'.$pic) }}" class="img-fluid col-12 col-md-6 col-lg-4">
+                                            @endforeach
                                         @endif
                                         <input type="file" name="img" class="form-control">
                                     </div>

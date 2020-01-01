@@ -13,7 +13,7 @@ class OptionController extends Controller
         $this->middleware('Access:settings');
 
         $res = Restaurant::find(auth()->id());
-        $res->options = json_decode($res->options);
+        $res->options = $res->options;
         return view('admin.detailsRes' , compact('res'));
     }
 

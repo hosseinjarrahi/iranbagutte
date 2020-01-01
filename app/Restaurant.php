@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Restaurant extends Model
 {
     protected $casts = [
-        'options' => 'array'
+        'options' => 'json',
+        'pics' => 'json'
     ];
 
     public function foods()
@@ -47,6 +48,6 @@ class Restaurant extends Model
 
     public function getOptionsAttribute($value)
     {
-        return json_decode(json_decode($value));
+        return (json_decode($value));
     }
 }
