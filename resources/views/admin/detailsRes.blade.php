@@ -17,6 +17,9 @@
                                         نام رستوران:
                                         <input class="form-control" type="text" name="name" value="{{ $res->name ?? ''}}">
                                         <br>
+                                        آدرس:
+                                        <input class="form-control" type="text" name="address" value="{{ $res->options->address ?? ''}}">
+                                        <br>
                                         ساعت کاری:
                                         <br>
                                         از

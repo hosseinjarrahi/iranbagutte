@@ -62,7 +62,8 @@ class HomeController extends Controller
 
     public function showRestaurants()
     {
-        return view('restaurants');
+        $restaurants = Restaurant::paginate(20);
+        return view('restaurants',compact('restaurants'));
     }
 
     public function showFood(Food $food, $alert = null)

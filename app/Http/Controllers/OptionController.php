@@ -28,6 +28,7 @@ class OptionController extends Controller
         $options = [];
         $res->name= $request->name;
         $options['start']= $request->time1;
+        $options['address']= $request->address;
         $options['end']= $request->time2;
         $options['delivery']= $request->delivery;
         $options['wifi']= $request->wifi;
