@@ -7,6 +7,12 @@
 @section('slider')
 <meta name="_token" content="{{ csrf_token() }}" />
 
+
+<hr>
+<div class="row"></div>
+<div>
+    @include('front.messages')
+</div>
 <div class="IB-Slide">
     <div class="IB-container">
         <div class="IB-SlideBox">
@@ -68,9 +74,10 @@
 
                 <ul style="text-align: justify;line-height: 3rem" class="pr-3">
                     <li>
+
                         <span>جای پارک : </span>
                         <span>
-                            @if($res->options->park)
+                            @if(isset($res->options->park))
                                 دارد
                             @else
                                 ندارد
@@ -80,7 +87,7 @@
                     <li>
                         <span>اینترنت : </span>
                         <span>
-                            @if($res->options->wifi)
+                            @if(isset($res->options->wifi))
                                 دارد
                             @else
                                 ندارد
@@ -90,7 +97,7 @@
                     <li>
                         <span>زمین بازی : </span>
                         <span>
-                            @if($res->options->game)
+                            @if(isset($res->options->game))
                                 دارد
                             @else
                                 ندارد
@@ -100,7 +107,7 @@
                     <li>
                         <span>میز کودک : </span>
                         <span>
-                            @if($res->options->child_bench)
+                            @if(isset($res->options->child_bench))
                                 دارد
                             @else
                                 ندارد
@@ -110,7 +117,7 @@
                     <li>
                         <span>موسیقی زنده : </span>
                         <span>
-                            @if($res->options->music)
+                            @if(isset($res->options->music))
                                 دارد
                             @else
                                 ندارد
@@ -120,7 +127,7 @@
                     <li>
                         <span>تحویل رایگان : </span>
                         <span>
-                            @if($res->options->delivery)
+                            @if(isset($res->options->delivery))
                                 دارد
                             @else
                                 ندارد
@@ -130,7 +137,7 @@
                     <li>
                         <span>کارت خوان سیار : </span>
                         <span>
-                            @if($res->options->kart)
+                            @if(isset($res->options->kart))
                                 دارد
                             @else
                                 ندارد
@@ -246,6 +253,69 @@
         </div>
 
     </div>
+
+    {{--کامنت--}}
+    <form action="{{route('restaurant.comment',$res->id)}}" method="post" class="form-group"
+          style="border: 1px solid black; background-color:white;margin: 14px; ">
+        <div class="form-group row" style="margin: 14px;">
+            @csrf
+            @auth
+            <div class="form-group col-sm-6">
+                <label for="name">نام شما:</label>
+                <input type="text" class="form-control" name="name" value="{{Auth::user()->name}}" readonly>
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="email">ایمیل شما:</label>
+                <input type="email" class="form-control" name="email" value="{{Auth::user()->email}}" readonly>
+
+            </div>
+            @else
+                <div class="form-group col-sm-6">
+                    <label for="name">نام شما:</label>
+                    <input type="text" class="form-control" name="name">
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="email">ایمیل شما:</label>
+                    <input type="email" class="form-control" name="email">
+
+                </div>
+                @endauth
+                <div class="form-group col-sm-12">
+                    <label for="name">متن نظر شما:</label>
+                    <textarea type="text" class="form-control" name="body"></textarea>
+                </div>
+                <input type="hidden" name="role" value="2">
+            {{--رول 2 برای رستوران ها می باشد--}}
+                <input type="hidden" name="item_id" value="{{$res->id}}">
+                <div class="form-group col-sm-12">
+                    <label for="name">تصویر امنیتی:</label>
+                    {!! htmlFormSnippet() !!}
+                </div>
+
+
+
+                <div class="form-row">
+                    <button class="btn btn-primary" type="submit">ارسال نظر</button>
+                </div>
+
+        </div>
+    </form>
+    <div style="background-color: white;border: 1px solid black; margin: 3%;border-radius: 12px;" >
+        <h4 style="padding:3% 3% 0 0 ;">نظرات: </h4>
+        @foreach($comments as $comment)
+            <div style="margin-right: 3%;">
+                <div style="">
+                    <p>  {{$comment->name}} گفتند که:</p>
+                    {{--<li> ایمیل: {{$comment->email}}</li>--}}
+                </div>
+                <div>  {{$comment->body}}</div>
+            </div>
+            <hr>
+        @endforeach
+    </div>
+    {{--انتهای کامنت--}}
+
+
 
     <script>
         function animation()

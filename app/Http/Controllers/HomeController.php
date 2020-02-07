@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Banner;
 use App\Buycode;
 use App\Category;
@@ -63,7 +64,7 @@ class HomeController extends Controller
     public function showRestaurants()
     {
         $restaurants = Restaurant::paginate(20);
-        return view('restaurants',compact('restaurants'));
+        return view('restaurants', compact('restaurants'));
     }
 
     public function showFood(Food $food, $alert = null)
@@ -75,7 +76,7 @@ class HomeController extends Controller
     {
 
 
-        $comments=$game->comment()->where('status',1)->get(); // comments
+        $comments = $game->comment()->where('status', 1)->where('role',1)->get(); // comments
 
 
         $dynamic = Banner::randomDynamicBanner()->first(); // start the game banner
@@ -93,7 +94,7 @@ class HomeController extends Controller
             $urls[$i] = asset($game->file . '/part' . $i . '/index.html');
         }
 
-        return view('game', compact('dynamic', 'urls', 'zirnevis', 'banners', 'part', 'game','comments'));
+        return view('game', compact('dynamic', 'urls', 'zirnevis', 'banners', 'part', 'game', 'comments'));
     }
 
     public function gamesPage()
@@ -139,7 +140,10 @@ class HomeController extends Controller
         $slides = $res->slides()->with('category')->get();
         $special = $res->events();
 
-        return view('order', compact('special', 'slides', 'home', 'products', 'res'));
+
+        $comments = $res->comment()->where('status', 1)->where('role','2')->get(); // comments
+
+        return view('order', compact('special', 'slides', 'home', 'products', 'res', 'comments'));
     }
 
     public function reserve($id = 1, Request $request)

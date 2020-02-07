@@ -145,8 +145,9 @@ Route::group(['prefix' => 'restaurant'], function () {
     Route::post('down', 'HomeController@ajax');
 });
 //comment front
+Route::post('/comment/{restaurant}', 'CommentController@storeR')->name('restaurant.comment');
+
 Route::post('/comment/{game}', 'CommentController@storeG')->name('game.comment');
-// Route::post('/comment/{restaurant}', 'CommentController@storeR')->name('restaurant.comment');
 
 
 Route::get('/test', function () {

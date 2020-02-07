@@ -15,4 +15,5 @@ class Comment extends Model
     {
         return $this->belongsTo(Game::class,'item_id','id');
     }
+
 }

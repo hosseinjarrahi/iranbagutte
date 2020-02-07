@@ -6,10 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Restaurant extends Model
 {
+    protected $fillable=['name','pics','options'];
     protected $casts = [
         'options' => 'Array',
         'pics' => 'Array'
     ];
+
+
+    public function comment()
+    {
+        return $this->hasMany(Comment::class,'item_id','id');
+    }
+
 
     public function foods()
     {

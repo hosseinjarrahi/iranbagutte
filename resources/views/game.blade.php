@@ -198,7 +198,7 @@
             </div>
         </div>
     </div>
-
+{{--کامنت--}}
     <form action="{{route('game.comment',$game->id)}}" method="post" class="form-group"
           style="border: 1px solid black; background-color:white;margin: 14px; ">
         <div class="form-group row" style="margin: 14px;">
@@ -256,7 +256,7 @@
             <hr>
         @endforeach
     </div>
-
+{{--انتهای کامنت--}}
     <script>
         let ztime = 99999999999;
                 @if($zirnevis)

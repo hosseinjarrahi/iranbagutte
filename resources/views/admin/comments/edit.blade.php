@@ -1,4 +1,4 @@
-@extends('back.index')
+@extends('admin.master')
 
 @section('title')
     ویرایش نظر
@@ -6,18 +6,18 @@
 
 @section('content')
     <div class="main-panel">
-        <div class="content-wrapper">
+        
             <!-- Page Title Header Starts-->
-            <div class="row page-title-header">
-                <div class="col-12">
-                    <div class="page-header">
-                        <h4 class="page-title">ویرایش نظر</h4>
-                    </div>
-                </div>
+            {{--<div class="row page-title-header">--}}
+                {{--<div class="col-12">--}}
+                    {{--<div class="page-header">--}}
+                        {{--<h4 class="page-title">ویرایش نظر</h4>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
 
-            </div>
+            {{--</div>--}}
             <!-- Page Title Header Ends-->
-            <div class="row">@include('back.messages')</div>
+            <div class="row">@include('admin.messages')</div>
             <div class="row">
                 <div class="col-lg-12 grid-margin stretch-card">
                     <div class="card">
@@ -76,7 +76,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        @include('back.footer')
+
     </div>
 @endsection

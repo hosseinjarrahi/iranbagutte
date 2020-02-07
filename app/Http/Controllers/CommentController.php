@@ -26,7 +26,7 @@ class CommentController extends Controller
             'name' => 'required',
             'email' => 'required',
             'body' => 'required',
-//            recaptchaFieldName() => recaptchaRuleName(),
+            recaptchaFieldName() => recaptchaRuleName(),
 
         ]);
         $game->comment()->create(
@@ -49,33 +49,39 @@ class CommentController extends Controller
 
 
     }
-//    public function storeR(Request $request, Restaurant $restaurant)
-//    {
-//        $validateCategory = $request->validate([
-//            'name' => 'required',
-//            'email' => 'required',
-//            'body' => 'required',
-////            recaptchaFieldName() => recaptchaRuleName(),
-//
-//        ]);
-//        $game->comment()->create(
-//            [
-//                'name' => $request->name,
-//                'email' => $request->email,
-//                'body' => $request->body,
-//                'role' => $request->role,
-//            ]
-//        );
-//
-//
-////        Mail::to($request->email)
-////            ->send(new CommentSent($request,$article));
-//
-//        $msg = 'نظر شما با موفقیت ثبت شد و پس از تایید مدیریت سایت نمایش داده میشود.';
-//        return back()->with('success', $msg);
-//
-//
-//    }
+
+
+
+
+
+
+    public function storeR(Request $request, Restaurant $restaurant)
+    {
+        $validateCategory = $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'body' => 'required',
+//            recaptchaFieldName() => recaptchaRuleName(),
+        ]);
+
+        $restaurant->comment()->create(
+            [
+                'name' => $request->name,
+                'email' => $request->email,
+                'body' => $request->body,
+                'role' => $request->role,
+            ]
+        );
+
+
+//        Mail::to($request->email)
+//            ->send(new CommentSent($request,$article));
+
+        $msg = 'نظر شما با موفقیت ثبت شد و پس از تایید مدیریت سایت نمایش داده میشود.';
+        return back()->with('success', $msg);
+
+
+    }
 
     /**
      * Display the specified resource.
