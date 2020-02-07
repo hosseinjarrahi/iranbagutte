@@ -459,7 +459,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             @if(auth()->user()->hasRole('comments'))
                             <li class="nav-item">
 
-                                <a href="#" class="nav-link">
+                                <a href="{{route('admin.comments')}}" class="nav-link">
 
                                     <i class="nav-icon fa fa-comment"></i>
 

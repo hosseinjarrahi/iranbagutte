@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Banner;
 use App\Buycode;
 use App\Category;
@@ -13,6 +12,7 @@ use App\Restaurant;
 use App\Slide;
 use App\Table;
 use App\User;
+use App\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Morilog\Jalali\Jalalian;
@@ -73,6 +73,11 @@ class HomeController extends Controller
 
     public function game(Game $game)
     {
+
+
+        $comments=$game->comment()->where('status',1)->get(); // comments
+
+
         $dynamic = Banner::randomDynamicBanner()->first(); // start the game banner
         $zirnevis = Banner::randomTextBanner()->first(); // zirnevis
         $banners = Banner::randomNormalBanner()->get(); // upp and down banners
@@ -88,7 +93,7 @@ class HomeController extends Controller
             $urls[$i] = asset($game->file . '/part' . $i . '/index.html');
         }
 
-        return view('game', compact('dynamic', 'urls', 'zirnevis', 'banners', 'part', 'game'));
+        return view('game', compact('dynamic', 'urls', 'zirnevis', 'banners', 'part', 'game','comments'));
     }
 
     public function gamesPage()

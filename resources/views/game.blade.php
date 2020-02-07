@@ -5,12 +5,15 @@
 @endsection
 
 @section('content')
+
+
     <style>
         .example2 {
             height: 50px;
             overflow: hidden;
             position: relative;
         }
+
         .example2 h3 {
             position: absolute;
             width: 100%;
@@ -19,25 +22,36 @@
             line-height: 50px;
             text-align: center;
             /* Starting position */
-            -moz-transform:translateX(-100%);
-            -webkit-transform:translateX(-100%);
-            transform:translateX(-100%);
+            -moz-transform: translateX(-100%);
+            -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
             /* Apply animation to this element */
             -moz-animation: example2 15s linear infinite;
             -webkit-animation: example2 15s linear infinite;
             animation: example2 15s linear infinite;
         }
+
         /* Move it (define the animation) */
         @-moz-keyframes example2 {
-            0%   { -moz-transform: translateX(-100%); }
-            100% { -moz-transform: translateX(100%); }
+            0% {
+                -moz-transform: translateX(-100%);
+            }
+            100% {
+                -moz-transform: translateX(100%);
+            }
         }
+
         @-webkit-keyframes example2 {
-            0%   { -webkit-transform: translateX(-100%); }
-            100% { -webkit-transform: translateX(100%); }
+            0% {
+                -webkit-transform: translateX(-100%);
+            }
+            100% {
+                -webkit-transform: translateX(100%);
+            }
         }
+
         @keyframes example2 {
-            0%   {
+            0% {
                 -moz-transform: translateX(-100%); /* Firefox bug fix */
                 -webkit-transform: translateX(-100%); /* Firefox bug fix */
                 transform: translateX(-100%);
@@ -49,6 +63,17 @@
             }
         }
     </style>
+
+
+
+
+
+
+<hr>
+    <div class="row"></div>
+    <div>
+        @include('front.messages')
+    </div>
 
     <div id="gameBox"
          style="visibility: hidden;height: 100%;width: 100%;position: fixed; background-color: hsla(0, 0%, 0%, 0.90);z-index: 10000;">
@@ -115,23 +140,23 @@
                             </a>
                         @endfor
                         @if($game->part != $part)
-                        <div class="ads-parent position-relative m-2 d-flex flex-column justify-content-center align-items-center"
-                             style="border-radius: 30px;width: 500px; !important;background: #0c5460">
-                            <span class="pb-3">جهت ادامه بازی کد خرید ساندویچ خودرا وارد نمایید</span>
-                            @if(!auth()->check())<span class="pb-3">ابتدا باید وارد حساب خود شوید</span>@endif
-                            <form action="{{ url('check-buycode') }}" method="post">
-                                @csrf
-                                <div class="form-row">
-                                    <div class="col-8">
-                                        <input name="buy_code" class="form-control">
-                                        <input name="id" value="{{ $game->id }}" type="hidden" class="form-control">
+                            <div class="ads-parent position-relative m-2 d-flex flex-column justify-content-center align-items-center"
+                                 style="border-radius: 30px;width: 500px; !important;background: #0c5460">
+                                <span class="pb-3">جهت ادامه بازی کد خرید ساندویچ خودرا وارد نمایید</span>
+                                @if(!auth()->check())<span class="pb-3">ابتدا باید وارد حساب خود شوید</span>@endif
+                                <form action="{{ url('check-buycode') }}" method="post">
+                                    @csrf
+                                    <div class="form-row">
+                                        <div class="col-8">
+                                            <input name="buy_code" class="form-control">
+                                            <input name="id" value="{{ $game->id }}" type="hidden" class="form-control">
+                                        </div>
+                                        <div class="col-4">
+                                            <button type="submit" class="btn btn-default">ارسال</button>
+                                        </div>
                                     </div>
-                                    <div class="col-4">
-                                        <button type="submit" class="btn btn-default">ارسال</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+                                </form>
+                            </div>
                         @endif
                     </div>
                     <button class="ctrl-btn pro-prev text-white" style="margin-left: 20px;">< قبلی</button>
@@ -173,17 +198,72 @@
             </div>
         </div>
     </div>
+
+    <form action="{{route('game.comment',$game->id)}}" method="post" class="form-group"
+          style="border: 1px solid black; background-color:white;margin: 14px; ">
+        <div class="form-group row" style="margin: 14px;">
+            @csrf
+            @auth
+            <div class="form-group col-sm-6">
+                <label for="name">نام شما:</label>
+                <input type="text" class="form-control" name="name" value="{{Auth::user()->name}}" readonly>
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="email">ایمیل شما:</label>
+                <input type="email" class="form-control" name="email" value="{{Auth::user()->email}}" readonly>
+
+            </div>
+            @else
+                <div class="form-group col-sm-6">
+                    <label for="name">نام شما:</label>
+                    <input type="text" class="form-control" name="name">
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="email">ایمیل شما:</label>
+                    <input type="email" class="form-control" name="email">
+
+                </div>
+                @endauth
+                <div class="form-group col-sm-12">
+                    <label for="name">متن نظر شما:</label>
+                    <textarea type="text" class="form-control" name="body"></textarea>
+                </div>
+                <input type="hidden" name="role" value="1">
+                <input type="hidden" name="item_id" value="{{$game->id}}">
+                <div class="form-group col-sm-12">
+                    <label for="name">تصویر امنیتی:</label>
+                    {!! htmlFormSnippet() !!}
+                </div>
+
+
+
+                <div class="form-row">
+                    <button class="btn btn-primary" type="submit">ارسال نظر</button>
+                </div>
+
+        </div>
+    </form>
+    <div style="background-color: white;border: 1px solid black; margin: 3%;border-radius: 12px;" >
+        <h4 style="padding:3% 3% 0 0 ;">نظرات: </h4>
+        @foreach($comments as $comment)
+            <div style="margin-right: 3%;">
+                <div style="">
+                    <p>  {{$comment->name}} گفتند که:</p>
+                    {{--<li> ایمیل: {{$comment->email}}</li>--}}
+                </div>
+                <div>  {{$comment->body}}</div>
+            </div>
+            <hr>
+        @endforeach
+    </div>
+
     <script>
         let ztime = 99999999999;
-        @if($zirnevis)
+                @if($zirnevis)
         let url = '{{ url('advertise/'.$zirnevis->id) }}';
-        let zirnevis = `
-                <div class="example2">
-                    <h3><a href="${url}">{{ $zirnevis->text }}</a></h3>
-                </div>
-            `;
+        let zirnevis = '<div class="example2"><h3><a href="${url}">{{ $zirnevis->text }}</a></h3></div > ';
         ztime = {{ $zirnevis->time }};
-        @endif
+                @endif
         let vars = [];
         let objs = [];
         let iframes = [];
@@ -194,31 +274,31 @@
         let z = null;
 
         @foreach($urls as $url)
-            iframes.push(`<iframe width="100%" height="800px" src="{{ $url }}"></iframe>`);
-        @endforeach
+            iframes.push('<iframe width="100%" height="800px" src="{{ $url }}"></iframe>');
+                @endforeach
 
         let x = {
-            time: '{{ $dynamic->time }}',
-            img: '{{ $dynamic->img }}',
-            url: '{{ $dynamic->url }}',
-            id: '{{ $dynamic->id }}'
-        };
+                time: '{{ $dynamic->time }}',
+                img: '{{ $dynamic->img }}',
+                url: '{{ $dynamic->url }}',
+                id: '{{ $dynamic->id }}'
+            };
         vars.push(x);
 
-            for (v of vars) {
+        for (v of vars) {
             max++;
-            let img = `
+            let img = '
             <div class="container">
                 <a target="_blank" href="{{ url('advertise/') }}/${v.id}"><img style="max-height:500px;" id="Ad" src="{{ asset('upload/') }}/${v.img}" class="d-block mx-auto img-fluid rounded"></a>
                 <div id="progressBar" style="height:5px;background-color:white;"></div>
             </div>
-            `;
+            ';
             let time = v.time * 1000;
             objs.push({img, time});
         }
-        let closeAdver = `
+        let closeAdver = '
             <span class="col-10 mt-2 col-md-3 mx-auto btn btn-block btn-outline-warning" onclick="closeAd()">بستن تبلیغات</span>
-        `;
+        ';
 
         function openTheGame(i) {
             part = i;
@@ -255,7 +335,7 @@
             z = setTimeout(function () {
                 zir.style.visibility = '';
                 zir.innerHTML = zirnevis;
-            },ztime*1000);
+            }, ztime * 1000);
         }
 
     </script>

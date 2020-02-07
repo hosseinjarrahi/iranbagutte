@@ -35,21 +35,31 @@ Route::get("/checkout", 'BasketController@checkout');
 Route::get("/reply", 'BasketController@reply');
 Route::get("/status", 'BasketController@status');
 
-Route::get("edit" , "BasketController@takmil");
-Route::put("edit" , "BasketController@takmiler");
-
+Route::get("edit", "BasketController@takmil");
+Route::put("edit", "BasketController@takmiler");
 
 
 Route::get("reserve/{id?}", 'HomeController@reserve');
 Route::post('reserve/{id?}', 'HomeController@addReserve');
 
 //user register
-Route::get("register" , "RegisterController@show");
-Route::put("register" , "RegisterController@register");
+Route::get("register", "RegisterController@show");
+Route::put("register", "RegisterController@register");
 
 // manager
-Route::group(['prefix' => 'manager','middleware' => 'auth'], function () {
+Route::group(['prefix' => 'manager', 'middleware' => 'auth'], function () {
     Route::get("/", "ManagerController@show")->name('admin.home');
+
+
+//comments
+
+    Route::get('comments/', 'back\CommentController@index')->name('admin.comments');
+    Route::get('comments/edit/{comment}', 'back\CommentController@edit')->name('admin.comments.edit');
+    Route::put('comments/update/{comment}', 'back\CommentController@update')->name('admin.comments.update');
+    Route::get('comments/destroy/{comment}', 'back\CommentController@destroy')->name('admin.comments.destroy');
+    Route::get('comments/user/status/{comment}', 'back\CommentController@updateStatus')->name('admin.comments.status');
+
+
 //advertise
 
     Route::get('advertise', 'AdvertiseController@show');
@@ -134,7 +144,13 @@ Route::group(['prefix' => 'restaurant'], function () {
     Route::get('{restaurant}', 'HomeController@showRestaurant');
     Route::post('down', 'HomeController@ajax');
 });
+//comment front
+Route::post('/comment/{game}', 'CommentController@storeG')->name('game.comment');
+// Route::post('/comment/{restaurant}', 'CommentController@storeR')->name('restaurant.comment');
 
-Route::get('/test',function(){
+
+Route::get('/test', function () {
     dd(json_encode(\App\Food::all()));
 });
+
+

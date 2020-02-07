@@ -13,6 +13,7 @@
             background-size: cover;
         }
     </style>
+    {!! htmlScriptTagJsApi(['lang'=>'fa']) !!}
 </head>
 <body>
 
