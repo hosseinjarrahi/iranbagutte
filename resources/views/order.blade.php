@@ -70,7 +70,7 @@
                     <li>
                         <span>جای پارک : </span>
                         <span>
-                            @if($res->options->park)
+                            @if($res->options->park ?? false)
                                 دارد
                             @else
                                 ندارد
@@ -80,7 +80,7 @@
                     <li>
                         <span>اینترنت : </span>
                         <span>
-                            @if($res->options->wifi)
+                            @if($res->options->wifi ?? false)
                                 دارد
                             @else
                                 ندارد
@@ -90,7 +90,7 @@
                     <li>
                         <span>زمین بازی : </span>
                         <span>
-                            @if($res->options->game)
+                            @if($res->options->game ?? false)
                                 دارد
                             @else
                                 ندارد
@@ -100,7 +100,7 @@
                     <li>
                         <span>میز کودک : </span>
                         <span>
-                            @if($res->options->child_bench)
+                            @if($res->options->child_bench ?? false)
                                 دارد
                             @else
                                 ندارد
@@ -110,7 +110,7 @@
                     <li>
                         <span>موسیقی زنده : </span>
                         <span>
-                            @if($res->options->music)
+                            @if($res->options->music ?? false)
                                 دارد
                             @else
                                 ندارد
@@ -120,7 +120,7 @@
                     <li>
                         <span>تحویل رایگان : </span>
                         <span>
-                            @if($res->options->delivery)
+                            @if($res->options->delivery ?? false)
                                 دارد
                             @else
                                 ندارد
@@ -130,7 +130,7 @@
                     <li>
                         <span>کارت خوان سیار : </span>
                         <span>
-                            @if($res->options->kart)
+                            @if($res->options->kart ?? false)
                                 دارد
                             @else
                                 ندارد
