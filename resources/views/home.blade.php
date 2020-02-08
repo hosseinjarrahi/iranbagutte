@@ -75,17 +75,17 @@
             <div class="col-lg-4 col-12 d-block d-md-inline-block text-center mt-3 mt-lg-0">
                 <div class="row text-center justify-content-center">
                     @foreach($games as $key => $game)
-
-                        <div class="col-md-6 col-5 shadow" style="height:200px;padding: 5px;">
+                        <a class="col-md-6 col-5 shadow" style="height:200px;padding: 5px;" href="{{ url('game/'.$game->id) }}">
+                        {{--<div class="col-md-6 col-5 shadow" style="height:200px;padding: 5px;">--}}
                             <div id="card-{{ $key+1 }}" class="w-100 h-100 d-flex align-items-center">
 
                                 <div class="front bg-danger text-center" style="background: url({{ asset('img/back.jpg') }});">
-                                    <a href="{{ url('game/'.$game->id) }}">
+                                    {{--<a href="{{ url('game/'.$game->id) }}">--}}
                                         <p style=" font-weight: bold;color: darkblue;padding: 14px;">
                                         <p>هم بازی کن</p>
                                         <p>هم فلافل مجانی ببر</p>
                                         </p>
-                                    </a>
+                                    {{--</a>--}}
                                 </div>
 
                                 <div class="back"
@@ -96,8 +96,8 @@
                                 </div>
 
                             </div>
-                        </div>
-
+                        {{--</div>--}}
+                        </a>
                     @endforeach
                 </div>
             </div>
