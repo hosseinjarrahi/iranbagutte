@@ -90,7 +90,7 @@
 
 
     </style>
-    {!! htmlScriptTagJsApi(['lang'=>'fa']) !!}
+{{--    {!! htmlScriptTagJsApi(['lang'=>'fa']) !!}--}}
 </head>
 <body style="background-color: #ecf0f1;"onload="startGame();">
 
