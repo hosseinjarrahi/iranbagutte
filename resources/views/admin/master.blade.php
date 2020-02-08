@@ -90,84 +90,54 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="sidebar">
 
             <div>
-
                 <!-- Sidebar Menu -->
-
                 <nav class="mt-2">
-
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
-
                         <!-- Add icons to the links using the .nav-icon class
-
                              with font-awesome or any other icon font library -->
                         @if(auth()->user()->hasRole('posts'))
                             <li class="nav-item has-treeview">
-
                                 <a href="#" class="nav-link">
-
                                     <i class="nav-icon fa fa-edit"></i>
-
                                     <p>
-
-                                        مدیریت پست ها
-
+                                        مدیریت محصولات
                                         <i class="right fa fa-angle-left"></i>
-
                                     </p>
-
                                 </a>
-
                                 <ul class="nav nav-treeview">
-
                                     <li class="nav-item">
-
                                         <a href="{{ url('manager/add-food') }}" class="nav-link">
-
                                             <i class="fa fa-circle-o nav-icon"></i>
-
                                             <p>افزودن محصول</p>
-
                                         </a>
-
                                     </li>
-
                                     <li class="nav-item">
-
                                         <a href="{{ url('manager/show-foods') }}" class="nav-link">
-
                                             <i class="fa fa-circle-o nav-icon"></i>
-
                                             <p>مشاهده محصولات</p>
-
                                         </a>
-
                                     </li>
-
                                     <li class="nav-item">
-
                                         <a href="{{ url('manager/category') }}" class="nav-link">
-
                                             <i class="fa fa-circle-o nav-icon"></i>
-
                                             <p>دسته بندی ها</p>
-
                                         </a>
 
                                     </li>
 
                                     @if(auth()->user()->hasRole('slides'))
-                                    <li class="nav-item">
+                                        <li class="nav-item">
 
-                                        <a href="{{ url('manager/slides') }}" class="nav-link">
+                                            <a href="{{ url('manager/slides') }}" class="nav-link">
 
-                                            <i class="fa fa-circle-o nav-icon"></i>
+                                                <i class="fa fa-circle-o nav-icon"></i>
 
-                                            <p>اسلایدر</p>
+                                                <p>اسلایدر</p>
 
-                                        </a>
+                                            </a>
 
-                                    </li>
+                                        </li>
                                     @endif
                                 </ul>
 
@@ -419,27 +389,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </ul>
 
                             </li>
-                            @endif
+                        @endif
 
-                            @if(auth()->user()->hasRole('users'))
+                        @if(auth()->user()->hasRole('users'))
 
-                                <li class="nav-item has-treeview">
+                            <li class="nav-item has-treeview">
 
-                                    <a href="{{ url('manager/manage-users') }}" class="nav-link">
+                                <a href="{{ url('manager/manage-users') }}" class="nav-link">
 
-                                        <i class="nav-icon fa fa-users"></i>
+                                    <i class="nav-icon fa fa-users"></i>
 
-                                        <p>
+                                    <p>
 
-                                            مدیریت کاربران
+                                        مدیریت کاربران
 
-                                        </p>
+                                    </p>
 
-                                    </a>
+                                </a>
 
-                                </li>
-                            @endif
-                            @if(auth()->user()->hasRole('chat'))
+                            </li>
+                        @endif
+                        @if(auth()->user()->hasRole('chat'))
                             <li class="nav-item has-treeview">
 
                                 <a href="http://go.iranbaguette.com/admin" class="nav-link">
@@ -455,8 +425,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </a>
 
                             </li>
-                            @endif
-                            @if(auth()->user()->hasRole('comments'))
+                        @endif
+                        @if(auth()->user()->hasRole('comments'))
                             <li class="nav-item">
 
                                 <a href="{{route('admin.comments')}}" class="nav-link">
@@ -472,22 +442,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </a>
 
                             </li>
-                            @endif
-                            <li class="nav-item">
+                        @endif
+                        <li class="nav-item">
 
-                                <a href="{{ url('') }}" target="_blank" class="nav-link">
+                            <a href="{{ url('') }}" target="_blank" class="nav-link">
 
-                                    <i class="nav-icon fa fa-th"></i>
+                                <i class="nav-icon fa fa-th"></i>
 
-                                    <p>
+                                <p>
 
-                                        مشاهده سایت
+                                    مشاهده سایت
 
-                                    </p>
+                                </p>
 
-                                </a>
+                            </a>
 
-                            </li>
+                        </li>
                         <li class="nav-item">
 
                             <a href="{{ route('logout') }}" class="nav-link">
