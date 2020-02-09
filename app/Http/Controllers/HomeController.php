@@ -31,7 +31,8 @@ class HomeController extends Controller
         $op->main = str_replace('width="', 'class="img-fluid"', $op->main);
         $op->main = str_replace('height="', '', $op->main);
         $cyberspace = Cyberspace::get();
-        return view('home', compact('op', 'home', 'slides', 'games','cyberspace'));
+        $restaurants=Restaurant::get();
+        return view('home', compact('op', 'home', 'slides', 'games','cyberspace','restaurants'));
     }
 
     public function benefits()
@@ -40,8 +41,8 @@ class HomeController extends Controller
         $benefits->main = str_replace('../', '', $benefits->main);
         $benefits->main = str_replace('width="', 'class="img-fluid"', $benefits->main);
         $benefits->main = str_replace('height="', '', $benefits->main);
-
-        return view('benefits', compact('benefits'));
+        $cyberspace = Cyberspace::get();
+        return view('benefits', compact('benefits','cyberspace'));
     }
 
     public function contactUs()
@@ -50,27 +51,30 @@ class HomeController extends Controller
         $contactUs->main = str_replace('../', '', $contactUs->main);
         $contactUs->main = str_replace('width="', 'class="img-fluid"', $contactUs->main);
         $contactUs->main = str_replace('height="', '', $contactUs->main);
-
-        return view('contact-us', compact('contactUs'));
+        $cyberspace = Cyberspace::get();
+        return view('contact-us', compact('contactUs','cyberspace'));
     }
 
     public function showRestaurant(Restaurant $restaurant)
     {
         $cats = $restaurant->categories;
         $foods = $restaurant->foods()->paginate(6);
-
-        return view('restaurant', compact('cats', 'foods', 'restaurant'));
+        $cyberspace = Cyberspace::get();
+        return view('restaurant', compact('cats', 'foods', 'restaurant','cyberspace'));
     }
 
     public function showRestaurants()
     {
         $restaurants = Restaurant::paginate(20);
-        return view('restaurants', compact('restaurants'));
+        $cyberspace = Cyberspace::get();
+
+        return view('restaurants', compact('restaurants','cyberspace'));
     }
 
     public function showFood(Food $food, $alert = null)
     {
-        return view('food', compact('food', 'alert'));
+        $cyberspace = Cyberspace::get();
+        return view('food', compact('food', 'alert','cyberspace'));
     }
 
     public function game(Game $game)
@@ -94,15 +98,15 @@ class HomeController extends Controller
         for ($i = 2; $i <= $part; $i++) {
             $urls[$i] = asset($game->file . '/part' . $i . '/index.html');
         }
-
-        return view('game', compact('dynamic', 'urls', 'zirnevis', 'banners', 'part', 'game', 'comments'));
+        $cyberspace = Cyberspace::get();
+        return view('game', compact('dynamic', 'urls', 'zirnevis', 'banners', 'part', 'game', 'comments','cyberspace'));
     }
 
     public function gamesPage()
     {
         $games = Game::where('status', 1)->paginate(6);
-
-        return view('gamesPage', compact('games'));
+        $cyberspace = Cyberspace::get();
+        return view('gamesPage', compact('games','cyberspace'));
     }
 
     public function checkBuycode(Request $request)
@@ -143,8 +147,8 @@ class HomeController extends Controller
 
 
         $comments = $res->comment()->where('status', 1)->where('role', '2')->get(); // comments
-
-        return view('order', compact('special', 'slides', 'home', 'products', 'res', 'comments'));
+        $cyberspace = Cyberspace::get();
+        return view('order', compact('special', 'slides', 'home', 'products', 'res', 'comments','cyberspace'));
     }
 
     public function reserve($id = 1, Request $request)
@@ -156,8 +160,8 @@ class HomeController extends Controller
         $out = $miz;
 
         $errors = (isset($request->errors)) ? unserialize($reserve->errors) : [];
-
-        return view('reserve', compact('errors', 'home', 'id', 'out', 'message'));
+        $cyberspace = Cyberspace::get();
+        return view('reserve', compact('errors', 'home', 'id', 'out', 'message','cyberspace'));
     }
 
     public function addReserve($id = 1, Request $request)

@@ -19,7 +19,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
 
-    <title>پنل مدیریت | شروع سریع</title>
+    <title>@yield('title')</title>
 
 
     <!-- Font Awesome Icons -->

@@ -14,7 +14,8 @@
 
                         @foreach($slides as $key => $slide)
                             <li>
-                                <h2 style="padding: 0px; margin: 0px; height: 40px; width: 350px; left: 0px;" class="IB-selected each">
+                                <h2 style="padding: 0px; margin: 0px; height: 40px; width: 350px; left: 0px;"
+                                    class="IB-selected each">
                                     <span class="IB-akordin0">{{ $slide->category->name }}</span>
                                 </h2>
                                 <div style="width: 1040px; left: 0px; padding-left: 40px;">
@@ -75,16 +76,18 @@
             <div class="col-lg-4 col-12 d-block d-md-inline-block text-center mt-3 mt-lg-0">
                 <div class="row text-center justify-content-center">
                     @foreach($games as $key => $game)
-                        <a class="col-md-6 col-5 shadow" style="height:200px;padding: 5px;" href="{{ url('game/'.$game->id) }}">
-                        {{--<div class="col-md-6 col-5 shadow" style="height:200px;padding: 5px;">--}}
+                        <a class="col-md-6 col-5 shadow" style="height:200px;padding: 5px;"
+                           href="{{ url('game/'.$game->id) }}">
+                            {{--<div class="col-md-6 col-5 shadow" style="height:200px;padding: 5px;">--}}
                             <div id="card-{{ $key+1 }}" class="w-100 h-100 d-flex align-items-center">
 
-                                <div class="front bg-danger text-center" style="background: url({{ asset('img/back.jpg') }});">
+                                <div class="front bg-danger text-center"
+                                     style="background: url({{ asset('img/back.jpg') }});">
                                     {{--<a href="{{ url('game/'.$game->id) }}">--}}
-                                        <p style=" font-weight: bold;color: darkblue;padding: 14px;">
-                                        <p>هم بازی کن</p>
-                                        <p>هم فلافل مجانی ببر</p>
-                                        </p>
+                                    <p style=" font-weight: bold;color: darkblue;padding: 14px;">
+                                    <p>هم بازی کن</p>
+                                    <p>هم فلافل مجانی ببر</p>
+                                    </p>
                                     {{--</a>--}}
                                 </div>
 
@@ -96,7 +99,7 @@
                                 </div>
 
                             </div>
-                        {{--</div>--}}
+                            {{--</div>--}}
                         </a>
                     @endforeach
                 </div>
@@ -108,25 +111,26 @@
             <div class="slider" id="slider">
                 <div class="slide" id="slide" style="color:#fff;">
 
-                    @for($i=0;$i<3;$i++)
-                        <a href="{{url('restaurant/1')}}" style="color: white">
+
+                    <a href="{{url('restaurants')}}" style="color: white">
+                        <div class="ads-parent position-relative m-2">
+                            <img class="item img-fluid w-100 h-100" src="{{ asset('img/0219_Elmwood_0016.jpg') }}">
+                            <span class="IB-ads text-center w-100 p-2 position-absolute h-50">
+همه رستوران ها
+                        </span>
+                        </div>
+                    </a>
+                    @foreach($restaurants as $restaurant)
+                        <a href="{{url('restaurant/'.$restaurant['id'])}}" style="color: white">
                             <div class="ads-parent position-relative m-2">
+                                {{--<img class="item img-fluid w-100 h-100" src="{{url($restaurant['pics'][0])}}">--}}
                                 <img class="item img-fluid w-100 h-100" src="{{ asset('img/0219_Elmwood_0016.jpg') }}">
                                 <span class="IB-ads text-center w-100 p-2 position-absolute h-50">
                                    آدرس:هفت چنار میدان بریانک روبه روی مسجد المهدی
                                 </span>
                             </div>
                         </a>
-                    @endfor
-                    <a href="{{url('restaurants')}}" style="color: white">
-                        <div class="ads-parent position-relative m-2">
-                            <img class="item img-fluid w-100 h-100" src="{{ asset('img/0219_Elmwood_0016.jpg') }}">
-                            <span class="IB-ads text-center w-100 p-2 position-absolute h-50">
-                           سایر رستوران ها
-                        </span>
-                        </div>
-                    </a>
-
+                    @endforeach
 
                 </div>
                 <button class="ctrl-btn pro-prev text-white">< قبلی</button>

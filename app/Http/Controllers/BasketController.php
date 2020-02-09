@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Food;
 use App\Payment;
+use App\Cyberspace;
 use Illuminate\Http\Request;
 
 class BasketController extends Controller
@@ -12,7 +13,8 @@ class BasketController extends Controller
     {
         $basket = unserialize(session('basket'));
         if ($basket == null) $basket = [];
-        return view('user.basket', compact('basket'));
+        $cyberspace = Cyberspace::get();
+        return view('user.basket', compact('basket','cyberspace'));
     }
 
     public function add($id, Request $request)
