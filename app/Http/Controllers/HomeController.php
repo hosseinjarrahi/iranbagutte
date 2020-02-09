@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Banner;
 use App\Buycode;
 use App\Category;
+use App\Cyberspace;
 use App\Food;
 use App\Game;
 use App\Option;
@@ -29,8 +30,8 @@ class HomeController extends Controller
         $op->main = str_replace('../', '', $op->main);
         $op->main = str_replace('width="', 'class="img-fluid"', $op->main);
         $op->main = str_replace('height="', '', $op->main);
-
-        return view('home', compact('op', 'home', 'slides', 'games'));
+        $cyberspace = Cyberspace::get();
+        return view('home', compact('op', 'home', 'slides', 'games','cyberspace'));
     }
 
     public function benefits()
@@ -76,7 +77,7 @@ class HomeController extends Controller
     {
 
 
-        $comments = $game->comment()->where('status', 1)->where('role',1)->get(); // comments
+        $comments = $game->comment()->where('status', 1)->where('role', 1)->get(); // comments
 
 
         $dynamic = Banner::randomDynamicBanner()->first(); // start the game banner
@@ -141,7 +142,7 @@ class HomeController extends Controller
         $special = $res->events();
 
 
-        $comments = $res->comment()->where('status', 1)->where('role','2')->get(); // comments
+        $comments = $res->comment()->where('status', 1)->where('role', '2')->get(); // comments
 
         return view('order', compact('special', 'slides', 'home', 'products', 'res', 'comments'));
     }

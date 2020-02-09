@@ -51,6 +51,17 @@ Route::group(['prefix' => 'manager', 'middleware' => 'auth'], function () {
     Route::get("/", "ManagerController@show")->name('admin.home');
 
 
+    //cyberspace
+
+    Route::get('cyberspace/', 'back\CyberspaceController@index')->name('admin.cyberspace');
+    Route::get('cyberspace/edit/{cyberspace}', 'back\CyberspaceController@edit')->name('admin.cyberspace.edit');
+    Route::put('cyberspace/update/{cyberspace}', 'back\CyberspaceController@update')->name('admin.cyberspace.update');
+    Route::get('cyberspace/destroy/{cyberspace}', 'back\CyberspaceController@destroy')->name('admin.cyberspace.destroy');
+    Route::get('cyberspace/user/status/{cyberspace}', 'back\CyberspaceController@updateStatus')->name('admin.cyberspace.status');
+
+
+
+
 //comments
 
     Route::get('comments/', 'back\CommentController@index')->name('admin.comments');

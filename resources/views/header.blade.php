@@ -1,4 +1,5 @@
 
+
 <button class="IB-nav-toggle">
 	<div class="IB-icon-menu" >
 		<span class="IB-line IB-line-1"></span>
@@ -25,19 +26,20 @@
 </script>
 
 <header>
+
 	<div class="IB-HeaderTop" style="  background: linear-gradient(to right, #f2994a, #f2c94c);">
 	    <div class="IB-container">
 	        <div class="IB-BoxSocial container-fluid">
 	            <div class="IB-Social">
 
 	              <div class="IB-Item IB-fade">
-	                    <a href="#">
+	                    <a href="{{($cyberspace[0]['url'])}}">
 	                        <img class="IB-ItemImage" src="{{ asset('img/ss2.png') }}" alt="Instagram">
 	                    </a>
 	              </div>
 
 	              <div class="IB-Item IB-fade">
-	                    <a href="#">
+					  <a href="{{$cyberspace[1]['url']}}">
 	                        <img class="IB-ItemImage" src="{{ asset('img/ss3.png') }}" alt="Telegram">
 	                    </a>
 	              </div>

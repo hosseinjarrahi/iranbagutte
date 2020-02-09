@@ -69,14 +69,14 @@
 
 
 
-<hr>
+    <hr>
     <div class="row"></div>
     <div>
         @include('front.messages')
     </div>
 
     <div id="gameBox"
-         style="visibility: hidden;height: 100%;width: 100%;position: fixed; background-color: hsla(0, 0%, 0%, 0.90);z-index: 10000;">
+         style="visibility: hidden;height: 100%;width: 100%;position: fixed; background-color: hsla(0, 0%, 0%, 0.90);z-index: 10000;top:0;">
         <span style="cursor: pointer;" class="p-3 pt-5 text-white display-4" onclick="closeGame()">&times;</span>
         <div id="iframe" class="m-auto w-100 mt-2 text-white"></div>
     </div>
@@ -198,7 +198,7 @@
             </div>
         </div>
     </div>
-{{--کامنت--}}
+    {{--کامنت--}}
     <form action="{{route('game.comment',$game->id)}}" method="post" class="form-group"
           style="border: 1px solid black; background-color:white;margin: 14px; ">
         <div class="form-group row" style="margin: 14px;">
@@ -256,7 +256,7 @@
             <hr>
         @endforeach
     </div>
-{{--انتهای کامنت--}}
+    {{--انتهای کامنت--}}
     <script>
         let ztime = 99999999999;
                 @if($zirnevis)
@@ -274,7 +274,7 @@
         let z = null;
 
         @foreach($urls as $url)
-            iframes.push('<iframe width="100%" height="800px" src="{{ $url }}"></iframe>');
+            iframes.push(`<iframe width="100%" height="800px" src="{{ $url }}"></iframe>`);
                 @endforeach
 
         let x = {
@@ -287,18 +287,18 @@
 
         for (v of vars) {
             max++;
-            let img = '
+            let img = `
             <div class="container">
                 <a target="_blank" href="{{ url('advertise/') }}/${v.id}"><img style="max-height:500px;" id="Ad" src="{{ asset('upload/') }}/${v.img}" class="d-block mx-auto img-fluid rounded"></a>
                 <div id="progressBar" style="height:5px;background-color:white;"></div>
             </div>
-            ';
+            `;
             let time = v.time * 1000;
             objs.push({img, time});
         }
-        let closeAdver = '
+        let closeAdver = `
             <span class="col-10 mt-2 col-md-3 mx-auto btn btn-block btn-outline-warning" onclick="closeAd()">بستن تبلیغات</span>
-        ';
+        `;
 
         function openTheGame(i) {
             part = i;

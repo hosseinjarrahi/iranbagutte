@@ -21,12 +21,19 @@
                     <div class="input-group-append">
                         <span class="input-group-text text-dark">نام کاربری</span>
                     </div>
+                    @error('username')
+                    <div class="alert alert-danger"> {{$message}}</div>
+                    @enderror
                 </div>
+
                 <div class="input-group mb-2">
                     <input type="password" class="form-control" name="password" required><br>
                     <div class="input-group-append">
                         <span class="input-group-text text-dark">رمز عبور</span>
                     </div>
+                    @error('password')
+                    <div class="alert alert-danger"> {{$message}}</div>
+                    @enderror
                 </div>
                 <input type="submit" class="btn btn-primary mb-2" value="ورود">
 

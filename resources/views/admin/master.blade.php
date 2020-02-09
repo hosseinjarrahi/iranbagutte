@@ -75,20 +75,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Main Sidebar Container -->
 
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
-
         <!-- Brand Logo -->
-
         <span class="brand-link">
-
             <span class="brand-text font-weight-light">پنل مدیریت</span>
-
         </span>
-
-
         <!-- Sidebar -->
-
         <div class="sidebar">
-
             <div>
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
@@ -334,19 +326,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         @endif
                         @if(auth()->user()->hasRole('settings'))
                             <li class="nav-item has-treeview">
-
                                 <a href="#" class="nav-link">
-
                                     <i class="nav-icon fa fa-gears"></i>
-
                                     <p>
-
                                         تنظیمات سایت
-
                                         <i class="right fa fa-angle-left"></i>
-
                                     </p>
-
                                 </a>
                                 <ul class="nav nav-treeview">
 
@@ -362,6 +347,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                     </li>
                                     @if(auth()->user()->hasRole('adminSetting'))
+                                        <li class="nav-item">
+
+                                            <a href="{{ route('admin.cyberspace') }}" class="nav-link">
+
+                                                <i class="fa fa-circle-o nav-icon"></i>
+
+                                                <p>فضای مجازی</p>
+
+                                            </a>
+
+                                        </li>
                                         <li class="nav-item">
 
                                             <a href="{{ url('manager/about-us') }}" class="nav-link">
@@ -430,17 +426,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <li class="nav-item">
 
                                 <a href="{{route('admin.comments')}}" class="nav-link">
-
                                     <i class="nav-icon fa fa-comment"></i>
-
                                     <p>
-
                                         نظرات
-
                                     </p>
-
                                 </a>
-
                             </li>
                         @endif
                         <li class="nav-item">
