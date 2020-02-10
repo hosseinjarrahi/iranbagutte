@@ -9,10 +9,8 @@
         <div class="loginBox col-11 col-md-7 rounded p-3 text-center">
 
             <img src="{{ asset('img/logoiran.png') }}" alt="iranbuget" class=" mb-3 img-fluid">
-            @if(isset($errors))
-                @foreach($errors as $error)
-                    <p class="alert-danger  alert">{{ $error }}</p>
-                @endforeach
+            @if(session('error'))
+                <p class="alert-danger  alert">اطلاعات وارد شده اشتباه است.</p>
             @endif
             <form action="{{ url('login') }}" method="post">
                 @csrf
