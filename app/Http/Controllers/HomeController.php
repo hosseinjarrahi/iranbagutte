@@ -99,6 +99,10 @@ class HomeController extends Controller
             $urls[$i] = asset($game->file . '/part' . $i . '/index.html');
         }
         $cyberspace = Cyberspace::get();
+<<<<<<< HEAD
+=======
+
+>>>>>>> seyed
         return view('game', compact('dynamic', 'urls', 'zirnevis', 'banners', 'part', 'game', 'comments','cyberspace'));
     }
 
@@ -106,6 +110,10 @@ class HomeController extends Controller
     {
         $games = Game::where('status', 1)->paginate(6);
         $cyberspace = Cyberspace::get();
+<<<<<<< HEAD
+=======
+
+>>>>>>> seyed
         return view('gamesPage', compact('games','cyberspace'));
     }
 
