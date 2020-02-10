@@ -191,8 +191,9 @@
                     <p style=" font-weight: bold;color: darkblue;padding: 14px;">
                     </p>
                 </div>
-                <div class="back" style="background: url({{ asset('img/halo_4_2013-wallpaper-1440x960.jpg') }});background-size: cover;background-position: center;">
-                    <a href="{{ url("reserve/".$restaurant->id) }}" class="d-block back"></a>
+                <div class="back" style="background: url({{ asset('img/table.jpg') }});background-size: cover;background-position: center;">
+                    <a href="{{ url("reserve/".$restaurant->id) }}" class="d-block back">
+                    </a>
                 </div>
             </div>
         </div>

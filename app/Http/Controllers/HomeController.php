@@ -60,6 +60,7 @@ class HomeController extends Controller
         $cats = $restaurant->categories;
         $foods = $restaurant->foods()->paginate(6);
         $cyberspace = Cyberspace::get();
+
         return view('restaurant', compact('cats', 'foods', 'restaurant','cyberspace'));
     }
 
