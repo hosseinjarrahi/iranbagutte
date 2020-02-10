@@ -94,15 +94,17 @@ class HomeController extends Controller
         for ($i = 2; $i <= $part; $i++) {
             $urls[$i] = asset($game->file . '/part' . $i . '/index.html');
         }
+        $cyberspace = Cyberspace::get();
 
-        return view('game', compact('dynamic', 'urls', 'zirnevis', 'banners', 'part', 'game', 'comments'));
+        return view('game', compact('dynamic', 'urls', 'zirnevis', 'banners', 'part', 'game', 'comments','cyberspace'));
     }
 
     public function gamesPage()
     {
         $games = Game::where('status', 1)->paginate(6);
+        $cyberspace = Cyberspace::get();
 
-        return view('gamesPage', compact('games'));
+        return view('gamesPage', compact('games','cyberspace'));
     }
 
     public function checkBuycode(Request $request)
