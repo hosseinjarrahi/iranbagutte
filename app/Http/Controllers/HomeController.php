@@ -141,8 +141,8 @@ class HomeController extends Controller
     public function order()
     {
         $home = 1;
-        $res = Restaurant::where('id', 1)->with('foods')->get()->first();
-        $products = $res->foods;
+        $res = Restaurant::where('id', 1)->first();
+        $products = $res->foods()->paginate(6);
         $slides = $res->slides()->with('category')->get();
         $special = $res->events();
 

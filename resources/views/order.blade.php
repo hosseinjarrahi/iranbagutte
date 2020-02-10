@@ -215,6 +215,9 @@
 
     </div>
     @endif
+
+    <div class="col-12 d-flex justify-content-center">{{ $products->links() }}</div>
+
     <div class="container-fluid p-lg-3 p-1 col-12 m-0 p-0 d-flex flex-lg-row flex-column justify-content-around" style="color: white">
 
             <div class="shadow col-12 col-lg-2" style="height:200px;padding: 5px;">
