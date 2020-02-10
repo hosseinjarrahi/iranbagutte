@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 
 class BasketController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['show','add','remove']);
+    }
+
     public function show()
     {
         $basket = unserialize(session('basket'));
@@ -133,14 +138,20 @@ class BasketController extends Controller
 
     public function takmiler(Request $request)
     {
+        $request->validate([
+            'email' => 'email|required',
+            'phone' => 'numeric|required',
+            'address' => 'required',
+            'name' => 'required',
+        ]);
         $user = auth()->user();
         $errors = [];
-        $user->email = (empty($request->email)) ? null : $request->email;
-        $user->phone = (empty($request->phone)) ? null : $request->phone;
-        $user->name = (empty($request->name)) ? null : $request->name;
-        $user->address = (empty($request->address)) ? null : $request->address;
-
-        return redirect('/edit');
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->name = $request->name;
+        $user->address = $request->address;
+        $user->save();
+        return back();
     }
 
 }

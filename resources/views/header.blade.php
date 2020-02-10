@@ -33,13 +33,13 @@
 	            <div class="IB-Social">
 
 	              <div class="IB-Item IB-fade">
-	                    <a href="{{($cyberspace[0]['url'])}}">
+	                    <a href="{{($cyberspace[0]['url']) ?? ''}}">
 	                        <img class="IB-ItemImage" src="{{ asset('img/ss2.png') }}" alt="Instagram">
 	                    </a>
 	              </div>
 
 	              <div class="IB-Item IB-fade">
-					  <a href="{{$cyberspace[1]['url']}}">
+					  <a href="{{$cyberspace[1]['url'] ?? ''}}">
 	                        <img class="IB-ItemImage" src="{{ asset('img/ss3.png') }}" alt="Telegram">
 	                    </a>
 	              </div>
