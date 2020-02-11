@@ -173,7 +173,7 @@
         @if(auth()->check() && auth()->user()->payedThisGame($game))
             <a href="{{ asset('upload/'.$game->full) }}" style="color: #969896;font-size: 2rem;">دانلود نسخه کامل</a>
         @else
-            <a href="#" style="color: #969896;font-size: 2rem;">خرید و دانلود نسخه کامل بازی</a>
+            <a href="{{route('front.detalisGame',$game->id)}}" style="color: #969896;font-size: 2rem;">خرید و دانلود نسخه کامل بازی</a>
         @endif
     </div>
 

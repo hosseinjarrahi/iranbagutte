@@ -6,9 +6,10 @@ Route::get('/contact-us', 'HomeController@contactUs');
 
 Route::get('/food/{food}/{alert?}', 'HomeController@showFood');
 Route::get('/restaurants', 'HomeController@showRestaurants');
-
+//front > game
 Route::get('/games-page', 'HomeController@gamesPage');
-Route::get('/game/{game}', 'HomeController@game');
+Route::get('/game/{game}', 'HomeController@game')->name('front.game');
+Route::get('/gameDetails/{game}', 'HomeController@gameDetails')->name('front.detalisGame');
 Route::post('check-buycode', 'HomeController@checkBuycode');
 
 Route::get('/login', 'HomeController@loginPage')->name('login');
@@ -122,7 +123,7 @@ Route::group(['prefix' => 'manager', 'middleware' => 'auth'], function () {
     Route::get("slides", "SlideController@show");
     Route::put("slides", "SlideController@add");
 
-// games
+// manager > games
     Route::get("games", "GameController@manage");
     Route::get("send-game", "GameController@sendPage");
     Route::get("download-game/{game}", "GameController@download");

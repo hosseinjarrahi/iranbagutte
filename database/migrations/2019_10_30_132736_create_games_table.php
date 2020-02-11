@@ -22,6 +22,7 @@ class CreateGamesTable extends Migration
 			$table->text('description')->nullable();
 			$table->text('poster')->nullable();
 			$table->string('part',2);
+			$table->integer('price');
 			$table->text('full')->nullable();
 			$table->timestamps();
 

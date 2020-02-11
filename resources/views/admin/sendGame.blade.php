@@ -19,16 +19,27 @@
                                 @method('put')
                                 @csrf
                                 <div class="form-group">
+                                    <span>نام بازی(به تومان):</span>
                                     <input name="name" type="text" placeholder="نام بازی" class="mb-2 form-control">
                                 </div>
                                 <div class="form-group">
+                                    <span>تعداد قسمت های بازی:</span>
                                     <input name="part" type="text" placeholder="تعداد قسمت ها"
                                            class="mb-2 form-control">
+                                </div>
+                                <div class="form-group">
+                                    <span>قیمت نسخه کامل بازی:</span>
+                                    <input name="price" type="number" placeholder="قیمت نسخه کامل بازی" class="mb-2 form-control">
+                                </div>
+                                <div class="form-group">
+                                    <span>معرفی بازی:</span>
+                                    <textarea name="description" class="mb-2 form-control"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <span>پوستر بازی:</span>
                                     <input type="file" name="poster" class="mb-2 form-control">
                                 </div>
+
                                 <div class="form-group">
                                     <span>فایل بازی با فرمت Zip:</span>
                                     <span class="text-muted">شامل تمامی قسمت های بازی</span>

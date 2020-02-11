@@ -31,8 +31,8 @@ class HomeController extends Controller
         $op->main = str_replace('width="', 'class="img-fluid"', $op->main);
         $op->main = str_replace('height="', '', $op->main);
         $cyberspace = Cyberspace::get();
-        $restaurants=Restaurant::get();
-        return view('home', compact('op', 'home', 'slides', 'games','cyberspace','restaurants'));
+        $restaurants = Restaurant::get();
+        return view('home', compact('op', 'home', 'slides', 'games', 'cyberspace', 'restaurants'));
     }
 
     public function benefits()
@@ -42,7 +42,7 @@ class HomeController extends Controller
         $benefits->main = str_replace('width="', 'class="img-fluid"', $benefits->main);
         $benefits->main = str_replace('height="', '', $benefits->main);
         $cyberspace = Cyberspace::get();
-        return view('benefits', compact('benefits','cyberspace'));
+        return view('benefits', compact('benefits', 'cyberspace'));
     }
 
     public function contactUs()
@@ -52,7 +52,7 @@ class HomeController extends Controller
         $contactUs->main = str_replace('width="', 'class="img-fluid"', $contactUs->main);
         $contactUs->main = str_replace('height="', '', $contactUs->main);
         $cyberspace = Cyberspace::get();
-        return view('contact-us', compact('contactUs','cyberspace'));
+        return view('contact-us', compact('contactUs', 'cyberspace'));
     }
 
     public function showRestaurant(Restaurant $restaurant)
@@ -61,7 +61,7 @@ class HomeController extends Controller
         $foods = $restaurant->foods()->paginate(6);
         $cyberspace = Cyberspace::get();
 
-        return view('restaurant', compact('cats', 'foods', 'restaurant','cyberspace'));
+        return view('restaurant', compact('cats', 'foods', 'restaurant', 'cyberspace'));
     }
 
     public function showRestaurants()
@@ -69,22 +69,18 @@ class HomeController extends Controller
         $restaurants = Restaurant::paginate(20);
         $cyberspace = Cyberspace::get();
 
-        return view('restaurants', compact('restaurants','cyberspace'));
+        return view('restaurants', compact('restaurants', 'cyberspace'));
     }
 
     public function showFood(Food $food, $alert = null)
     {
         $cyberspace = Cyberspace::get();
-        return view('food', compact('food', 'alert','cyberspace'));
+        return view('food', compact('food', 'alert', 'cyberspace'));
     }
 
     public function game(Game $game)
     {
-
-
         $comments = $game->comment()->where('status', 1)->where('role', 1)->get(); // comments
-
-
         $dynamic = Banner::randomDynamicBanner()->first(); // start the game banner
         $zirnevis = Banner::randomTextBanner()->first(); // zirnevis
         $banners = Banner::randomNormalBanner()->get(); // upp and down banners
@@ -100,14 +96,20 @@ class HomeController extends Controller
             $urls[$i] = asset($game->file . '/part' . $i . '/index.html');
         }
         $cyberspace = Cyberspace::get();
-        return view('game', compact('dynamic', 'urls', 'zirnevis', 'banners', 'part', 'game', 'comments','cyberspace'));
+        return view('game', compact('dynamic', 'urls', 'zirnevis', 'banners', 'part', 'game', 'comments', 'cyberspace'));
+    }
+
+    public function gameDetails(Game $game)
+    {
+        $cyberspace = Cyberspace::get();
+        return view('front.game.gameDetails', compact('game', 'cyberspace'));
     }
 
     public function gamesPage()
     {
         $games = Game::where('status', 1)->paginate(6);
         $cyberspace = Cyberspace::get();
-        return view('gamesPage', compact('games','cyberspace'));
+        return view('gamesPage', compact('games', 'cyberspace'));
     }
 
     public function checkBuycode(Request $request)
@@ -121,7 +123,6 @@ class HomeController extends Controller
             $buycode->game_id = $request->id;
             $buycode->save();
         }
-
         return back();
     }
 
@@ -149,7 +150,7 @@ class HomeController extends Controller
 
         $comments = $res->comment()->where('status', 1)->where('role', '2')->get(); // comments
         $cyberspace = Cyberspace::get();
-        return view('order', compact('special', 'slides', 'home', 'products', 'res', 'comments','cyberspace'));
+        return view('order', compact('special', 'slides', 'home', 'products', 'res', 'comments', 'cyberspace'));
     }
 
     public function reserve($id = 1, Request $request)
@@ -162,7 +163,7 @@ class HomeController extends Controller
 
         $errors = (isset($request->errors)) ? unserialize($reserve->errors) : [];
         $cyberspace = Cyberspace::get();
-        return view('reserve', compact('errors', 'home', 'id', 'out', 'message','cyberspace'));
+        return view('reserve', compact('errors', 'home', 'id', 'out', 'message', 'cyberspace'));
     }
 
     public function addReserve($id = 1, Request $request)
