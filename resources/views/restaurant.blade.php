@@ -185,18 +185,36 @@
     <div class="col-12 d-flex justify-content-center">{{ $foods->links() }}</div>
 
     <div class="container-fluid p-lg-3 p-1 col-12 m-0 p-0 d-flex flex-lg-row flex-column justify-content-around">
+
+
+
         <div class="shadow col-12 col-lg-2" style="height:200px;padding: 5px;">
-            <div id="card-1" class="w-100 h-100 d-flex align-items-center">
-                <div class="front bg-danger text-center" style="background: url({{ asset('img/reserve1.jpg') }});background-size:cover">
-                    <p style=" font-weight: bold;color: darkblue;padding: 14px;">
-                    </p>
+            <a href="{{ url("reserve/".$restaurant->id) }}" style="color: white">
+                <div id="card-1" class="w-100 h-100 d-flex align-items-center">
+                    <div class="front text-center" style=" background: url({{ asset('img/reserve1.jpg') }});background-size:contain;background-repeat: no-repeat;background-position: center;">
+                        <p style=" font-weight: bold;color: darkblue;padding: 14px;">
+                        <p>رزرو میز</p>
+                        </p>
+                    </div>
+                    <div class="back" style="background: url({{ asset('img/reserve2.jpg') }});background-size: cover;background-position: center;"></div>
                 </div>
-                <div class="back" style="background: url({{ asset('img/table.jpg') }});background-size: cover;background-position: center;">
-                    <a href="{{ url("reserve/".$restaurant->id) }}" class="d-block back">
-                    </a>
-                </div>
-            </div>
+            </a>
         </div>
+
+
+
+        {{--<div class="shadow col-12 col-lg-2" style="height:200px;padding: 5px;">--}}
+            {{--<div id="card-1" class="w-100 h-100 d-flex align-items-center">--}}
+                {{--<div class="front bg-danger text-center" style="background: url({{ asset('img/reserve1.jpg') }});background-size:cover">--}}
+                    {{--<p style=" font-weight: bold;color: darkblue;padding: 14px;">--}}
+                    {{--</p>--}}
+                {{--</div>--}}
+                {{--<div class="back" style="background: url({{ asset('img/table.jpg') }});background-size: cover;background-position: center;">--}}
+                    {{--<a href="{{ url("reserve/".$restaurant->id) }}" class="d-block back">--}}
+                    {{--</a>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
     </div>
 
     <script>

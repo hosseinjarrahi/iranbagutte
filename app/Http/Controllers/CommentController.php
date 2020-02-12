@@ -26,7 +26,7 @@ class CommentController extends Controller
             'name' => 'required',
             'email' => 'required',
             'body' => 'required',
-            recaptchaFieldName() => recaptchaRuleName(),
+//            recaptchaFieldName() => recaptchaRuleName(),
 
         ]);
         $game->comment()->create(
