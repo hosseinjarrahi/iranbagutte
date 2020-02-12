@@ -424,7 +424,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         @endif
                         @if(auth()->user()->hasRole('comments'))
                             <li class="nav-item">
-
                                 <a href="{{route('admin.comments')}}" class="nav-link">
                                     <i class="nav-icon fa fa-comment"></i>
                                     <p>
@@ -433,6 +432,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </a>
                             </li>
                         @endif
+                        <li class="nav-item">
+                            <a href="{{route('admin.advertiseUser')}}" class="nav-link">
+                                <i class="nav-icon fa fa-comment"></i>
+                                <p>
+                                    حذف تبلیغات
+                                </p>
+                            </a>
+                        </li>
                         <li class="nav-item">
 
                             <a href="{{ url('') }}" target="_blank" class="nav-link">

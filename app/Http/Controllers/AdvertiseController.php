@@ -16,7 +16,10 @@ class AdvertiseController extends Controller
         $ads = Banner::where('state','<','2')->get();
         return view('admin.advertise' , compact('ads'));
     }
-
+    public function showAdvUser ()
+    {
+        return view('admin.advertiseUser.advertiseUser');
+    }
     public function delete ($id)
     {
         $id = (int) $id;

@@ -39,24 +39,21 @@ Route::put("register", "RegisterController@register");
 // manager
 Route::group(['prefix' => 'manager', 'middleware' => 'auth'], function () {
     Route::get("/", "ManagerController@show")->name('admin.home');
-
-
-    //cyberspace
+    //manager > cyberspace
 
     Route::get('cyberspace/', 'back\CyberspaceController@index')->name('admin.cyberspace');
     Route::get('cyberspace/edit/{cyberspace}', 'back\CyberspaceController@edit')->name('admin.cyberspace.edit');
     Route::put('cyberspace/update/{cyberspace}', 'back\CyberspaceController@update')->name('admin.cyberspace.update');
 
-//comments
-
+//manager > comments
     Route::get('comments/', 'back\CommentController@index')->name('admin.comments');
     Route::get('comments/edit/{comment}', 'back\CommentController@edit')->name('admin.comments.edit');
     Route::put('comments/update/{comment}', 'back\CommentController@update')->name('admin.comments.update');
     Route::get('comments/destroy/{comment}', 'back\CommentController@destroy')->name('admin.comments.destroy');
     Route::get('comments/user/status/{comment}', 'back\CommentController@updateStatus')->name('admin.comments.status');
 
-
-//advertise
+//manager > advertise
+    Route::get('advertiseUser', 'AdvertiseController@showAdvUser')->name('admin.advertiseUser');
 
     Route::get('advertise', 'AdvertiseController@show');
     Route::get('advertise/delete/{id}', 'AdvertiseController@delete');
