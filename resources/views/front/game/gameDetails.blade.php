@@ -25,7 +25,8 @@
                         <p><span style="font-weight: bold;padding-left: 5px;">قیمت:</span><span style="color: #3c0;">{{$game->price}}
                                 تومان</span></p>
                     </div>
-                    <form action="{{route('front.game',$game->id)}}" method="get">
+                    {{--<form action="{{route('front.game',$game->id)}}" method="get">--}}
+                    <form action="https://zarinp.al/@iranbaguette" method="get">
                         <button type="submit" class="btn btn-success" style="padding: 8px 14px;">خرید بازی</button>
 
                     </form>

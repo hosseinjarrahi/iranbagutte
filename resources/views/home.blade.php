@@ -123,7 +123,6 @@
                     @foreach($restaurants as $restaurant)
                         <a href="{{url('restaurant/'.$restaurant['id'])}}" style="color: white; height: 100%;">
                             <div class="ads-parent position-relative m-2">
-                                {{--<img class="item img-fluid w-100 h-100" src="{{url($restaurant['pics'][0])}}">--}}
 
                                 <img class="item img-fluid w-100 h-100" src="upload/{{ $restaurant['pics'][0] }}">
                                 <span class="IB-ads text-center w-100 p-2 position-absolute h-50">
