@@ -38,7 +38,8 @@
             </table>
             <div class="container rounded p-2 text-white">
                 <span class="bg-dark p-3 rounded"><span>قیمت کل: </span><span>{{ $p }}</span> <span>تومان</span></span>
-                <a href="{{ url('checkout') }}" class="btn btn-primary p-3 rounded">اتمام خرید</a>
+                <a href="https://zarinp.al/@iranbaguette" class="btn btn-primary p-3 rounded">اتمام خرید</a>
+                {{--<a href="{{ url('checkout') }}" class="btn btn-primary p-3 rounded">اتمام خرید</a>--}}
             </div>
         </div>
 

@@ -13,4 +13,8 @@ yarn-error.log
 /.idea
 /.idea/workspace.xml
 /.idea/iranbagutte.iml
+*.zip
+/public/games/*
+/public/upload/*
+
 

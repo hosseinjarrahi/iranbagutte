@@ -25,7 +25,8 @@
         @endforelse
 
         </div>
-    {{ $games->links() }}
+        <div class="d-flex justify-content-center">{{ $games->links() }}</div>
+
     </div>
 
 @endsection

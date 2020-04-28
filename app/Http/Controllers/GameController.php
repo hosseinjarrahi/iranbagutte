@@ -45,6 +45,8 @@ class GameController extends Controller
         $game = new Game;
         $game->name = $request->name;
         $game->part = $request->part;
+        $game->description = $request->description;
+        $game->price = $request->price;
         $game->user_id = auth()->id();
         $game->status = 0;
         if (auth()->user()->hasRole('admin') || auth()->user()->hasRole('checkGame'))
