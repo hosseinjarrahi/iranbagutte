@@ -15,5 +15,6 @@ $factory->define(Game::class, function (Faker $faker) {
         'part' => 2,
         'full' => 'games/full.zip',
         'status' => 1,
+        'price' => 0
     ];
 });
