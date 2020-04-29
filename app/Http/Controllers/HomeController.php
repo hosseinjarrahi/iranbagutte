@@ -54,7 +54,11 @@ class HomeController extends Controller
         $cyberspace = Cyberspace::get();
         return view('contact-us', compact('contactUs', 'cyberspace'));
     }
-
+    public function collaborateWithFastFoodMaker()
+    {
+//        return view('collaborate-with-fastFood-maker', compact('collaborateWithFastFoodMaker', 'cyberspace'));
+        return view('collaborate-with-fastFood-maker');
+    }
     public function showRestaurant(Restaurant $restaurant)
     {
         $cats = $restaurant->categories;

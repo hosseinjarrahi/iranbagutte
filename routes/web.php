@@ -3,6 +3,13 @@
 Route::get('/', 'HomeController@home')->name('home');
 Route::get('/benefits', 'HomeController@benefits');
 Route::get('/contact-us', 'HomeController@contactUs');
+//new
+Route::get('/collaborate-with-fastFood-maker', 'HomeController@collaborateWithFastFoodMaker');
+Route::get('/collaborate-with-game-developers', 'HomeController@collaborateWithGameDevelopers');
+Route::get('/how-to-order', 'HomeController@howToOrder');
+Route::get('/make-game-for-us', 'HomeController@makeGameForUs');
+//end new
+
 
 Route::get('/food/{food}/{alert?}', 'HomeController@showFood');
 Route::get('/restaurants', 'HomeController@showRestaurants');

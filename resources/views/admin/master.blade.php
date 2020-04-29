@@ -408,7 +408,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         @if(auth()->user()->hasRole('chat'))
                             <li class="nav-item has-treeview">
 
-                                <a href="http://go.iranbaguette.com/admin" class="nav-link">
+                                <a href="http://go.iranbaguette.ir/admin" class="nav-link">
 
                                     <i class="nav-icon fa fa-comments"></i>
 
