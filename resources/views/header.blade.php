@@ -108,6 +108,25 @@
 							<div id="myDropdown" class="dropdown-content">
 								<a class="IB-menu-link" href="#">همکاری با بازیسازان</a>
 								<a class="IB-menu-link" href="#">برا ی ما بازی بسازید</a>
+<<<<<<< HEAD
+
+                                <a class="IB-menu-link" href="#">همکاری با فست فودی ها</a>
+
+                            </div>
+
+							<li class="IB-menu-item"><a class="IB-menu-link" href="{{ url('games-page') }}"> بازی ها</a></li>
+							<li class="IB-menu-item"><a class="IB-menu-link" href="#">نحوه سفارش</a></li>
+							<li class="IB-menu-item"><a class="IB-menu-link" href="{{ url('contact-us') }}">ارتباط با ما</a></li>
+                            <li class="IB-menu-item"><a class="IB-menu-link" href="{{ url('benefits') }}">مزایای عضویت</a></li>
+
+                            @if(auth()->check())
+							<li class="IB-menu-item"><a class="IB-menu-link" href="{{ url('edit') }}">ویرایش اطلاعات</a></li>
+							<li class="IB-menu-item"><a class="IB-menu-link" href="{{ url('status') }}">سفارشات</a></li>
+                                @if(auth()->user()->hasRole('any'))
+                                    <li class="IB-menu-item text-bold text-info"><a class="IB-menu-link" href="{{ route('admin.home') }}">مدیریت</a></li>
+                                @endif
+                            @endif
+=======
 								<a class="IB-menu-link" href="#">همکاری با فسفودی ها</a>
 							</div>
 
@@ -122,6 +141,7 @@
 									<li class="IB-menu-item text-bold text-info"><a class="IB-menu-link" href="{{ route('admin.home') }}">مدیریت</a></li>
 								@endif
 							@endif
+>>>>>>> a391f8a58acb7da79f92493b3fa7ed4634455938
 
 
 						</ul>
