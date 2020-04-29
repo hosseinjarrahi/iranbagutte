@@ -108,12 +108,17 @@
 							<div id="myDropdown" class="dropdown-content">
 								<a class="IB-menu-link" href="#">همکاری با بازیسازان</a>
 								<a class="IB-menu-link" href="#">برا ی ما بازی بسازید</a>
-								<a class="IB-menu-link" href="{{ url('benefits') }}">مزایای عضویت</a>
-							</div>
 
-							<li class="IB-menu-item"><a class="IB-menu-link" href="{{ url('games-page') }}">صـفحـه بازی ها</a></li>
+                                <a class="IB-menu-link" href="#">همکاری با فست فودی ها</a>
+
+                            </div>
+
+							<li class="IB-menu-item"><a class="IB-menu-link" href="{{ url('games-page') }}"> بازی ها</a></li>
+							<li class="IB-menu-item"><a class="IB-menu-link" href="#">نحوه سفارش</a></li>
 							<li class="IB-menu-item"><a class="IB-menu-link" href="{{ url('contact-us') }}">ارتباط با ما</a></li>
-							@if(auth()->check())
+                            <li class="IB-menu-item"><a class="IB-menu-link" href="{{ url('benefits') }}">مزایای عضویت</a></li>
+
+                            @if(auth()->check())
 							<li class="IB-menu-item"><a class="IB-menu-link" href="{{ url('edit') }}">ویرایش اطلاعات</a></li>
 							<li class="IB-menu-item"><a class="IB-menu-link" href="{{ url('status') }}">سفارشات</a></li>
                                 @if(auth()->user()->hasRole('any'))
