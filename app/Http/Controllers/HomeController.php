@@ -54,6 +54,7 @@ class HomeController extends Controller
         $cyberspace = Cyberspace::get();
         return view('contact-us', compact('contactUs', 'cyberspace'));
     }
+    //***********************
     public function collaborateWithFastFoodMaker()
     {
         $collaborateWithFastFoodMaker = Option::all()[1];
@@ -64,16 +65,39 @@ class HomeController extends Controller
         return view('collaborate-with-fastFood-maker', compact('collaborateWithFastFoodMaker', 'cyberspace'));
 //        return view('collaborate-with-fastFood-maker');
     }
-//    public function collaborateWithFastFoodMaker()
-//    {
-//        $collaborateWithFastFoodMaker = Option::all()[1];
-//        $collaborateWithFastFoodMaker->main = str_replace('../', '', $collaborateWithFastFoodMaker->main);
-//        $collaborateWithFastFoodMaker->main = str_replace('width="', 'class="img-fluid"', $collaborateWithFastFoodMaker->main);
-//        $collaborateWithFastFoodMaker->main = str_replace('height="', '', $collaborateWithFastFoodMaker->main);
-//        $cyberspace = Cyberspace::get();
-//        return view('collaborate-with-fastFood-maker', compact('collaborateWithFastFoodMaker', 'cyberspace'));
-////        return view('collaborate-with-fastFood-maker');
-//    }
+
+
+    //***********************
+    public function makeGameForUs()
+    {
+        $makeGameForUs = Option::all()[1];
+        $makeGameForUs->main = str_replace('../', '', $makeGameForUs->main);
+        $makeGameForUs->main = str_replace('width="', 'class="img-fluid"', $makeGameForUs->main);
+        $makeGameForUs->main = str_replace('height="', '', $makeGameForUs->main);
+        $cyberspace = Cyberspace::get();
+        return view('make-game-for-us', compact('makeGameForUs', 'cyberspace'));
+    }
+    //***********************
+    public function howToOrder()
+    {
+        $howToOrder = Option::all()[1];
+        $howToOrder->main = str_replace('../', '', $howToOrder->main);
+        $howToOrder->main = str_replace('width="', 'class="img-fluid"', $howToOrder->main);
+        $howToOrder->main = str_replace('height="', '', $howToOrder->main);
+        $cyberspace = Cyberspace::get();
+        return view('how-to-order', compact('howToOrder', 'cyberspace'));
+    }
+    //***********************
+    public function collaborateWithGameDevelopers()
+    {
+        $collaborateWithGameDevelopers = Option::all()[1];
+        $collaborateWithGameDevelopers->main = str_replace('../', '', $collaborateWithGameDevelopers->main);
+        $collaborateWithGameDevelopers->main = str_replace('width="', 'class="img-fluid"', $collaborateWithGameDevelopers->main);
+        $collaborateWithGameDevelopers->main = str_replace('height="', '', $collaborateWithGameDevelopers->main);
+        $cyberspace = Cyberspace::get();
+        return view('collaborate-with-game-developer', compact('collaborateWithGameDevelopers', 'cyberspace'));
+    }
+
     public function showRestaurant(Restaurant $restaurant)
     {
         $cats = $restaurant->categories;
