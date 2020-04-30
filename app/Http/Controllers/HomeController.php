@@ -54,7 +54,7 @@ class HomeController extends Controller
         $cyberspace = Cyberspace::get();
         return view('contact-us', compact('contactUs', 'cyberspace'));
     }
-    //***********************
+
     public function collaborateWithFastFoodMaker()
     {
         $collaborateWithFastFoodMaker = Option::all()[1];
@@ -66,8 +66,18 @@ class HomeController extends Controller
 //        return view('collaborate-with-fastFood-maker');
     }
 
+    public function collaborateWithGameDevelopers()
+    {
+        $collaborateWithGameDevelopers = Option::all()[1];
+        $collaborateWithGameDevelopers->main = str_replace('../', '', $collaborateWithGameDevelopers->main);
+        $collaborateWithGameDevelopers->main = str_replace('width="', 'class="img-fluid"', $collaborateWithGameDevelopers->main);
+        $collaborateWithGameDevelopers->main = str_replace('height="', '', $collaborateWithGameDevelopers->main);
+        $cyberspace = Cyberspace::get();
+        return view('collaborate-with-game-developers', compact('collaborateWithGameDevelopers', 'cyberspace'));
+//        return view('collaborate-with-game-developers');
+    }
 
-    //***********************
+
     public function makeGameForUs()
     {
         $makeGameForUs = Option::all()[1];
@@ -77,7 +87,7 @@ class HomeController extends Controller
         $cyberspace = Cyberspace::get();
         return view('make-game-for-us', compact('makeGameForUs', 'cyberspace'));
     }
-    //***********************
+
     public function howToOrder()
     {
         $howToOrder = Option::all()[1];
@@ -87,16 +97,7 @@ class HomeController extends Controller
         $cyberspace = Cyberspace::get();
         return view('how-to-order', compact('howToOrder', 'cyberspace'));
     }
-    //***********************
-    public function collaborateWithGameDevelopers()
-    {
-        $collaborateWithGameDevelopers = Option::all()[1];
-        $collaborateWithGameDevelopers->main = str_replace('../', '', $collaborateWithGameDevelopers->main);
-        $collaborateWithGameDevelopers->main = str_replace('width="', 'class="img-fluid"', $collaborateWithGameDevelopers->main);
-        $collaborateWithGameDevelopers->main = str_replace('height="', '', $collaborateWithGameDevelopers->main);
-        $cyberspace = Cyberspace::get();
-        return view('collaborate-with-game-developer', compact('collaborateWithGameDevelopers', 'cyberspace'));
-    }
+
 
     public function showRestaurant(Restaurant $restaurant)
     {
