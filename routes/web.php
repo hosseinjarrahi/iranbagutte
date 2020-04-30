@@ -151,7 +151,7 @@ Route::post('/comment/{restaurant}', 'CommentController@storeR')->name('restaura
 
 
 
-Route::get('/test', function () {
+Route::get('/test1', function () {
     dd(json_encode(\App\Food::all()));
 });
 

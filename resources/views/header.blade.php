@@ -28,23 +28,23 @@
 <header>
 
 	<div class="IB-HeaderTop" style="  background: linear-gradient(to right, #f2994a, #f2c94c);">
-		<div class="IB-container">
-			<div class="IB-BoxSocial container-fluid">
-				<div class="IB-Social">
+	    <div class="IB-container">
+	        <div class="IB-BoxSocial container-fluid">
+	            <div class="IB-Social">
 
-					<div class="IB-Item IB-fade">
-						<a href="{{($cyberspace[1]['url']) ?? '#'}}">
-							<img class="IB-ItemImage" src="{{ asset('img/ss2.png') }}" alt="Instagram">
-						</a>
-					</div>
+	              <div class="IB-Item IB-fade">
+	                    <a href="{{($cyberspace[1]['url']) ?? '#'}}">
+	                        <img class="IB-ItemImage" src="{{ asset('img/ss2.png') }}" alt="Instagram">
+	                    </a>
+	              </div>
 
-					<div class="IB-Item IB-fade">
-						<a href="{{$cyberspace[0]['url'] ?? '#'}}">
-							<img class="IB-ItemImage" src="{{ asset('img/ss3.png') }}" alt="Telegram">
-						</a>
-					</div>
+	              <div class="IB-Item IB-fade">
+					  <a href="{{$cyberspace[0]['url'] ?? '#'}}">
+	                        <img class="IB-ItemImage" src="{{ asset('img/ss3.png') }}" alt="Telegram">
+	                    </a>
+	              </div>
 
-				</div>
+	            </div>
 
 				<div class="text-logo d-lg-flex mt-3 text-bold justify-content-between flex-lg-row" style="font-size: 1.5rem;">
 					<span class="ml-lg-2 m-0 text-light" id="sefaresh">سفارش آنلاین فست فود و فلافل هفت چنار تهران</span>
@@ -97,18 +97,17 @@
 							<li class="IB-menu-item"><a class="IB-menu-link" href="{{ url('') }}">صـفحـه نخست</a></li>
 							<li class="IB-menu-item">
 
-								<div class="dropdown">
-									<a onclick="myFunction()" class="dropbtna">
-										همکاری با ما
-									</a>
+									<div class="dropdown">
+										<a onclick="myFunction()" class="dropbtna">
+											همکاری با ما
+										</a>
 
-								</div>
+									</div>
 
 							</li>
 							<div id="myDropdown" class="dropdown-content">
 								<a class="IB-menu-link" href="#">همکاری با بازیسازان</a>
 								<a class="IB-menu-link" href="#">برا ی ما بازی بسازید</a>
-<<<<<<< HEAD
 
                                 <a class="IB-menu-link" href="#">همکاری با فست فودی ها</a>
 
@@ -126,29 +125,13 @@
                                     <li class="IB-menu-item text-bold text-info"><a class="IB-menu-link" href="{{ route('admin.home') }}">مدیریت</a></li>
                                 @endif
                             @endif
-=======
-								<a class="IB-menu-link" href="#">همکاری با فسفودی ها</a>
-							</div>
-
-							{{--							<li class="IB-menu-item"><a class="IB-menu-link" href="{{ url('games-page') }}">صـفحـه بازی ها</a></li>--}}
-							<li class="IB-menu-item"><a class="IB-menu-link" href="{{ url('contact-us') }}">نحوه سفارش</a></li>
-							<li class="IB-menu-item"><a class="IB-menu-link" href="{{ url('contact-us') }}">ارتباط با ما</a></li>
-							<li class="IB-menu-item"><a class="IB-menu-link" href="{{ url('benefits') }}">مزایای عضویت</a></li>
-							@if(auth()->check())
-								<li class="IB-menu-item"><a class="IB-menu-link" href="{{ url('edit') }}">ویرایش اطلاعات</a></li>
-								<li class="IB-menu-item"><a class="IB-menu-link" href="{{ url('status') }}">سفارشات</a></li>
-								@if(auth()->user()->hasRole('any'))
-									<li class="IB-menu-item text-bold text-info"><a class="IB-menu-link" href="{{ route('admin.home') }}">مدیریت</a></li>
-								@endif
-							@endif
->>>>>>> a391f8a58acb7da79f92493b3fa7ed4634455938
 
 
 						</ul>
 
-					</div>
+	                </div>
 
-				</div>
+	            </div>
 
 				<div id="nav-login">
 					@if(!auth()->check())
@@ -159,9 +142,9 @@
 					@endif
 				</div>
 
-				<div class="IB-wrapper IB-wrapper-flush">
-					<div class="IB-nav-container">
-						<ul class="IB-nav-menu IB-menu">
+	            <div class="IB-wrapper IB-wrapper-flush">
+	                <div class="IB-nav-container">
+	                    <ul class="IB-nav-menu IB-menu">
 
 							<li class="IB-menu-item"><a class="IB-menu-link" href="/">صـفحـه نخست</a></li>
 
@@ -170,36 +153,35 @@
 								<div class="p-2" id="dp" style="display: none;">
 									<a class="d-block p-3 hover2" href="">همکاری با بازیسازان</a>
 									<a class="d-block p-3 hover2" href="">برا ی ما بازی بسازید</a>
-									<a class="d-block p-3 hover2" href="">همکاری با فسفودی ها</a>
+									<a class="d-block p-3 hover2" href="">مزایای عضویت</a>
 								</div>
 							</li>
 
-							<li class="IB-menu-item"><a class="IB-menu-link" href="#">نحوه سفارش</a></li>
 							<li class="IB-menu-item"><a class="IB-menu-link" href="#">ارتباط با ما</a></li>
 							<li class="IB-menu-item"><a class="IB-menu-link" href="#">مزایای عضویت</a></li>
 							@if(auth()->check())
 								<li class="IB-menu-item"><a class="IB-menu-link" href="{{ url('edit') }}">ویرایش اطلاعات</a></li>
 								<li class="IB-menu-item"><a class="IB-menu-link" href="{{ url('status') }}">سفارشات</a></li>
-								@if(auth()->user()->hasRole('any'))
-									<li class="IB-menu-item bg-info"><a class="IB-menu-link" href="{{ url('status') }}">سفارشات</a></li>
-								@endif
-							@endif
+                                @if(auth()->user()->hasRole('any'))
+                                    <li class="IB-menu-item bg-info"><a class="IB-menu-link" href="{{ url('status') }}">سفارشات</a></li>
+                                @endif
+                            @endif
 
 							<form >
 
-								<div class="input-group mr-lg-2 m-0">
-									<div class="input-group-prepend">
-										<a href="" class="btn btn-secondary IB-input">جست و جو</a>
+									<div class="input-group mr-lg-2 m-0">
+										<div class="input-group-prepend">
+											<a href="" class="btn btn-secondary IB-input">جست و جو</a>
+										</div>
+										<input type="search" class="text-white text-left form-control IB-input bg-dark">
 									</div>
-									<input type="search" class="text-white text-left form-control IB-input bg-dark">
-								</div>
 
-							</form>
+								</form>
 							</li>
 
-						</ul>
-					</div>
-				</div>
+	                    </ul>
+	                </div>
+	            </div>
 
 				<a class="ml-2 logo">
 					<img src="{{ asset('img/logoiran.png') }}" style="height:5rem;">
@@ -209,9 +191,9 @@
 					<a href="{{ url('basket') }}" class="mr-5"><img src="{{ asset('img/shopping-bag.png') }}" class="img-fluid" style="height: 35px;"></a>
 				</div>
 
-			</div>
+	        </div>
 
-		</div>
+	    </div>
 	</div>
 
 </header>

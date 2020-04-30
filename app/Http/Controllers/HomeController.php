@@ -56,9 +56,24 @@ class HomeController extends Controller
     }
     public function collaborateWithFastFoodMaker()
     {
-//        return view('collaborate-with-fastFood-maker', compact('collaborateWithFastFoodMaker', 'cyberspace'));
-        return view('collaborate-with-fastFood-maker');
+        $collaborateWithFastFoodMaker = Option::all()[1];
+        $collaborateWithFastFoodMaker->main = str_replace('../', '', $collaborateWithFastFoodMaker->main);
+        $collaborateWithFastFoodMaker->main = str_replace('width="', 'class="img-fluid"', $collaborateWithFastFoodMaker->main);
+        $collaborateWithFastFoodMaker->main = str_replace('height="', '', $collaborateWithFastFoodMaker->main);
+        $cyberspace = Cyberspace::get();
+        return view('collaborate-with-fastFood-maker', compact('collaborateWithFastFoodMaker', 'cyberspace'));
+//        return view('collaborate-with-fastFood-maker');
     }
+//    public function collaborateWithFastFoodMaker()
+//    {
+//        $collaborateWithFastFoodMaker = Option::all()[1];
+//        $collaborateWithFastFoodMaker->main = str_replace('../', '', $collaborateWithFastFoodMaker->main);
+//        $collaborateWithFastFoodMaker->main = str_replace('width="', 'class="img-fluid"', $collaborateWithFastFoodMaker->main);
+//        $collaborateWithFastFoodMaker->main = str_replace('height="', '', $collaborateWithFastFoodMaker->main);
+//        $cyberspace = Cyberspace::get();
+//        return view('collaborate-with-fastFood-maker', compact('collaborateWithFastFoodMaker', 'cyberspace'));
+////        return view('collaborate-with-fastFood-maker');
+//    }
     public function showRestaurant(Restaurant $restaurant)
     {
         $cats = $restaurant->categories;
