@@ -85,23 +85,78 @@
                                      style="background: url({{ asset('img/back.jpg') }});">
                                     {{--<a href="{{ url('game/'.$game->id) }}">--}}
                                     <p style=" font-weight: bold;color: darkblue;padding: 14px;">
-                                    <p>هم بازی کن</p>
-                                    <p>هم فلافل مجانی ببر</p>
+                                    <p>{{$game->name}}</p>
                                     </p>
                                     {{--</a>--}}
                                 </div>
 
                                 <div class="back"
                                      style="background: url({{ asset('upload/'.$game->poster) }});
-                                             background-size: cover;
-                                             background-position: center;
-                                             ">
+                                         background-size: cover;
+                                         background-position: center;
+                                         ">
                                 </div>
 
                             </div>
                             {{--</div>--}}
                         </a>
                     @endforeach
+                    <a class="col-md-6 col-5 shadow" style="height:200px;padding: 5px;"
+                       href="{{ url('games-page') }}">
+                        {{--<div class="col-md-6 col-5 shadow" style="height:200px;padding: 5px;">--}}
+                        <div id="card-3" class="w-100 h-100 d-flex align-items-center">
+
+                            <div class="front bg-danger text-center"
+                                 style="background: url({{ asset('img/back.jpg') }});">
+                                {{--<a href="{{ url('game/'.$game->id) }}">--}}
+                                <p style=" font-weight: bold;color: darkblue;padding: 14px;">
+                                <h2>سایر بازی ها</h2>
+
+                                <p>هم بازی کن</p>
+                                <p>هم فلافل مجانی ببر</p>
+                                </p>
+                                {{--</a>--}}
+                            </div>
+
+                            <div class="back"
+                                 style="background: url({{ asset('img/back.jpg') }});
+                                     background-size: cover;
+                                     background-position: center;
+                                     ">
+                                بزن بریم
+                            </div>
+
+                        </div>
+                        {{--</div>--}}
+                    </a>
+                    <a class="col-md-6 col-5 shadow" style="height:200px;padding: 5px;"
+                       href="#">
+                        {{--<div class="col-md-6 col-5 shadow" style="height:200px;padding: 5px;">--}}
+                        <div id="card-4" class="w-100 h-100 d-flex align-items-center">
+
+                            <div class="front bg-danger text-center"
+                                 style="background: url({{ asset('img/back.jpg') }});">
+                                {{--<a href="{{ url('game/'.$game->id) }}">--}}
+                                <p style=" font-weight: bold;color: darkblue;padding: 14px;">
+                                <h2>رويداد هاي ويژه</h2>
+
+                                <p>هم بازی کن</p>
+                                <p>هم فلافل مجانی ببر</p>
+                                </p>
+                                {{--</a>--}}
+                            </div>
+
+                            <div class="back"
+                                 style="background: url({{ asset('img/back.jpg') }});
+                                     background-size: cover;
+                                     background-position: center;
+                                     ">
+                                به زودی...
+                            </div>
+
+                        </div>
+                        {{--</div>--}}
+                    </a>
                 </div>
             </div>
         </div>
@@ -110,8 +165,6 @@
         <div class="row mb-3" style="direction: ltr !important">
             <div class="slider" id="slider">
                 <div class="slide" id="slide" style="color:#fff;">
-
-
                     <a href="{{url('restaurants')}}" style="color: white">
                         <div class="ads-parent position-relative m-2">
                             <img class="item img-fluid w-100 h-100" src="{{ asset('img/0219_Elmwood_0016.jpg') }}">

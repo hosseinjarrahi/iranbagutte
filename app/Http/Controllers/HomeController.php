@@ -23,7 +23,7 @@ class HomeController extends Controller
 {
     public function home()
     {
-        $games = Game::inRandomOrder()->limit(4)->get();
+        $games = Game::inRandomOrder()->where('special',1)->limit(2)->get();
         $home = 1;
         $op = Option::first();
         $slides = Slide::where('restaurant_id', 1)->with('category')->get();

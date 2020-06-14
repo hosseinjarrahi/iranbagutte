@@ -132,6 +132,7 @@ Route::group(['prefix' => 'manager', 'middleware' => 'auth'], function () {
     Route::get("send-game", "GameController@sendPage");
     Route::get("download-game/{game}", "GameController@download");
     Route::get("verification-game/{game}", "GameController@verify");
+    Route::get("specialGame/{game}", "GameController@special")->name('specialGame');
     Route::get("block-game/{game}", "GameController@block");
     Route::put("games", "GameController@add");
     Route::get("games/{id}", "GameController@delete");

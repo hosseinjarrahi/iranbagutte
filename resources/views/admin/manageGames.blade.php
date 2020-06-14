@@ -23,6 +23,7 @@
                                     <th>دانلود</th>
                                     <th>تایید</th>
                                     <th>عدم تایید</th>
+                                    <th>بازی های ویژه</th>
                                     <th>حذف</th>
                                 </tr>
                                 @forelse($games as $game)
@@ -32,6 +33,7 @@
                                         <td><a href="{{ url('manager/download-game/'.$game->id) }}">دانلود</a></td>
                                         <td><a href="{{ url('manager/verification-game/'.$game->id) }}">تایید</a></td>
                                         <td><a href="{{ url('manager/block-game/'.$game->id) }}">عدم تایید</a></td>
+                                        <td><a href="{{route('specialGame',$game->id)}}">@if($game->special==0) بازی ساده @else بازی ویژه @endif</a></td>
                                         <td><a href="{{ url('manager/games/'.$game->id) }}">حذف</a></td>
                                     </tr>
                                 @empty

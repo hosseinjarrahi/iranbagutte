@@ -16,8 +16,8 @@ class GameController extends Controller
 
     public function sendPage()
     {
-        $games = Game::where('user_id',auth()->id())->paginate(10);
-        return view('admin.sendGame',compact('games'));
+        $games = Game::where('user_id', auth()->id())->paginate(10);
+        return view('admin.sendGame', compact('games'));
     }
 
     public function download(Game $game)
@@ -104,5 +104,16 @@ class GameController extends Controller
         $file = (isset(glob($file)[0])) ? glob($file)[0] : 'nothing';
         if (is_file($file))
             unlink($file);
+    }
+
+    public function special(Game $game)
+    {
+        if ($game->special == 1) {
+            $game->update(['special'=>0]);
+        } else {
+            $game->update(['special'=>1]);
+        }
+
+        return back();
     }
 }
