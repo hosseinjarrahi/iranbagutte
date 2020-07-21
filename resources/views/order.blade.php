@@ -152,7 +152,7 @@
                 @foreach($products as $key => $product)
                 <div class="col-lg-4 col-11 my-2 animate" style="opacity: 0;">
                     <div class="card bg-light p-hover">
-                        <div class="card-header text-bold text-dark">{{ $product->name }}</div>
+                        <div class="card-header text-bold text-dark text-center">{{ $product->title }}</div>
                         <div class="card-img-top" style="width:100%;height: 200px;background-image: url({{ asset('upload/'.$product->img) }});background-repeat:no-repeat;background-size: cover;background-position: center;"></div>
                         <div class="card-body">
                             <p class="text-justify text-dark">
