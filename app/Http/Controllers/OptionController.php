@@ -15,7 +15,7 @@ class OptionController extends Controller
 
         $user = User::find(auth()->id());
         $res=Restaurant::find($user->res_id);
-        $res->options = $res->options;
+        //$res->options = $res->options;
         return view('admin.detailsRes' , compact('res'));
     }
 
