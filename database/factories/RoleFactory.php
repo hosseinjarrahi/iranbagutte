@@ -18,7 +18,7 @@ $access = [
     'checkGame',
     'slides',
 ];
-$factory->define(Role::class, function (Faker $faker) use ($access,$counter){
+$factory->define(Role::class, function (Faker $faker) use ($access){
     return [
         'access' => $access[0]
     ];

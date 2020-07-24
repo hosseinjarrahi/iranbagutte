@@ -25,7 +25,6 @@ class DatabaseSeeder extends Seeder
     	Category::truncate();
     	Banner::truncate();
     	Buycode::truncate();
-    	Food::truncate();
     	Option::truncate();
     	Slide::truncate();
     	Restaurant::truncate();
@@ -33,16 +32,18 @@ class DatabaseSeeder extends Seeder
     	User::truncate();
     	Role::truncate();
     	Payment::truncate();
+    	Food::truncate();
+
 	    $this->call(BannersTableSeeder::class);
 	    $this->call(RolesTableSeeder::class);
 	    $this->call(UsersTableSeeder::class);
 	    $this->call(CategoriesTableSeeder::class);
-	    $this->call(FoodsTableSeeder::class);
 	    $this->call(OptionsTableSeeder::class);
 	    $this->call(SlidesTableSeeder::class);
 	    $this->call(RestaurantsTableSeeder::class);
 	    $this->call(GamesTableSeeder::class);
 	    $this->call(BuycodesTableSeeder::class);
 	    $this->call(PaymentsTableSeeder::class);
+	    $this->call(FoodsTableSeeder::class);
     }
 }

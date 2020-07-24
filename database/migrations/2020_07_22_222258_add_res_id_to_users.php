@@ -14,7 +14,7 @@ class AddResIdToUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->unsignedBigInteger('res_id');
+            $table->unsignedBigInteger('res_id')->nullable();
         });
     }
 
@@ -26,7 +26,7 @@ class AddResIdToUsers extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            $table->dropColumn('res_id');
         });
     }
 }
