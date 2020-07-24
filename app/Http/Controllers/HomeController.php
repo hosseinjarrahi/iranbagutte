@@ -183,11 +183,11 @@ class HomeController extends Controller
         echo $foods->toJson();
     }
 
-    public function order()
+    public function order(Request $request)
     {
         $home = 1;
         $res = Restaurant::where('id', 1)->first();
-        $products = $res->foods()->paginate(6);
+        $products = (Category::find($request->id))->foods;
         $slides = $res->slides()->with('category')->get();
         $special = $res->events();
 
