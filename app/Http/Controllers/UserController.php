@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Restaurant;
 use App\Role;
 use App\User;
 use Illuminate\Http\Request;
@@ -46,6 +47,24 @@ class UserController extends Controller
             $r = Role::where('access',$key)->first();
             $user->roles()->attach($r->id);
         }
+        return back();
+    }
+    public function promote_res($id, Request $request)
+    {
+        $user = User::find($id);
+        $roles = $user->roles;
+        foreach ($roles as $role)
+            $user->roles()->detach($role->id);
+        $roles = $request->except('_token');
+        foreach ($roles as $key => $role) {
+            $r = Role::where('access',$key)->first();
+            $user->roles()->attach($r->id);
+        }
+        $restaurant=new Restaurant();
+        $restaurant->name="بدون نام";
+        $restaurant->save();
+        $user->res_id=$restaurant->id;
+        $user->save();
         return back();
     }
 

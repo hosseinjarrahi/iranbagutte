@@ -97,6 +97,7 @@ Route::group(['prefix' => 'manager', 'middleware' => 'auth'], function () {
     Route::get("show-user/{id}", "UserController@showUser");
     Route::get("remove-user/{id}", "UserController@remove");
     Route::post("promote/{id}", "UserController@promote");
+    Route::post("promote_res/{id}", "UserController@promote_res");
 
 // about us and benefits
     Route::post("upload", 'OptionController@upload');

@@ -43,7 +43,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <link rel="stylesheet" href="{{ asset('admin/dist/css/custom-style.css') }}">
 
-
+<style>
+    .sidebar-dark-primary .nav-treeview>.nav-item>.nav-link{
+        background: #333;
+    }
+</style>
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -88,62 +92,72 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                              with font-awesome or any other icon font library -->
-                        @if(auth()->user()->hasRole('posts'))
+                        @if(auth()->user()->hasRole('posts') || auth()->user()->hasRole('tables'))
                             <li class="nav-item has-treeview">
                                 <a href="#" class="nav-link">
                                     <i class="nav-icon fa fa-edit"></i>
                                     <p>
-                                        مدیریت محصولات
+                                        مدیریت رستوران من
                                         <i class="right fa fa-angle-left"></i>
                                     </p>
                                 </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="{{ url('manager/add-food') }}" class="nav-link">
-                                            <i class="fa fa-circle-o nav-icon"></i>
-                                            <p>افزودن محصول</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ url('manager/show-foods') }}" class="nav-link">
-                                            <i class="fa fa-circle-o nav-icon"></i>
-                                            <p>مشاهده محصولات</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ url('manager/category') }}" class="nav-link">
-                                            <i class="fa fa-circle-o nav-icon"></i>
-                                            <p>دسته بندی ها</p>
-                                        </a>
+                                @if(auth()->user()->hasRole('posts'))
+                                    <ul class="nav nav-treeview">
 
-                                    </li>
-
-                                    @if(auth()->user()->hasRole('slides'))
-                                        <li class="nav-item">
-
-                                            <a href="{{ url('manager/slides') }}" class="nav-link">
-
-                                                <i class="fa fa-circle-o nav-icon"></i>
-
-                                                <p>اسلایدر</p>
-
+                                        <li class="nav-item has-treeview">
+                                            <a href="#" class="nav-link">
+                                                <i class="nav-icon fa fa-edit"></i>
+                                                <p>
+                                                    مدیریت محصولات
+                                                    <i class="right fa fa-angle-left"></i>
+                                                </p>
                                             </a>
+                                            <ul class="nav nav-treeview">
+                                                <li class="nav-item">
+                                                    <a href="{{ url('manager/add-food') }}" class="nav-link">
+                                                        <i class="fa fa-circle-o nav-icon"></i>
+                                                        <p>افزودن محصول</p>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="{{ url('manager/show-foods') }}" class="nav-link">
+                                                        <i class="fa fa-circle-o nav-icon"></i>
+                                                        <p>مشاهده محصولات</p>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="{{ url('manager/category') }}" class="nav-link">
+                                                        <i class="fa fa-circle-o nav-icon"></i>
+                                                        <p>دسته بندی ها</p>
+                                                    </a>
 
-                                        </li>
-                                    @endif
-                                </ul>
+                                                </li>
 
-                            </li>
+                                                @if(auth()->user()->hasRole('slides'))
+                                                    <li class="nav-item">
 
+                                                        <a href="{{ url('manager/slides') }}" class="nav-link">
+
+                                                            <i class="fa fa-circle-o nav-icon"></i>
+
+                                                            <p>اسلایدر</p>
+
+                                                        </a>
+
+                                                    </li>
+                                                @endif
+                                            </ul>
+                                    </ul>
                         @endif
                         @if(auth()->user()->hasRole('tables'))
+                                    <ul class="nav nav-treeview">
                             <li class="nav-item has-treeview">
 
                                 <a href="#" class="nav-link">
 
                                     <i class="nav-icon fa fa-table"></i>
 
-                                    <p>
+                                    <p style="border-radius: 10px">
 
                                         مدیریت میزها
 
@@ -182,7 +196,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </ul>
 
                             </li>
+
+                                    </ul>
+                            @endif
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+
+                                        <a href="{{ url('manager/detail-res') }}" class="nav-link">
+
+                                            <i class="fa fa-circle-o nav-icon"></i>
+
+                                            <p>اطلاعات رستوران</p>
+
+                                        </a>
+
+                                    </li>
+                                </ul>
+                            </li>
+                            </li>
                         @endif
+
                         @if(auth()->user()->hasRole('payments'))
                             <li class="nav-item has-treeview">
 
@@ -335,17 +368,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </a>
                                 <ul class="nav nav-treeview">
 
-                                    <li class="nav-item">
 
-                                        <a href="{{ url('manager/detail-res') }}" class="nav-link">
-
-                                            <i class="fa fa-circle-o nav-icon"></i>
-
-                                            <p>امکانات رستوران</p>
-
-                                        </a>
-
-                                    </li>
                                     @if(auth()->user()->hasRole('adminSetting'))
                                         <li class="nav-item">
 

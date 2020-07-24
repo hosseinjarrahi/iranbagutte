@@ -84,7 +84,7 @@
                                             <input id="vip" type="checkbox" name="vip"
                                                    @if(!$role->where('access','vip')->isEmpty()) checked @endif>
                                             <hr>
-                                            مدیریت پست ها
+                                            مدیریت محصولات
                                             <br>
                                             <input type="checkbox" name="posts"
                                                    @if(!$role->where('access','posts')->isEmpty()) checked @endif>

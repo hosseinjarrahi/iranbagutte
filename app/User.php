@@ -35,7 +35,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
+    public function restaurants()
+    {
+        return $this->belongsTo(Restaurant::class, 'res_id');
+    }
     public function buycodes()
     {
         return $this->hasMany(Buycode::class);
@@ -90,4 +93,5 @@ class User extends Authenticatable
         } else
             return redirect('login')->with(['error' => 'نام کاربری و یا رمز اشتباه است.']);
     }
+
 }

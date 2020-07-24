@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Option;
 use App\Restaurant;
+use App\User;
 use Illuminate\Http\Request;
 
 class OptionController extends Controller
@@ -12,7 +13,8 @@ class OptionController extends Controller
     {
         $this->middleware('Access:settings');
 
-        $res = Restaurant::find(auth()->id());
+        $user = User::find(auth()->id());
+        $res=Restaurant::find($user->res_id);
         $res->options = $res->options;
         return view('admin.detailsRes' , compact('res'));
     }
