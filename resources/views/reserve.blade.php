@@ -93,10 +93,10 @@
                     <p class="text-danger">{{ $errors['time_e'] ?? '' }}</p>
                 </div>
                 <div class="col-6 p-1">
-                    <img src="{{asset('img/LEdu.jpg')}}" class="img-thumbnail " alt="...">
+                    <img src="{{asset('upload/'.$tableInfo[0]->img1)}}" class="img-thumbnail " alt="...">
 
                 </div><div class="col-6 p-1">
-                    <img src="{{asset('img/LEdu.jpg')}}" class="img-thumbnail " alt="...">
+                    <img src="{{asset('upload/'.$tableInfo[0]->img2)}}" class="img-thumbnail " alt="...">
 
                 </div>
 
@@ -129,11 +129,14 @@
                     <textarea class="form-control" name="detail" placeholder="بطور مثال : من یک صندلی بیشتر بر روی این میز می خواهم"></textarea>
                 </div>
             </div>
-            <p class="col-12 pt-2">جهت رزرو میز مبلغ<span style="color: red;"> 30.000 ریال </span> بعنوان پیش پرداخت دریافت می گردد.</p>
+            <p class="col-12 pt-2">جهت رزرو میز مبلغ<span style="color: red;"> {{$tableInfo[0]->price}} ریال </span> بعنوان پیش پرداخت دریافت می گردد.</p>
+{{--            //temp *****هنگام اتصال به درگاه باید قیمت از دیتابیس گرفته شود*****--}}
+            <input type="hidden" name="price" value="{{$tableInfo[0]->price}}" class="btn btn-primary">
+{{--            //end temp--}}
             <input type="submit" name="submit" value="رزرو میز" class="btn btn-primary">
 
         </form>
-        
+
     </div>
 
     <script type="text/javascript">

@@ -13,6 +13,7 @@ use App\Reserve;
 use App\Restaurant;
 use App\Slide;
 use App\Table;
+use App\TableInfo;
 use App\User;
 use App\Comment;
 use Illuminate\Http\Request;
@@ -197,7 +198,7 @@ class HomeController extends Controller
         return view('order', compact('special', 'slides', 'home', 'products', 'res', 'comments', 'cyberspace'));
     }
 
-    public function reserve($id = 1, Request $request)
+    public function reserve($id, Request $request)
     {
         $message = isset($request->message) ? $request->message : null;
         $home = 1;
@@ -207,12 +208,15 @@ class HomeController extends Controller
 
         $errors = (isset($request->errors)) ? unserialize($reserve->errors) : [];
         $cyberspace = Cyberspace::get();
-        return view('reserve', compact('errors', 'home', 'id', 'out', 'message', 'cyberspace'));
+        $tableInfo=TableInfo::where('restaurant_id',$id)->get();
+        return view('reserve', compact('errors', 'home', 'id', 'out', 'message', 'cyberspace','tableInfo'));
     }
 
     public function addReserve($id = 1, Request $request)
     {
 
+        $temp_zarinpal="https://zarinp.al/@iranbaguette";
+        return redirect($temp_zarinpal);
         $request->time_s = $this->faTOen($request->time_s);
         $date = explode('-', $request->time_s);
         $time = explode(':', substr($date[2], '3'));

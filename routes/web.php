@@ -81,6 +81,10 @@ Route::group(['prefix' => 'manager', 'middleware' => 'auth'], function () {
     Route::get("reserved", "OrderController@showReserved");
     Route::get("sit/setting", "OrderController@sitSetting");
     Route::get("rm-sit/{id}", "OrderController@rmvSit");
+//tableInfo
+
+    Route::put("tableInfo/{id}", "back\TableInfoController@update")->name('tableInfo.update');
+
 
 
 //admin detail res

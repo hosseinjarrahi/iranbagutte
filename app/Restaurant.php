@@ -18,7 +18,10 @@ class Restaurant extends Model
         return $this->hasMany(Comment::class,'item_id','id');
     }
 
-
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
     public function foods()
     {
         return $this->hasMany(Food::class);
@@ -48,7 +51,10 @@ class Restaurant extends Model
     {
         return $this->hasMany(Table::class);
     }
-
+    public function tableInfos()
+    {
+        return $this->hasOne(TableInfo::class);
+    }
     public function payments()
     {
         return $this->hasMany(Payment::class);

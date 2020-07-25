@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Restaurant;
 use App\Role;
+use App\TableInfo;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -63,6 +64,9 @@ class UserController extends Controller
         $restaurant=new Restaurant();
         $restaurant->name="بدون نام";
         $restaurant->save();
+        $tableInfo=new TableInfo();
+        $tableInfo->restaurant_id=$restaurant->id;
+        $tableInfo->save();
         $user->res_id=$restaurant->id;
         $user->save();
         return back();

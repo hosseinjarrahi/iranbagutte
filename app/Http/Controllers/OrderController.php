@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Reserve;
 use App\Restaurant;
 use App\Table;
+use App\TableInfo;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -17,7 +18,10 @@ class OrderController extends Controller
     public function sitSetting()
     {
         $opt = Restaurant::find(auth()->id())->tables;
-        return view('admin.sitSetting',compact('opt'));
+
+        $tableInfo= Restaurant::find(auth()->id())->tableInfos;
+
+        return view('admin.sitSetting',compact('opt','tableInfo'));
     }
 
     public function addSit(Request $request)
