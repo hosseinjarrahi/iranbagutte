@@ -23,10 +23,6 @@ define('LARAVEL_START', microtime(true));
 
 require __DIR__.'/../vendor/autoload.php';
 
-$app->bind('path.public', function() {
-    return __DIR__;
-});
-
 /*
 |--------------------------------------------------------------------------
 | Turn On The Lights
@@ -40,6 +36,10 @@ $app->bind('path.public', function() {
 */
 
 $app = require_once __DIR__.'/../bootstrap/app.php';
+
+$app->bind('path.public', function() {
+    return __DIR__;
+});
 
 /*
 |--------------------------------------------------------------------------
