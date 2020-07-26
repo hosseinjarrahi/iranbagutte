@@ -1,10 +1,10 @@
 @extends('master')
 
 @section('title')
-	ایران باگت
+    ایران باگت
 @endsection
 @section('content')
-    <link rel="stylesheet" type="text/css" media="all" href="{{asset('calendar/skins/aqua/theme.css')}}" title="Aqua" />
+    <link rel="stylesheet" type="text/css" media="all" href="{{asset('calendar/skins/aqua/theme.css')}}" title="Aqua"/>
 
 
     <!-- import the Jalali Date Class script -->
@@ -23,13 +23,14 @@
     <script type="text/javascript">
 
         var oldLink = null;
+
         // code to change the active stylesheet
         function setActiveStyleSheet(link, title) {
             var i, a, main;
-            for(i=0; (a = document.getElementsByTagName("link")[i]); i++) {
-                if(a.getAttribute("rel").indexOf("style") != -1 && a.getAttribute("title")) {
+            for (i = 0; (a = document.getElementsByTagName("link")[i]); i++) {
+                if (a.getAttribute("rel").indexOf("style") != -1 && a.getAttribute("title")) {
                     a.disabled = true;
-                    if(a.getAttribute("title") == title) a.disabled = false;
+                    if (a.getAttribute("title") == title) a.disabled = false;
                 }
             }
             if (oldLink) oldLink.style.fontWeight = 'normal';
@@ -44,9 +45,10 @@
             direction: rtl;
         }
 
-        #flat_calendar_1, #flat_calendar_2{
+        #flat_calendar_1, #flat_calendar_2 {
             width: 200px;
         }
+
         .example {
             padding: 10px;
         }
@@ -63,7 +65,8 @@
                 {{ $message }}
             </div>
         @endif
-        <form id="myform" action="{{ url('reserve/'.$id) }}" method="post" class="form-input-holder-base form-group row p-4 p-lg-1">
+        <form id="myform" action="{{ url('reserve/'.$id) }}" method="post"
+              class="form-input-holder-base form-group row p-4 p-lg-1">
             @csrf
             <h2>رزرو میز</h2>
 
@@ -71,14 +74,16 @@
 
 
                 <div class="col-12">
-                        <label>زمان و تاریخ ورود : </label>
+                    <label>زمان و تاریخ ورود : </label>
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroupPrepend3">
-                                 <img id="date_btn_9" src="{{ asset('calendar/cal.png') }}" style="vertical-align: top;" />
+                                 <img id="date_btn_9" src="{{ asset('calendar/cal.png') }}"
+                                      style="vertical-align: top;"/>
                             </span>
                         </div>
-                        <input required placeholder="تاریخ و زمان" class="form-control" id="date_input_9" name="time_s" data-format="yyyy-MM-dd hh:mm:ss" type="text">
+                        <input required placeholder="تاریخ و زمان" class="form-control" id="date_input_9" name="time_s"
+                               data-format="yyyy-MM-dd hh:mm:ss" type="text">
                     </div>
                     <p class="text-danger">{{ $errors['time_s'] ?? '' }}</p>
                 </div>
@@ -92,17 +97,25 @@
                     </select>
                     <p class="text-danger">{{ $errors['time_e'] ?? '' }}</p>
                 </div>
-                <div class="col-6 p-1">
-                    <img src="{{asset('img/LEdu.jpg')}}" class="img-thumbnail " alt="...">
+                @if(isset($tableInfo[0]->img1))
+                    <div class="col-6 p-1">
+                        <img src="{{asset('upload/'.$tableInfo[0]->img1)?? ''}}" class="img-thumbnail "
+                             alt="تصاویر رستوان">
 
-                </div><div class="col-6 p-1">
-                    <img src="{{asset('img/LEdu.jpg')}}" class="img-thumbnail " alt="...">
+                    </div>
+                @endif
 
-                </div>
+                @if(isset($tableInfo[0]->img2))
+                    <div class="col-6 p-1">
+                        <img src="{{asset('upload/'.$tableInfo[0]->img2)?? ''}}" class="img-thumbnail "
+                             alt="تصاویر رستوان">
 
+                    </div>
+                @endif
                 <label class="col-12">میز های موجود : </label>
                 @foreach($out as $o)
-                    <a class="btn btn-primary m-2 item-a" miz="{{ $o->id }}" onclick="tik(this)"><span>میز</span> {{ $o->capacity }} <span>نفره</span> </a>
+                    <a class="btn btn-primary m-2 item-a" miz="{{ $o->id }}"
+                       onclick="tik(this)"><span>میز</span> {{ $o->capacity }} <span>نفره</span> </a>
                 @endforeach
                 <a class="btn btn-secondary m-2" onclick="def()">پاک کردن همه ی میز انتخابی </a>
                 <input type="hidden" id="selecter" name="capacity" value="">
@@ -111,14 +124,16 @@
                 <h2 class="col-12 mt-2">اطلاعات شما</h2>
                 <div class="col-12">
                     <label for="validationServer01">نام و نام خانوادگی</label>
-                    <input type="text" name="name" class="form-control" id="validationServer01" placeholder="نام و نام خانوادگی" required>
+                    <input type="text" name="name" class="form-control" id="validationServer01"
+                           placeholder="نام و نام خانوادگی" required>
                     <p class="text-danger">{{ $errors['name'] ?? '' }}</p>
 
                 </div>
 
                 <div class="col-12">
                     <label for="validationServer02">شماره موبایل</label>
-                    <input type="tel" name="phone" class="form-control " id="validationServer02" placeholder="شماره موبایل" required>
+                    <input type="tel" name="phone" class="form-control " id="validationServer02"
+                           placeholder="شماره موبایل" required>
                     <p class="text-danger">{{ $errors['phone'] ?? '' }}</p>
 
                 </div>
@@ -126,31 +141,36 @@
                 <div class="col-12">
                     <p class="text-danger">{{ $errors['detail'] ?? '' }}</p>
                     <label for="validationServerUsername">جزئیات بیشتر رزرو</label>
-                    <textarea class="form-control" name="detail" placeholder="بطور مثال : من یک صندلی بیشتر بر روی این میز می خواهم"></textarea>
+                    <textarea class="form-control" name="detail"
+                              placeholder="بطور مثال : من یک صندلی بیشتر بر روی این میز می خواهم"></textarea>
                 </div>
             </div>
-            <p class="col-12 pt-2">جهت رزرو میز مبلغ<span style="color: red;"> 30.000 ریال </span> بعنوان پیش پرداخت دریافت می گردد.</p>
+            <p class="col-12 pt-2">جهت رزرو میز مبلغ<span style="color: red;"> {{$tableInfo[0]->price}} ریال </span>
+                بعنوان پیش پرداخت دریافت می گردد.</p>
+            {{--            //temp *****هنگام اتصال به درگاه باید قیمت از دیتابیس گرفته شود*****--}}
+            <input type="hidden" name="price" value="{{$tableInfo[0]->price}}" class="btn btn-primary">
+            {{--            //end temp--}}
             <input type="submit" name="submit" value="رزرو میز" class="btn btn-primary">
 
         </form>
-        
+
     </div>
 
     <script type="text/javascript">
         Calendar.setup({
-            inputField  : "date_input_9",   // id of the input field
-            button      : "date_btn_9",   // trigger for the calendar (button ID)
-            ifFormat    : "%Y-%m-%d %H:%M",       // format of the input field
-            showsTime   : true,
-            dateType	: 'jalali',
-            showOthers  : true,
-            langNumbers : true,
-            timeFormat  : "24",
-            weekNumbers : true
+            inputField: "date_input_9",   // id of the input field
+            button: "date_btn_9",   // trigger for the calendar (button ID)
+            ifFormat: "%Y-%m-%d %H:%M",       // format of the input field
+            showsTime: true,
+            dateType: 'jalali',
+            showOthers: true,
+            langNumbers: true,
+            timeFormat: "24",
+            weekNumbers: true
         });
     </script>
     <script type="text/javascript">
-        $(function() {
+        $(function () {
             $('#datetimepicker').datetimepicker({
                 language: 'pt-BR'
             });
@@ -161,31 +181,26 @@
     </script>
     <script>
 
-        function tik(element){
+        function tik(element) {
             element.classList.toggle('tik');
         }
 
-        myform.onsubmit = function(){
+        myform.onsubmit = function () {
             let a = document.getElementsByClassName('item-a');
             selecter.value = "";
-            for(let j=0;j < a.length;j++)
-            {
-                if(a[j].classList.contains('tik'))
-                {
+            for (let j = 0; j < a.length; j++) {
+                if (a[j].classList.contains('tik')) {
                     selecter.value += a[j].getAttribute('miz') + '-';
                 }
             }
             return true;
         }
 
-        function getMiz()
-        {
+        function getMiz() {
             let a = document.getElementsByClassName('item-a');
             selecter.value = "";
-            for(let j=0;j < a.length;j++)
-            {
-                if(a[j].classList.contains('tik'))
-                {
+            for (let j = 0; j < a.length; j++) {
+                if (a[j].classList.contains('tik')) {
                     selecter.value += a[j].getAttribute('miz') + '-';
                 }
             }
@@ -194,11 +209,9 @@
             x[0].submit(); // Form submission
         }
 
-        function def()
-        {
+        function def() {
             let a = document.getElementsByClassName('item-a');
-            for(let j=0;j < a.length;j++)
-            {
+            for (let j = 0; j < a.length; j++) {
                 selecter.value = "";
                 a[j].classList.remove('tik');
             }
