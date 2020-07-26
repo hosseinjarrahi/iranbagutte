@@ -3,6 +3,9 @@
 Route::get('/', 'HomeController@home')->name('home');
 Route::get('/benefits', 'HomeController@benefits');
 Route::get('/contact-us', 'HomeController@contactUs');
+
+Route::get('/call', 'HomeController@call');
+Route::get('/delivery', 'HomeController@delivery');
 //new
 Route::get('/collaborate-with-fastFood-maker', 'HomeController@collaborateWithFastFoodMaker');
 Route::get('/collaborate-with-game-developers', 'HomeController@collaborateWithGameDevelopers');
@@ -105,6 +108,12 @@ Route::group(['prefix' => 'manager', 'middleware' => 'auth'], function () {
     Route::post("about-us", 'OptionController@addAbout');
     Route::get("benefits", 'OptionController@benefits');
     Route::post("benefits", 'OptionController@addBenefits');
+
+    Route::get("call", 'OptionController@call');
+    Route::post("call", 'OptionController@addCall');
+
+    Route::get("delivery", 'OptionController@delivery');
+    Route::post("delivery", 'OptionController@addDelivery');
 
 // category
     Route::get("category", "CategoryController@show");
