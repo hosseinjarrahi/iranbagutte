@@ -141,8 +141,14 @@ Route::group(['prefix' => 'manager', 'middleware' => 'auth'], function () {
     Route::get("block-game/{game}", "GameController@block");
     Route::put("games", "GameController@add");
     Route::get("games/{id}", "GameController@delete");
-//events
-    Route::resource("events", "EventController");
+//manager > events
+    Route::get('event/', 'EventController@index')->name('event');
+    Route::get('event/create', 'EventController@create')->name('event.create');
+    Route::post('event/store', 'EventController@store')->name('event.store');
+    Route::get('event/edit/{comment}', 'EventController@edit')->name('event.edit');
+    Route::put('event/update/{comment}', 'EventController@update')->name('event.update');
+    Route::get('event/destroy/{comment}', 'EventController@destroy')->name('event.destroy');
+    Route::get("all-events","EventController@show")->name("event.show");
 
 });
 //end manager

@@ -82,7 +82,7 @@
 
                                         </a>
                                         <a href="{{route('admin.comments.destroy',$comment->id)}}"
-                                           onclick="return confirm('آیا دسته بندی حذف شود')">
+                                           onclick="return confirm('آیا این نظر حذف شود')">
                                             <label class="badge badge-danger">حذف</label>
 
                                         </a>

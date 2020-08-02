@@ -130,7 +130,7 @@
                         {{--</div>--}}
                     </a>
                     <a class="col-md-6 col-5 shadow" style="height:200px;padding: 5px;"
-                       href="#">
+                       href="@if(!isset($game_event)) # @else {{route("events.index")}} @endif">
                         {{--<div class="col-md-6 col-5 shadow" style="height:200px;padding: 5px;">--}}
                         <div id="card-4" class="w-100 h-100 d-flex align-items-center">
 
@@ -138,20 +138,20 @@
                                  style="background: url({{ asset('img/back.jpg') }});">
                                 {{--<a href="{{ url('game/'.$game->id) }}">--}}
                                 <p style=" font-weight: bold;color: darkblue;padding: 14px;">
-                                <h2>رويداد هاي ويژه</h2>
+                                <h2>@if(!isset($game_event))رویداد ویژه@else {{$event->title}} @endif</h2>
 
-                                <p>هم بازی کن</p>
-                                <p>هم فلافل مجانی ببر</p>
+                                <p>@if(!isset($game_event)) الان رویداد نداریم@else {{$event->text}} @endif</p>
                                 </p>
                                 {{--</a>--}}
                             </div>
 
                             <div class="back"
-                                 style="background: url({{ asset('img/back.jpg') }});
+                                 style="background: url(@if(!isset($game_event)){{ asset('img/back.jpg') }}@else {{asset('upload/'.$game_event->poster)}}@endif {{""}} );
                                      background-size: cover;
                                      background-position: center;
-                                     ">
-                                به زودی...
+                                     ">@if(!isset($event))
+                                الان رویدادی نداریم
+                                @endif
                             </div>
 
                         </div>

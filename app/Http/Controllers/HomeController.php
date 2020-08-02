@@ -6,6 +6,7 @@ use App\Banner;
 use App\Buycode;
 use App\Category;
 use App\Cyberspace;
+use App\Event;
 use App\Food;
 use App\Game;
 use App\Option;
@@ -20,10 +21,18 @@ use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Morilog\Jalali\Jalalian;
 
-class HomeController extends Controller
+class
+HomeController extends Controller
 {
     public function home()
     {
+        $event=Event::all()->first();
+        if(isset($event->id)){
+            $game_event=Game::find($event->game_id);
+        }
+        else{
+            $game_event=NULL;
+        }
         $games = Game::inRandomOrder()->where('special',1)->limit(2)->get();
         $home = 1;
         $op = Option::first();
@@ -33,7 +42,7 @@ class HomeController extends Controller
         $op->main = str_replace('height="', '', $op->main);
         $cyberspace = Cyberspace::get();
         $restaurants = Restaurant::get();
-        return view('home', compact('op', 'home', 'slides', 'games', 'cyberspace', 'restaurants'));
+        return view('home', compact('event','game_event','op', 'home', 'slides', 'games', 'cyberspace', 'restaurants'));
     }
 
     public function benefits()

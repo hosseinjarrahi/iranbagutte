@@ -19,6 +19,7 @@
                             <table class="table table-bordered table table-hover">
                                 <tr>
                                     <th>نام بازی</th>
+                                    <th>ID بازی</th>
                                     <th>نام کاربری فرستنده</th>
                                     <th>دانلود</th>
                                     <th>تایید</th>
@@ -29,6 +30,7 @@
                                 @forelse($games as $game)
                                     <tr>
                                         <td class="@if($game->status) bg-success @else bg-danger @endif">{{ $game->name }}</td>
+                                        <td>{{ $game->id }}</td>
                                         <td>{{ $game->user->username }}</td>
                                         <td><a href="{{ url('manager/download-game/'.$game->id) }}">دانلود</a></td>
                                         <td><a href="{{ url('manager/verification-game/'.$game->id) }}">تایید</a></td>
