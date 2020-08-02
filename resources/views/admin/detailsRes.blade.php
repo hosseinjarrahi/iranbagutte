@@ -20,6 +20,12 @@
                                         آدرس:
                                         <input class="form-control" type="text" name="address" value="{{ $res->options->address ?? ''}}">
                                         <br>
+                                        نحوه تماس با فروشگاه:
+                                        <input class="form-control" type="text" name="contact" value="{{ $res->options->contact ?? ''}}">
+                                        <br>
+                                        نحوه ارسال:
+                                        <input class="form-control" type="text" name="send" value="{{ $res->options->send ?? ''}}">
+                                        <br>
                                         ساعت کاری:
                                         <br>
                                         از

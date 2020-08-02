@@ -1,6 +1,6 @@
 @extends('admin.master')
 @section('title')
-مزایای عضویت
+نحوه ارسال سفارشات
 @endsection
 
 @section('content')
@@ -11,7 +11,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <form action="{{ url('manager/benefits') }}" method="post">
+                            <form action="{{ url('manager/delivery') }}" method="post">
                                 @csrf
                                 <textarea class="p-0 m-0" name="main" style="width: 100%;" cols="5" rows="10">{{ $op->main }}</textarea>
                                 <button type="submit">ارسال</button>

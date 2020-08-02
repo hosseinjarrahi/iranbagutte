@@ -26,6 +26,7 @@ HomeController extends Controller
 {
     public function home()
     {
+<<<<<<< HEAD
         $event=Event::all()->first();
         if(isset($event->id)){
             $game_event=Game::find($event->game_id);
@@ -34,6 +35,9 @@ HomeController extends Controller
             $game_event=NULL;
         }
         $games = Game::inRandomOrder()->where('special',1)->limit(2)->get();
+=======
+        $games = Game::inRandomOrder()->where('special', 1)->limit(2)->get();
+>>>>>>> 85a2fe05822a65986f942f25a6179d66184cd0fc
         $home = 1;
         $op = Option::first();
         $slides = Slide::where('restaurant_id', 1)->with('category')->get();
@@ -47,7 +51,7 @@ HomeController extends Controller
 
     public function benefits()
     {
-        $benefits = Option::all()[1];
+        $benefits = Option::first() ?? new Option();
         $benefits->main = str_replace('../', '', $benefits->main);
         $benefits->main = str_replace('width="', 'class="img-fluid"', $benefits->main);
         $benefits->main = str_replace('height="', '', $benefits->main);
@@ -57,12 +61,32 @@ HomeController extends Controller
 
     public function contactUs()
     {
-        $contactUs = Option::all()[1];
+        $contactUs = Option::find(2) ?? new Option();
         $contactUs->main = str_replace('../', '', $contactUs->main);
         $contactUs->main = str_replace('width="', 'class="img-fluid"', $contactUs->main);
         $contactUs->main = str_replace('height="', '', $contactUs->main);
         $cyberspace = Cyberspace::get();
         return view('contact-us', compact('contactUs', 'cyberspace'));
+    }
+
+    public function delivery()
+    {
+        $delivery = Option::find(4) ?? new Option();
+        $delivery->main = str_replace('../', '', $delivery->main);
+        $delivery->main = str_replace('width="', 'class="img-fluid"', $delivery->main);
+        $delivery->main = str_replace('height="', '', $delivery->main);
+        $cyberspace = Cyberspace::get();
+        return view('delivery', compact('delivery', 'cyberspace'));
+    }
+
+    public function call()
+    {
+        $call = Option::find(3) ?? new Option();
+        $call->main = str_replace('../', '', $call->main);
+        $call->main = str_replace('width="', 'class="img-fluid"', $call->main);
+        $call->main = str_replace('height="', '', $call->main);
+        $cyberspace = Cyberspace::get();
+        return view('call', compact('call', 'cyberspace'));
     }
 
     public function collaborateWithFastFoodMaker()

@@ -63,21 +63,49 @@ class OptionController extends Controller
         $op = Option::first();
         $op->main = $request->main;
         $op->save();
-        return redirect('admin/about-us');
+        return redirect('manager/about-us');
+    }
+
+    public function call()
+    {
+        $op = Option::find(3) ?? Option::create(['id' => 3,'main' => '']);
+        return view('admin.call',compact('op'));
+    }
+
+    public function addCall(Request $request)
+    {
+        $op = Option::find(3) ?? new Option(['id' => 3]);
+        $op->main = $request->main;
+        $op->save();
+        return redirect('manager/call');
+    }
+
+    public function delivery()
+    {
+        $op = Option::find(4) ?? Option::create(['id' => 4,'main' => '']);
+        return view('admin.delivery',compact('op'));
+    }
+
+    public function addDelivery(Request $request)
+    {
+        $op = Option::find(4) ?? new Option(['id' => 4]);
+        $op->main = $request->main;
+        $op->save();
+        return redirect('manager/delivery');
     }
 
     public function benefits()
     {
-        $op = Option::find(1);
+        $op = Option::find(2) ?? Option::create(['id' => 2]);
         return view('admin.benefits',compact('op'));
     }
 
     public function addBenefits(Request $request)
     {
-        $op = Option::find(1);
+        $op = Option::find(2) ?? new Option(['id' => 2]);
         $op->main = $request->main;
         $op->save();
-        return redirect('admin/benefits');
+        return redirect('manager/benefits');
     }
 
     public function upload(Request $request)

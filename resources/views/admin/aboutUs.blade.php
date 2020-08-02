@@ -13,7 +13,8 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <form action="{{ url('admin/about-us') }}" method="post">
+                            <form action="{{ url('manager/about-us') }}" method="post">
+                                @csrf
                                 <textarea class="p-0 m-0" name="main" style="width: 100%;" cols="5" rows="10">{{ $op->main }}</textarea>
                                 <button type="submit">ارسال</button>
                             </form>

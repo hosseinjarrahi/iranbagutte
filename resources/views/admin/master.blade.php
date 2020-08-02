@@ -381,6 +381,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             </a>
 
                                         </li>
+
                                         <li class="nav-item">
 
                                             <a href="{{ url('manager/about-us') }}" class="nav-link">
@@ -394,16 +395,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         </li>
 
                                         <li class="nav-item">
-
                                             <a href="{{ url('manager/benefits') }}" class="nav-link">
-
                                                 <i class="fa fa-circle-o nav-icon"></i>
-
                                                 <p>مزایای عضویت</p>
-
                                             </a>
-
                                         </li>
+
+                                        <li class="nav-item">
+                                            <a href="{{ url('manager/delivery') }}" class="nav-link">
+                                                <i class="fa fa-circle-o nav-icon"></i>
+                                                <p>نحوه ارسال</p>
+                                            </a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a href="{{ url('manager/call') }}" class="nav-link">
+                                                <i class="fa fa-circle-o nav-icon"></i>
+                                                <p>تماس با فروشگاه</p>
+                                            </a>
+                                        </li>
+
                                     @endif
                                 </ul>
 
