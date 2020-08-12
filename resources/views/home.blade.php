@@ -130,7 +130,7 @@
                         {{--</div>--}}
                     </a>
                     <a class="col-md-6 col-5 shadow" style="height:200px;padding: 5px;"
-                       href="@if(!isset($game_event)) # @else {{route("events.index")}} @endif">
+                       href="@if(!isset($game_event)) # @else {{route("event")}} @endif">
                         {{--<div class="col-md-6 col-5 shadow" style="height:200px;padding: 5px;">--}}
                         <div id="card-4" class="w-100 h-100 d-flex align-items-center">
 

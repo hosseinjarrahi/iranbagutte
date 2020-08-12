@@ -26,7 +26,6 @@ HomeController extends Controller
 {
     public function home()
     {
-<<<<<<< HEAD
         $event=Event::all()->first();
         if(isset($event->id)){
             $game_event=Game::find($event->game_id);
@@ -35,9 +34,6 @@ HomeController extends Controller
             $game_event=NULL;
         }
         $games = Game::inRandomOrder()->where('special',1)->limit(2)->get();
-=======
-        $games = Game::inRandomOrder()->where('special', 1)->limit(2)->get();
->>>>>>> 85a2fe05822a65986f942f25a6179d66184cd0fc
         $home = 1;
         $op = Option::first();
         $slides = Slide::where('restaurant_id', 1)->with('category')->get();

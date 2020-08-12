@@ -98,10 +98,7 @@
 							<li class="IB-menu-item">
 
 									<div class="dropdown">
-										<a onclick="myFunction()" class="dropbtna">
-											همکاری با ما
-										</a>
-
+										<a onclick="myFunction()" class="dropbtna">همکاری با ما</a>
 									</div>
 
 							</li>
