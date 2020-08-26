@@ -151,7 +151,6 @@ Route::group(['prefix' => 'manager', 'middleware' => 'auth'], function () {
     Route::put("games", "GameController@add");
     Route::get("games/{id}", "GameController@delete");
 //manager > events
-    Route::get('event/', 'EventController@index')->name('event');
     Route::get('event/create', 'EventController@create')->name('event.create');
     Route::post('event/store', 'EventController@store')->name('event.store');
     Route::get('event/edit/{comment}', 'EventController@edit')->name('event.edit');
@@ -161,6 +160,9 @@ Route::group(['prefix' => 'manager', 'middleware' => 'auth'], function () {
 
 });
 //end manager
+//event user
+Route::get('event/', 'EventController@index')->name('event');
+//end event user
 Route::group(['prefix' => 'restaurant'], function () {
     Route::get('{restaurant}', 'HomeController@showRestaurant');
     Route::post('down', 'HomeController@ajax');
