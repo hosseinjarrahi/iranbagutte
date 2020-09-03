@@ -458,3 +458,15 @@ canvas {
 
 /* Showa the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .showa {display:block;}
+
+.countdown {
+    width: 100%;
+    float: left;
+    margin: 20px auto;
+}
+
+.timer {
+    font: 72px Courier;
+    color: #fff;
+    text-align: center;
+}

@@ -10,11 +10,7 @@ use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $event=Event::all()->first();
@@ -40,23 +36,12 @@ class EventController extends Controller
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('admin.event.create');
 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $messages = [
@@ -80,43 +65,25 @@ class EventController extends Controller
 
             $event->save();
         } catch (Exception $exception) {
-            return redirect(route('event.edit'))->with('warning', $exception->getCode());
+            return redirect(route('admin.event.edit'))->with('warning', $exception->getCode());
         }
         $msg = "رویداد با موفقیت ویرایش شد.";
-        return redirect(route('event.show'))->with('success', $msg);
+        return redirect(route('admin.event.show'))->with('success', $msg);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show()
     {
         $event=Event::all()->first();
         return view('admin.event.event',compact('event'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $event=Event::find($id);
         return view('admin.event.edit',compact('event'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $event=Event::find($id);
@@ -135,27 +102,21 @@ class EventController extends Controller
         try {
             $event->update($request->all());
         } catch (Exception $exception) {
-            return redirect(route('event.edit'))->with('warning', $exception->getCode());
+            return redirect(route('admin.event.edit'))->with('warning', $exception->getCode());
         }
         $msg = "رویداد با موفقیت ویرایش شد.";
-        return redirect(route('event.show'))->with('success', $msg);
+        return redirect(route('admin.event.show'))->with('success', $msg);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy( $id)
     {
         $event=Event::find($id);
         try {
             $event->delete();
         } catch (Exception $exception) {
-            return redirect(route('event.edit'))->with('warning', $exception->getCode());
+            return redirect(route('admin.event.edit'))->with('warning', $exception->getCode());
         }
         $msg = "رویداد با موفقیت حذف شد.";
-        return redirect(route('event.show'))->with('success', $msg);
+        return redirect(route('admin.event.show'))->with('success', $msg);
     }
 }
