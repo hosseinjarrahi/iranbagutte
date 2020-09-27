@@ -33,7 +33,7 @@ class BasketController extends Controller
             if (isset($basket[$id])) {
                 $basket[$id]['count'] += $counter;
             } else {
-                $basket[$id] = ['res' => $product->restaurant, 'price' => $product->price, 'name' => $product->title, 'img' => $product->img, 'count' => $counter];
+                $basket[$id] = ['restaurant_id' => $product->restaurant->id, 'price' => $product->price, 'name' => $product->title, 'img' => $product->img, 'count' => $counter];
                 $count++;
             }
             session(['basket' => serialize($basket)]);
@@ -61,65 +61,113 @@ class BasketController extends Controller
     public function checkout()
     {
         if (!auth()->check()) return redirect('/login');
+
         $user = auth()->user();
+
         if ($user->address == null || $user->phone == null) {
             return redirect('/edit');
         }
-        $basket = cookie('basket')->getValue();
+
+        $basket = session('basket');
+        
         if ($basket) {
+
             $basket = unserialize($basket, ["allowed_classes" => false]);
+
             $jam = 0;
+
             foreach ($basket as $pid => $value) {
                 $p = Food::find($pid);
                 if (isset($p))
                     $jam += $p->price * (1 - $p->off / 100);
             }
-//            Dargah::transaction($jam,url('reply'));
+           
+            session(['jam'=>$jam]);
+
+            $MerchantID = '6468a85e-fb2b-11ea-be55-000c295eb8fc'; //Required
+            $Amount = $jam; //Amount will be based on Toman - Required
+            $Description = 'توضیحات تراکنش تستی'; // Required
+            $Email = 'UserEmail@Mail.Com'; // Optional
+            $Mobile = '09123456789'; // Optional
+            $CallbackURL = route('reply.to.pay'); // Required
+            
+            
+            $client = new \SoapClient('https://sandbox.zarinpal.com/pg/services/WebGate/wsdl', ['encoding' => 'UTF-8']);
+            
+            $result = $client->PaymentRequest(
+            [
+            'MerchantID' => $MerchantID,
+            'Amount' => $Amount,
+            'Description' => $Description,
+            'Email' => $Email,
+            'Mobile' => $Mobile,
+            'CallbackURL' => $CallbackURL,
+            ]
+            );
+            
+            //Redirect to URL You can do it also by creating a form
+            if ($result->Status == 100) {
+            return redirect('https://sandbox.zarinpal.com/pg/StartPay/'.$result->Authority);
+            } else {
+            echo'ERR: '.$result->Status;
+            }
+
         } else
             return redirect('/');
     }
 
-    public function reply()
+    public function reply(Request $request)
     {
         if (!auth()->check()) return redirect('/login');
-        $user = auth()->user();
-        if (1) {
-            $res = 1;
-            if (1) {
-                $pay = new Payment();
-                $pay->userid = $user->id;
-                $pay->products = \Cookie::get('basket');
-                $pay->transid = $res->transId;
-                $pay->factor = $this->CreateFactor();
-                $pay->trace = $res->traceNumber;
-                $pay->time = time();
-                if ($pay->save()) {
-                    $message = 'محصول با موفقیت خرید شد.';
-                    $message .= '<br>';
-                    $message .= 'شماره فاکتور : ';
-                    $message .= $pay->factor;
-                    $message .= '<br>';
-                    $message .= 'شماره پیگیری بانک : ';
-                    $message .= $pay->trace;
-                    $message .= '<br>';
-                    \Cookie::remove('basket');
-                    \Cookie::remove('count');
-                }
-            } else
-                $message = 'شما پرداخت را با موفقیت انجام داده اید.';
-        } else
-            $message = 'مشکلی در پرداخت به وجود آمده است.درصورت کسر وجه تا 1 ساعت مبلغ به حسابتان باز خواهد گشت.';
-        return view('user.complete', compact('message'));
-    }
 
-    public function CreateFactor()
-    {
-        $f = Pay::all(0, 2, 'factor|DESC');
-        if (!empty($f))
-            $factor = $f[0]->factor;
-        else
-            $factor = 1000000;
-        return $factor + 1;
+        $user = auth()->user();
+
+        $MerchantID = '6468a85e-fb2b-11ea-be55-000c295eb8fc';
+        $Amount = session('jam'); //Amount will be based on Toman
+        $Authority = $request->Authority;
+        
+        if ($request->Status == 'OK') {
+        
+        $client = new \SoapClient('https://sandbox.zarinpal.com/pg/services/WebGate/wsdl', ['encoding' => 'UTF-8']);
+        
+        $result = $client->PaymentVerification(
+        [
+        'MerchantID' => $MerchantID,
+        'Authority' => $Authority,
+        'Amount' => $Amount,
+        ]
+        );
+
+        if ($result->Status == 100) {
+            $products = session('basket');
+            $products = collect(unserialize($products, ["allowed_classes" => false]));
+            $products = $products->groupBy('restaurant_id');
+            foreach($products as $index => $product){
+                $p = serialize($product);
+                $pay = new Payment();
+                $pay->user_id = $user->id;
+                $pay->trans_id = $result->RefID;
+                $pay->restaurant_id = $index;
+                $pay->products = $p;
+                $pay->save();
+                $message = 'محصول با موفقیت خرید شد.';
+                $message .= '<br>';
+                $message .= 'شماره پیگیری بانک : ';
+                $message .= $pay->trans_id;
+                $message .= '<br>';
+            }
+            session()->forget('basket');
+            session()->forget('count');
+
+        } else {
+            $message = 'مشکلی در پرداخت به وجود آمده است.درصورت کسر وجه تا 1 ساعت مبلغ به حسابتان باز خواهد گشت.';
+        }
+        } else {
+            $message = 'مشکلی در پرداخت به وجود آمده است.درصورت کسر وجه تا 1 ساعت مبلغ به حسابتان باز خواهد گشت.';
+        }
+
+
+        return view('user.complete', compact('message'));
     }
 
     public function status()
