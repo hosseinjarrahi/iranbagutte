@@ -8,7 +8,7 @@
 <div class="container d-flex flex-column justify-content-center align-items-center mt-3">
         <div class="loginBox col-11 col-md-7 rounded p-3 text-center">
 
-            <img src="{{ asset('img/logoiran.png') }}" alt="iranbuget" class=" mb-3 img-fluid">
+            <img src="{{ asset('img/logoiran_b.jpg') }}" style="width: 45%; border-radius: 10px" alt="iranbuget" class=" mb-3 img-fluid">
             @if(session('error'))
                 <p class="alert-danger  alert">اطلاعات وارد شده اشتباه است.</p>
             @endif

@@ -9,7 +9,7 @@
     <div class="container d-flex flex-column justify-content-center align-items-center mt-3">
         <div class="loginBox col-11 col-md-7 rounded p-3 text-center">
 
-            <img src="{{ asset('img/logoiran.png') }}" alt="iranbuget" class=" mb-3 img-fluid">
+            <img src="{{ asset('img/logoiran_b.jpg') }}" alt="iranbuget" style="width: 45%; border-radius: 10px;" class=" mb-3 img-fluid">
             @if(isset($errors))
                 @foreach($errors as $error)
                     <p class="alert-danger alert">{{ $error }}</p>
@@ -51,7 +51,7 @@
                 <div class="input-group mb-2">
                     <input type="email" class="form-control" name="email" value="{{ $user->email ?? '' }}"><br>
                     <div class="input-group-append">
-                        <span class="input-group-text text-dark">ایمیل(اختیاری)</span>
+                        <span class="input-group-text text-dark">ایمیل</span>
                     </div>
                     @error('email')
                     <div class="alert alert-danger"> {{$message}}</div>
@@ -68,7 +68,7 @@
                 </div>
 
 
-                {!! htmlFormSnippet() !!}
+{{--                {!! htmlFormSnippet() !!}--}}
 
                 <input type="submit" class="btn btn-primary mb-2" value="ثبت نام">
             </form>

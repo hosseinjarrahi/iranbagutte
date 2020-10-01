@@ -26,9 +26,11 @@ class RegisterController extends Controller
             $user = new User;
             $user->username = $request->username;
             $user->password = bcrypt($request->password);
+            $user->name = $request->name;
             $user->email = $request->email;
             $user->phone = $request->phone;
-            $user->name = $request->name;
+            dd("در حال بروزرسانی...");
+
             $res = $user->save();
             auth()->login($user);
         }

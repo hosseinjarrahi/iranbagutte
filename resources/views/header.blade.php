@@ -6,7 +6,7 @@
 		<span class="IB-line IB-line-2"></span>
 		<span class="IB-line IB-line-3"></span>
 	</div>
-	<span class="text-white text-center" style="font-size: .8rem;">سفارش آنلاین فست فود و فلافل هفت چنار تهران</span>
+	<span class="text-white text-center" style="font-size: .8rem;">به فروشگاه ایران باگت خوش آمدید</span>
 </button>
 
 <script>
@@ -47,10 +47,10 @@
 	            </div>
 
 				<div class="text-logo d-lg-flex mt-3 text-bold justify-content-between flex-lg-row" style="font-size: 1.5rem;">
-					<span class="ml-lg-2 m-0 text-light" id="sefaresh">سفارش آنلاین فست فود و فلافل هفت چنار تهران</span>
+					<span class="ml-lg-2 m-0 text-light" id="sefaresh">به فروشگاه ایران باگت خوش آمدید</span>
 
 					<a class="logo2 mx-auto">
-						<img class="img-fluid col-10" src="{{ asset('img/logoiran.png') }}">
+						<img class="img-fluid col-10" src="{{ asset('img/logoiran_s.png') }}">
 					</a>
 
 					<div class="ib-social-2 my-2" style="position: absolute;top: 10px;left: 10px;">
@@ -180,7 +180,7 @@
 	            </div>
 
 				<a class="ml-2 logo">
-					<img src="{{ asset('img/logoiran.png') }}" style="height:5rem;">
+					<img src="{{ asset('img/logoiran_s.png') }}" style="height:5rem;">
 				</a>
 				<div class="position-relative basket-bottom mt-3">
 					<span class="position-absolute badge badge-success" style="top: 30%;right: 15px;font-size: 0.8rem">@php echo Cookie::get('count'); @endphp</span>

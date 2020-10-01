@@ -115,7 +115,7 @@
                     @foreach($foods as $key => $food)
                         <div class="col-lg-4 col-11 my-2 animate" style="opacity: 0;">
                             <div class="card bg-light p-hover">
-                                <div class="card-header text-bold text-dark">{{ $food->title }}</div>
+                                <div class="card-header text-bold text-dark  text-center">{{ $food->title }}</div>
                                 <div class="card-img-top" style="width:100%;height: 200px;background-position: center;background-image: url({{ asset('upload/'.$food->img) }});background-repeat:no-repeat;background-size: cover;"></div>
                                 <div class="card-body">
                                     <p class="text-justify text-dark">

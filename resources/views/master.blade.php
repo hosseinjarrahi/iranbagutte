@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>@yield('title')</title>
+    <link rel="icon" href="{{ asset('img/logoiran_s.png') }}" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('css/UserSheetFa.css') }}">

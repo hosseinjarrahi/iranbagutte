@@ -21,8 +21,7 @@ use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Morilog\Jalali\Jalalian;
 
-class
-HomeController extends Controller
+class HomeController extends Controller
 {
     public function home()
     {
