@@ -47,7 +47,7 @@
                             </a>
 
                             <div class="ac-content" style="display: none;">
-                                <a target="_blank" href="{{ url('order#'.($key + 1)) }}">
+                                <a target="_blank" href="{{ url('order?id=1#'.($key + 1)) }}">
                                     <img src="{{ asset('upload/'.$slide->img) }}">
                                 </a>
                             </div>

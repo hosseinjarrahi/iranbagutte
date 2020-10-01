@@ -11,7 +11,7 @@ class BasketController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except(['show','add','remove']);
+        $this->middleware('auth')->except(['show', 'add', 'remove']);
     }
 
     public function show()
@@ -19,7 +19,7 @@ class BasketController extends Controller
         $basket = unserialize(session('basket'));
         if ($basket == null) $basket = [];
         $cyberspace = Cyberspace::get();
-        return view('user.basket', compact('basket','cyberspace'));
+        return view('user.basket', compact('basket', 'cyberspace'));
     }
 
     public function add($id, Request $request)
@@ -69,7 +69,7 @@ class BasketController extends Controller
         }
 
         $basket = session('basket');
-        
+
         if ($basket) {
 
             $basket = unserialize($basket, ["allowed_classes" => false]);
@@ -81,35 +81,31 @@ class BasketController extends Controller
                 if (isset($p))
                     $jam += $p->price * (1 - $p->off / 100);
             }
-           
-            session(['jam'=>$jam]);
+
+            session(['jam' => $jam]);
 
             $MerchantID = '6468a85e-fb2b-11ea-be55-000c295eb8fc'; //Required
             $Amount = $jam; //Amount will be based on Toman - Required
-            $Description = 'توضیحات تراکنش تستی'; // Required
-            $Email = 'UserEmail@Mail.Com'; // Optional
-            $Mobile = '09123456789'; // Optional
+            $Description = 'خرید از ایران باگت'; // Required
             $CallbackURL = route('reply.to.pay'); // Required
-            
-            
-            $client = new \SoapClient('https://sandbox.zarinpal.com/pg/services/WebGate/wsdl', ['encoding' => 'UTF-8']);
-            
+
+
+            $client = new \SoapClient('https://zarinpal.com/pg/services/WebGate/wsdl', ['encoding' => 'UTF-8']);
+
             $result = $client->PaymentRequest(
-            [
-            'MerchantID' => $MerchantID,
-            'Amount' => $Amount,
-            'Description' => $Description,
-            'Email' => $Email,
-            'Mobile' => $Mobile,
-            'CallbackURL' => $CallbackURL,
-            ]
+                [
+                    'MerchantID' => $MerchantID,
+                    'Amount' => $Amount,
+                    'Description' => $Description,
+                    'CallbackURL' => $CallbackURL,
+                ]
             );
-            
+
             //Redirect to URL You can do it also by creating a form
             if ($result->Status == 100) {
-            return redirect('https://sandbox.zarinpal.com/pg/StartPay/'.$result->Authority);
+                return redirect('https://zarinpal.com/pg/StartPay/' . $result->Authority);
             } else {
-            echo'ERR: '.$result->Status;
+                echo 'ERR: ' . $result->Status;
             }
 
         } else
@@ -125,43 +121,43 @@ class BasketController extends Controller
         $MerchantID = '6468a85e-fb2b-11ea-be55-000c295eb8fc';
         $Amount = session('jam'); //Amount will be based on Toman
         $Authority = $request->Authority;
-        
+
         if ($request->Status == 'OK') {
-        
-        $client = new \SoapClient('https://sandbox.zarinpal.com/pg/services/WebGate/wsdl', ['encoding' => 'UTF-8']);
-        
-        $result = $client->PaymentVerification(
-        [
-        'MerchantID' => $MerchantID,
-        'Authority' => $Authority,
-        'Amount' => $Amount,
-        ]
-        );
 
-        if ($result->Status == 100) {
-            $products = session('basket');
-            $products = collect(unserialize($products, ["allowed_classes" => false]));
-            $products = $products->groupBy('restaurant_id');
-            foreach($products as $index => $product){
-                $p = serialize($product);
-                $pay = new Payment();
-                $pay->user_id = $user->id;
-                $pay->trans_id = $result->RefID;
-                $pay->restaurant_id = $index;
-                $pay->products = $p;
-                $pay->save();
-                $message = 'محصول با موفقیت خرید شد.';
-                $message .= '<br>';
-                $message .= 'شماره پیگیری بانک : ';
-                $message .= $pay->trans_id;
-                $message .= '<br>';
+            $client = new \SoapClient('https://zarinpal.com/pg/services/WebGate/wsdl', ['encoding' => 'UTF-8']);
+
+            $result = $client->PaymentVerification(
+                [
+                    'MerchantID' => $MerchantID,
+                    'Authority' => $Authority,
+                    'Amount' => $Amount,
+                ]
+            );
+
+            if ($result->Status == 100) {
+                $products = session('basket');
+                $products = collect(unserialize($products, ["allowed_classes" => false]));
+                $products = $products->groupBy('restaurant_id');
+                foreach ($products as $index => $product) {
+                    $p = serialize($product);
+                    $pay = new Payment();
+                    $pay->user_id = $user->id;
+                    $pay->trans_id = $result->RefID;
+                    $pay->restaurant_id = $index;
+                    $pay->products = $p;
+                    $pay->save();
+                    $message = 'محصول با موفقیت خرید شد.';
+                    $message .= '<br>';
+                    $message .= 'شماره پیگیری بانک : ';
+                    $message .= $pay->trans_id;
+                    $message .= '<br>';
+                }
+                session()->forget('basket');
+                session()->forget('count');
+
+            } else {
+                $message = 'مشکلی در پرداخت به وجود آمده است.درصورت کسر وجه تا 1 ساعت مبلغ به حسابتان باز خواهد گشت.';
             }
-            session()->forget('basket');
-            session()->forget('count');
-
-        } else {
-            $message = 'مشکلی در پرداخت به وجود آمده است.درصورت کسر وجه تا 1 ساعت مبلغ به حسابتان باز خواهد گشت.';
-        }
         } else {
             $message = 'مشکلی در پرداخت به وجود آمده است.درصورت کسر وجه تا 1 ساعت مبلغ به حسابتان باز خواهد گشت.';
         }
