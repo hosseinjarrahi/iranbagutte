@@ -31,8 +31,8 @@ Route::get('/order', 'HomeController@order');
 Route::get("/basket", 'BasketController@show');
 Route::get("/add-to-basket/{id}", 'BasketController@add');
 Route::get("/remove-from-basket/{id}", 'BasketController@remove');
-Route::get("/checkout", 'BasketController@checkout');
-Route::get("/reply", 'BasketController@reply');
+Route::get("/checkout", 'BasketController@checkout')->name('checkout');
+Route::get("/reply", 'BasketController@reply')->name('reply.to.pay');
 Route::get("/status", 'BasketController@status');
 
 Route::get("edit", "BasketController@takmil");

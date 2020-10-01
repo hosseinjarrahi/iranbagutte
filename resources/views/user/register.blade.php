@@ -23,9 +23,9 @@
                     <div class="input-group-append">
                         <span class="input-group-text text-dark">نام و نام خانوادگی</span>
                     </div>
-                    @error('name')
+                    {{-- @error('name')
                     <div class="alert alert-danger"> {{$message}}</div>
-                    @enderror
+                    @enderror --}}
                 </div>
 
                 <div class="input-group mb-2">
@@ -34,9 +34,9 @@
                     <div class="input-group-append">
                         <span class="input-group-text text-dark">نام کاربری</span>
                     </div>
-                    @error('username')
+                    {{-- @error('username')
                     <div class="alert alert-danger"> {{$message}}</div>
-                    @enderror
+                    @enderror --}}
                 </div>
                 <div class="input-group mb-2">
                     <input type="password" class="form-control" name="password" required
@@ -44,27 +44,27 @@
                     <div class="input-group-append">
                         <span class="input-group-text text-dark">رمز عبور</span>
                     </div>
-                    @error('password')
+                    {{-- @error('password')
                     <div class="alert alert-danger"> {{$message}}</div>
-                    @enderror
+                    @enderror --}}
                 </div>
                 <div class="input-group mb-2">
                     <input type="email" class="form-control" name="email" value="{{ $user->email ?? '' }}"><br>
                     <div class="input-group-append">
                         <span class="input-group-text text-dark">ایمیل</span>
                     </div>
-                    @error('email')
+                    {{-- @error('email')
                     <div class="alert alert-danger"> {{$message}}</div>
-                    @enderror
+                    @enderror --}}
                 </div>
                 <div class="input-group mb-2">
                     <input type="tel" class="form-control" name="phone" required value="{{ $user->phone ?? '' }}"><br>
                     <div class="input-group-append">
                         <span class="input-group-text text-dark">شماره همراه</span>
                     </div>
-                    @error('phone')
+                    {{-- @error('phone')
                     <div class="alert alert-danger"> {{$message}}</div>
-                    @enderror
+                    @enderror --}}
                 </div>
 
 

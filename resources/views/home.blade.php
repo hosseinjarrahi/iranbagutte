@@ -19,7 +19,7 @@
                                     <span class="IB-akordin0">{{ $slide->category->name }}</span>
                                 </h2>
                                 <div style="width: 1040px; left: 0px; padding-left: 40px;">
-                                    <a target="_blank" href="{{ url('order?id='.($key + 1).'#'.($key + 1)) }}">
+                                    <a target="_blank" href="{{ url('order?id=1#'.($key + 1)) }}">
                                         <img src="{{ asset('upload/'.$slide->img) }}" class="img-fluid">
                                     </a>
                                     {{ $slide->category->name }}
@@ -47,7 +47,7 @@
                             </a>
 
                             <div class="ac-content" style="display: none;">
-                                <a target="_blank" href="{{ url('order#'.($key + 1)) }}">
+                                <a target="_blank" href="{{ url('order?id=1#'.($key + 1)) }}">
                                     <img src="{{ asset('upload/'.$slide->img) }}">
                                 </a>
                             </div>
@@ -132,10 +132,12 @@
                     <a class="col-md-6 col-5 shadow" style="height:200px;padding: 5px;"
                        href="@if(!isset($game_event)) # @else {{route("event")}} @endif">
                         {{--<div class="col-md-6 col-5 shadow" style="height:200px;padding: 5px;">--}}
-                        <div id="card-4" class="w-100 h-100 d-flex align-items-center">
+                        <div
+                            @if(!isset($game_event)) onclick="event.preventDefault();alert('در حال حاضر رویدادی نداریم.')" @endif
+                            id="card-4" class="w-100 h-100 d-flex align-items-center">
 
                             <div class="front bg-danger text-center"
-                                 style="background: url({{ asset('img/back.jpg') }});">
+                                style="background: url({{ asset('img/back.jpg') }});">
                                 {{--<a href="{{ url('game/'.$game->id) }}">--}}
                                 <p style=" font-weight: bold;color: darkblue;padding: 14px;">
                                 <h2>@if(!isset($game_event))رویداد ویژه@else {{$event->title}} @endif</h2>
@@ -150,7 +152,7 @@
                                      background-size: cover;
                                      background-position: center;
                                      ">@if(!isset($event))
-                                الان رویدادی نداریم
+                                    الان رویدادی نداریم
                                 @endif
                             </div>
 
@@ -176,7 +178,7 @@
                     @foreach($restaurants as $restaurant)
                         <a href="{{url('restaurant/'.$restaurant['id'])}}" style="color: white; height: 100%;">
                             <div class="ads-parent position-relative m-2">
-{{--                                <img class="item img-fluid w-100 h-100" src="upload/{{ $restaurant['pics'][0] }}">--}}
+                                {{--                                <img class="item img-fluid w-100 h-100" src="upload/{{ $restaurant['pics'][0] }}">--}}
                                 <img class="item img-fluid w-100 h-100" src="upload/res1.jpg">
                                 <span class="IB-ads text-center w-100 p-2 position-absolute h-50">
                                 {{$restaurant['name']}}
