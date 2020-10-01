@@ -19,7 +19,7 @@
                                     <span class="IB-akordin0">{{ $slide->category->name }}</span>
                                 </h2>
                                 <div style="width: 1040px; left: 0px; padding-left: 40px;">
-                                    <a target="_blank" href="{{ url('order?id='.($key + 1).'#'.($key + 1)) }}">
+                                    <a target="_blank" href="{{ url('order?id=1#'.($key + 1)) }}">
                                         <img src="{{ asset('upload/'.$slide->img) }}" class="img-fluid">
                                     </a>
                                     {{ $slide->category->name }}
