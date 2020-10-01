@@ -103,7 +103,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </a>
                                 @if(auth()->user()->hasRole('posts'))
                                     <ul class="nav nav-treeview">
-
                                         <li class="nav-item has-treeview">
                                             <a href="#" class="nav-link">
                                                 <i class="nav-icon fa fa-edit"></i>
@@ -376,7 +375,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                                 <i class="fa fa-circle-o nav-icon"></i>
 
-                                                <p>فضای مجازی</p>
+                                                <p>فضای مجازی و اپلیکیشن</p>
 
                                             </a>
 

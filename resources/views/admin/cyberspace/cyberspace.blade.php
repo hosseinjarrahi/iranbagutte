@@ -1,7 +1,7 @@
 @extends('admin.master')
 
 @section('title')
-    مدیریت نظرات - بخش مدیریت
+    مدیریت فضای مجازی و اپلیکیشن
 @endsection
 
 @section('content')
@@ -25,8 +25,8 @@
                         <table class="table table-hover">
                             <thead>
                             <tr>
-                                <th>نام فضای مجازی</th>
-                                <th>آدرس فضای مجازی</th>
+                                <th>نام</th>
+                                <th>آدرس</th>
                                 <th>مدیریت</th>
                             </tr>
                             </thead>

@@ -173,7 +173,6 @@ Route::post('/comment/{game}', 'CommentController@storeG')->name('game.comment')
 Route::post('/comment/{restaurant}', 'CommentController@storeR')->name('restaurant.comment');
 
 
-
 Route::get('/test1', function () {
     dd(json_encode(\App\Food::all()));
 });
