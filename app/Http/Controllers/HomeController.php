@@ -46,7 +46,7 @@ class HomeController extends Controller
 
     public function benefits()
     {
-        $benefits = Option::first() ?? new Option();
+        $benefits = Option::find(2) ?? new Option();
         $benefits->main = str_replace('../', '', $benefits->main);
         $benefits->main = str_replace('width="', 'class="img-fluid"', $benefits->main);
         $benefits->main = str_replace('height="', '', $benefits->main);
@@ -56,7 +56,7 @@ class HomeController extends Controller
 
     public function contactUs()
     {
-        $contactUs = Option::find(2) ?? new Option();
+        $contactUs = Option::find(3) ?? new Option();
         $contactUs->main = str_replace('../', '', $contactUs->main);
         $contactUs->main = str_replace('width="', 'class="img-fluid"', $contactUs->main);
         $contactUs->main = str_replace('height="', '', $contactUs->main);
