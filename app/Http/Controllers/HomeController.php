@@ -56,7 +56,7 @@ class HomeController extends Controller
 
     public function contactUs()
     {
-        $contactUs = Option::find(3) ?? new Option();
+        $contactUs = Option::find(5) ?? new Option();
         $contactUs->main = str_replace('../', '', $contactUs->main);
         $contactUs->main = str_replace('width="', 'class="img-fluid"', $contactUs->main);
         $contactUs->main = str_replace('height="', '', $contactUs->main);
@@ -86,45 +86,43 @@ class HomeController extends Controller
 
     public function collaborateWithFastFoodMaker()
     {
-        $collaborateWithFastFoodMaker = Option::all()[1];
-        $collaborateWithFastFoodMaker->main = str_replace('../', '', $collaborateWithFastFoodMaker->main);
-        $collaborateWithFastFoodMaker->main = str_replace('width="', 'class="img-fluid"', $collaborateWithFastFoodMaker->main);
-        $collaborateWithFastFoodMaker->main = str_replace('height="', '', $collaborateWithFastFoodMaker->main);
+        $benefits = Option::find(8) ?? new Option();
+        $benefits->main = str_replace('../', '', $benefits->main);
+        $benefits->main = str_replace('width="', 'class="img-fluid"', $benefits->main);
+        $benefits->main = str_replace('height="', '', $benefits->main);
         $cyberspace = Cyberspace::get();
-        return view('collaborate-with-fastFood-maker', compact('collaborateWithFastFoodMaker', 'cyberspace'));
-//        return view('collaborate-with-fastFood-maker');
+        return view('collaborate-with-fastFood-maker', compact('benefits', 'cyberspace'));
     }
 
     public function collaborateWithGameDevelopers()
     {
-        $collaborateWithGameDevelopers = Option::all()[1];
-        $collaborateWithGameDevelopers->main = str_replace('../', '', $collaborateWithGameDevelopers->main);
-        $collaborateWithGameDevelopers->main = str_replace('width="', 'class="img-fluid"', $collaborateWithGameDevelopers->main);
-        $collaborateWithGameDevelopers->main = str_replace('height="', '', $collaborateWithGameDevelopers->main);
+        $benefits = Option::find(6) ?? new Option();
+        $benefits->main = str_replace('../', '', $benefits->main);
+        $benefits->main = str_replace('width="', 'class="img-fluid"', $benefits->main);
+        $benefits->main = str_replace('height="', '', $benefits->main);
         $cyberspace = Cyberspace::get();
-        return view('collaborate-with-game-developers', compact('collaborateWithGameDevelopers', 'cyberspace'));
-//        return view('collaborate-with-game-developers');
+        return view('collaborate-with-game-developers', compact('benefits', 'cyberspace'));
     }
 
 
     public function makeGameForUs()
     {
-        $makeGameForUs = Option::all()[1];
-        $makeGameForUs->main = str_replace('../', '', $makeGameForUs->main);
-        $makeGameForUs->main = str_replace('width="', 'class="img-fluid"', $makeGameForUs->main);
-        $makeGameForUs->main = str_replace('height="', '', $makeGameForUs->main);
+        $benefits = Option::find(7) ?? new Option();
+        $benefits->main = str_replace('../', '', $benefits->main);
+        $benefits->main = str_replace('width="', 'class="img-fluid"', $benefits->main);
+        $benefits->main = str_replace('height="', '', $benefits->main);
         $cyberspace = Cyberspace::get();
-        return view('make-game-for-us', compact('makeGameForUs', 'cyberspace'));
+        return view('make-game-for-us', compact('benefits', 'cyberspace'));
     }
 
     public function howToOrder()
     {
-        $howToOrder = Option::all()[1];
-        $howToOrder->main = str_replace('../', '', $howToOrder->main);
-        $howToOrder->main = str_replace('width="', 'class="img-fluid"', $howToOrder->main);
-        $howToOrder->main = str_replace('height="', '', $howToOrder->main);
+        $benefits = Option::find(10) ?? new Option();
+        $benefits->main = str_replace('../', '', $benefits->main);
+        $benefits->main = str_replace('width="', 'class="img-fluid"', $benefits->main);
+        $benefits->main = str_replace('height="', '', $benefits->main);
         $cyberspace = Cyberspace::get();
-        return view('how-to-order', compact('howToOrder', 'cyberspace'));
+        return view('how-to-order', compact('benefits', 'cyberspace'));
     }
 
 
