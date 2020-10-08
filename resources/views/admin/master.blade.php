@@ -7,33 +7,18 @@ This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 
 -->
-
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-
-
     <title>@yield('title')</title>
-
-
     <!-- Font Awesome Icons -->
-
     <link rel="stylesheet" href="{{ url('admin/plugins/font-awesome/css/font-awesome.min.css') }}">
-
     <!-- Theme style -->
-
     <link rel="stylesheet" href="{{ asset('admin/dist/css/adminlte.min.css') }}">
-
     <!-- Google Font: Source Sans Pro -->
-
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-
 
     <!-- bootstrap rtl -->
 
@@ -366,6 +351,82 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </p>
                                 </a>
                                 <ul class="nav nav-treeview">
+                                    <li class="nav-item has-treeview">
+                                        <a href="#" class="nav-link">
+                                            <i class="nav-icon fa fa-edit"></i>
+                                            <p>
+                                                صفحات خانه
+                                                <i class="right fa fa-angle-left"></i>
+                                            </p>
+                                        </a>
+                                        <ul class="nav nav-treeview">
+                                            <li class="nav-item">
+                                                <a href="{{ url('manager/WorkWithUs') }}" class="nav-link">
+                                                    <i class="fa fa-circle-o nav-icon"></i>
+                                                    <p> همکاری با ما</p>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{{ url('manager/HowToOrder') }}" class="nav-link">
+                                                    <i class="fa fa-circle-o nav-icon"></i>
+                                                    <p>		 نحوه سفارش
+                                                    </p>
+                                                </a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a href="{{ url('manager/benefits') }}" class="nav-link">
+                                                    <i class="fa fa-circle-o nav-icon"></i>
+                                                    <p>مزایای عضویت</p>
+                                                </a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a href="{{ url('manager/ContactUs') }}" class="nav-link">
+                                                    <i class="fa fa-circle-o nav-icon"></i>
+                                                    <p>ارتباط با ما</p>
+                                                </a>
+
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{{ url('manager/CollaborateWithGameMakers') }}" class="nav-link">
+                                                    <i class="fa fa-circle-o nav-icon"></i>
+                                                    <p> همکاری با بازی سازان</p>
+                                                </a>
+
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{{ url('manager/MakeAGameForUs') }}" class="nav-link">
+                                                    <i class="fa fa-circle-o nav-icon"></i>
+                                                    <p> برای ما بازی بسازيد
+                                                    </p>
+                                                </a>
+
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{{ url('manager/CooperationWithFastFoods') }}" class="nav-link">
+                                                    <i class="fa fa-circle-o nav-icon"></i>
+                                                    <p>همکاری با فست فودی ها</p>
+                                                </a>
+
+                                            </li>
+
+                                            @if(auth()->user()->hasRole('slides'))
+                                                <li class="nav-item">
+
+                                                    <a href="{{ url('manager/slides') }}" class="nav-link">
+
+                                                        <i class="fa fa-circle-o nav-icon"></i>
+
+                                                        <p>اسلایدر</p>
+
+                                                    </a>
+
+                                                </li>
+                                            @endif
+                                        </ul>
+                                </ul>
+                                <ul class="nav nav-treeview">
 
 
                                     @if(auth()->user()->hasRole('adminSetting'))
@@ -391,13 +452,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                             </a>
 
-                                        </li>
-
-                                        <li class="nav-item">
-                                            <a href="{{ url('manager/benefits') }}" class="nav-link">
-                                                <i class="fa fa-circle-o nav-icon"></i>
-                                                <p>مزایای عضویت</p>
-                                            </a>
                                         </li>
 
                                         <li class="nav-item">

@@ -27,13 +27,11 @@
                                 </div>
                             </li>
                         @endforeach
-
                     </ol>
                 </div>
             </div>
         </div>
     </div>
-
 
     <div class="IB-divAcB">
         <div class="IB-container">
@@ -55,13 +53,10 @@
                         </div>
                     </div>
                 @endforeach
-
             </div>
         </div>
     </div>
-
 @endsection
-
 @section('content')
     <div class="container-fluid mt-2">
         <div class="row p-2 py-5 d-flex justify-content-around">
@@ -73,7 +68,6 @@
                     {!! $op->main ?? ''  !!}
                 </p>
             </div>
-
             <div class="col-lg-4 col-12 d-block d-md-inline-block text-center mt-3 mt-lg-0">
                 <div class="row text-center justify-content-center">
                     @foreach($games as $key => $game)
@@ -81,7 +75,6 @@
                            href="{{ url('game/'.$game->id) }}">
                             {{--<div class="col-md-6 col-5 shadow" style="height:200px;padding: 5px;">--}}
                             <div id="card-{{ $key+1 }}" class="w-100 h-100 d-flex align-items-center">
-
                                 <div class="front bg-danger text-center"
                                      style="background: url({{ asset('img/back.jpg') }});">
                                     {{--<a href="{{ url('game/'.$game->id) }}">--}}
@@ -90,14 +83,12 @@
                                     </p>
                                     {{--</a>--}}
                                 </div>
-
                                 <div class="back"
                                      style="background: url({{ asset('upload/'.$game->poster) }});
                                          background-size: cover;
                                          background-position: center;
                                          ">
                                 </div>
-
                             </div>
                             {{--</div>--}}
                         </a>

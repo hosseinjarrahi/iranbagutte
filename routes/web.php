@@ -106,18 +106,38 @@ Route::group(['prefix' => 'manager', 'middleware' => 'auth'], function () {
     Route::post("promote/{id}", "UserController@promote");
     Route::post("promote_res/{id}", "UserController@promote_res");
 
-// about us and benefits
-    Route::post("upload", 'OptionController@upload');
-    Route::get("about-us", 'OptionController@aboutUs');
-    Route::post("about-us", 'OptionController@addAbout');
-    Route::get("benefits", 'OptionController@benefits');
-    Route::post("benefits", 'OptionController@addBenefits');
 
     Route::get("call", 'OptionController@call');
     Route::post("call", 'OptionController@addCall');
 
     Route::get("delivery", 'OptionController@delivery');
     Route::post("delivery", 'OptionController@addDelivery');
+
+    //maneger homepages
+    // about us and benefits
+    Route::post("upload", 'OptionController@upload');
+    Route::get("about-us", 'OptionController@aboutUs');
+    Route::post("about-us", 'OptionController@addAbout');
+    Route::get("benefits", 'OptionController@benefits');
+    Route::post("benefits", 'OptionController@addBenefits');
+    //other
+    Route::get("WorkWithUs", 'OptionController@WorkWithUs');
+    Route::post("WorkWithUs", 'OptionController@addWorkWithUs');
+
+    Route::get("HowToOrder", 'OptionController@HowToOrder');
+    Route::post("HowToOrder", 'OptionController@addHowToOrder');
+
+    Route::get("ContactUs", 'OptionController@ContactUs');
+    Route::post("ContactUs", 'OptionController@addContactUs');
+
+    Route::get("CollaborateWithGameMakers", 'OptionController@CollaborateWithGameMakers');
+    Route::post("CollaborateWithGameMakers", 'OptionController@addCollaborateWithGameMakers');
+
+    Route::get("MakeAGameForUs", 'OptionController@MakeAGameForUs');
+    Route::post("MakeAGameForUs", 'OptionController@addMakeAGameForUs');
+
+    Route::get("CooperationWithFastFoods", 'OptionController@CooperationWithFastFoods');
+    Route::post("CooperationWithFastFoods", 'OptionController@addCooperationWithFastFoods');
 
 // category
     Route::get("category", "CategoryController@show");

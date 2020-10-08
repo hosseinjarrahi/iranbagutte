@@ -108,6 +108,106 @@ class OptionController extends Controller
         return redirect('manager/benefits');
     }
 
+    //WorkWithUs
+
+    public function WorkWithUs()
+    {
+        $op = Option::find(9) ?? Option::create(['id' => 9]);
+        return view('admin.homePages.workWithUs', compact('op'));
+    }
+
+    public function addWorkWithUs(Request $request)
+    {
+        $op = Option::find(9) ?? new Option(['id' => 9]);
+        $op->main = $request->main;
+        $op->save();
+        return redirect('manager/homePages/workWithUs');
+    }
+
+    //HowToOrder
+
+    public function HowToOrder()
+    {
+        $op = Option::find(10) ?? Option::create(['id' => 10]);
+        return view('admin.homePages.howToOrder', compact('op'));
+    }
+
+    public function addHowToOrder(Request $request)
+    {
+        $op = Option::find(10) ?? new Option(['id' => 10]);
+        $op->main = $request->main;
+        $op->save();
+        return redirect('manager/homePages/howToOrder');
+    }
+
+    //ContactUs
+
+    public function ContactUs()
+    {
+        $op = Option::find(5) ?? Option::create(['id' => 5]);
+        return view('admin.homePages.contactUs', compact('op'));
+    }
+
+    public function addContactUs(Request $request)
+    {
+        $op = Option::find(5) ?? new Option(['id' => 5]);
+        $op->main = $request->main;
+        $op->save();
+        return redirect('manager/homePages/contactUs');
+    }
+
+    //CollaborateWithGameMakers
+
+    public function CollaborateWithGameMakers()
+    {
+        $op = Option::find(6) ?? Option::create(['id' => 6]);
+        return view('admin.homePages.collaborateWithGameMakers', compact('op'));
+    }
+
+    public function addCollaborateWithGameMakers(Request $request)
+    {
+        $op = Option::find(6) ?? new Option(['id' => 6]);
+        $op->main = $request->main;
+        $op->save();
+        return redirect('manager/homePages/collaborateWithGameMakers');
+    }
+
+    //WorkWithUs
+
+    public function MakeAGameForUs()
+    {
+        $op = Option::find(7) ?? Option::create(['id' => 7]);
+        return view('admin.homePages.makeAGameForUs', compact('op'));
+    }
+
+    public function addMakeAGameForUs(Request $request)
+    {
+        $op = Option::find(7) ?? new Option(['id' => 7]);
+        $op->main = $request->main;
+        $op->save();
+        return redirect('manager/homePages/makeAGameForUs');
+    }
+
+    //CooperationWithFastFoods
+
+    public function CooperationWithFastFoods()
+    {
+        $op = Option::find(8) ?? Option::create(['id' => 8]);
+        return view('admin.homePages.cooperationWithFastFoods', compact('op'));
+    }
+
+    public function addCooperationWithFastFoods(Request $request)
+    {
+        $op = Option::find(8) ?? new Option(['id' => 8]);
+        $op->main = $request->main;
+        $op->save();
+        return redirect('manager/homePages/cooperationWithFastFoods');
+    }
+
+
+
+
+
     public function upload(Request $request)
     {
         $path = $request->file('file')->store('images','public');
