@@ -1,6 +1,6 @@
 @extends('admin.master')
 @section('title')
-   مدیریت صفحات - درباره ما
+   مدیریت صفحات - همکاری با فست فودی ها
 @endsection
 
 @section('content')

@@ -1,6 +1,6 @@
 @extends('admin.master')
 @section('title')
-   مدیریت صفحات - درباره ما
+   مدیریت صفحات - نحوه سفارش
 @endsection
 
 @section('content')

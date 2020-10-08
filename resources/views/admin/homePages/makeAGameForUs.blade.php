@@ -1,6 +1,6 @@
 @extends('admin.master')
 @section('title')
-   مدیریت صفحات - درباره ما
+   مدیریت صفحات - برای ما بازی بسازید
 @endsection
 
 @section('content')
