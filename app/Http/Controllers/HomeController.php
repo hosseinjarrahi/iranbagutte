@@ -180,16 +180,16 @@ class HomeController extends Controller
     {
         if (!auth()->check()) return redirect('/login');
 
+        $user = auth()->user();
+
         if ($game->price <= 0) {
             $pay = new Payment();
             $pay->user_id = $user->id;
-            $pay->trans_id = $result->RefID;
+            $pay->trans_id = 0;
             $pay->restaurant_id = 0;
             $pay->products = session('game-id');
             return view('user.complete', compact('message'));
         }
-
-        $user = auth()->user();
 
         if ($user->address == null || $user->phone == null) {
             return redirect('/edit');
