@@ -10,6 +10,7 @@ use App\Event;
 use App\Food;
 use App\Game;
 use App\Option;
+use App\Payment;
 use App\Reserve;
 use App\Restaurant;
 use App\Slide;
@@ -25,14 +26,13 @@ class HomeController extends Controller
 {
     public function home()
     {
-        $event=Event::all()->first();
-        if(isset($event->id)){
-            $game_event=Game::find($event->game_id);
+        $event = Event::all()->first();
+        if (isset($event->id)) {
+            $game_event = Game::find($event->game_id);
+        } else {
+            $game_event = NULL;
         }
-        else{
-            $game_event=NULL;
-        }
-        $games = Game::inRandomOrder()->where('special',1)->limit(2)->get();
+        $games = Game::inRandomOrder()->where('special', 1)->limit(2)->get();
         $home = 1;
         $op = Option::first();
         $slides = Slide::where('restaurant_id', 1)->with('category')->get();
@@ -41,7 +41,7 @@ class HomeController extends Controller
         $op->main = str_replace('height="', '', $op->main);
         $cyberspace = Cyberspace::get();
         $restaurants = Restaurant::get();
-        return view('home', compact('event','game_event','op', 'home', 'slides', 'games', 'cyberspace', 'restaurants'));
+        return view('home', compact('event', 'game_event', 'op', 'home', 'slides', 'games', 'cyberspace', 'restaurants'));
     }
 
     public function benefits()
@@ -176,6 +176,98 @@ class HomeController extends Controller
         return view('front.game.gameDetails', compact('game', 'cyberspace'));
     }
 
+    public function payGame(Game $game)
+    {
+        if (!auth()->check()) return redirect('/login');
+
+        if ($game->price <= 0) {
+            $pay = new Payment();
+            $pay->user_id = $user->id;
+            $pay->trans_id = $result->RefID;
+            $pay->restaurant_id = 0;
+            $pay->products = session('game-id');
+            return view('user.complete', compact('message'));
+        }
+
+        $user = auth()->user();
+
+        if ($user->address == null || $user->phone == null) {
+            return redirect('/edit');
+        }
+
+        session(['game-price' => $game->price]);
+        session(['game-id' => $game->id]);
+
+        $MerchantID = '6468a85e-fb2b-11ea-be55-000c295eb8fc'; //Required
+        $Amount = $game->price; //Amount will be based on Toman - Required
+        $Description = 'خرید از ایران باگت'; // Required
+        $CallbackURL = route('pay.game.callback'); // Required
+
+
+        $client = new \SoapClient('https://sandbox.zarinpal.com/pg/services/WebGate/wsdl', ['encoding' => 'UTF-8']);
+
+        $result = $client->PaymentRequest(
+            [
+                'MerchantID' => $MerchantID,
+                'Amount' => $Amount,
+                'Description' => $Description,
+                'CallbackURL' => $CallbackURL,
+            ]
+        );
+
+        if ($result->Status == 100) {
+            return redirect('https://sandbox.zarinpal.com/pg/StartPay/' . $result->Authority);
+        } else {
+            echo 'ERR: ' . $result->Status;
+        }
+
+    }
+
+    public function payGameCallback(Request $request)
+    {
+        if (!auth()->check()) return redirect('/login');
+
+        $user = auth()->user();
+
+        $MerchantID = '6468a85e-fb2b-11ea-be55-000c295eb8fc';
+        $Amount = session('game-price'); //Amount will be based on Toman
+        $Authority = $request->Authority;
+
+        if ($request->Status == 'OK') {
+
+            $client = new \SoapClient('https://sandbox.zarinpal.com/pg/services/WebGate/wsdl', ['encoding' => 'UTF-8']);
+
+            $result = $client->PaymentVerification(
+                [
+                    'MerchantID' => $MerchantID,
+                    'Authority' => $Authority,
+                    'Amount' => $Amount,
+                ]
+            );
+
+            if ($result->Status == 100) {
+                $pay = new Payment();
+                $pay->user_id = $user->id;
+                $pay->trans_id = $result->RefID;
+                $pay->restaurant_id = 0;
+                $pay->products = session('game-id');
+                $pay->save();
+                $message = 'محصول با موفقیت خرید شد.';
+                $message .= '<br>';
+                $message .= 'شماره پیگیری بانک : ';
+                $message .= $pay->trans_id;
+                $message .= '<br>';
+
+            } else {
+                $message = 'مشکلی در پرداخت به وجود آمده است.درصورت کسر وجه تا 1 ساعت مبلغ به حسابتان باز خواهد گشت.';
+            }
+        } else {
+            $message = 'مشکلی در پرداخت به وجود آمده است.درصورت کسر وجه تا 1 ساعت مبلغ به حسابتان باز خواهد گشت.';
+        }
+
+        return view('user.complete', compact('message'));
+    }
+
     public function gamesPage()
     {
         $games = Game::where('status', 1)->paginate(6);
@@ -234,14 +326,14 @@ class HomeController extends Controller
 
         $errors = (isset($request->errors)) ? unserialize($reserve->errors) : [];
         $cyberspace = Cyberspace::get();
-        $tableInfo=TableInfo::where('restaurant_id',$id)->get();
-        return view('reserve', compact('errors', 'home', 'id', 'out', 'message', 'cyberspace','tableInfo'));
+        $tableInfo = TableInfo::where('restaurant_id', $id)->get();
+        return view('reserve', compact('errors', 'home', 'id', 'out', 'message', 'cyberspace', 'tableInfo'));
     }
 
     public function addReserve($id = 1, Request $request)
     {
 
-        $temp_zarinpal="https://zarinp.al/@iranbaguette";
+        $temp_zarinpal = "https://zarinp.al/@iranbaguette";
         return redirect($temp_zarinpal);
         $request->time_s = $this->faTOen($request->time_s);
         $date = explode('-', $request->time_s);

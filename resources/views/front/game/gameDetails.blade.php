@@ -26,9 +26,9 @@
                                 تومان</span></p>
                     </div>
                     {{--<form action="{{route('front.game',$game->id)}}" method="get">--}}
-                    <form action="https://zarinp.al/@iranbaguette" method="get">
+                    <form action="{{ route('pay.game',['game' => $game->id]) }}" method="post">
+                        @csrf
                         <button type="submit" class="btn btn-success" style="padding: 8px 14px;">خرید بازی</button>
-
                     </form>
                 </div>
             </div>

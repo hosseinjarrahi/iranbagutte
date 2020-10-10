@@ -20,6 +20,10 @@ Route::get('/restaurants', 'HomeController@showRestaurants');
 Route::get('/games-page', 'HomeController@gamesPage');
 Route::get('/game/{game}', 'HomeController@game')->name('front.game');
 Route::get('/gameDetails/{game}', 'HomeController@gameDetails')->name('front.detalisGame');
+
+Route::post('/pay-game/{game}', 'HomeController@payGame')->name('pay.game');
+Route::get('/pay-game}', 'HomeController@payGameCallback')->name('pay.game.callback');
+
 Route::post('check-buycode', 'HomeController@checkBuycode');
 
 Route::get('/login', 'HomeController@loginPage')->name('login');
