@@ -188,6 +188,7 @@ class HomeController extends Controller
             $pay->trans_id = 0;
             $pay->restaurant_id = 0;
             $pay->products = session('game-id');
+            $message = " خرید شد";
             return view('user.complete', compact('message'));
         }
 
