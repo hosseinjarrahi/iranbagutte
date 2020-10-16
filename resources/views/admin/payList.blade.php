@@ -27,23 +27,32 @@
                                         <td>{{ $itemPay->user->name }}</td>
                                         <td>
                                             @if(is_int($itemPay->products))
-                                                {{ \App\Game::find($itemPay->products)->name . ' - ' . \App\Game::find($itemPay->products)->price }}
-                                                @continue
+                                                {{ \App\Game::find($itemPay->products)->name }}
+                                            @else
+                                                @foreach(unserialize($itemPay->products) as $product)
+                                                    -{{$product['name']}}-
+                                                @endforeach
                                             @endif
-                                            @foreach(unserialize($itemPay->products) as $product)
-                                                -{{$product['name']}}-
-                                            @endforeach
+
                                         </td>
                                         <td>
                                             @php
                                                 $price=0;
                                             @endphp
-                                            @foreach(unserialize($itemPay->products) as $product)
-                                                @php($price+=$product['price']*($product['count'] ?? 1))
-                                            @endforeach
+                                            @if(is_int($itemPay->products))
+                                                @php($price+=\App\Game::find($itemPay->products)->price)
+                                            @else
+                                                @foreach(unserialize($itemPay->products) as $product)
+                                                    @php($price+=$product['price']*($product['count'] ?? 1))
+                                                @endforeach
+                                            @endif
+
                                             {{$price}}
                                         </td>
-                                        <th><a href="{{ url('manager/detail-pay/'.$itemPay->id) }}"> جزئیات بیشتر</a>
+                                        <th>
+                                            @if(!is_int($itemPay->products))
+                                                <a href="{{ url('manager/detail-pay/'.$itemPay->id) }}"> جزئیات بیشتر</a>
+                                            @endif
                                         </th>
 
                                         <td><a href="{{ url('manager/remove-pay/'.$itemPay->id) }}">حذف</a></td>
