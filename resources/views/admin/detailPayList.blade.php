@@ -32,14 +32,23 @@
                                     <td>{{ $pay->user->email }}</td>
                                     <td>{{ $pay->user->address }}</td>
                                     <td>
+
                                         @php
                                             $price=0;
                                         @endphp
-                                        @foreach($products as $product)
-                                            @php($price += $product->price*($product->count ?? 1))
-                                        @endforeach
+
+                                        @if(is_int($products))
+                                            @php($price += \App\Game::find($products)->price))
+                                        @else
+                                            @foreach(unserialize($products) as $product)
+                                                @php($price += $product['price']*($product['count'] ?? 1))
+                                            @endforeach
+                                        @endif
+
                                         {{ $price }}
+
                                     </td>
+
                                     <td><a href="{{ url('manager/remove-pay/'.$pay->id) }}">حذف</a></td>
                                 </tr>
                             </table>
@@ -51,19 +60,33 @@
                                     <th>رستوران</th>
                                     <th>قیمت</th>
                                 </tr>
-                                @foreach($products as $product)
+                                @if(is_int($products))
                                     <tr>
                                         <td>
-                                            {{ $product->title }}
+                                            {{ \App\Game::find($itemPay->products)->name }}
                                         </td>
                                         <td>
-                                            {{ $pay->restaurant->name }}
+                                            -
                                         </td>
                                         <td>
-                                            {{ $product->price }}
+                                            {{ \App\Game::find($itemPay->products)->price }}
                                         </td>
                                     </tr>
-                                @endforeach
+                                @else
+                                    @foreach(unserialize($products) as $product)
+                                        <tr>
+                                            <td>
+                                                {{ $product['name'] }}
+                                            </td>
+                                            <td>
+                                                {{ \App\Restaurant::find($pay['restaurant_id'])->name }}
+                                            </td>
+                                            <td>
+                                                {{ $product['price'] }}
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                @endif
                             </table>
                         </div>
                     </div>

@@ -31,7 +31,7 @@ class PayController extends Controller
     public function detailPay($id)
     {
         $pay = Payment::with(['user','restaurant'])->where('id',$id)->first();
-        $products = json_decode($pay->products);
+        $products = $pay->products;
         return view('admin.detailPayList', compact('products','pay'));
     }
 }

@@ -90,7 +90,7 @@ class BasketController extends Controller
             $CallbackURL = route('reply.to.pay'); // Required
 
 
-            $client = new \SoapClient('https://zarinpal.com/pg/services/WebGate/wsdl', ['encoding' => 'UTF-8']);
+            $client = new \SoapClient('https://sandbox.zarinpal.com/pg/services/WebGate/wsdl', ['encoding' => 'UTF-8']);
 
             $result = $client->PaymentRequest(
                 [
@@ -103,7 +103,7 @@ class BasketController extends Controller
 
             //Redirect to URL You can do it also by creating a form
             if ($result->Status == 100) {
-                return redirect('https://zarinpal.com/pg/StartPay/' . $result->Authority);
+                return redirect('https://sandbox.zarinpal.com/pg/StartPay/' . $result->Authority);
             } else {
                 echo 'ERR: ' . $result->Status;
             }
@@ -124,7 +124,7 @@ class BasketController extends Controller
 
         if ($request->Status == 'OK') {
 
-            $client = new \SoapClient('https://zarinpal.com/pg/services/WebGate/wsdl', ['encoding' => 'UTF-8']);
+            $client = new \SoapClient('https://sandbox.zarinpal.com/pg/services/WebGate/wsdl', ['encoding' => 'UTF-8']);
 
             $result = $client->PaymentVerification(
                 [

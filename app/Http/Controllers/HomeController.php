@@ -131,8 +131,9 @@ class HomeController extends Controller
         $cats = $restaurant->categories;
         $foods = $restaurant->foods()->paginate(6);
         $cyberspace = Cyberspace::get();
+        $home = 1;
 
-        return view('restaurant', compact('cats', 'foods', 'restaurant', 'cyberspace'));
+        return view('restaurant', compact('cats', 'foods', 'restaurant', 'cyberspace','home'));
     }
 
     public function showRestaurants()
@@ -187,8 +188,9 @@ class HomeController extends Controller
             $pay->user_id = $user->id;
             $pay->trans_id = 0;
             $pay->restaurant_id = 0;
-            $pay->products = session('game-id');
-            $message = " خرید شد";
+            $pay->products = $game->id;
+            $pay->save();
+            $message = " خرید انجام شد";
             return view('user.complete', compact('message'));
         }
 
@@ -205,7 +207,7 @@ class HomeController extends Controller
         $CallbackURL = route('pay.game.callback'); // Required
 
 
-        $client = new \SoapClient('https://sandbox.zarinpal.com/pg/services/WebGate/wsdl', ['encoding' => 'UTF-8']);
+        $client = new \SoapClient('https://zarinpal.com/pg/services/WebGate/wsdl', ['encoding' => 'UTF-8']);
 
         $result = $client->PaymentRequest(
             [
@@ -217,7 +219,7 @@ class HomeController extends Controller
         );
 
         if ($result->Status == 100) {
-            return redirect('https://sandbox.zarinpal.com/pg/StartPay/' . $result->Authority);
+            return redirect('https://zarinpal.com/pg/StartPay/' . $result->Authority);
         } else {
             echo 'ERR: ' . $result->Status;
         }
@@ -236,7 +238,7 @@ class HomeController extends Controller
 
         if ($request->Status == 'OK') {
 
-            $client = new \SoapClient('https://sandbox.zarinpal.com/pg/services/WebGate/wsdl', ['encoding' => 'UTF-8']);
+            $client = new \SoapClient('https://zarinpal.com/pg/services/WebGate/wsdl', ['encoding' => 'UTF-8']);
 
             $result = $client->PaymentVerification(
                 [
