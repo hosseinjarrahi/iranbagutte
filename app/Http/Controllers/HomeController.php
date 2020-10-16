@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Banner;
 use App\Buycode;
 use App\Category;
@@ -21,7 +19,6 @@ use App\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Morilog\Jalali\Jalalian;
-
 class HomeController extends Controller
 {
     public function home()
