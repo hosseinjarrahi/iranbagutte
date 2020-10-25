@@ -12,7 +12,10 @@ Route::get('/collaborate-with-game-developers', 'HomeController@collaborateWithG
 Route::get('/how-to-order', 'HomeController@howToOrder');
 Route::get('/make-game-for-us', 'HomeController@makeGameForUs');
 //end new
+//search
+Route::get("search", 'SearchController@show')->name('search');
 
+//end search
 
 Route::get('/food/{food}/{alert?}', 'HomeController@showFood');
 Route::get('/restaurants', 'HomeController@showRestaurants');

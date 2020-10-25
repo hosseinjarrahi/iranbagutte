@@ -15,5 +15,9 @@ class Game extends Model
     {
         return $this->hasMany(Comment::class,'item_id','id');
     }
-
+    public function scopeSearch($query , $keyword)
+    {
+        $query->where('name', 'LIKE', '%' . $keyword . '%');
+        return $query;
+    }
 }

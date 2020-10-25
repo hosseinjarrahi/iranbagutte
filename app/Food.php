@@ -17,4 +17,9 @@ class Food extends Model
     {
         return $this->belongsTo(Category::class);
     }
+    public function scopeSearch($query , $keyword)
+    {
+        $query->where('title', 'LIKE', '%' . $keyword . '%');
+        return $query;
+    }
 }

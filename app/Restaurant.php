@@ -64,4 +64,9 @@ class Restaurant extends Model
     {
         return (json_decode($value));
     }
+    public function scopeSearch($query , $keyword)
+    {
+        $query->where('name', 'LIKE', '%' . $keyword . '%');
+        return $query;
+    }
 }

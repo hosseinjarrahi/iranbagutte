@@ -70,13 +70,13 @@
 						</div>
 
 						<span id="search">
-							<form class="d-none d-lg-flex">
-
+							<form class="d-none d-lg-flex" method="get" action="{{route('search')}}">
+                                @csrf
 							  <div class="input-group mr-lg-2 m-0">
 								<div class="input-group-prepend">
-									  <a href="" class="btn btn-secondary IB-input">جست و جو</a>
+									  <input type="submit" class="btn btn-secondary IB-input" value="جستجو"></input>
 								</div>
-								<input type="search" class="text-white text-left form-control IB-input bg-dark">
+								<input type="text" name="keyword" class="text-white text-left form-control IB-input bg-dark">
 							  </div>
 
 							</form>
@@ -163,16 +163,17 @@
                                 @endif
                             @endif
 
-							<form >
+                            <form class="d-none d-lg-flex" method="get" action="{{route('search')}}">
+                                @csrf
+                                <div class="input-group mr-lg-2 m-0">
+                                    <div class="input-group-prepend">
+                                        <input type="submit" class="btn btn-secondary IB-input" value="جستجو"></input>
+                                    </div>
+                                    <input type="text" name="keyword" class="text-white text-left form-control IB-input bg-dark">
+                                </div>
 
-									<div class="input-group mr-lg-2 m-0">
-										<div class="input-group-prepend">
-											<a href="" class="btn btn-secondary IB-input">جست و جو</a>
-										</div>
-										<input type="search" class="text-white text-left form-control IB-input bg-dark">
-									</div>
+                            </form>
 
-								</form>
 							</li>
 
 	                    </ul>

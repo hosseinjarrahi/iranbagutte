@@ -104,7 +104,8 @@ class BasketController extends Controller
             //Redirect to URL You can do it also by creating a form
             if ($result->Status == 100) {
                 return redirect('https://zarinpal.com/pg/StartPay/' . $result->Authority);
-            } else {
+            }
+            else {
                 echo 'ERR: ' . $result->Status;
             }
 
