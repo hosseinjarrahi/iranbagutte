@@ -11,7 +11,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <table class="table table-hover table-responsive">
+                            <table class="table table-hover">
                                 <tr>
 
                                     <th>شماره خرید</th>
@@ -26,20 +26,34 @@
                                         <td>{{ $itemPay->id }}</td>
                                         <td>{{ $itemPay->user->name }}</td>
                                         <td>
-                                            @foreach(json_decode($itemPay->products) as $product)
-                                                -{{$product->title}}-
-                                            @endforeach
+                                            @if(is_int($itemPay->products))
+                                                {{ \App\Game::find($itemPay->products)->name }}
+                                            @else
+                                                @foreach(unserialize($itemPay->products) as $product)
+                                                    -{{$product['name']}}-
+                                                @endforeach
+                                            @endif
+
                                         </td>
                                         <td>
                                             @php
-                                            $price=0;
+                                                $price=0;
                                             @endphp
-                                            @foreach(json_decode($itemPay->products) as $product)
-                                                @php($price+=$product->price*($product->count ?? 1))
-                                            @endforeach
+                                            @if(is_int($itemPay->products))
+                                                @php($price+=\App\Game::find($itemPay->products)->price)
+                                            @else
+                                                @foreach(unserialize($itemPay->products) as $product)
+                                                    @php($price+=$product['price']*($product['count'] ?? 1))
+                                                @endforeach
+                                            @endif
+
                                             {{$price}}
                                         </td>
-                                        <th><a href="{{ url('manager/detail-pay/'.$itemPay->id) }}"> جزئیات بیشتر</a></th>
+                                        <th>
+                                            @if(!is_int($itemPay->products))
+                                                <a href="{{ url('manager/detail-pay/'.$itemPay->id) }}"> جزئیات بیشتر</a>
+                                            @endif
+                                        </th>
 
                                         <td><a href="{{ url('manager/remove-pay/'.$itemPay->id) }}">حذف</a></td>
                                     </tr>
@@ -49,8 +63,8 @@
                         </div>
                     </div>
 
-                <!-- /.col-md-6 -->
-            </div>
+                    <!-- /.col-md-6 -->
+                </div>
                 <!-- /.col-md-6 -->
             </div>
             <!-- /.row -->

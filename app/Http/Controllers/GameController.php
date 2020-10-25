@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Game;
+use App\Payment;
 use Illuminate\Http\Request;
 use ZipArchive;
 
@@ -11,7 +12,11 @@ class GameController extends Controller
     public function manage()
     {
         $games = Game::with('user')->paginate(10);
-        return view('admin.manageGames', compact('games'));
+        $sells = [];
+        foreach ($games as $game) {
+            $sells[$game->id] = Payment::where('products',$game->id)->count();
+        }
+        return view('admin.manageGames', compact('games','sells'));
     }
 
     public function sendPage()

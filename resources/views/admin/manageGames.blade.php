@@ -20,6 +20,7 @@
                                 <tr>
                                     <th>نام بازی</th>
                                     <th>ID بازی</th>
+                                    <th>تعداد فروش</th>
                                     <th>نام کاربری فرستنده</th>
                                     <th>دانلود</th>
                                     <th>تایید</th>
@@ -31,6 +32,7 @@
                                     <tr>
                                         <td class="@if($game->status) bg-success @else bg-danger @endif">{{ $game->name }}</td>
                                         <td>{{ $game->id }}</td>
+                                        <td>{{ $sells[$game->id] }}</td>
                                         <td>{{ $game->user->username }}</td>
                                         <td><a href="{{ url('manager/download-game/'.$game->id) }}">دانلود</a></td>
                                         <td><a href="{{ url('manager/verification-game/'.$game->id) }}">تایید</a></td>
