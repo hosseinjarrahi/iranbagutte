@@ -432,6 +432,7 @@ class HomeController extends Controller
 
     public function logout()
     {
+        session()->forget('isAdmin');
         if (\Auth::check()) {
             \Auth::logoutCurrentDevice();
         }

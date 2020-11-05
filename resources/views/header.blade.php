@@ -102,11 +102,11 @@
 									</div>
 
 							</li>
+
 							<div id="myDropdown" class="dropdown-content">
 								<a class="IB-menu-link" href="{{ url('collaborate-with-game-developers') }}">همکاری با بازیسازان</a>
 								<a class="IB-menu-link" href="{{ url('make-game-for-us') }}">برا ی ما بازی بسازید</a>
                                 <a class="IB-menu-link" href="{{ url('collaborate-with-fastFood-maker') }}">همکاری با فست فودی ها</a>
-
                             </div>
 
 							<li class="IB-menu-item"><a class="IB-menu-link" href="{{ url('games-page') }}"> بازی ها</a></li>
@@ -119,6 +119,8 @@
 							<li class="IB-menu-item"><a class="IB-menu-link" href="{{ url('status') }}">سفارشات</a></li>
                                 @if(auth()->user()->hasRole('any'))
                                     <li class="IB-menu-item text-bold text-info"><a class="IB-menu-link" href="{{ route('admin.home') }}">مدیریت</a></li>
+                                @else
+                                    <li class="IB-menu-item text-bold text-info"><a class="IB-menu-link" href="{{ route('user.dashboard') }}">مدیریت</a></li>
                                 @endif
                             @endif
 

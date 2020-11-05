@@ -430,6 +430,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
                                     @if(auth()->user()->hasRole('adminSetting'))
+
                                         <li class="nav-item">
 
                                             <a href="{{ route('admin.cyberspace') }}" class="nav-link">
@@ -437,6 +438,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 <i class="fa fa-circle-o nav-icon"></i>
 
                                                 <p>فضای مجازی و اپلیکیشن</p>
+
+                                            </a>
+
+                                        </li>
+
+                                        <li class="nav-item">
+
+                                            <a href="{{ route('adver.price') }}" class="nav-link">
+
+                                                <i class="fa fa-circle-o nav-icon"></i>
+
+                                                <p>تبلیغات</p>
 
                                             </a>
 

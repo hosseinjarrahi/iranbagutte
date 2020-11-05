@@ -94,4 +94,9 @@ class User extends Authenticatable
             return redirect('login')->with(['error' => 'نام کاربری و یا رمز اشتباه است.']);
     }
 
+    public function paidAdvertise()
+    {
+        $pay = Payment::where('products','"advertise'.$this->id.'"')->first();
+        return !!$pay;
+    }
 }

@@ -14,16 +14,18 @@
                     <div class="card">
                         <div class="card-body">
                             <p class="card-text">
-                            <form action="{{ url('manager/advertise/dynamic') }}" method="post" enctype="multipart/form-data">
-                                @method('put')
-                                @csrf
-                                <input name="url" type="url" placeholder="آدرس سایت" class="mb-2 form-control">
-                                <input name="time" type="number" placeholder="زمان تبلیغ بر حسب ثانیه" class="mb-2 form-control">
-                                <input type="file" name="img" class="mb-2 form-control">
-                                <input type="submit" class="btn btn-primary" value="افزودن">
-                            </form>
+                                <form action="{{ url('manager/advertise/dynamic') }}" method="post" enctype="multipart/form-data">
+                                    @method('put')
+                                    @csrf
+                                    آدرس سایت
+                                    <input name="url" type="url" placeholder="آدرس سایت" class="mb-2 form-control">
+                                    زمان تبلیغ بر حسب ثانیه
+                                    <input name="time" type="number" placeholder="زمان تبلیغ بر حسب ثانیه" class="mb-2 form-control">
+                                    بنر تبلیغاتی
+                                    <input type="file" name="img" class="mb-2 form-control">
+                                    <input type="submit" class="btn btn-primary" value="افزودن">
+                                </form>
                             </p>
-
                         </div>
                     </div>
                 </div>
