@@ -35,6 +35,46 @@
                                     @enderror
                                 </div>
 
+                                <div class="form-group">
+                                    <label for="time_s">زمان و تاریخ شروع : </label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroupPrepend3">
+                                 <img id="date_btn_9" src="{{ asset('calendar/cal.png') }}"
+                                      style="vertical-align: top;"/>
+                            </span>
+                                        </div>
+                                        <input required  class="form-control" id="date_input_9"
+                                               name="start_time"
+                                               data-format="yyyy-MM-dd hh:mm:ss" type="text" value="{{$event->start_time}}">
+                                    </div>@error('time_s')
+                                    <div class="alert alert-danger"> {{$message}}</div>
+                                    @enderror
+                                </div>
+
+
+
+
+
+                                <div class="form-group">
+                                    <label for="time_e">زمان و تاریخ پایان : </label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroupPrepend3">
+                                 <img id="date_btn_9" src="{{ asset('calendar/cal.png') }}"
+                                      style="vertical-align: top;"/>
+                            </span>
+                                        </div>
+                                        <input required  class="form-control" id="date_input_9"
+                                               name="end_"
+                                               data-format="yyyy-MM-dd hh:mm:ss" type="text" value="{{$event->end_time}}">
+                                    </div>@error('time_e')
+                                    <div class="alert alert-danger"> {{$message}}</div>
+                                    @enderror
+                                </div>
+
+
+
 
 
                                 <div class="form-group">
