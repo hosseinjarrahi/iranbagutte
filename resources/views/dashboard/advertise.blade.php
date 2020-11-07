@@ -22,7 +22,7 @@
                                     </p>
                                     <a class="btn btn-primary" href="{{ route('user.dashboard.payAds') }}">
                                         <span>حذف تبلیغات</span>
-                                        <span>{{ $option->main }}</span>
+                                        <span>{{ $option->main ?? '' }}</span>
                                         <span>تومان</span>
                                     </a>
                                 </div>

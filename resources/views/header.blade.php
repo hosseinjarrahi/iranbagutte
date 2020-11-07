@@ -115,8 +115,6 @@
                             <li class="IB-menu-item"><a class="IB-menu-link" href="{{ url('benefits') }}">مزایای عضویت</a></li>
 
                             @if(auth()->check())
-							<li class="IB-menu-item"><a class="IB-menu-link" href="{{ url('edit') }}">ویرایش اطلاعات</a></li>
-							<li class="IB-menu-item"><a class="IB-menu-link" href="{{ url('status') }}">سفارشات</a></li>
                                 @if(auth()->user()->hasRole('any'))
                                     <li class="IB-menu-item text-bold text-info"><a class="IB-menu-link" href="{{ route('admin.home') }}">مدیریت</a></li>
                                 @else

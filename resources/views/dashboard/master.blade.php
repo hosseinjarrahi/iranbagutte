@@ -44,7 +44,25 @@
                             <a href="{{ route('user.dashboard.advertise') }}" class="nav-link">
                                 <i class="nav-icon fa fa-users"></i>
                                 <p>
-                                    مدیریت تبلیغات
+                                    حذف تبلیغات
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item has-treeview">
+                            <a href="{{ url('/edit') }}" class="nav-link">
+                                <i class="nav-icon fa fa-users"></i>
+                                <p>
+                                    ویرایش
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item has-treeview">
+                            <a href="{{ url('/status') }}" class="nav-link">
+                                <i class="nav-icon fa fa-users"></i>
+                                <p>
+                                    خریدها
                                 </p>
                             </a>
                         </li>

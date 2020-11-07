@@ -1,11 +1,10 @@
-@extends('master')
+@extends('dashboard.master')
 
 @section('title')
 سفارشات
 @endsection
 
 @section('content')
-
     <div class="d-block mx-auto">
 
         <div class="container">
@@ -24,7 +23,10 @@
                     </tr>
 
                     @php
-                        $products = json_decode($pay->products);
+                        if(@unserialize($pay->products))
+                            $products = unserialize($pay->products);
+                        else
+                            continue;
                     @endphp
 
                     @foreach($products as $product)
