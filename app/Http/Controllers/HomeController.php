@@ -68,7 +68,13 @@ class HomeController extends Controller
         $delivery->main = str_replace('width="', 'class="img-fluid"', $delivery->main);
         $delivery->main = str_replace('height="', '', $delivery->main);
         $cyberspace = Cyberspace::get();
-        return view('delivery', compact('delivery', 'cyberspace'));
+        $event = Event::all()->first();
+        if (isset($event->id)) {
+            $game_event = Game::find($event->game_id);
+        } else {
+            $game_event = NULL;
+        }
+        return view('delivery', compact('event','game_event','delivery', 'cyberspace'));
     }
 
     public function call()
@@ -78,7 +84,13 @@ class HomeController extends Controller
         $call->main = str_replace('width="', 'class="img-fluid"', $call->main);
         $call->main = str_replace('height="', '', $call->main);
         $cyberspace = Cyberspace::get();
-        return view('call', compact('call', 'cyberspace'));
+        $event = Event::all()->first();
+        if (isset($event->id)) {
+            $game_event = Game::find($event->game_id);
+        } else {
+            $game_event = NULL;
+        }
+        return view('call', compact('event','game_event','call', 'cyberspace'));
     }
 
     public function collaborateWithFastFoodMaker()
@@ -309,11 +321,16 @@ class HomeController extends Controller
         $products = (Category::find($request->id))->foods;
         $slides = $res->slides()->with('category')->get();
         $special = $res->events();
-
+        $event = Event::all()->first();
+        if (isset($event->id)) {
+            $game_event = Game::find($event->game_id);
+        } else {
+            $game_event = NULL;
+        }
 
         $comments = $res->comment()->where('status', 1)->where('role', '2')->get(); // comments
         $cyberspace = Cyberspace::get();
-        return view('order', compact('special', 'slides', 'home', 'products', 'res', 'comments', 'cyberspace'));
+        return view('order', compact('event','game_event','special', 'slides', 'home', 'products', 'res', 'comments', 'cyberspace'));
     }
 
     public function reserve($id, Request $request)
@@ -327,14 +344,21 @@ class HomeController extends Controller
         $errors = (isset($request->errors)) ? unserialize($reserve->errors) : [];
         $cyberspace = Cyberspace::get();
         $tableInfo = TableInfo::where('restaurant_id', $id)->get();
-        return view('reserve', compact('errors', 'home', 'id', 'out', 'message', 'cyberspace', 'tableInfo'));
+
+        $event = Event::all()->first();
+        if (isset($event->id)) {
+            $game_event = Game::find($event->game_id);
+        } else {
+            $game_event = NULL;
+        }
+
+        return view('reserve', compact('game_event','event','errors', 'home', 'id', 'out', 'message', 'cyberspace', 'tableInfo'));
     }
 
     public function addReserve($id = 1, Request $request)
     {
-
-        $temp_zarinpal = "https://zarinp.al/@iranbaguette";
-        return redirect($temp_zarinpal);
+//        $temp_zarinpal = "https://zarinp.al/@iranbaguette";
+//        return redirect($temp_zarinpal);
         $request->time_s = $this->faTOen($request->time_s);
         $date = explode('-', $request->time_s);
         $time = explode(':', substr($date[2], '3'));

@@ -1,4 +1,4 @@
-
+{{--{{dd($event->end_time)}}--}}
 
 <button class="IB-nav-toggle">
 	<div class="IB-icon-menu" >
@@ -193,8 +193,17 @@
 	    </div>
 	</div>
     @if(isset($game_event))
-    <div class="countdown">
-        <a class="timer" href="href=" {{route("event")}} "">
+    <div class="countdown" style="background: linear-gradient(to right, #c31432, #240b36);
+">
+        <div style="color: white; display: block; font-size: larger">
+            <span>رويداد شروع شد! </span>
+            <span>{{$game_event->name}} </span>
+{{--            <span>{{$game_event->description}} </span>--}}
+
+
+        </div>
+
+        <a class="timer" style="" href=" {{route("event")}} ">
             <span id="seconds"></span>
             <span id="minutes"></span>
             <span id="hours"></span>
@@ -230,6 +239,9 @@
 		}
 	}
 </script>
+
+@if(isset($game_event))
+
 <script type="text/javascript">function countdown(dateEnd) {
         var timer, days, hours, minutes, seconds;
 
@@ -275,6 +287,7 @@
 
 
 
-    countdown('01/19/2021 03:14:07 AM');
+    // countdown('01/19/2021 03:14:07 AM');
+    countdown('{{$event->end_time}}');
 </script>
-
+@endif

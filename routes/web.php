@@ -46,7 +46,7 @@ Route::get("edit", "BasketController@takmil");
 Route::put("edit", "BasketController@takmiler");
 
 
-Route::get("reserve/{id?}", 'HomeController@reserve');
+Route::get("reserve/{id?}", 'HomeController@reserve')->name('user.reserve');
 Route::post('reserve/{id?}', 'HomeController@addReserve');
 
 //user register

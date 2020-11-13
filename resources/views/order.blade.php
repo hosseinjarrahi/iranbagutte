@@ -227,7 +227,7 @@
          style="color: white">
 
         <div class="shadow col-12 col-lg-2" style="height:200px;padding: 5px;">
-            <a href="{{url('reserve')}}" style="color: white">
+            <a href="{{route('user.reserve',1)}}" style="color: white">
                 <div id="card-1" class="w-100 h-100 d-flex align-items-center">
                     <div class="front text-center"
                          style=" background: url({{ asset('img/reserve1.jpg') }});background-size:contain;background-repeat: no-repeat;background-position: center;">

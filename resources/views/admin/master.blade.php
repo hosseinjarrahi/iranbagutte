@@ -28,11 +28,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <link rel="stylesheet" href="{{ asset('admin/dist/css/custom-style.css') }}">
 
-<style>
-    .sidebar-dark-primary .nav-treeview>.nav-item>.nav-link{
-        background: #333;
-    }
-</style>
+    <style>
+        .sidebar-dark-primary .nav-treeview > .nav-item > .nav-link {
+            background: #333;
+        }
+    </style>
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -132,57 +132,57 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 @endif
                                             </ul>
                                     </ul>
-                        @endif
-                        @if(auth()->user()->hasRole('tables'))
+                                @endif
+                                @if(auth()->user()->hasRole('tables'))
                                     <ul class="nav nav-treeview">
-                            <li class="nav-item has-treeview">
+                                        <li class="nav-item has-treeview">
 
-                                <a href="#" class="nav-link">
+                                            <a href="#" class="nav-link">
 
-                                    <i class="nav-icon fa fa-table"></i>
+                                                <i class="nav-icon fa fa-table"></i>
 
-                                    <p style="border-radius: 10px">
+                                                <p style="border-radius: 10px">
 
-                                        مدیریت میزها
+                                                    مدیریت میزها
 
-                                        <i class="right fa fa-angle-left"></i>
+                                                    <i class="right fa fa-angle-left"></i>
 
-                                    </p>
+                                                </p>
 
-                                </a>
+                                            </a>
 
-                                <ul class="nav nav-treeview">
+                                            <ul class="nav nav-treeview">
 
-                                    <li class="nav-item">
+                                                <li class="nav-item">
 
-                                        <a href="{{ url('manager/sit/setting') }}" class="nav-link">
+                                                    <a href="{{ url('manager/sit/setting') }}" class="nav-link">
 
-                                            <i class="fa fa-circle-o nav-icon"></i>
+                                                        <i class="fa fa-circle-o nav-icon"></i>
 
-                                            <p>تنظیمات</p>
+                                                        <p>تنظیمات</p>
 
-                                        </a>
+                                                    </a>
 
-                                    </li>
+                                                </li>
 
-                                    <li class="nav-item">
+                                                <li class="nav-item">
 
-                                        <a href="{{ url('manager/reserved') }}" class="nav-link">
+                                                    <a href="{{ url('manager/reserved') }}" class="nav-link">
 
-                                            <i class="fa fa-circle-o nav-icon"></i>
+                                                        <i class="fa fa-circle-o nav-icon"></i>
 
-                                            <p>میزر های رزرو شده</p>
+                                                        <p>میزر های رزرو شده</p>
 
-                                        </a>
+                                                    </a>
 
-                                    </li>
+                                                </li>
 
-                                </ul>
+                                            </ul>
 
-                            </li>
+                                        </li>
 
                                     </ul>
-                            @endif
+                                @endif
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
 
@@ -226,6 +226,39 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <i class="fa fa-circle-o nav-icon"></i>
 
                                             <p>لیست خرید</p>
+
+                                        </a>
+
+                                    </li>
+
+                                </ul>
+
+                            </li>
+                        @endif
+                        @if(auth()->user()->hasRole('payments'))
+                            <li class="nav-item has-treeview">
+
+                                <a href="#" class="nav-link">
+
+                                    <i class="nav-icon fa fa-trophy"></i>
+                                    <p>
+
+                                        رويداد
+                                        <i class="right fa fa-angle-left"></i>
+
+                                    </p>
+
+                                </a>
+
+                                <ul class="nav nav-treeview">
+
+                                    <li class="nav-item">
+
+                                        <a href="{{ route('event.show') }}" class="nav-link">
+
+                                            <i class="fa fa-circle-o nav-icon"></i>
+
+                                            <p>رويداد</p>
 
                                         </a>
 
@@ -369,7 +402,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <li class="nav-item">
                                                 <a href="{{ url('manager/HowToOrder') }}" class="nav-link">
                                                     <i class="fa fa-circle-o nav-icon"></i>
-                                                    <p>		 نحوه سفارش
+                                                    <p> نحوه سفارش
                                                     </p>
                                                 </a>
                                             </li>
@@ -389,7 +422,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                             </li>
                                             <li class="nav-item">
-                                                <a href="{{ url('manager/CollaborateWithGameMakers') }}" class="nav-link">
+                                                <a href="{{ url('manager/CollaborateWithGameMakers') }}"
+                                                   class="nav-link">
                                                     <i class="fa fa-circle-o nav-icon"></i>
                                                     <p> همکاری با بازی سازان</p>
                                                 </a>
@@ -404,7 +438,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                             </li>
                                             <li class="nav-item">
-                                                <a href="{{ url('manager/CooperationWithFastFoods') }}" class="nav-link">
+                                                <a href="{{ url('manager/CooperationWithFastFoods') }}"
+                                                   class="nav-link">
                                                     <i class="fa fa-circle-o nav-icon"></i>
                                                     <p>همکاری با فست فودی ها</p>
                                                 </a>

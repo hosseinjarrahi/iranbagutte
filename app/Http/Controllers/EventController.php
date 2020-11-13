@@ -39,7 +39,6 @@ class EventController extends Controller
     public function create()
     {
         return view('admin.event.create');
-
     }
 
     public function store(Request $request)
@@ -62,13 +61,15 @@ class EventController extends Controller
             $event->text=$request->text;
             $event->restaurant_id=$request->restaurant_id;
             $event->game_id=$request->game_id;
+            $event->start_time=$request->start_time??'۱۳۹۹-۰۸-۲۸ ۲۰:۳۲';
+            $event->end_time=$request->end_time;
 
             $event->save();
         } catch (Exception $exception) {
-            return redirect(route('admin.event.edit'))->with('warning', $exception->getCode());
+            return redirect(route('event.edit'))->with('warning', $exception->getCode());
         }
         $msg = "رویداد با موفقیت ویرایش شد.";
-        return redirect(route('admin.event.show'))->with('success', $msg);
+        return redirect(route('event.show'))->with('success', $msg);
     }
 
 
@@ -92,20 +93,22 @@ class EventController extends Controller
             'restaurant_id.required' => 'فیلد ID رستوران را وارد نمایید.',
             'game_id.required' => 'فیلد ID بازی را وارد نمایید.',
             'text.required' => 'فیلد متن را وارد نمایید.',
+            'end_time.required' => 'فیلد زمان را صحيح وارد نمایید.',
         ];
         $validateCategory = $request->validate([
             'title' => 'required',
             'restaurant_id' => 'required',
             'game_id' => 'required',
             'text' => 'required',
+            'end_time' => 'required',
         ], $messages);
         try {
             $event->update($request->all());
         } catch (Exception $exception) {
-            return redirect(route('admin.event.edit'))->with('warning', $exception->getCode());
+            return redirect(route('event.edit'))->with('warning', $exception->getCode());
         }
         $msg = "رویداد با موفقیت ویرایش شد.";
-        return redirect(route('admin.event.show'))->with('success', $msg);
+        return redirect(route('event.show'))->with('success', $msg);
     }
 
     public function destroy( $id)
@@ -114,9 +117,9 @@ class EventController extends Controller
         try {
             $event->delete();
         } catch (Exception $exception) {
-            return redirect(route('admin.event.edit'))->with('warning', $exception->getCode());
+            return redirect(route('event.edit'))->with('warning', $exception->getCode());
         }
         $msg = "رویداد با موفقیت حذف شد.";
-        return redirect(route('admin.event.show'))->with('success', $msg);
+        return redirect(route('event.show'))->with('success', $msg);
     }
 }
