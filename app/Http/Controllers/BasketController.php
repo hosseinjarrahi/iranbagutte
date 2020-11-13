@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Buycode;
 use App\Food;
 use App\Payment;
 use App\Cyberspace;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class BasketController extends Controller
 {
@@ -117,6 +119,7 @@ class BasketController extends Controller
     {
         if (!auth()->check()) return redirect('/login');
 
+        $code = false;
         $user = auth()->user();
 
         $MerchantID = '6468a85e-fb2b-11ea-be55-000c295eb8fc';
@@ -155,7 +158,8 @@ class BasketController extends Controller
                 }
                 session()->forget('basket');
                 session()->forget('count');
-
+                $code = random_int(100000,99999999);
+                Buycode::create(['user_id' => auth()->id(),'code' => $code]);
             } else {
                 $message = 'مشکلی در پرداخت به وجود آمده است.درصورت کسر وجه تا 1 ساعت مبلغ به حسابتان باز خواهد گشت.';
             }
@@ -164,7 +168,7 @@ class BasketController extends Controller
         }
 
 
-        return view('user.complete', compact('message'));
+        return view('user.complete', compact('message','code'));
     }
 
     public function status()

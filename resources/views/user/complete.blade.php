@@ -12,6 +12,12 @@
                 <p class="alert alert-light">
                     {!! $message ?? '' !!}
                 </p>
+                @if($code ?? false)
+                <p class="alert alert-light">
+                    <span> کد بازی : </span>
+                    <span>{{ $code ?? '' }}</span>
+                </p>
+                @endif
                 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
             </div>
         </div>

@@ -81,8 +81,9 @@
         <div id="iframe" class="m-auto w-100 mt-2 text-white"></div>
     </div>
 
-    <div style="visibility:hidden;color:white !important;position: fixed;bottom:0;display: block;width: 100%;background-color: black;padding: 20px;z-index: 100000"
-         id="zir">
+    <div
+        style="visibility:hidden;color:white !important;position: fixed;bottom:0;display: block;width: 100%;background-color: black;padding: 20px;z-index: 100000"
+        id="zir">
 
     </div>
 
@@ -140,22 +141,26 @@
                             </a>
                         @endfor
                         @if($game->part != $part)
-                            <div class="ads-parent position-relative m-2 d-flex flex-column justify-content-center align-items-center"
-                                 style="border-radius: 30px;width: 500px; !important;background: #0c5460">
+                            <div
+                                class="ads-parent position-relative m-2 d-flex flex-column justify-content-center align-items-center"
+                                style="border-radius: 30px;width: 500px; !important;background: #0c5460">
                                 <span class="pb-3">جهت ادامه بازی کد خرید ساندویچ خودرا وارد نمایید</span>
                                 @if(!auth()->check())<span class="pb-3">ابتدا باید وارد حساب خود شوید</span>@endif
-                                <form action="{{ url('check-buycode') }}" method="post">
-                                    @csrf
-                                    <div class="form-row">
-                                        <div class="col-8">
-                                            <input name="buy_code" class="form-control">
-                                            <input name="id" value="{{ $game->id }}" type="hidden" class="form-control">
+                                @if(auth()->check())
+                                    <form action="{{ url('check-buycode') }}" method="post">
+                                        @csrf
+                                        <div class="form-row">
+                                            <div class="col-8">
+                                                <input name="buy_code" class="form-control">
+                                                <input name="id" value="{{ $game->id }}" type="hidden"
+                                                       class="form-control">
+                                            </div>
+                                            <div class="col-4">
+                                                <button type="submit" class="btn btn-default">ارسال</button>
+                                            </div>
                                         </div>
-                                        <div class="col-4">
-                                            <button type="submit" class="btn btn-default">ارسال</button>
-                                        </div>
-                                    </div>
-                                </form>
+                                    </form>
+                                @endif
                             </div>
                         @endif
                     </div>
@@ -173,7 +178,8 @@
         @if(auth()->check() && auth()->user()->payedThisGame($game))
             <a href="{{ asset('upload/'.$game->full) }}" style="color: #969896;font-size: 2rem;">دانلود نسخه کامل</a>
         @else
-            <a href="{{route('front.detalisGame',$game->id)}}" style="color: #969896;font-size: 2rem;">خرید و دانلود نسخه کامل بازی</a>
+            <a href="{{route('front.detalisGame',$game->id)}}" style="color: #969896;font-size: 2rem;">خرید و دانلود
+                نسخه کامل بازی</a>
         @endif
     </div>
 
@@ -204,15 +210,15 @@
         <div class="form-group row" style="margin: 14px;">
             @csrf
             @auth
-            <div class="form-group col-sm-6">
-                <label for="name">نام شما:</label>
-                <input type="text" class="form-control" name="name" value="{{Auth::user()->name}}" readonly>
-            </div>
-            <div class="form-group col-sm-6">
-                <label for="email">ایمیل شما:</label>
-                <input type="email" class="form-control" name="email" value="{{Auth::user()->email}}" readonly>
+                <div class="form-group col-sm-6">
+                    <label for="name">نام شما:</label>
+                    <input type="text" class="form-control" name="name" value="{{Auth::user()->name}}" readonly>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="email">ایمیل شما:</label>
+                    <input type="email" class="form-control" name="email" value="{{Auth::user()->email}}" readonly>
 
-            </div>
+                </div>
             @else
                 <div class="form-group col-sm-6">
                     <label for="name">نام شما:</label>
@@ -223,27 +229,26 @@
                     <input type="email" class="form-control" name="email">
 
                 </div>
-                @endauth
-                <div class="form-group col-sm-12">
-                    <label for="name">متن نظر شما:</label>
-                    <textarea type="text" class="form-control" name="body"></textarea>
-                </div>
-                <input type="hidden" name="role" value="1">
-                <input type="hidden" name="item_id" value="{{$game->id}}">
-                <div class="form-group col-sm-12">
-                    <label for="name">تصویر امنیتی:</label>
-                    {!! htmlFormSnippet() !!}
-                </div>
+            @endauth
+            <div class="form-group col-sm-12">
+                <label for="name">متن نظر شما:</label>
+                <textarea type="text" class="form-control" name="body"></textarea>
+            </div>
+            <input type="hidden" name="role" value="1">
+            <input type="hidden" name="item_id" value="{{$game->id}}">
+            <div class="form-group col-sm-12">
+                <label for="name">تصویر امنیتی:</label>
+                {!! htmlFormSnippet() !!}
+            </div>
 
 
-
-                <div class="form-row">
-                    <button class="btn btn-primary" type="submit">ارسال نظر</button>
-                </div>
+            <div class="form-row">
+                <button class="btn btn-primary" type="submit">ارسال نظر</button>
+            </div>
 
         </div>
     </form>
-    <div style="background-color: white;border: 1px solid black; margin: 3%;border-radius: 12px;" >
+    <div style="background-color: white;border: 1px solid black; margin: 3%;border-radius: 12px;">
         <h4 style="padding:3% 3% 0 0 ;">نظرات: </h4>
         @foreach($comments as $comment)
             <div style="margin-right: 3%;">
@@ -259,11 +264,11 @@
     {{--انتهای کامنت--}}
     <script>
         let ztime = 99999999999;
-                @if($zirnevis)
+        @if($zirnevis)
         let url = '{{ url('advertise/'.$zirnevis->id) }}';
         let zirnevis = '<div class="example2"><h3><a href="${url}">{{ $zirnevis->text }}</a></h3></div > ';
         ztime = {{ $zirnevis->time }};
-                @endif
+        @endif
         let vars = [];
         let objs = [];
         let iframes = [];
@@ -274,15 +279,15 @@
         let z = null;
 
         @foreach($urls as $url)
-            iframes.push(`<iframe width="100%" height="800px" src="{{ $url }}"></iframe>`);
-                @endforeach
+        iframes.push(`<iframe width="100%" height="800px" src="{{ $url }}"></iframe>`);
+        @endforeach
 
         let x = {
-                time: '{{ $dynamic->time }}',
-                img: '{{ $dynamic->img }}',
-                url: '{{ $dynamic->url }}',
-                id: '{{ $dynamic->id }}'
-            };
+            time: '{{ $dynamic->time }}',
+            img: '{{ $dynamic->img }}',
+            url: '{{ $dynamic->url }}',
+            id: '{{ $dynamic->id }}'
+        };
         vars.push(x);
 
         for (v of vars) {
@@ -303,26 +308,26 @@
         function openTheGame(i) {
             @if(auth()->check() && auth()->user()->paidAdvertise())
                 part = i;
-                gameBox.style.visibility = '';
-                iframe.innerHTML = objs[counter].img;
-                let width = 100;
-                let ratio = width / (objs[counter].time / 10);
-                closeAd();
+            gameBox.style.visibility = '';
+            iframe.innerHTML = objs[counter].img;
+            let width = 100;
+            let ratio = width / (objs[counter].time / 10);
+            closeAd();
             @else
                 part = i;
-                gameBox.style.visibility = '';
-                iframe.innerHTML = objs[counter].img;
-                let width = 100;
-                let ratio = width / (objs[counter].time / 10);
-                bar = setInterval(function () {
-                    width -= ratio;
-                    progressBar.style.width = width + '%';
-                    if (width <= 0) {
-                        clearInterval(bar);
-                        progressBar.remove();
-                        iframe.innerHTML += closeAdver;
-                    }
-                }, 10);
+            gameBox.style.visibility = '';
+            iframe.innerHTML = objs[counter].img;
+            let width = 100;
+            let ratio = width / (objs[counter].time / 10);
+            bar = setInterval(function () {
+                width -= ratio;
+                progressBar.style.width = width + '%';
+                if (width <= 0) {
+                    clearInterval(bar);
+                    progressBar.remove();
+                    iframe.innerHTML += closeAdver;
+                }
+            }, 10);
             @endif
 
         }

@@ -289,11 +289,9 @@ class HomeController extends Controller
 
     public function checkBuycode(Request $request)
     {
-        auth()->loginUsingId(1);
-        dd(auth()->user());
         $code = $request->buy_code;
         $buycode = Buycode::where('code', $code)->first();
-        $user = User::find(1);
+        $user = auth()->user();
         if ($buycode->user_id == $user->id) {
             $buycode->game_id = $request->id;
             $buycode->save();

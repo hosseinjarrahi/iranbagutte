@@ -15,7 +15,9 @@ $access = [
     'tables',
     'users',
     'sendGame',
+    'adminSetting',
     'checkGame',
+    'events',
     'slides',
 ];
 $factory->define(Role::class, function (Faker $faker) use ($access){

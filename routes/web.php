@@ -166,6 +166,9 @@ Route::group(['prefix' => 'manager', 'middleware' => 'auth'], function () {
     Route::get("edit-product/{id}", "FoodController@show");
     Route::patch("edit-product/{id}", "FoodController@update");
 
+//offs
+    Route::get("offs", 'OffController@index')->name('admin.offs');
+
 //slides
     Route::get("slides/delete/{id}", "SlideController@delete");
     Route::get("slides", "SlideController@show");
@@ -208,3 +211,4 @@ Route::get('/user/dashboard/advertise','UserDashboard@advertise')->name('user.da
 
 Route::get('/user/dashboard/pay','UserDashboard@payAds')->name('user.dashboard.payAds')->middleware('auth');
 Route::get('/user/dashboard/payback','UserDashboard@payAdsCallback')->name('user.dashboard.payAdsCallback')->middleware('auth');
+

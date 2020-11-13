@@ -116,262 +116,148 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                     </a>
 
                                                 </li>
-
-                                                @if(auth()->user()->hasRole('slides'))
-                                                    <li class="nav-item">
-
-                                                        <a href="{{ url('manager/slides') }}" class="nav-link">
-
-                                                            <i class="fa fa-circle-o nav-icon"></i>
-
-                                                            <p>اسلایدر</p>
-
-                                                        </a>
-
-                                                    </li>
-                                                @endif
                                             </ul>
                                     </ul>
                                 @endif
+
                                 @if(auth()->user()->hasRole('tables'))
                                     <ul class="nav nav-treeview">
                                         <li class="nav-item has-treeview">
-
                                             <a href="#" class="nav-link">
-
                                                 <i class="nav-icon fa fa-table"></i>
-
                                                 <p style="border-radius: 10px">
-
                                                     مدیریت میزها
-
                                                     <i class="right fa fa-angle-left"></i>
-
                                                 </p>
-
                                             </a>
 
                                             <ul class="nav nav-treeview">
-
                                                 <li class="nav-item">
-
                                                     <a href="{{ url('manager/sit/setting') }}" class="nav-link">
-
                                                         <i class="fa fa-circle-o nav-icon"></i>
-
                                                         <p>تنظیمات</p>
-
                                                     </a>
-
                                                 </li>
 
                                                 <li class="nav-item">
-
                                                     <a href="{{ url('manager/reserved') }}" class="nav-link">
-
                                                         <i class="fa fa-circle-o nav-icon"></i>
-
                                                         <p>میزر های رزرو شده</p>
-
                                                     </a>
-
                                                 </li>
-
                                             </ul>
-
                                         </li>
-
                                     </ul>
                                 @endif
+
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-
                                         <a href="{{ url('manager/detail-res') }}" class="nav-link">
-
                                             <i class="fa fa-circle-o nav-icon"></i>
-
                                             <p>اطلاعات رستوران</p>
-
                                         </a>
-
                                     </li>
                                 </ul>
-                            </li>
                             </li>
                         @endif
 
                         @if(auth()->user()->hasRole('payments'))
                             <li class="nav-item has-treeview">
-
                                 <a href="#" class="nav-link">
-
                                     <i class="nav-icon fa fa-shopping-bag"></i>
-
                                     <p>
-
                                         خرید ها
-
                                         <i class="right fa fa-angle-left"></i>
-
                                     </p>
-
                                 </a>
 
                                 <ul class="nav nav-treeview">
-
                                     <li class="nav-item">
-
                                         <a href="{{ url('manager/manage-pays') }}" class="nav-link">
-
                                             <i class="fa fa-circle-o nav-icon"></i>
-
                                             <p>لیست خرید</p>
-
                                         </a>
-
                                     </li>
-
                                 </ul>
-
                             </li>
                         @endif
-                        @if(auth()->user()->hasRole('payments'))
+                        @if(auth()->user()->hasRole('events'))
                             <li class="nav-item has-treeview">
-
                                 <a href="#" class="nav-link">
-
                                     <i class="nav-icon fa fa-trophy"></i>
                                     <p>
-
                                         رويداد
                                         <i class="right fa fa-angle-left"></i>
-
                                     </p>
-
                                 </a>
-
                                 <ul class="nav nav-treeview">
-
                                     <li class="nav-item">
-
                                         <a href="{{ route('event.show') }}" class="nav-link">
-
                                             <i class="fa fa-circle-o nav-icon"></i>
-
                                             <p>رويداد</p>
-
                                         </a>
-
                                     </li>
-
                                 </ul>
-
                             </li>
                         @endif
                         @if(auth()->user()->hasRole('advertise'))
                             <li class="nav-item has-treeview">
-
                                 <a href="{{url('manager/advertise')}}" class="nav-link">
-
                                     <i class="nav-icon fa fa-area-chart"></i>
-
                                     <p>
-
                                         تبلیغات
-
                                         <i class="right fa fa-angle-left"></i>
-
                                     </p>
-
                                 </a>
 
                                 <ul class="nav nav-treeview">
-
                                     <li class="nav-item">
-
                                         <a href="{{ url('manager/advertise') }}" class="nav-link">
-
                                             <i class="fa fa-circle-o nav-icon"></i>
-
                                             <p>ثابت</p>
-
                                         </a>
-
                                     </li>
 
                                     <li class="nav-item">
-
                                         <a href="{{ url('manager/advertise/dynamic') }}" class="nav-link">
-
                                             <i class="fa fa-circle-o nav-icon"></i>
-
                                             <p>ابتدای بازی</p>
-
                                         </a>
-
                                     </li>
                                     <li class="nav-item">
-
                                         <a href="{{ url('manager/advertise/zirnevis') }}" class="nav-link">
-
                                             <i class="fa fa-circle-o nav-icon"></i>
-
                                             <p>تبلیغات زیرنویس</p>
-
                                         </a>
-
                                     </li>
-
                                 </ul>
-
                             </li>
-
                         @endif
                         @if(auth()->user()->hasRole('developer'))
                             <li class="nav-item has-treeview">
-
                                 <a href="#" class="nav-link">
-
                                     <i class="nav-icon fa fa-gamepad"></i>
-
                                     <p>
-
                                         بازی ها
-
                                         <i class="right fa fa-angle-left"></i>
-
                                     </p>
-
                                 </a>
-
                                 <ul class="nav nav-treeview">
-
                                     <li class="nav-item">
-
                                         <a href="{{ url('manager/send-game') }}" class="nav-link">
-
                                             <i class="fa fa-circle-o nav-icon"></i>
-
                                             <p>ارسال بازی</p>
-
                                         </a>
-
                                     </li>
                                     @if(auth()->user()->hasRole('checkGame'))
                                         <li class="nav-item">
-
                                             <a href="{{ url('manager/games') }}" class="nav-link">
-
                                                 <i class="fa fa-circle-o nav-icon"></i>
-
                                                 <p>مدیریت بازی ها</p>
-
                                             </a>
-
                                         </li>
                                     @endif
                                 </ul>
-
                             </li>
                         @endif
                         @if(auth()->user()->hasRole('settings'))
@@ -445,118 +331,68 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 </a>
 
                                             </li>
-
-                                            @if(auth()->user()->hasRole('slides'))
-                                                <li class="nav-item">
-
-                                                    <a href="{{ url('manager/slides') }}" class="nav-link">
-
-                                                        <i class="fa fa-circle-o nav-icon"></i>
-
-                                                        <p>اسلایدر</p>
-
-                                                    </a>
-
-                                                </li>
-                                            @endif
                                         </ul>
                                 </ul>
+
                                 <ul class="nav nav-treeview">
-
-
                                     @if(auth()->user()->hasRole('adminSetting'))
-
                                         <li class="nav-item">
-
                                             <a href="{{ route('admin.cyberspace') }}" class="nav-link">
-
                                                 <i class="fa fa-circle-o nav-icon"></i>
-
                                                 <p>فضای مجازی و اپلیکیشن</p>
-
                                             </a>
-
                                         </li>
-
                                         <li class="nav-item">
-
                                             <a href="{{ route('adver.price') }}" class="nav-link">
-
                                                 <i class="fa fa-circle-o nav-icon"></i>
-
                                                 <p>تبلیغات</p>
-
                                             </a>
-
                                         </li>
-
                                         <li class="nav-item">
-
                                             <a href="{{ url('manager/about-us') }}" class="nav-link">
-
                                                 <i class="fa fa-circle-o nav-icon"></i>
-
                                                 <p>درباره ما</p>
-
                                             </a>
-
                                         </li>
-
                                         <li class="nav-item">
                                             <a href="{{ url('manager/delivery') }}" class="nav-link">
                                                 <i class="fa fa-circle-o nav-icon"></i>
                                                 <p>نحوه ارسال</p>
                                             </a>
                                         </li>
-
                                         <li class="nav-item">
                                             <a href="{{ url('manager/call') }}" class="nav-link">
                                                 <i class="fa fa-circle-o nav-icon"></i>
                                                 <p>تماس با فروشگاه</p>
                                             </a>
                                         </li>
-
                                     @endif
                                 </ul>
-
                             </li>
                         @endif
 
                         @if(auth()->user()->hasRole('users'))
-
                             <li class="nav-item has-treeview">
-
                                 <a href="{{ url('manager/manage-users') }}" class="nav-link">
-
                                     <i class="nav-icon fa fa-users"></i>
-
                                     <p>
-
                                         مدیریت کاربران
-
                                     </p>
-
                                 </a>
-
                             </li>
                         @endif
+
                         @if(auth()->user()->hasRole('chat'))
                             <li class="nav-item has-treeview">
-
                                 <a href="http://go.iranbaguette.ir/admin" class="nav-link">
-
                                     <i class="nav-icon fa fa-comments"></i>
-
                                     <p>
-
                                         پنل مدیریت چت آنلاین
-
                                     </p>
-
                                 </a>
-
                             </li>
                         @endif
+
                         @if(auth()->user()->hasRole('comments'))
                             <li class="nav-item">
                                 <a href="{{route('admin.comments')}}" class="nav-link">
@@ -567,6 +403,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </a>
                             </li>
                         @endif
+
+                        @if(auth()->user()->hasRole('offs'))
+                            <li class="nav-item">
+                                <a href="{{route('admin.offs')}}" class="nav-link">
+                                    <i class="nav-icon fa fa-comment"></i>
+                                    <p>
+                                        تخفیف ها
+                                    </p>
+                                </a>
+                            </li>
+                        @endif
+
                         <li class="nav-item">
                             <a href="{{route('admin.advertiseUser')}}" class="nav-link">
                                 <i class="nav-icon fa fa-comment"></i>
@@ -575,35 +423,32 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
 
+                        @if(auth()->user()->hasRole('slides'))
+                            <li class="nav-item">
+                                <a href="{{ url('manager/slides') }}" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>اسلایدر</p>
+                                </a>
+                            </li>
+                        @endif
+
+                        <li class="nav-item">
                             <a href="{{ url('') }}" target="_blank" class="nav-link">
-
                                 <i class="nav-icon fa fa-th"></i>
-
                                 <p>
-
                                     مشاهده سایت
-
                                 </p>
-
                             </a>
-
                         </li>
+
                         <li class="nav-item">
-
                             <a href="{{ route('logout') }}" class="nav-link">
-
                                 <i class="nav-icon fa fa-th"></i>
-
                                 <p>
-
                                     خروج
-
                                 </p>
-
                             </a>
-
                         </li>
 
                     </ul>

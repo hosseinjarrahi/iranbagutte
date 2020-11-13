@@ -67,8 +67,8 @@
                                             <br>
                                             تنظیمات ادمین
                                             <br>
-                                            <input type="checkbox" name="settings"
-                                                   @if(!$role->where('access','adminSettings')->isEmpty()) checked @endif>
+                                            <input type="checkbox" name="adminSetting"
+                                                   @if(!$role->where('access','adminSetting')->isEmpty()) checked @endif>
                                             <br>
                                             تنظیمات اسلایدر
                                             <br>

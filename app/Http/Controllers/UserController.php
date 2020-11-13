@@ -40,16 +40,12 @@ class UserController extends Controller
     public function promote($id, Request $request)
     {
         $user = User::find($id);
-        $roles = $user->roles;
-        foreach ($roles as $role)
-            $user->roles()->detach($role->id);
         $roles = $request->except('_token');
-        foreach ($roles as $key => $role) {
-            $r = Role::where('access',$key)->first();
-            $user->roles()->attach($r->id);
-        }
+        $roles = Role::whereIn('access', collect($roles)->keys())->get();
+        $user->roles()->sync($roles->pluck('id'));
         return back();
     }
+
     public function promote_res($id, Request $request)
     {
         $user = User::find($id);
@@ -58,16 +54,16 @@ class UserController extends Controller
             $user->roles()->detach($role->id);
         $roles = $request->except('_token');
         foreach ($roles as $key => $role) {
-            $r = Role::where('access',$key)->first();
+            $r = Role::where('access', $key)->first();
             $user->roles()->attach($r->id);
         }
-        $restaurant=new Restaurant();
-        $restaurant->name="بدون نام";
+        $restaurant = new Restaurant();
+        $restaurant->name = "بدون نام";
         $restaurant->save();
-        $tableInfo=new TableInfo();
-        $tableInfo->restaurant_id=$restaurant->id;
+        $tableInfo = new TableInfo();
+        $tableInfo->restaurant_id = $restaurant->id;
         $tableInfo->save();
-        $user->res_id=$restaurant->id;
+        $user->res_id = $restaurant->id;
         $user->save();
         return back();
     }
