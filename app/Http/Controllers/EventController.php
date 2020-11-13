@@ -7,7 +7,6 @@ use App\Cyberspace;
 use App\Event;
 use App\Game;
 use Illuminate\Http\Request;
-use Morilog\Jalali\Jalalian;
 
 class EventController extends Controller
 {
@@ -44,7 +43,6 @@ class EventController extends Controller
 
     public function store(Request $request)
     {
-
         $messages = [
             'title.required' => 'فیلد عنوان را وارد نمایید.',
             'restaurant_id.required' => 'فیلد ID رستوران را وارد نمایید.',
@@ -65,19 +63,6 @@ class EventController extends Controller
             $event->game_id=$request->game_id;
             $event->start_time=$request->start_time??'۱۳۹۹-۰۸-۲۸ ۲۰:۳۲';
             $event->end_time=$request->end_time;
-
-            $request->start_time = $this->faTOen($request->start_time);
-            $date = explode('-', $request->start_time);
-            $time = explode(':', substr($date[2], '3'));
-            $date[2] = substr($date[2], '0', '2');
-            $event->start_time = new Jalalian($date[0], $date[1], $date[2], $time[0], $time[1]);
-
-            $request->end_time = $this->faTOen($request->end_time);
-            $date = explode('-', $request->end_time);
-            $time = explode(':', substr($date[2], '3'));
-            $date[2] = substr($date[2], '0', '2');
-            $request->end_time = new Jalalian($date[0], $date[1], $date[2], $time[0], $time[1]);
-
 
             $event->save();
         } catch (Exception $exception) {
@@ -117,18 +102,6 @@ class EventController extends Controller
             'text' => 'required',
             'end_time' => 'required',
         ], $messages);
-        $request->start_time = $this->faTOen($request->start_time);
-        $date = explode('-', $request->start_time);
-        $time = explode(':', substr($date[2], '3'));
-        $date[2] = substr($date[2], '0', '2');
-        $event->start_time = new Jalalian($date[0], $date[1], $date[2], $time[0], $time[1]);
-
-        $request->end_time = $this->faTOen($request->end_time);
-        $date = explode('-', $request->end_time);
-        $time = explode(':', substr($date[2], '3'));
-        $date[2] = substr($date[2], '0', '2');
-        $event->end_time = new Jalalian($date[0], $date[1], $date[2], $time[0], $time[1]);
-
         try {
             $event->update($request->all());
         } catch (Exception $exception) {
@@ -149,31 +122,4 @@ class EventController extends Controller
         $msg = "رویداد با موفقیت حذف شد.";
         return redirect(route('event.show'))->with('success', $msg);
     }
-    function faTOen($string)
-    {
-        return strtr($string, [
-            '۰' => '0',
-            '۱' => '1',
-            '۲' => '2',
-            '۳' => '3',
-            '۴' => '4',
-            '۵' => '5',
-            '۶' => '6',
-            '۷' => '7',
-            '۸' => '8',
-            '۹' => '9',
-            '٠' => '0',
-            '١' => '1',
-            '٢' => '2',
-            '٣' => '3',
-            '٤' => '4',
-            '٥' => '5',
-            '٦' => '6',
-            '٧' => '7',
-            '٨' => '8',
-            '٩' => '9',
-        ]);
-    }
-
 }
-

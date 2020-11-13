@@ -540,24 +540,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                             </li>
                         @endif
-                        @if(auth()->user()->hasRole('users'))
-
-                            <li class="nav-item has-treeview">
-
-                                <a href="{{ route('event.show') }}" class="nav-link">
-
-                                    <i class="nav-icon fa fa-edit"></i>
-
-                                    <p>
-
-                                        رویداد ویژه
-
-                                    </p>
-
-                                </a>
-
-                            </li>
-                        @endif
                         @if(auth()->user()->hasRole('chat'))
                             <li class="nav-item has-treeview">
 
