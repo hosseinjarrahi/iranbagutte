@@ -1,10 +1,10 @@
-@extends('user.master')
+@extends('dashboard.master')
 
 @section('title')
     ویرایش اطلاعات | ایران باگت
 @endsection
 
-@section('menu')
+@section('content')
 
     <div class="container d-flex flex-column justify-content-center align-items-center mt-3">
         <div class="loginBox col-11 col-md-7 rounded p-3 text-center">

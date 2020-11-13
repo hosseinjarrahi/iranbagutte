@@ -46,7 +46,7 @@ Route::get("edit", "BasketController@takmil");
 Route::put("edit", "BasketController@takmiler");
 
 
-Route::get("reserve/{id?}", 'HomeController@reserve');
+Route::get("reserve/{id?}", 'HomeController@reserve')->name('user.reserve');
 Route::post('reserve/{id?}', 'HomeController@addReserve');
 
 //user register
@@ -79,6 +79,9 @@ Route::group(['prefix' => 'manager', 'middleware' => 'auth'], function () {
     Route::get('advertise/zirnevis', 'AdvertiseController@zirnevisManage');
     Route::get('advertise/zirnevis/delete/{id}', 'AdvertiseController@delete');
     Route::put('advertise/zirnevis', 'AdvertiseController@zirnevisAdd');
+
+    Route::get('advertise/price', 'AdvertiseController@adverPrice')->name('adver.price');
+    Route::post('advertise/price', 'AdvertiseController@adverPriceChange')->name('adver.price.change');
 
     Route::get('advertise/dynamic', 'AdvertiseController@dynamicManage');
     Route::get('advertise/dynamic/delete/{id}', 'AdvertiseController@delete');
@@ -199,9 +202,9 @@ Route::post('/comment/{game}', 'CommentController@storeG')->name('game.comment')
 
 Route::post('/comment/{restaurant}', 'CommentController@storeR')->name('restaurant.comment');
 
+// user dahboard
+Route::get('/user/dashboard','UserDashboard@index')->name('user.dashboard')->middleware('auth');
+Route::get('/user/dashboard/advertise','UserDashboard@advertise')->name('user.dashboard.advertise')->middleware('auth');
 
-Route::get('/test1', function () {
-    dd(json_encode(\App\Food::all()));
-});
-
-
+Route::get('/user/dashboard/pay','UserDashboard@payAds')->name('user.dashboard.payAds')->middleware('auth');
+Route::get('/user/dashboard/payback','UserDashboard@payAdsCallback')->name('user.dashboard.payAdsCallback')->middleware('auth');

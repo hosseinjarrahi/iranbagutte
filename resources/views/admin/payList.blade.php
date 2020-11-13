@@ -29,9 +29,13 @@
                                             @if(is_int($itemPay->products))
                                                 {{ \App\Game::find($itemPay->products)->name }}
                                             @else
-                                                @foreach(unserialize($itemPay->products) as $product)
-                                                    -{{$product['name']}}-
-                                                @endforeach
+                                                @if(@unserialize($itemPay->products))
+                                                    @foreach(unserialize($itemPay->products) as $product)
+                                                        -{{$product['name']}}-
+                                                    @endforeach
+                                                @else
+                                                    پرداخت تبلیغات
+                                                @endif
                                             @endif
 
                                         </td>
@@ -42,16 +46,21 @@
                                             @if(is_int($itemPay->products))
                                                 @php($price+=\App\Game::find($itemPay->products)->price)
                                             @else
-                                                @foreach(unserialize($itemPay->products) as $product)
-                                                    @php($price+=$product['price']*($product['count'] ?? 1))
-                                                @endforeach
+                                                @if(@unserialize($itemPay->products))
+                                                    @foreach(unserialize($itemPay->products) as $product)
+                                                        @php($price+=$product['price']*($product['count'] ?? 1))
+                                                    @endforeach
+                                                    {{$price}}
+                                                @else
+                                                    ***
+                                                @endif
                                             @endif
 
-                                            {{$price}}
                                         </td>
                                         <th>
-                                            @if(!is_int($itemPay->products))
-                                                <a href="{{ url('manager/detail-pay/'.$itemPay->id) }}"> جزئیات بیشتر</a>
+                                            @if(!is_int($itemPay->products) && @unserialize($itemPay->products))
+                                                <a href="{{ url('manager/detail-pay/'.$itemPay->id) }}"> جزئیات
+                                                    بیشتر</a>
                                             @endif
                                         </th>
 

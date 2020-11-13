@@ -88,6 +88,28 @@
                                 </div>
 
 
+
+                                <div class="form-group">
+                                    <label for="end_time">زمان و تاریخ پایان  </label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="inputGroupPrepend3">
+                                                 <img id="date_btn_9" src="{{ asset('calendar/cal.png') }}"
+                                                      style="vertical-align: top;"/>
+                                            </span>
+                                        </div>
+                                        <input required  class="form-control @error('text') is-invalid @enderror"
+                                               id="date_input_9"
+                                               name="end_time"
+                                               data-format="yyyy-MM-dd hh:mm:ss" type="text"
+                                               value="{{$event->end_time}}"
+                                               placeholder="2021-09-28 20:30">
+                                    </div>
+                                    @error('end_time')
+                                    <div class="alert alert-danger"> {{$message}}</div>
+                                    @enderror
+                                </div>
+
                                 <div class="form-group">
                                     <label for="restaurant_id">ID رستوران</label>
                                     <input type="text" class="form-control @error('restaurant_id') is-invalid @enderror"

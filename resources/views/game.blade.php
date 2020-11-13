@@ -301,20 +301,30 @@
         `;
 
         function openTheGame(i) {
-            part = i;
-            gameBox.style.visibility = '';
-            iframe.innerHTML = objs[counter].img;
-            let width = 100;
-            let ratio = width / (objs[counter].time / 10);
-            bar = setInterval(function () {
-                width -= ratio;
-                progressBar.style.width = width + '%';
-                if (width <= 0) {
-                    clearInterval(bar);
-                    progressBar.remove();
-                    iframe.innerHTML += closeAdver;
-                }
-            }, 10);
+            @if(auth()->check() && auth()->user()->paidAdvertise())
+                part = i;
+                gameBox.style.visibility = '';
+                iframe.innerHTML = objs[counter].img;
+                let width = 100;
+                let ratio = width / (objs[counter].time / 10);
+                closeAd();
+            @else
+                part = i;
+                gameBox.style.visibility = '';
+                iframe.innerHTML = objs[counter].img;
+                let width = 100;
+                let ratio = width / (objs[counter].time / 10);
+                bar = setInterval(function () {
+                    width -= ratio;
+                    progressBar.style.width = width + '%';
+                    if (width <= 0) {
+                        clearInterval(bar);
+                        progressBar.remove();
+                        iframe.innerHTML += closeAdver;
+                    }
+                }, 10);
+            @endif
+
         }
 
         function closeGame() {

@@ -1,4 +1,5 @@
-@extends('master')
+@extends('dashboard.master')
+
 @section('title')
     ایران باگت
 @endsection
@@ -9,7 +10,7 @@
         <div class="col-12 mb-3">
             <div class="container rounded p-2 text-white">
                 <p class="alert alert-light">
-                    {!! $message ?? '' !!}    
+                    {!! $message ?? '' !!}
                 </p>
                 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
             </div>

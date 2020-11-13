@@ -35,8 +35,29 @@
                             </div>
 
 
+{{--                            <div class="form-group">--}}
+{{--                                <label for="end_time">زمان و تاریخ شروع : </label>--}}
+{{--                                <div class="input-group">--}}
+{{--                                    <div class="input-group-prepend">--}}
+{{--                            <span class="input-group-text" id="inputGroupPrepend3">--}}
+{{--                                 <img id="date_btn_9" src="{{ asset('calendar/cal.png') }}"--}}
+{{--                                      style="vertical-align: top;"/>--}}
+{{--                            </span>--}}
+{{--                                    </div>--}}
+{{--                                    <input required  class="form-control" id="date_input_9"--}}
+{{--                                           name="end_time"--}}
+{{--                                           data-format="yyyy-MM-dd hh:mm:ss" type="text">--}}
+{{--                                </div>@error('end_time')--}}
+{{--                                <div class="alert alert-danger"> {{$message}}</div>--}}
+{{--                                @enderror--}}
+{{--                            </div>--}}
+
+
+
+
+
                             <div class="form-group">
-                                <label for="time_s">زمان و تاریخ شروع : </label>
+                                <label for="end_time">زمان و تاریخ پایان : </label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroupPrepend3">
@@ -45,30 +66,10 @@
                             </span>
                                     </div>
                                     <input required  class="form-control" id="date_input_9"
-                                           name="time_s"
-                                           data-format="yyyy-MM-dd hh:mm:ss" type="text">
-                                </div>@error('time_s')
-                                <div class="alert alert-danger"> {{$message}}</div>
-                                @enderror
-                            </div>
-
-
-
-
-
-                            <div class="form-group">
-                                <label for="time_e">زمان و تاریخ پایان : </label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroupPrepend3">
-                                 <img id="date_btn_9" src="{{ asset('calendar/cal.png') }}"
-                                      style="vertical-align: top;"/>
-                            </span>
-                                    </div>
-                                    <input required  class="form-control" id="date_input_9"
-                                           name="time_e"
-                                           data-format="yyyy-MM-dd hh:mm:ss" type="text">
-                                </div>@error('time_e')
+                                           name="end_time"
+                                           data-format="yyyy-MM-dd hh:mm:ss" type="text"
+                                    placeholder="2021-09-28 20:30">
+                                </div>@error('end_time')
                                 <div class="alert alert-danger"> {{$message}}</div>
                                 @enderror
                             </div>
