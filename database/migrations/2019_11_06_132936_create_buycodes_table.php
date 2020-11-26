@@ -17,7 +17,6 @@ class CreateBuycodesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedInteger('user_id')->nullable();
 	        $table->unsignedInteger('game_id')->nullable();
-	        $table->unsignedInteger('restaurant_id')->nullable();
 	        $table->unsignedInteger('product_id')->nullable();
 	        $table->unsignedInteger('event_id')->nullable();
 	        $table->unsignedTinyInteger('percent')->nullable();

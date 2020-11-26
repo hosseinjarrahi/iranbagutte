@@ -4,47 +4,29 @@ namespace App\Http\Controllers;
 
 use App\Buycode;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class BuyCodeController extends Controller
 {
     public function index()
     {
-        $buyCodes = Buycode::where('by_admin',true)->get();
+        $buyCodes = Buycode::where('by_admin', true)->get();
 
-        return view('admin.buycode',compact('buyCodes'));
-    }
-
-    public function create()
-    {
-        //
+        return view('admin.buycode', compact('buyCodes'));
     }
 
     public function store(Request $request)
     {
-        Buycode::create($request->only([
-            'code',
-            'game_id',
-            'product_id',
-            'event_id',
-            'percent',
-        ]) + ['by_admin' => true]);
+        foreach (range(1, $request->count ?? 0) as $number) {
+            Buycode::create($request->only([
+                    'game_id',
+                    'product_id',
+                    'event_id',
+                    'percent',
+                ]) + ['by_admin' => true,'code' => Str::random(7)]);
+        }
 
         return back();
-    }
-
-    public function show($id)
-    {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
     }
 
     public function destroy($id)
