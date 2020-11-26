@@ -67,6 +67,15 @@
                             </a>
                         </li>
 
+                        <li class="nav-item has-treeview">
+                            <a href="{{ url('/check-code') }}" class="nav-link">
+                                <i class="nav-icon fa fa-users"></i>
+                                <p>
+                                    بررسی کد
+                                </p>
+                            </a>
+                        </li>
+
                         <li class="nav-item">
                             <a href="{{ url('') }}" target="_blank" class="nav-link">
                                 <i class="nav-icon fa fa-th"></i>

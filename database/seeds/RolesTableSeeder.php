@@ -28,7 +28,7 @@ class RolesTableSeeder extends Seeder
             'special',
             'developer',
             'adminSetting',
-            'offs',
+            'buycode',
             'vip',
         ];
         foreach ($access as $a)
