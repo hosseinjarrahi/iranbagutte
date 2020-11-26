@@ -1,6 +1,9 @@
 <?php
 
 Route::get('/', 'HomeController@home')->name('home');
+Route::get('/check-code', 'HomeController@checkCodePage');
+Route::post('/get-code', 'HomeController@getCode');
+Route::post('/check-code', 'HomeController@checkCode');
 Route::get('/benefits', 'HomeController@benefits');
 Route::get('/contact-us', 'HomeController@contactUs');
 
@@ -166,9 +169,6 @@ Route::group(['prefix' => 'manager', 'middleware' => 'auth'], function () {
     Route::get("edit-product/{id}", "FoodController@show");
     Route::patch("edit-product/{id}", "FoodController@update");
 
-//offs
-    Route::get("offs", 'OffController@index')->name('admin.offs');
-
 //slides
     Route::get("slides/delete/{id}", "SlideController@delete");
     Route::get("slides", "SlideController@show");
@@ -190,9 +190,9 @@ Route::group(['prefix' => 'manager', 'middleware' => 'auth'], function () {
     Route::put('event/update/{comment}', 'EventController@update')->name('event.update');
     Route::get('event/destroy/{comment}', 'EventController@destroy')->name('event.destroy');
     Route::get("all-events","EventController@show")->name("event.show");
-
+//manager > buycode
+    Route::resource('buycode', 'BuyCodeController');
 });
-//end manager
 //event user
 Route::get('event/', 'EventController@index')->name('event');
 //end event user

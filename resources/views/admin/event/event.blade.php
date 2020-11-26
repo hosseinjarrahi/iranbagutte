@@ -30,10 +30,10 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>{{$event->game->name}}</td>
-                                    <td>{{$event->restaurant->name}}</td>
-                                    <td>{{$event->title}}</td>
-                                    <td>{{$event->text}}</td>
+                                    <td>{{$event->game->name ?? ''}}</td>
+                                    <td>{{$event->restaurant->name ?? ''}}</td>
+                                    <td>{{$event->title ?? ''}}</td>
+                                    <td>{{$event->text ?? ''}}</td>
 
                                     <td>
                                         <a href="{{route('event.edit',$event->id)}}">

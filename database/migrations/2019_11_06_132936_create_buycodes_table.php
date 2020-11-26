@@ -15,11 +15,15 @@ class CreateBuycodesTable extends Migration
     {
         Schema::create('buycodes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('user_id')->nullable();
 	        $table->unsignedInteger('game_id')->nullable();
 	        $table->unsignedInteger('restaurant_id')->nullable();
 	        $table->unsignedInteger('product_id')->nullable();
+	        $table->unsignedInteger('event_id')->nullable();
+	        $table->unsignedTinyInteger('percent')->nullable();
 	        $table->string('code')->unique();
+	        $table->boolean('get')->default(false);
+	        $table->boolean('by_admin')->default(false);
             $table->timestamps();
 
 //	        $table->foreign('user_id')

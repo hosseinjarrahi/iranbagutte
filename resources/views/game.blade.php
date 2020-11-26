@@ -6,7 +6,6 @@
 
 @section('content')
 
-
     <style>
         .example2 {
             height: 50px;
@@ -63,11 +62,6 @@
             }
         }
     </style>
-
-
-
-
-
 
     <hr>
     <div class="row"></div>
@@ -264,11 +258,13 @@
     {{--انتهای کامنت--}}
     <script>
         let ztime = 99999999999;
+
         @if($zirnevis)
-        let url = '{{ url('advertise/'.$zirnevis->id) }}';
-        let zirnevis = '<div class="example2"><h3><a href="${url}">{{ $zirnevis->text }}</a></h3></div > ';
-        ztime = {{ $zirnevis->time }};
+            let url = '{{ url('advertise/'.$zirnevis->id) }}';
+            let zirnevis = '<div class="example2"><h3><a href="${url}">{{ $zirnevis->text }}</a></h3></div > ';
+            ztime = {{ $zirnevis->time }};
         @endif
+
         let vars = [];
         let objs = [];
         let iframes = [];
@@ -279,7 +275,7 @@
         let z = null;
 
         @foreach($urls as $url)
-        iframes.push(`<iframe width="100%" height="800px" src="{{ $url }}"></iframe>`);
+            iframes.push(`<iframe width="100%" height="800px" src="{{ $url }}"></iframe>`);
         @endforeach
 
         let x = {

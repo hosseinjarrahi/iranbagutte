@@ -15,5 +15,8 @@ class Event extends Model
     {
         return $this->hasOne(Restaurant::class,'id','restaurant_id');
     }
-
+    public function buycode()
+    {
+        return $this->hasOne(Buycode::class);
+    }
 }

@@ -3,22 +3,17 @@
 @section('title')
     ایران باگت
 @endsection
+
 @section('content')
     <link rel="stylesheet" type="text/css" media="all" href="{{asset('calendar/skins/aqua/theme.css')}}" title="Aqua"/>
-
-
     <!-- import the Jalali Date Class script -->
     <script type="text/javascript" src="{{asset('calendar/jalali.js')}}"></script>
-
     <!-- import the calendar script -->
     <script type="text/javascript" src="{{asset('calendar/calendar.js')}}"></script>
-
     <!-- import the calendar script -->
     <script type="text/javascript" src="{{asset('calendar/calendar-setup.js')}}"></script>
-
     <!-- import the language module -->
     <script type="text/javascript" src="{{asset('calendar/lang/calendar-fa.js')}}"></script>
-
     <!-- helper script that uses the calendar -->
     <script type="text/javascript">
 
@@ -145,10 +140,11 @@
                               placeholder="بطور مثال : من یک صندلی بیشتر بر روی این میز می خواهم"></textarea>
                 </div>
             </div>
-            <p class="col-12 pt-2">جهت رزرو میز مبلغ<span style="color: red;"> {{$tableInfo[0]->price}} ریال </span>
+
+            <p class="col-12 pt-2">جهت رزرو میز مبلغ<span style="color: red;"> {{$tableInfo[0]->price ?? 0}} ریال </span>
                 بعنوان پیش پرداخت دریافت می گردد.</p>
             {{--            //temp *****هنگام اتصال به درگاه باید قیمت از دیتابیس گرفته شود*****--}}
-            <input type="hidden" name="price" value="{{$tableInfo[0]->price}}" class="btn btn-primary">
+            <input type="hidden" name="price" value="{{$tableInfo[0]->price ?? 0}}" class="btn btn-primary">
             {{--            //end temp--}}
             <input type="submit" name="submit" value="رزرو میز" class="btn btn-primary">
 

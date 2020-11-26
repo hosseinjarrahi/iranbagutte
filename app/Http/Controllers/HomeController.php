@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use App\Banner;
 use App\Buycode;
 use App\Category;
@@ -19,6 +21,7 @@ use App\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Morilog\Jalali\Jalalian;
+
 class HomeController extends Controller
 {
     public function home()
@@ -74,7 +77,7 @@ class HomeController extends Controller
         } else {
             $game_event = NULL;
         }
-        return view('delivery', compact('event','game_event','delivery', 'cyberspace'));
+        return view('delivery', compact('event', 'game_event', 'delivery', 'cyberspace'));
     }
 
     public function call()
@@ -90,7 +93,7 @@ class HomeController extends Controller
         } else {
             $game_event = NULL;
         }
-        return view('call', compact('event','game_event','call', 'cyberspace'));
+        return view('call', compact('event', 'game_event', 'call', 'cyberspace'));
     }
 
     public function collaborateWithFastFoodMaker()
@@ -142,7 +145,7 @@ class HomeController extends Controller
         $cyberspace = Cyberspace::get();
         $home = 1;
 
-        return view('restaurant', compact('cats', 'foods', 'restaurant', 'cyberspace','home'));
+        return view('restaurant', compact('cats', 'foods', 'restaurant', 'cyberspace', 'home'));
     }
 
     public function showRestaurants()
@@ -328,7 +331,7 @@ class HomeController extends Controller
 
         $comments = $res->comment()->where('status', 1)->where('role', '2')->get(); // comments
         $cyberspace = Cyberspace::get();
-        return view('order', compact('event','game_event','special', 'slides', 'home', 'products', 'res', 'comments', 'cyberspace'));
+        return view('order', compact('event', 'game_event', 'special', 'slides', 'home', 'products', 'res', 'comments', 'cyberspace'));
     }
 
     public function reserve($id, Request $request)
@@ -350,7 +353,7 @@ class HomeController extends Controller
             $game_event = NULL;
         }
 
-        return view('reserve', compact('game_event','event','errors', 'home', 'id', 'out', 'message', 'cyberspace', 'tableInfo'));
+        return view('reserve', compact('game_event', 'event', 'errors', 'home', 'id', 'out', 'message', 'cyberspace', 'tableInfo'));
     }
 
     public function addReserve($id = 1, Request $request)
@@ -460,5 +463,28 @@ class HomeController extends Controller
         }
 
         return redirect('/');
+    }
+
+    public function checkCodePage()
+    {
+        return view('user.checkBuycode', ['first' => true]);
+    }
+
+    public function checkCode(Request $request)
+    {
+        $code = $request->code;
+        $code = Buycode::where(['code' => $code, 'get' => false,'user_id' => auth()->id()])->with(['product' => function ($query) {
+            $query->with('restaurant');
+        }, 'game'])->first();
+        if (!$code) {
+            return view('user.checkBuycode', ['message' => 'چنین کدی وجود ندارد و یا قبلا استفاده شده است.']);
+        }
+
+        return view('user.checkBuycode', compact('code'));
+    }
+
+    public function getCode(Request $request)
+    {
+        $data = $request->only(['event','game']);
     }
 }
