@@ -17,7 +17,7 @@ class OrderController extends Controller
 
     public function sitSetting()
     {
-        $res = User::find(auth()->id())->restaurants;
+        $res = (User::find(auth()->id()))->restaurants;
         $opt = Restaurant::find($res->id)->tables;
         $tableInfo = Restaurant::find($res->id)->tableInfos;
 

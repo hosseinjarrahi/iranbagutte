@@ -260,9 +260,11 @@
         let ztime = 99999999999;
 
         @if($zirnevis)
-            let url = '{{ url('advertise/'.$zirnevis->id) }}';
-            let zirnevis = '<div class="example2"><h3><a href="${url}">{{ $zirnevis->text }}</a></h3></div > ';
-            ztime = {{ $zirnevis->time }};
+            @if(auth()->check() && auth()->user()->paidAdvertise())
+                let url = '{{ url('advertise/'.$zirnevis->id) }}';
+                let zirnevis = '<div class="example2"><h3><a href="${url}">{{ $zirnevis->text }}</a></h3></div > ';
+                ztime = {{ $zirnevis->time }};
+            @endif
         @endif
 
         let vars = [];
@@ -275,7 +277,7 @@
         let z = null;
 
         @foreach($urls as $url)
-            iframes.push(`<iframe width="100%" height="800px" src="{{ $url }}"></iframe>`);
+        iframes.push(`<iframe width="100%" height="800px" src="{{ $url }}"></iframe>`);
         @endforeach
 
         let x = {

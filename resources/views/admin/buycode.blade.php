@@ -13,7 +13,7 @@
                         <div class="card-body">
                             <form method="post" action="{{ route('buycode.store') }}">
                                 @csrf
-                                <input type="text" name="code" class="my-2 form-control" placeholder="کدتخفیف">
+                                <input type="text" name="count" class="my-2 form-control" placeholder="تعداد کد">
                                 <input type="text" name="game_id" class="my-2 form-control" placeholder="آیدی بازی">
                                 <input type="text" name="product_id" class="my-2 form-control" placeholder="آیدی محصول">
                                 <input type="text" name="event_id" class="my-2 form-control" placeholder="آیدی رویداد">
