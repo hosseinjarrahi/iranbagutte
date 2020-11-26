@@ -126,7 +126,7 @@ class HomeController extends Controller
 
     public function howToOrder()
     {
-        $benefits = Option::find(10) ?? new Option();
+        $benefits = Option::find(11) ?? new Option();
         $benefits->main = str_replace('../', '', $benefits->main);
         $benefits->main = str_replace('width="', 'class="img-fluid"', $benefits->main);
         $benefits->main = str_replace('height="', '', $benefits->main);

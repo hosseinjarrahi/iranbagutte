@@ -6,7 +6,9 @@ use App\Banner;
 use App\Cyberspace;
 use App\Event;
 use App\Game;
+use App\Restaurant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class EventController extends Controller
 {
@@ -38,7 +40,10 @@ class EventController extends Controller
 
     public function create()
     {
-        return view('admin.event.create');
+        $games=Game::all();
+        $restaurants=Restaurant::all();
+
+        return view('admin.event.create', compact('games','restaurants'));
     }
 
     public function store(Request $request)
@@ -76,18 +81,22 @@ class EventController extends Controller
     public function show()
     {
         $event=Event::all()->first();
+
         return view('admin.event.event',compact('event'));
     }
 
     public function edit($id)
     {
         $event=Event::find($id);
-        return view('admin.event.edit',compact('event'));
+        $games=Game::all();
+        $restaurants=Restaurant::all();
+
+        return view('admin.event.edit',compact('event','games','restaurants'));
     }
 
     public function update(Request $request, $id)
     {
-        $event=Event::find($id);
+//        $event=Event::find($id);
         $messages = [
             'title.required' => 'فیلد عنوان را وارد نمایید.',
             'restaurant_id.required' => 'فیلد ID رستوران را وارد نمایید.',
@@ -103,15 +112,18 @@ class EventController extends Controller
             'end_time' => 'required',
         ], $messages);
         try {
-            $event->update($request->all());
+            DB::table('events')->where('id',$id)->update(['title'=>$request->title,'restaurant_id'=>$request->restaurant_id,
+                'game_id'=>$request->game_id,'text'=>$request->text,'end_time'=>$request->end_time,]);
+
         } catch (Exception $exception) {
             return redirect(route('event.edit'))->with('warning', $exception->getCode());
         }
+//        dd($event->end_time);
         $msg = "رویداد با موفقیت ویرایش شد.";
         return redirect(route('event.show'))->with('success', $msg);
     }
 
-    public function destroy( $id)
+    public function destroy($id)
     {
         $event=Event::find($id);
         try {

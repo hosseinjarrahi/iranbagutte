@@ -71,10 +71,15 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="restaurant_id">ID رستوران</label>
-                                    <input type="text" class="form-control @error('restaurant_id') is-invalid @enderror"
-                                           name="restaurant_id"
-                                           value="{{$event->restaurant_id}}">
+                                    <label for="restaurant_id"> رستوران</label>
+
+                                    <select class="form-control @error('restaurant_id') is-invalid @enderror"
+                                           name="restaurant_id">
+                                        @foreach($restaurants as $restaurant)
+                                            <option value="{{$restaurant->id}}" @if($event->restaurant_id==$restaurant->id) selected="selected" @endif">{{$restaurant->name}}</option>
+                                        @endforeach
+                                    </select>
+
                                     @error('restaurant_id')
                                     <div class="alert alert-danger"> {{$message}}</div>
                                     @enderror
@@ -82,10 +87,13 @@
 
 
                                 <div class="form-group">
-                                    <label for="game_id">ID بازی</label>
-                                    <input type="text" class="form-control @error('game_id') is-invalid @enderror"
-                                           name="game_id"
-                                           value="{{$event->game_id}}">
+                                    <label for="game_id"> بازی</label>
+                                    <select class="form-control @error('game_id') is-invalid @enderror"
+                                           name="game_id">
+                                    @foreach($games as $game)
+                                        <option value="{{$game->id}}" @if($event->game_id==$game->id) selected="selected" @endif">{{$game->name}}</option>
+                                        @endforeach
+                                        </select>
                                     @error('game_id')
                                     <div class="alert alert-danger"> {{$message}}</div>
                                     @enderror
