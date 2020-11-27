@@ -406,8 +406,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                         @if(auth()->user()->hasRole('buycode'))
                             <li class="nav-item">
+
                                 <a href="{{route('buycode.index')}}" class="nav-link">
-                                    <i class="nav-icon fa fa-comment"></i>
+                                    <i class="nav-icon fa fa-percent"></i>
                                     <p>
                                         تخفیف ها
                                     </p>
@@ -415,14 +416,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </li>
                         @endif
 
-                        <li class="nav-item">
-                            <a href="{{route('admin.advertiseUser')}}" class="nav-link">
-                                <i class="nav-icon fa fa-comment"></i>
-                                <p>
-                                    حذف تبلیغات
-                                </p>
-                            </a>
-                        </li>
+{{--                        <li class="nav-item">--}}
+{{--                            <a href="{{route('admin.advertiseUser')}}" class="nav-link">--}}
+{{--                                <i class="nav-icon fa fa-comment"></i>--}}
+{{--                                <p>--}}
+{{--                                    حذف تبلیغات--}}
+{{--                                </p>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
 
                         @if(auth()->user()->hasRole('slides'))
                             <li class="nav-item">

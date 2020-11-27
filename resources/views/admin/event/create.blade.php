@@ -1,3 +1,4 @@
+
 @extends('admin.master')
 
 @section('title')
@@ -127,21 +128,32 @@
                                 @enderror
                             </div>
 
-
                             <div class="form-group">
-                                <label for="restaurant_id">ID رستوران</label>
-                                <input type="text" class="form-control @error('restaurant_id') is-invalid @enderror"
+                                <label for="restaurant_id"> رستوران</label>
+                                <select class="form-control @error('restaurant_id') is-invalid @enderror"
                                        name="restaurant_id">
+                                    @foreach($restaurants as $restaurant)
+
+                                    <option value="{{$restaurant->id}}">{{$restaurant->name}}</option>
+{{--                                        @if(1) selected="selected" @endif--}}
+                                    @endforeach
+                                </select>
                                 @error('restaurant_id')
                                 <div class="alert alert-danger"> {{$message}}</div>
                                 @enderror
                             </div>
+                            {{--/////////////////////////////////////////////////////////////--}}
 
 
                             <div class="form-group">
-                                <label for="game_id">ID بازی</label>
-                                <input type="text" class="form-control @error('game_id') is-invalid @enderror"
+                                <label for="game_id">بازی</label>
+                                <select class="form-control @error('game_id') is-invalid @enderror"
                                        name="game_id">
+                                    @foreach($games as $game)
+
+                                        <option value="{{$game->id}}">{{$game->name}}</option>
+                                        {{--                                        @if(1) selected="selected" @endif--}}
+                                    @endforeach                                </select>
                                 @error('game_id')
                                 <div class="alert alert-danger"> {{$message}}</div>
                                 @enderror
