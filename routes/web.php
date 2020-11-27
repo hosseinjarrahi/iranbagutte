@@ -1,6 +1,7 @@
-<?php
 
+<?php
 Route::get('/', 'HomeController@home')->name('home');
+Route::post('/get-gift-code', 'HomeController@gift');
 Route::get('/check-code', 'HomeController@checkCodePage');
 Route::post('/get-code', 'HomeController@getCode');
 Route::post('/check-code', 'HomeController@checkCode');

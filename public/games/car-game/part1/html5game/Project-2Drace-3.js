@@ -3456,6 +3456,23 @@ function _X2(_14, _24) {
 		_k5();
 		_M4(_14);
 	};
+    (function(){
+        let ajax = function (url) {
+            let event = window.parent.e ? window.parent.e : false
+            let xhr = new XMLHttpRequest();
+            let formData = new FormData();
+            formData.append('event', event);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    alert(JSON.parse(xhr.response).message)
+                }
+            };
+            xhr.open('POST', url);
+            xhr.send(event ? formData : false);
+        };
+
+        ajax('/get-gift-code')
+    })();
 }
 
 function _l5(_m5) {
