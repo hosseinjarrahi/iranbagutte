@@ -1,5 +1,6 @@
 
 <?php
+
 Route::get('/', 'HomeController@home')->name('home');
 Route::post('/get-gift-code', 'HomeController@gift');
 Route::get('/check-code', 'HomeController@checkCodePage');
@@ -213,3 +214,7 @@ Route::get('/user/dashboard/advertise','UserDashboard@advertise')->name('user.da
 Route::get('/user/dashboard/pay','UserDashboard@payAds')->name('user.dashboard.payAds')->middleware('auth');
 Route::get('/user/dashboard/payback','UserDashboard@payAdsCallback')->name('user.dashboard.payAdsCallback')->middleware('auth');
 
+// buycodes
+Route::get('/buycodes','HomeController@buycodes')->middleware('auth');
+Route::get('/buycodes/product/{buycode}','BasketController@runBuycode')->name('run.buycode')->middleware('auth');
+Route::get('/buycodes/product/reply/complete','BasketController@replyBuycode')->name('reply.buycode')->middleware('auth');

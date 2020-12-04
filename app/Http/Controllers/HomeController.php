@@ -523,4 +523,10 @@ class HomeController extends Controller
 
         return response(['message' => 'متاسفانه کدی هدیه ای وجود ندارد.:(']);
     }
+
+    public function buycodes(){
+        $buycodes = auth()->user()->buycodes()->where('get',0)->get();
+        return view('user.buycodes',compact('buycodes'));
+    }
+
 }
