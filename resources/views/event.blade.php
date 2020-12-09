@@ -262,6 +262,7 @@
     </div>
     {{--انتهای کامنت--}}
     <script>
+        window.e = {{ $event->id }}
         let ztime = 99999999999;
         @if($zirnevis)
         let url = '{{ url('advertise/'.$zirnevis->id) }}';

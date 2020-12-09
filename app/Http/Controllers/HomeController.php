@@ -473,7 +473,7 @@ class HomeController extends Controller
     public function checkCode(Request $request)
     {
         $code = $request->code;
-        $code = Buycode::where(['code' => $code, 'get' => false,'user_id' => auth()->id()])->with(['product' => function ($query) {
+        $code = Buycode::where(['code' => $code, 'get' => false, 'user_id' => auth()->id()])->with(['product' => function ($query) {
             $query->with('restaurant');
         }, 'game'])->first();
         if (!$code) {
@@ -485,6 +485,48 @@ class HomeController extends Controller
 
     public function getCode(Request $request)
     {
-        $data = $request->only(['event','game']);
+        $data = $request->only(['event', 'game']);
     }
+
+    public function gift(Request $request)
+    {
+        if ($request->event) {
+            $events = Event::with(['buycodes' => function ($query) {
+                $query->whereNull('user_id');
+            }])->get();
+            $choice = $events[0] ?? false;
+            if ($choice) {
+                if ($choice->game_id) {
+                    $pay = new Payment();
+                    $pay->user_id = auth()->id();
+                    $pay->trans_id = 0;
+                    $pay->restaurant_id = 0;
+                    $pay->products = $choice->game_id;
+                    $pay->save();
+                    $choice->delete();
+                    return response(['message' => 'تبریک! شما بازی ' . $choice->game->name . ' را برنده شدید. ']);
+                } else if ($choice->product_id) {
+                    $choice->user_id = auth()->id();
+                    $choice->save();
+                    return response(['message' => 'کد تخفیف خرید محصول برای شما ثبت شد از پنل خود آن را مشاهده کنید.']);
+                }
+            }
+        } else {
+            $buycodes = Buycode::whereNull('user_id')->whereNull('event_id')->get();
+            $choice = $buycodes[0] ?? false;
+            if ($choice) {
+                $choice->user_id = auth()->id();
+                $choice->save();
+                return response(['message' => 'کد تخفیف خرید محصول برای شما ثبت شد از پنل خود آن را مشاهده کنید.']);
+            }
+        }
+
+        return response(['message' => 'متاسفانه کدی هدیه ای وجود ندارد.:(']);
+    }
+
+    public function buycodes(){
+        $buycodes = auth()->user()->buycodes()->where('get',0)->get();
+        return view('user.buycodes',compact('buycodes'));
+    }
+
 }

@@ -68,10 +68,10 @@
                         </li>
 
                         <li class="nav-item has-treeview">
-                            <a href="{{ url('/check-code') }}" class="nav-link">
+                            <a href="{{ url('/buycodes') }}" class="nav-link">
                                 <i class="nav-icon fa fa-users"></i>
                                 <p>
-                                    بررسی کد
+                                    کد های شما
                                 </p>
                             </a>
                         </li>

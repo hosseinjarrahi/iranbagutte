@@ -35,7 +35,7 @@ class EventController extends Controller
             $urls[$i] = asset($game->file . '/part' . $i . '/index.html');
         }
         $cyberspace = Cyberspace::get();
-        return view('event', compact('dynamic', 'urls', 'zirnevis', 'banners', 'part', 'game', 'comments', 'cyberspace'));
+        return view('event', compact('dynamic','event', 'urls', 'zirnevis', 'banners', 'part', 'game', 'comments', 'cyberspace'));
 
     }
 

@@ -1,19 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
 
-
-<!-- Start Live Chat Code -->
-<script type="text/javascript" src="http://go.iranbaguette.com/assets/js/jquery.min.js"></script>
-<script type="text/javascript">jQuery.noConflict();</script>
-<script type="text/javascript">jQuery(document).ready(function($) {$.ajaxSetup({xhrFields: {withCredentials: true},headers: {"X-Requested-With": "XMLHttpRequest"}});$.ajax({type: "GET",url: "http://go.iranbaguette.com/live_chat",dataType: "html",success: function(data) {$("body").append(data);}});});</script>
-<!-- End Live Chat Code -->
 </body>
+
+<script>
+    (function(){
+        let ajax = function (url) {
+            let event = window.parent.e ? window.parent.e : false
+            let xhr = new XMLHttpRequest();
+            let formData = new FormData();
+            formData.append('event', event);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    alert(JSON.parse(xhr.response).message)
+                }
+            };
+            xhr.open('POST', url);
+            xhr.send(event ? formData : false);
+        };
+
+        ajax('/get-gift-code')
+    })();
+</script>
+
 </html>

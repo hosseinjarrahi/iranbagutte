@@ -99,4 +99,5 @@ class User extends Authenticatable
         $pay = Payment::where('products','"advertise'.$this->id.'"')->first();
         return !!$pay;
     }
+
 }
