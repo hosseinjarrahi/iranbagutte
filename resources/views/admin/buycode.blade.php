@@ -14,8 +14,27 @@
                             <form method="post" action="{{ route('buycode.store') }}">
                                 @csrf
                                 <input type="text" name="count" class="my-2 form-control" placeholder="تعداد کد">
-                                <input type="text" name="game_id" class="my-2 form-control" placeholder="آیدی بازی">
-                                <input type="text" name="product_id" class="my-2 form-control" placeholder="آیدی محصول">
+                                <select name="game_id" class="my-2 form-control" placeholder="بازی">
+                                    <option value=""> - </option>
+                                    @foreach($games as $game)
+                                        <option value="{{$game->id}}">
+                                            {{$game->name}} * {{$game->id}}
+                                        </option>
+                                    @endforeach
+                                </select>
+{{--                                <input type="text" name="game_id" class="my-2 form-control" placeholder="آیدی بازی">--}}
+
+                                <select name="food_id" class="my-2 form-control" placeholder="غذا">
+                                    <option value=""> - </option>
+                                    @foreach($foods as $food)
+                                        <option value="{{$food->id}}">
+                                            {{$food->title}} * {{$food->restaurant->name}} * {{$food->id}}
+                                        </option>
+                                    @endforeach
+
+                                </select>
+{{--                                <input type="text" name="product_id" class="my-2 form-control" placeholder="آیدی محصول">--}}
+
                                 <input type="text" name="event_id" class="my-2 form-control" placeholder="آیدی رویداد">
                                 <input type="text" name="percent" class="my-2 form-control" placeholder="درصد تخفیف محصول">
                                 <button class="btn btn-primary">ثبت</button>

@@ -1,4 +1,3 @@
-{{--{{dd($event->end_time)}}--}}
 
 <button class="IB-nav-toggle">
 	<div class="IB-icon-menu" >
@@ -195,6 +194,7 @@
     @if(isset($game_event))
     <div class="countdown" style="background: linear-gradient(to right, #c31432, #240b36);
 ">
+        <a class="timer" style="font-size: xx-large;font-family: 'vaziri'" href=" {{route("event")}} ">
         <div style="color: white; display: block; font-size: larger">
             <span>رويداد شروع شد! </span>
             <span>{{$game_event->name}} </span>
@@ -203,12 +203,13 @@
 
         </div>
 
-        <a class="timer" style="" href=" {{route("event")}} ">
+
             <span id="seconds"></span>
             <span id="minutes"></span>
             <span id="hours"></span>
             <span id="days"></span>
         </a>
+
     </div>
     @endif
 </header>

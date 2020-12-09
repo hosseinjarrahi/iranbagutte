@@ -238,7 +238,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <a href="#" class="nav-link">
                                     <i class="nav-icon fa fa-gamepad"></i>
                                     <p>
-                                        بازی ها
+                                        مدیریت بازی ها
                                         <i class="right fa fa-angle-left"></i>
                                     </p>
                                 </a>
@@ -405,12 +405,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         @endif
 
                         @if(auth()->user()->hasRole('buycode'))
+
                             <li class="nav-item">
 
                                 <a href="{{route('buycode.index')}}" class="nav-link">
                                     <i class="nav-icon fa fa-percent"></i>
                                     <p>
                                         تخفیف ها
+                                    </p>
+                                </a>
+                            </li>
+                        @endif
+                        @if(auth()->user()->hasRole('buycode'))
+
+                            <li class="nav-item">
+
+                                <a href="{{route('user.myCode')}}" class="nav-link">
+                                    <i class="nav-icon fa fa-gamepad"></i>
+                                    <p>
+                                        بازی های من
                                     </p>
                                 </a>
                             </li>

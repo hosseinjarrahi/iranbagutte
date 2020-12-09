@@ -20,4 +20,8 @@ class Payment extends Model
     {
         return $this->belongsTo(Restaurant::class);
     }
+    public function game()
+    {
+        return $this->belongsTo(Game::class,'products','id');
+    }
 }

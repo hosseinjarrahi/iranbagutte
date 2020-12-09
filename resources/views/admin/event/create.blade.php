@@ -1,4 +1,3 @@
-
 @extends('admin.master')
 
 @section('title')
@@ -92,7 +91,7 @@
 
 
                             <div class="form-group">
-                                <label for="end_time">زمان و تاریخ پایان : </label>
+                                <label for="end_time">زمان و تاریخ پایان: </label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroupPrepend3">
@@ -102,8 +101,7 @@
                                     </div>
                                     <input required  class="form-control" id="date_input_9"
                                            name="end_time"
-                                           data-format="yyyy-MM-dd hh:mm:ss" type="text"
-                                    placeholder="2021-09-28 20:30">
+                                           data-format="yyyy-MM-dd hh:mm:ss" type="text">
                                 </div>@error('end_time')
                                 <div class="alert alert-danger"> {{$message}}</div>
                                 @enderror
@@ -150,10 +148,11 @@
                                 <select class="form-control @error('game_id') is-invalid @enderror"
                                        name="game_id">
                                     @foreach($games as $game)
-
-                                        <option value="{{$game->id}}">{{$game->name}}</option>
-                                        {{--                                        @if(1) selected="selected" @endif--}}
-                                    @endforeach                                </select>
+                                        <option value="{{$game->id}}">
+                                            {{$game->name}}
+                                        </option>
+                                    @endforeach
+                                </select>
                                 @error('game_id')
                                 <div class="alert alert-danger"> {{$message}}</div>
                                 @enderror

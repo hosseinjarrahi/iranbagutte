@@ -193,6 +193,9 @@ Route::group(['prefix' => 'manager', 'middleware' => 'auth'], function () {
 //manager > buycode
     Route::resource('buycode', 'BuyCodeController');
 });
+//user > buycode
+Route::get('myCood', 'BuyCodeController@myCode')->name('user.myCode');
+
 //event user
 Route::get('event/', 'EventController@index')->name('event');
 //end event user
@@ -211,4 +214,5 @@ Route::get('/user/dashboard/advertise','UserDashboard@advertise')->name('user.da
 
 Route::get('/user/dashboard/pay','UserDashboard@payAds')->name('user.dashboard.payAds')->middleware('auth');
 Route::get('/user/dashboard/payback','UserDashboard@payAdsCallback')->name('user.dashboard.payAdsCallback')->middleware('auth');
+Route::get('/user/dashboard/code','UserDashboard@code')->name('user.dashboard.code')->middleware('auth');
 

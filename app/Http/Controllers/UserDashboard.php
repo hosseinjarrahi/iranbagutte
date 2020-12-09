@@ -96,4 +96,11 @@ class UserDashboard extends Controller
 
         return view('user.complete', compact('message'));
     }
+    public function code()
+    {
+        $user = auth()->user();
+        $codes=Payment::
+        return view('dashboard.advertise',compact('option'));
+    }
+
 }

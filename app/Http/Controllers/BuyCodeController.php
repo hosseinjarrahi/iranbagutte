@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Buycode;
+use App\Food;
+use App\Game;
+use App\Payment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -11,8 +14,9 @@ class BuyCodeController extends Controller
     public function index()
     {
         $buyCodes = Buycode::where('by_admin', true)->get();
-
-        return view('admin.buycode', compact('buyCodes'));
+        $games=Game::all();
+        $foods=Food::all();
+        return view('admin.buycode', compact('buyCodes','games', 'foods'));
     }
 
     public function store(Request $request)
@@ -35,5 +39,17 @@ class BuyCodeController extends Controller
         $buycode->delete();
 
         return back();
+    }
+    public function  myCode(){
+        $mycode= Buycode::all()->where('user_id',auth()->user()->id);
+$pay_user=Payment::all()->where('user_id',auth()->user()->id);
+$i=0;
+foreach ($pay_user as $pay){
+    if(is_numeric($pay->products)) {
+        $games[$i++]=$pay;
+    }
+}
+
+        return view('admin.off.myCode', compact('mycode','games'));
     }
 }

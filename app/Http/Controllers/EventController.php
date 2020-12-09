@@ -9,6 +9,7 @@ use App\Game;
 use App\Restaurant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Morilog\Jalali\Jalalian;
 
 class EventController extends Controller
 {
@@ -60,6 +61,12 @@ class EventController extends Controller
             'game_id' => 'required',
             'text' => 'required',
         ], $messages);
+        $request->end_time = $this->faTOen($request->end_time);
+        $date = explode('-', $request->end_time);
+        $time = explode(':', substr($date[2], '3'));
+        $date[2] = substr($date[2], '0', '2');
+        $end_time = new Jalalian($date[0], $date[1], $date[2], $time[0], $time[1]);
+        $end_time = $end_time->toCarbon();
         $event=new Event();
         try {
             $event->title=$request->title;
@@ -67,7 +74,7 @@ class EventController extends Controller
             $event->restaurant_id=$request->restaurant_id;
             $event->game_id=$request->game_id;
             $event->start_time=$request->start_time??'۱۳۹۹-۰۸-۲۸ ۲۰:۳۲';
-            $event->end_time=$request->end_time;
+            $event->end_time=$end_time;
 
             $event->save();
         } catch (Exception $exception) {
@@ -111,14 +118,19 @@ class EventController extends Controller
             'text' => 'required',
             'end_time' => 'required',
         ], $messages);
+        $request->end_time = $this->faTOen($request->end_time);
+        $date = explode('-', $request->end_time);
+        $time = explode(':', substr($date[2], '3'));
+        $date[2] = substr($date[2], '0', '2');
+        $end_time = new Jalalian($date[0], $date[1], $date[2], $time[0], $time[1]);
+        $end_time = $end_time->toCarbon();
         try {
             DB::table('events')->where('id',$id)->update(['title'=>$request->title,'restaurant_id'=>$request->restaurant_id,
-                'game_id'=>$request->game_id,'text'=>$request->text,'end_time'=>$request->end_time,]);
+                'game_id'=>$request->game_id,'text'=>$request->text,'end_time'=>$end_time,]);
 
         } catch (Exception $exception) {
             return redirect(route('event.edit'))->with('warning', $exception->getCode());
         }
-//        dd($event->end_time);
         $msg = "رویداد با موفقیت ویرایش شد.";
         return redirect(route('event.show'))->with('success', $msg);
     }
@@ -134,4 +146,30 @@ class EventController extends Controller
         $msg = "رویداد با موفقیت حذف شد.";
         return redirect(route('event.show'))->with('success', $msg);
     }
+    function faTOen($string)
+    {
+        return strtr($string, [
+            '۰' => '0',
+            '۱' => '1',
+            '۲' => '2',
+            '۳' => '3',
+            '۴' => '4',
+            '۵' => '5',
+            '۶' => '6',
+            '۷' => '7',
+            '۸' => '8',
+            '۹' => '9',
+            '٠' => '0',
+            '١' => '1',
+            '٢' => '2',
+            '٣' => '3',
+            '٤' => '4',
+            '٥' => '5',
+            '٦' => '6',
+            '٧' => '7',
+            '٨' => '8',
+            '٩' => '9',
+        ]);
+    }
+
 }
