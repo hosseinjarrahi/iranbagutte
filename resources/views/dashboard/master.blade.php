@@ -68,6 +68,15 @@
                         </li>
 
                         <li class="nav-item has-treeview">
+                            <a href="{{ url('/user/myCood') }}" class="nav-link">
+                                <i class="nav-icon fa fa-gamepad"></i>
+                                <p>
+                                    بازی های من
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item has-treeview">
                             <a href="{{ url('/buycodes') }}" class="nav-link">
                                 <i class="nav-icon fa fa-users"></i>
                                 <p>

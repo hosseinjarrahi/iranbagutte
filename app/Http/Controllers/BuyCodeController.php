@@ -14,9 +14,9 @@ class BuyCodeController extends Controller
     public function index()
     {
         $buyCodes = Buycode::where('by_admin', true)->get();
-        $games=Game::all();
-        $foods=Food::all();
-        return view('admin.buycode', compact('buyCodes','games', 'foods'));
+        $games = Game::all();
+        $foods = Food::all();
+        return view('admin.buycode', compact('buyCodes', 'games', 'foods'));
     }
 
     public function store(Request $request)
@@ -27,7 +27,7 @@ class BuyCodeController extends Controller
                     'product_id',
                     'event_id',
                     'percent',
-                ]) + ['by_admin' => true,'code' => Str::random(7)]);
+                ]) + ['by_admin' => true, 'code' => Str::random(7)]);
         }
 
         return back();
@@ -40,16 +40,34 @@ class BuyCodeController extends Controller
 
         return back();
     }
-    public function  myCode(){
-        $mycode= Buycode::all()->where('user_id',auth()->user()->id);
-$pay_user=Payment::all()->where('user_id',auth()->user()->id);
-$i=0;
-foreach ($pay_user as $pay){
-    if(is_numeric($pay->products)) {
-        $games[$i++]=$pay;
-    }
-}
 
-        return view('admin.off.myCode', compact('mycode','games'));
+    public function myCode()
+    {
+        $mycode = Buycode::all()->where('user_id', auth()->user()->id);
+        $pay_user = Payment::all()->where('user_id', auth()->user()->id);
+        $i = 0;
+        $games = [];
+        foreach ($pay_user as $pay) {
+            if (is_numeric($pay->products)) {
+                $games[$i++] = $pay;
+            }
+        }
+
+        return view('admin.off.myCode', compact('mycode', 'games'));
+    }
+
+    public function userMyCode()
+    {
+        $mycode = Buycode::all()->where('user_id', auth()->user()->id);
+        $pay_user = Payment::all()->where('user_id', auth()->user()->id);
+        $i = 0;
+        $games = [];
+        foreach ($pay_user as $pay) {
+            if (is_numeric($pay->products)) {
+                $games[$i++] = $pay;
+            }
+        }
+
+        return view('user.myCode', compact('mycode', 'games'));
     }
 }

@@ -197,6 +197,7 @@ Route::group(['prefix' => 'manager', 'middleware' => 'auth'], function () {
 });
 //user > buycode
 Route::get('myCood', 'BuyCodeController@myCode')->name('user.myCode');
+Route::get('/user/myCood', 'BuyCodeController@userMyCode');
 
 //event user
 Route::get('event/', 'EventController@index')->name('event');
